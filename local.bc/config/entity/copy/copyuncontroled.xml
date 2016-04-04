@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="DMS:Copy:Uncontrolled" manager="System" uid="120">
+
+    <passport>
+        <title>Физическая не управляемая копия</title>
+    </passport>
+
+    <states>
+        <status name="isactive" default="yes" title="Действительна ли копия"/><!--зачем?-->
+        <status name="isreturn" default="yes" title="Была ли копия возвращена"/><!--зачем?-->
+    </states>
+
+    <structure>
+
+        <hasone entity="Document:Regulations:SOP" as="realcopy" title="Копия какого документа"/>
+        <hasone entity="People:Employee:Internal" as="master" title="Сотрудник, который выдал копию"/>
+        <field system="yes" name="created" type="timestamp" title="Дата создания / дата печати" createDefault="now"/>
+        <field name="dateissue" type="timestamp" title="Дата выдачи" createDefault="now"/>
+
+    </structure>
+
+    <lists>
+        <list name="holders" entity="People:Employee:Internal" ns="1201" title="Держатели копии"/>
+        <list name="previous" entity="People:Employee:Internal" ns="1202" title="Бывшие держатели копии"/>
+    </lists>
+    <defaultorder/>
+
+    <admincolumns>
+        <column selector="DocumentRegulations"/> <!-- < любой регламентирующий документ > -->
+        <column selector="created"/>
+		<column selector="dateissue"/>
+		<column selector="PeopleEmployeeInternal"/>
+		<!-- <column selector="status"/> -->
+    </admincolumns>
+
+    <options/>
+    <searchfields/>
+    <indexes/>
+</entity>

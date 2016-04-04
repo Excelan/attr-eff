@@ -1,0 +1,48 @@
+<process prototype="DMS:Regulation:SOP" readyfor="test">
+
+  <parameters></parameters>
+
+  <responsibility>
+
+    <stage name="CreateDraft"/>
+
+    <stage name="Editing" type="humantask" title="Редактирование">
+      <target>Цель - создание документа SOP</target><!-- выдача и изъятие копий, копии на ознакомление -->
+      <humantask responsible="initiator" appoint="initiator" timelimit="2"/>
+    </stage>
+
+    <stage name="Vising" title="Визирование">
+      <target>Цель - завизировать SOP</target>
+      <call process="DMS:Decisions:Visa" timelimit="3"/>
+    </stage>
+
+    <stage name="Approving" title="Утверждение">
+      <target>Цель - утвердить SOP</target>
+      <call process="DMS:Decisions:Approvement" timelimit="1"/>
+    </stage>
+
+    <stage name="Route">
+      <target>
+        Если требуется обучение, то на основании SOP создается программа обучения
+        PHP позже перенесет (после Study, уже в draft Attestation) из SOP тех, для кого требуется обучение (по Должности и Типу Должности)
+      </target>
+      <!--<delegate optional="yes" process="DMS:Regulation:Study"/>-->
+    </stage>
+
+  </responsibility>
+
+  <stages>
+
+    <stage name="CreateDraft" type="automated"/>
+
+    <stage name="Editing" type="humantask"/>
+
+    <stage name="Vising" type="delegate"/>
+
+    <stage name="Approving" type="delegate"/>
+
+    <stage name="Route" type="automated"/>
+
+  </stages>
+
+</process>

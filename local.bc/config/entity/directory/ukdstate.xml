@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Directory:UKDState:IssueRecord" manager="Business" uid="9299712">
+
+    <passport>
+        <title>UKD State for SOP version</title>
+    </passport>
+
+    <states/>
+
+    <structure>
+
+        <hasone entity="Document:Protocol:RUKD" as="DocumentProtocolRUKD" title="Протокол по CAPA"/>
+
+        <hasone entity="Management:Post:Individual" as="holder" title="Носитель копии"/>
+
+        <hasone entity="DMS:Copy:Controled" as="DMSCopyControled" title="DMSCopyControled"/>
+
+        <field name="reason" type="text" title="Детали или причина не проведения операции"/>
+
+        <field name="issued" title="Выдача новой версии" type="set">
+            <value name="yes" title="Выдано" />
+            <value name="no" title="Не выдано" />
+        </field>
+
+        <field name="withdrawal" title="Изъятие старой версии" type="set">
+            <value name="na" title="Не применимо" />
+            <value name="yes" title="Изъято" />
+            <value name="no" title="Не выдано" />
+        </field>
+
+    </structure>
+
+    <lists>
+        <!--<list name="responsible" entity="Management:Post:Individual" ns="921101" title="Ответственные лица"/>-->
+    </lists>
+
+
+    <defaultorder/>
+    <admincolumns>
+        <column selector="DocumentProtocolRUKD"/>
+        <column selector="holder"/>
+        <column selector="DMSCopyControled"/>
+        <column selector="issued"/>
+        <column selector="withdrawal"/>
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes/>
+</entity>

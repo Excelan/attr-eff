@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- Приказ на принятие на работу-->
+        <section type="context" entity="Document:Staffdoc:OR" title="Информация по новому сотруднику">
+
+            <field name="employeename" title="ФИО сотрудника" type="string"/>
+            <field name="CompanyStructureDepartment" title="Название структурного подразделения" type="select">
+                <query gate="Selector/company/structure/CompanyStructureDepartment"/>
+            </field>
+            <field name="ManagementPostGroup" title="Должность" type="ManagementPostIndividual"/>
+
+            <field name="date" title="Дата принятия на работу" type="date"/>
+            <field name="dateend" title="Дата окончания (если контракт)" type="date"/>
+            <field name="dateterm" title="Испытательный срок" type="string"/>
+            <field name="actual" title="Условия работы" type="select">
+                <options>
+                    <option value="mainplace" title="основное место работы"/>
+                    <option value="sametime" title="за совместительством"/>
+                </options>
+            </field>
+            <field name="long" title="Продолжительность рабочей недели" type="string"/>
+            <field name="salary" title="Оклад/тарифная ставка" type="string"/>
+            <field name="jobtype" title="Условия принятия на работу" type="select">
+                <options>
+                    <option value="val1" title="на конкурсной основе"/>
+                    <option value="val2" title="за условиями контракта"/>
+                    <option value="val3" title="на время выполнения какой-то работы"/>
+                    <option value="val4" title="с испытательным сроком"/>
+                    <option value="val5" title="на период отсутствия основного работника"/>
+                    <option value="val6" title="из кадрового резерва"/>
+                    <option value="val7" title="по результатам успешной стажировки"/>
+                    <option value="val8" title="перевод"/>
+                    <option value="val9" title="другое"/>
+                </options>
+            </field>
+            <field name="moremoney" title="Надбавка" type="string"/>
+            <field name="evenmoremoney" title="Доплата" type="string"/>
+            <field name="manager" title="Руководитель" type="ManagementPostIndividual"/>
+
+        </section>
+
+    </structure>
+
+</form>

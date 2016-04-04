@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- CONTEXT BLOCK  Мастер-план по валидации -->
+
+
+        <section title="Редактирование">
+            <field name="initialdate"  type="date"  title="Дата вступления в силу"/>
+            <field name="lastdate"  type="date" system="yes"  title="Дата последнего пересмотра"/>
+            <field name="CalendarPeriodMonth" type="select" title="Период действия">
+                <query gate="Selector/calendar/CalendarPeriodMonth"/>
+            </field>
+
+            <!--	Политика в области валидации (текст прошитый в xml) -->
+
+            <field name="policy"  type="text"  title="Политика в области валидации"/>
+
+            <!-- Календарный план-->
+            <struct entity="Directory:СalendarPlan:Simple" name="all" multiple="yes" title="Календарный план">
+                <field name="urn" type="hidden"/>
+                <field name="BusinessObjectRecordPolymorph" type="BusinessObject" title="Объект (объекты у которых есть необходимость валидации)"/>
+                <field name=" DocumentRegulationsPV" type="Document" title="Программа валидации"/>
+                <field name="date" system="yes"  type="date"  title="Дата"/> <!--Дата расчитывается от последней даты валидации + период (в БД БО) -->
+            </struct>
+
+        </section>
+
+    </structure>
+
+</form>

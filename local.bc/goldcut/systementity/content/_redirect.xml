@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity manager="SystemData" prototype="HTTP:Redirect:FromURIToURI" uid="127">
+  <passport>
+    <title>Редирект</title>
+  </passport>
+  <states/>
+  <structure>
+    <field name="uri" type="string" title="URI"/>
+    <field name="target" type="string" title="Target"/>
+  </structure>
+  <lists/>
+  <defaultorder/>
+  <admincolumns>
+    <column selector="uri"/>
+    <column selector="target"/>
+  </admincolumns>
+  <options>
+    <aparam name="directmanage" type="boolean" value="no"/>
+  </options>
+  <searchfields/>
+  <indexes>
+    <index column="uri"/>
+    <unique column="uri"/>
+  </indexes>
+</entity>

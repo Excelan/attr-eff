@@ -1,0 +1,7 @@
+syntax: glob
+~*
+*.svn
+*.DAV
+*.pyc
+python/*.pyc
+*.marks

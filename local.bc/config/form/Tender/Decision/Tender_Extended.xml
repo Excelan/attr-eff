@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- Тендер ТУР 2 шаг 5-->
+
+        <section entity="Document:Tender:Extended" name="tendercondition"  type="context" title="Информация по тендеру">
+
+            <field name="title" title="Название тендера" type="string"/>
+            <field name="attachment" type="string" title="Детальный свод предложений" />
+            <field edit="lock" name="currency" title="Валюта тендера" type="select">
+                <options>
+                    <option value="usd" title="USD"/>
+                    <option value="eur" title="EUR"/>
+                    <option value="uah" title="UAH"/>
+                </options>
+            </field>
+        </section>
+
+
+        <section entity="Document:Tender:Extended" multiple="yes" title="Участники Тендера" type="context">
+
+            <struct multiple="yes" name="DirectoryTenderBidderSimple" title="Участник Тендера">
+                <field type="hidden" name="urn"/>
+                <field name="CompanyLegalEntityCounterparty" title="Участник" type="CompanyLegalEntityCounterparty"/>
+                <field name="commercialoffer" type="string" title="Коммерческое предложение"/>
+                <field name="techvalidation" type="radio" title="Отметка соответствия условиям ТЗ">
+                    <options>
+                        <option value="yes" title="Да" />
+                        <option value="no" title="Нет" />
+                        <option value="clarification" title="Требует уточнения" />
+                    </options>
+                </field>
+
+                <struct entity="Document:Tender:Table" name="DocumentTenderTable" multiple="yes" title="Ценовые предложения">
+
+                    <field edit="unlock" type="hidden" name="urn"/>
+                    <field name="titleposition" type="string"  title="Название позиции" />  <!--  названия созданны на предыдущем шаге, здесь нужно их выводить селектом -->
+                    <field name="priceofferarray" type="string" multiple="yes" min="0" title="Архив предложений" />
+                    <field name="priceoffer" type="string"  title="Стоимость позиции" /> <!--  сохранять все предложения по цене -->
+
+                </struct>
+
+                <struct entity="Document:Tender:TableAdditional" name="DocumentTenderTableAdditional" multiple="yes" title="Дополнительные критерии оценки">
+
+                    <field edit="unlock" type="hidden" name="urn"/>
+                    <field name="titleposition" type="string"  title="Название позиции" />
+                    <field name="priceofferarray" type="string" multiple="yes" min="0" title="Архив предложений" />
+                    <field name="priceoffer" type="string" title="Последнее предложение(цена итп)" />
+
+                </struct>
+
+            </struct>
+
+        </section>
+
+    </structure>
+
+</form>

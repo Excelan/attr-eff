@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity prototype="Document:Regulations:AO" code="AO" manager="Document" uid="6008">
+
+    <passport>
+        <title>Приказ</title>
+    </passport>
+
+    <structure>
+
+        <field name="title" type="string" title="Название приказа"/>
+        <field name="preamble" type="richtext" title="Преамбула"/>
+        <field name="textorder" type="richtext" title="Текст приказа"/>
+        <field name="target" type="richtext" title="Цель"/>
+
+        <hasone entity="BusinessObject:Record:Polymorph" as="scaleapplication" title="Масштаб применения"/>
+        <field name="effectivedate" type="date" title="Дата введения в действие"/>
+
+
+
+    </structure>
+    <lists>
+        <list name="userprocedure" entity="Management:Post:Individual" ns="30999" title="Участники процедуры"/>
+    </lists>
+    <defaultorder />
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		<!-- <column selector="status"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

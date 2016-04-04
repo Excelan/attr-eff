@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- entity="Document:RiskReview:???" -->
+        <section  title="Конфигурация для идентификации/пересмотра рисков. Выберите">
+
+            <field name="BusinessObjectRecordPolymorph" type="BusinessObject"  title="или Объект"/>
+            <field name="DirectoryBusinessProcessItem" type="select"  title="или Процесс">
+                <query gate="Selector/directory/DirectoryBusinessProcessItem"/>
+            </field>
+            <field name="commissionmember" type="ManagementPostIndividual" multiple="yes" min="1" title="Члены комиссии" required="yes">
+              <query gate="Selector/management"/>
+            </field>
+
+        </section>
+
+    </structure>
+
+</form>

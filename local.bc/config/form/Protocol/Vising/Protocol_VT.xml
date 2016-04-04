@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- ПРОТОКОЛ ВАЛИДАЦИОННОГО ИССЛЕДОВАНИЯ-->
+
+        <section entity="Document:Protocol:VT" type="context" title="Метаинформация по Протоколу Валидационного исследования">
+            <field name="bo" type="BusinessObject" title="Объект"/>
+            <field name="responsiblemo" type="ManagementPostIndividual" title="Материально-ответственный сотрудник"/>
+            <field name="responsibleto" type="ManagementPostIndividual" title="Ответственный за техническое состояние и за техническое обслуживание"/>
+            <field name="responsiblevt" type="ManagementPostIndividual" title="Ответственный за валидацию"/>
+            <field name="warehouse" type="BusinessObject" title="№ Склада"/>
+            <field name="client" type="CompanyLegalEntityCounterparty" title="Клиент"/>
+            <field name="CalendarPeriodMonth" type="select" title="Периодичность валидации">
+                <query gate="Selector/calendar/CalendarPeriodMonth"/>
+            </field>
+            <field name="latestcheck" type="date" title="Поверка последняя"/>
+            <field name="nextcheck" type="date" title="Поверка следующая"/>
+        </section>
+
+        <!-- Форма для заполнения-->
+        <section entity="Document:Protocol:VT" type="context" title="Форма для заполнения Протокола Валидационного исследования">
+            <field name="scaleapplication" type="BusinessObject" title="Масштаб применения"/>
+
+            <struct entity="Directory:Responsibletwo:Simple" name="DirectoryResponsibletwoSimple" multiple="yes" title="Ответственное лицо">
+              <field name="urn" type="hidden"/>
+                <field name="worktype" type="string" title="Характер работ"/>
+                <field name="ManagementPostIndividual" type="ManagementPostIndividual" title="Ответственный"/>
+            </struct>
+
+            <field name="normativebase" type="text" title="Нормативная база"/>
+
+            <struct entity="Directory:Fixedasset:Simple" name="DirectoryFixedassetSimple" multiple="yes" title="Основные средства">
+                <field name="equipment" type="BusinessObject" title="Название, марка, модель обуродования"/>
+                <field name="numberequipment" type="string" title="Серийный номер"/>
+                <field name="specification" type="text" title="Технические характеристики"/>
+            </struct>
+
+                <field name="chemicals" type="string" title="Химические средства"/>
+                <field name="defabbr" type="richtext" title="Определения и сокращения"/>
+                <field name="masterpart" type="richtext" title="Основная часть"/>
+                <field name="attachments"  type="attachment" multiple="yes" title="Вложение"/>
+                <field name="finalrecommend" type="richtext" title="Конечные выводы / рекомендации"/>
+
+
+
+        </section>
+
+
+</structure>
+
+</form>

@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- Тендер ТУР 1 шаг 4-->
+
+        <section entity="Document:Tender:Extended" name="DocumentTenderExtended" title="Валюта тендера">
+
+            <field name="currency" title="Валюта" type="select">
+                <options>
+                    <option value="usd" title="USD"/>
+                    <option value="eur" title="EUR"/>
+                    <option value="uah" title="UAH"/>
+                </options>
+            </field>
+
+        </section>
+
+        <section title="Позиции для сводной таблицы(Дополнительные критерии для сводной таблицы)" entity="Document:Tender:Table">
+
+            <struct multiple="yes" name="DirectoryTenderPositionSimple" title="Позиция">
+                <field type="hidden" name="urn"/>
+                <field name="titleposition" type="string" title="Название позиции" />
+            </struct>
+
+        </section>
+
+<!--        <section title="Дополнительные критерии для сводной таблицы">
+
+            <field name="title" type="string" title="Название критерия" />
+
+        </section>-->
+
+    </structure>
+
+</form>

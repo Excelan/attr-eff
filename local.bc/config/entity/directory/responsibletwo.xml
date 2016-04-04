@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Directory:Responsibletwo:Simple" manager="Business" uid="92999">
+
+    <passport>
+        <title>Ответственные</title>
+    </passport>
+
+    <states/>
+
+    <structure>
+
+        <useone entity="Document:Protocol:VT" title="Протокол валидационного исследования"/>
+
+        <hasone entity="Management:Post:Individual" as="ManagementPostIndividual" title="Ответственное лицо"/>
+        <field name="worktype" type="string"  title="Характер работ"/>
+
+    </structure>
+
+    <lists>
+        <!--<list name="responsible" entity="Management:Post:Individual" ns="921101" title="Ответственные лица"/>-->
+    </lists>
+
+
+    <defaultorder/>
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="title"/>
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes/>
+</entity>

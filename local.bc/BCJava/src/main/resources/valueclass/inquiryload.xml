@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+        <!-- sql select from db (q per t),   build value class from sql.getVal(),  VC to JSON -->
+        <!-- json parse from form http post, build value class from json.getVal(), VC to JSON  -->
+        <!--    value class to json -->
+
+        <!-- message query params VS custom sql -->
+</root>

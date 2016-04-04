@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="RiskManagement:Risk:NotApproved" code="NR" manager="System" uid="115">
+
+    <passport>
+        <title>Не идентифицированный риск</title>
+    </passport>
+
+    <states>
+        <status name="identified" default="no" title="Идентифицирован"/>
+    </states>
+
+    <structure>
+
+        <field name="riskdescription" type="text" title="Описание риска"/>
+
+        <hasone entity="BusinessObject:Record:Polymorph" as="BusinessObjectRecordPolymorph" title="Обьект, в котором появился этот риск"/>
+        <hasone entity="Directory:BusinessProcess:Item" as="DirectoryBusinessProcessItem" title="Процесс, в котором появился этот риск"/>
+
+        <useone entity="RiskManagement:Risk:Approved" as="RiskManagementRiskApproved" title="Привязанный идентифицированный риск"/>
+
+        <field name="documentoforigin" type="string" title="Документ в котором появился это риск (Capa или СР, БО)" system="yes"/>
+
+    </structure>
+
+    <defaultorder/>
+
+    <admincolumns>
+        <column selector="riskdescription"/>
+        <column selector="BusinessObjectRecordPolymorph"/>
+        <column selector="DirectoryBusinessProcessItem"/>
+		    <column selector="RiskManagementRiskApproved"/>
+        <!-- <column selector="documentoforigin"/> -->
+    </admincolumns>
+
+    <options/>
+    <searchfields/>
+    <indexes/>
+</entity>

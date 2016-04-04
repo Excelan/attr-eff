@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="Capa" name="CancelVisa">
+
+    <role>
+
+    </role>
+
+    <request>
+
+        <field name="user" type="integer" required="no"/>
+
+        <field name="actor" type="string" required="yes"/>
+
+        <field name="urn" type="string" required="yes"/>
+
+        <field name="text" type="string" required="no"/>
+
+        <field name="actorEmployee" type="string" required="yes"/>
+
+        <field name="ticketurn" type="string" required="yes"/>
+
+        <field name="mpeid" type="string" required="yes"/>
+
+
+    </request>
+
+
+    <response>
+
+        <field name="status" type="integer" required="yes"/>
+
+    </response>
+
+</gate>

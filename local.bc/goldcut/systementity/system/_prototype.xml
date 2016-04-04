@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Definition:Prototype:System" manager="SystemData" uid="9327111">
+
+    <passport>
+        <title>System Prototype</title>
+    </passport>
+
+    <states>
+        <!-- TODO remove -->
+        <!-- <status name="isprocess" default="no" title="OLD Процесс"/> -->
+        <!-- <status name="unmanaged" default="no" title="OLD Без визирования"/> -->
+        <!-- <status name="withhardcopy" default="no" title="OLD С печатью"/> -->
+    </states>
+
+    <structure>
+
+        <useone entity="Definition:Domain:System" as="DefinitionDomainSystem" title="Домен"/>
+
+        <!-- TODO remove -->
+        <!-- <useone entity="Management:Post:Individual" as="approver" title="OLD Утверждающий"/> -->
+
+        <field name="title" type="string" title="Имя"/>
+        <field name="indomain" type="string" title="Домен"/>
+        <field name="ofclass" type="string" title="Класс"/>
+        <field name="oftype" type="string" title="Тип"/>
+
+    </structure>
+
+    <lists>
+        <!-- TODO remove -->
+        <!-- <list name="visants" entity="Management:Post:Individual" ns="829323" title="OLD Византы"/> -->
+    </lists>
+
+    <defaultorder>
+      <!-- <by field="indomain" order="ASC"/> -->
+      <by field="ofclass" order="ASC"/>
+      <by field="oftype" order="ASC"/>
+    </defaultorder>
+
+
+    <admincolumns>
+		<column selector="title"/>
+		<column selector="indomain"/>
+		<column selector="ofclass"/>
+		<column selector="oftype"/>
+    <column selector="check"/>
+    <!-- <column selector="visants"/> -->
+    <!-- <column selector="visants_ManagementPostIndividual"/> -->
+    <!-- <column selector="approver"/> -->
+    </admincolumns>
+
+    <options>
+        <!-- <aparam name="clonable" value="yes" /> -->
+    </options>
+
+    <searchfields/>
+
+    <indexes>
+      <!-- <unique column="title"/> -->
+      <!-- <unique column="domain"/> -->
+    </indexes>
+
+</entity>

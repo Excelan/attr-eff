@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity prototype="Document:Regulations:SOP" code="SOP" manager="Document" uid="6006">
+
+    <passport>
+        <title>Стандартные операционные процедуры (СОП)</title>
+    </passport>
+
+    <structure>
+        <!--Метаинформация СОПа-->
+
+        <hasmany entity="DMS:Copy:Controled" title="Реальная контролируемая копия (УКД)"/>
+
+
+        <field name="title" type="string" title="Название документа"/>
+        <field name="trainingdocument" type="set" title="Проведение обучения по документу">
+            <value name="yes" title="да" />
+            <value name="no" title="нет" />
+        </field>
+
+        <hasone entity="Management:Post:Individual" as="ManagementPostIndividual" title="Ответственный за создание Программы обучения"/>
+
+        <field name="fileprocessattachment" type="string" title="Блок-схема бизнес-процесса"/>
+        <field name="attachments" type="tarray" title="Вложения"/>
+        <hasone entity="Directory:BusinessProcess:Item" title="Процесс компании"/>
+        <hasone entity="BusinessObject:Record:Polymorph" as="scaleapplication" title="Масштаб применения"/>
+
+        <field name="causeedit" type="text" title="Причина создания новой версии"/> <!-- Только в случаи создании новой версии -->
+
+        <hasone entity="Calendar:Period:Month" title="Срок действия"/>
+        <field name="effectivedate" type="date" title="Дата введения в действие"/>
+        <field name="enddate" type="date" title="Конечная дата действия"/>
+        <field name="revisiondate" type="date" title=" Дата последнего пересмотра"/>
+        !--Автоматически выводится на этапе визирования-->
+
+
+
+        <hasmany entity="Directory:AdditionalSection:Simple" title="Дополнительный раздел"/>
+
+        <!--Основная часть СОПа-->
+        <field name="target" type="richtext" title="Цель"/>
+        <field name="realmuse" type="richtext" title="Область применения"/>
+        <field name="response" type="richtext" title="Ответственность и полномочия"/>
+        <field name="resource" type="richtext" title="Материалы и оборудование"/>
+        <field name="procedure" type="richtext" title="Процедура"/>
+	    <field name="extrachapter" type="richtext" title="Дополнительный раздел"/> <!-- multiple -->
+        <field name="report" type="richtext" title="Отчетность"/>
+        <field name="docforlink" type="richtext" title="Документы для ссылок"/>
+
+
+    </structure>
+
+    <lists>
+        <list name="boprocedure" entity="BusinessObject:Record:Polymorph" ns="30111" title="Список объектов"/>
+
+        <list name="userproceduregroup" entity="Management:Post:Group" ns="30112" title="Участники процедуры обучения (Тип должности)"/>
+        <list name="userprocedure" entity="Management:Post:Individual" ns="30113" title="Участники процедуры обучения (Должность)"/>
+
+        <list name="clientusersinluded" entity="Management:Post:Individual" ns="30115" title="Участники процедуры выдачи УКД со стороны Клиента (Должность)"/>
+
+    </lists>
+    <defaultorder />
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		      <column selector="title"/>
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

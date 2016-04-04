@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- ПРОТОКОЛ ТО<-->
+        <section entity="Document:Protocol:TM" title="Выберите Объект Технического Обслуживания">
+
+            <field name="bo" type="BusinessObject" min="1" title="Объект"/>
+
+        </section>
+
+
+    </structure>
+
+</form>

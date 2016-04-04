@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="RBAC:DocumentPrototypeResponsible:System" manager="RBAC" uid="12039">
+
+    <passport>
+        <title>Ответственные за этапы DMS</title>
+    </passport>
+
+    <states>
+        <status name="delegationactive" default="yes" title="Активен"/>
+    </states>
+
+    <structure>
+
+        <useone entity="Management:Post:Individual" as="managementrole" title="Должность"/>
+
+        <!-- <useone entity="Definition:Prototype:System" as="processprototype" title="Прототип управляющего процесса OLD"/> -->
+        <!-- <useone entity="Definition:Prototype:System" as="subjectprototype" title="Прототип документа OLD"/> -->
+
+        <useone entity="Definition:ProcessModel:System" as="processmodelprototype" title="Прототип управляющего процесса NEW"/>
+        <useone entity="Definition:Prototype:Document" as="documentprototype" title="Прототип документа NEW"/>
+
+        <field name="stage" type="string" title="Этап" />
+
+        <!-- <field name="ordered" type="integer" title="Порядок" system="yes"/> -->
+
+    </structure>
+    <lists />
+    <defaultorder/>
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="managementrole"/>
+        <column selector="processmodelprototype"/>
+        <column selector="documentprototype"/>
+        <column selector="stage"/>
+    </admincolumns>
+
+    <searchfields/>
+    <indexes/>
+</entity>

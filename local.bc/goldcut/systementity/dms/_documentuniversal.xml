@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="DMS:Document:Universal" manager="System" uid="999001">
+
+    <passport>
+        <title>Document Universal</title>
+    </passport>
+
+    <states>
+        <!-- <status name="hashardcopy" default="no" title="HasHardCopy"/> -->
+        direct/managed
+        inprocess, active+managed(), active+direct(), archived
+    </states>
+
+    <structure>
+
+        <hasone entity="Definition:Prototype:System" as="DefinitionPrototypeSystem" title="Прототип системный"/>
+
+        <hasone entity="Definition:Prototype:Document" as="DefinitionPrototypeDocument" title="Definition:Prototype:Document"/>
+
+        <hasone entity="DMS:Acquaintance:Document" as="DMSAcquaintanceDocument" title="Факт ознакомления с документом" />
+
+        <field name="title" type="string" title="Title"/>
+
+        <field name="document" type="string" title="Document Entity URN"/>
+        <field name="created" type="timestamp" title="Время создания" createDefault="now"/>
+
+        <field name="indexabletext" type="text" title="Indexable text"/>
+
+        <field name="hardmaster" type="tarray" title="Hard Master"/>
+        <field name="hardcopy" type="tarray" title="Hard Copy"/>
+
+        <field name="version" type="integer" title="Version" default="0"/>
+
+        <!-- действует с, до. дата пересмотра/продления -->
+        <!-- ДАТА УТВЕРЖДЕНИЯ -->
+
+        <field name="code" type="string" title="Код документа"/>
+
+        <field name="initiator" type="string" title="initiator"/>
+        <field name="vised" type="boolean" title="vised"/>
+        <field name="approved" type="boolean" title="approved"/>
+        <field name="done" type="boolean" title="done"/>
+        <field name="archived" type="boolean" title="archived"/>
+        <field name="process" type="string" title="process"/>
+        <field name="parent" type="string" title="parent"/>
+
+    </structure>
+    <lists />
+
+    <defaultorder>
+        <by field="created" order="DESC"/>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="document"/>
+        <column selector="DefinitionPrototypeSystem"/>
+        <column selector="stateofdecisions"/>
+        <column selector="created"/>
+    </admincolumns>
+
+    <searchfields/>
+    <indexes>
+        <column selector="document"/>
+    </indexes>
+</entity>

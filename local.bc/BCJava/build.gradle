@@ -1,0 +1,95 @@
+apply plugin: 'idea'
+apply plugin: 'java'
+//apply plugin: 'application'
+
+//applicationName = "gc3"
+//mainClassName = "Main"
+
+repositories{
+    mavenCentral()
+    mavenLocal()
+    maven {
+        url 'https://repository.apache.org/content/groups/snapshots/'
+    }
+}
+
+dependencies{
+    compile "org.glassfish:javax.json:1.0.4"
+    compile "org.postgresql:postgresql:9.3-1100-jdbc4"
+    compile 'org.slf4j:slf4j-api:1.7.5'
+    compile "org.eclipse.jetty:jetty-server:9.3.7.v20160115"
+    compile "org.eclipse.jetty:jetty-servlet:9.3.7.v20160115"
+    compile "org.eclipse.jetty:jetty-servlets:9.3.7.v20160115"
+    compile "org.eclipse.jetty:jetty-util:9.3.7.v20160115"
+    compile "org.apache.odftoolkit:simple-odf:0.8.1-incubating"
+    compile "org.apache.odftoolkit:odfdom-java:0.8.10-incubating"
+    compile "org.jsoup:jsoup:1.8.3"
+    compile "com.google.zxing:core:3.2.1"
+    compile "com.google.zxing:javase:3.2.1"
+    testCompile "org.testng:testng:6.9.10"
+}
+
+//testCompile "junit:junit:4.11"
+task getHomeDir << {
+    println gradle.gradleHomeDir
+}
+
+allprojects {
+    tasks.withType(JavaCompile) {
+        sourceCompatibility = "1.8"
+        targetCompatibility = "1.8"
+    }
+}
+
+compileJava.options.encoding = 'UTF-8'
+
+compileJava.doFirst {
+    println "source compatibility " + sourceCompatibility
+}
+
+// # gradle -t run // continuous run
+task run(type: JavaExec, dependsOn: classes) {
+    main = 'server.ServerLoader'
+    classpath sourceSets.main.runtimeClasspath
+    classpath configurations.runtime
+}
+
+// # gradle -t test // continuous run test
+defaultTasks 'test'
+
+// https://docs.gradle.org/current/dsl/org.gradle.api.tasks.testing.Test.html
+// http://gradle.org/feature-spotlight-continuous-build/
+// https://gist.github.com/djangofan/5006098
+
+test {
+    // enable TestNG support (default is JUnit)
+    useTestNG()
+
+    // set a system property for the test JVM(s)
+    //systemProperty 'some.prop', 'value'
+
+    // explicitly include or exclude tests
+    //include 'org/foo/**'
+    //exclude 'org/boo/**'
+
+    // show standard out and standard error of the test JVM(s) on the console
+    testLogging.showStandardStreams = true
+
+    // set heap size for the test JVM(s)
+    minHeapSize = "128m"
+    maxHeapSize = "512m"
+
+    // set JVM arguments for the test JVM(s)
+    jvmArgs '-XX:MaxPermSize=256m'
+
+    // listen to events in the test execution lifecycle
+    beforeTest { descriptor ->
+        logger.lifecycle("Running test: " + descriptor)
+    }
+
+    // listen to standard out and standard error of the test JVM(s)
+
+//    onOutput { descriptor, event ->
+//        logger.lifecycle("Test: " + descriptor + " produced standard out/err: " + event.message )
+//    }
+}

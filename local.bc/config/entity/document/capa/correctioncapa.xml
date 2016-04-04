@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity prototype="Document:Correction:Capa" manager="Document" uid="202">
+
+    <passport>
+        <title>Мероприятия по CAPA</title>
+    </passport>
+
+    <states>
+        <status default="no" name="confirmed" title="Принято начальником департамента"/>
+        <status default="no" name="taskcompleted" title="Задача по мероприятию завершена"/>
+        <status default="no" name="selecttype" title="Было ли принято решение по делегации"/>
+        <status default="no" name="cancelstat" title="Было ли принято решение по делегации как не моя сфера"/>
+        <status default="no" name="selectsolution" title="Было ли предложено решение по мероприятию"/>
+    </states>
+
+    <structure>
+
+        <useone entity="Document:Capa:Deviation" as="DocumentCapaDeviation"/> <!--Связь с владельцем-->
+
+        <field name="descriptioncorrection" title="Описание мероприятия" type="text"/>
+        <hasone entity="Company:Structure:Department" title="Департамент"/>
+        <hasone as="eventplace" entity="BusinessObject:Record:Polymorph" title="Место проведения мероприятия"/>
+
+        <hasone as="controlresponsible" entity="Management:Post:Individual" title="Ответственный за контроль мероприятия"/>
+
+        <field name="comment" title="Комментарий к мероприятию" type="text"/>
+
+        <hasmany entity="Document:Solution:Correction" as="DocumentSolutionCorrection"/> <!--Список вариантов решения по каждому мероприятию-->
+        <useone as="selectedsolution" entity="Document:Solution:Correction" title="Выбранное решение"/>
+
+        <useone entity="Directory:Solutionvariants:Simple" as="DirectorySolutionvariantsSimple" title="Результат самоинспекции по мероприятию(для протокла)"/>
+
+    
+        <field name="realizationtype" title="Тип реализации" type="set">
+            <value name="myrespwilldelegateordo" title="Моя сфера, но делегирую на своего подчиненного"/>
+            <value name="myself" title="Моя сфера, делаю сам"/>
+            <value name="notmyresp" title="Не моя сфера ответственности"/>
+        </field>
+
+        <field name="ordered" type="integer" system="yes" title="system order"/>
+
+    </structure>
+    <lists/>
+
+
+    <defaultorder>
+        <by field="ordered" order="ASC"/>
+    </defaultorder>
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="descriptiondeviation"/>
+        <column selector="department"/>
+        <column selector="place"/>
+        <column selector="controlresponsible"/>
+        <column selector="comment"/>
+        <column selector="created"/>
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes>
+        <index column="capaproblem"/>
+    </indexes>
+
+</entity>

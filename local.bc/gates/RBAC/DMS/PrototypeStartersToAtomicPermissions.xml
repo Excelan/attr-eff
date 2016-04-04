@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="RBAC/DMS" name="PrototypeStartersToAtomicPermissions">
+
+  <role></role>
+
+  <request>
+      <field name="urn" type="integer" required="no"/>
+  </request>
+
+  <response>
+      <field name="status" type="integer" required="yes"/>
+  </response>
+
+</gate>

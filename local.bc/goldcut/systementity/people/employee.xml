@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="People:Employee:Internal" manager="People" uid="107">
+
+    <passport>
+        <title>Сотрудники (Штатное Расписание)</title>
+    </passport>
+
+    <states>
+        <status name="isactive" default="yes" title="Активен"/>
+        <status name="istrener" default="no" title="Тренер"/>
+    </states>
+
+    <structure>
+
+        <useone entity="Actor:User:System" title="SYSTEM USER"/>
+        <useone entity="Management:Post:Individual" title="Должность"/>
+
+        <useone entity="Company:LegalEntity:Counterparty" as="CompanyLegalEntityCounterparty" title="Контрагент, которому принадлежит сотрудник (SELF)"/>
+
+        <field name="title" type="string" title="ФИО сотрудника"/>
+        <hasmany entity="BusinessObject:Record:Polymorph" title="Объекты, закрепленные за сотрудником"/>
+
+        <field name="medicalinspectiondate" system="yes" type="timestamp" title="Дата последнего медицинского осмотра"/>
+        <field name="fluorographydate" system="yes" type="timestamp" title="Дата  последней флюорографии"/>
+
+        <!--<hasmany entity="usertestresult" title="Результаты аттестаций"/>-->
+        <!--accreditationlast Статус аккредитации по последней аттестации-->
+        <!--accreditationpenult Статус аккредитации по предпоследней аттестации-->
+
+        <!--<hasone entity="document" as="ordertojob" title="Приказ о приеме на работу"/>-->
+        <!--<hasone entity="document" as="ordertodismissal" title="Приказ об увольнении"/>-->
+
+
+        <field name="created" type="timestamp" title="Время регистрации" createDefault="now"/>
+        <field name="updated" type="timestamp" title="Время последнего изменения" disabled="yes" createDefault="now" updateDefault="now"/>
+
+        <field name="ordered" type="integer" title="Порядок" system="yes"/>
+
+    </structure>
+    <lists />
+
+    <lists>
+        <list name="issuedrealcopy" entity="DMS:Copy:Controled" ns="1071" title="Выданные УКД"/>
+        <list name="removedrealcopy" entity="DMS:Copy:Controled" ns="1072" title="Изъятые УКД"/>
+
+        <!--<list name="issuedcopytoview" entity="virtualcopy" ns="1073" title="Список актуальных документов на ознакомление"/>-->
+        <!--<list name="removedcopytoview" entity="virtualcopy" ns="1074" title="Список не актуальнах документов на ознакомление"/>-->
+    </lists>
+    <defaultorder>
+        <by field="title" order="ASC"/>
+    </defaultorder>
+    <admincolumns>
+        <column selector="id"/>
+		<column selector="title"/>
+		<column selector="ActorUserSystem"/>
+		<column selector="ManagementPostIndividual"/>
+        <column selector="name"/>
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes>
+          <unique column="ActorUserSystem"/>
+          <unique column="ManagementPostIndividual"/>
+    </indexes>
+
+
+</entity>

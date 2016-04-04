@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Directory:TechnicalTask:ForWorks" manager="Business" uid="92053">
+
+    <passport>
+        <title>Работы</title>
+    </passport>
+
+    <states/>
+
+    <structure>
+
+        <useone entity="Document:TechnicalTask:ForWorks" as="DocumentTechnicalTaskForWorks" title="Отсутсвующий"/>
+        <field name="name" type="string"  title="Название"/>
+        <field name="datebegin" type="date"  title="Срок начала работ, согласно проектного плана"/>
+        <field name="dateend" type="date"  title="Cрок окончания работ, согласно проектного плана"/>
+        <field name="volume" type="richtext"  title="Объем работ"/>
+
+    </structure>
+
+    <lists>
+
+    </lists>
+
+
+    <defaultorder/>
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="title"/>
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes/>
+</entity>

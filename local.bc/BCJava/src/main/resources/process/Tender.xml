@@ -1,0 +1,84 @@
+<process prototype="DMS:Tenders:Tender"  readyfor="test">
+
+  <parameters>
+    <!-- <param name="" type="urn"/> -->
+  </parameters>
+
+  <responsibility>
+
+    <stage name="CreateDraft"/>
+
+    <stage name="Tour1_Step1" title="Тур 1. Редактирование">
+      <target>Цель - добавить участников и КП</target>
+      <humantask responsible="economist"  appoint="configuration"/>
+      <rule type="timelimit" value="1d"/>
+    </stage>
+
+    <stage name="Tour1_Step2" title="Тур 1. Согласование">
+      <target>Цель - проверить КП на соответствие с ТЗ</target>
+      <humantask responsible="texnar"  appoint="configuration"/>
+      <rule type="timelimit" value="1d"/>
+    </stage>
+
+    <stage name="Tour1_Step3" title="Тур 1. Обработка">
+      <target>Цель - принять решение об участии во 2м туре </target>
+      <humantask responsible="economist"  appoint="configuration"/>
+      <rule type="timelimit" value="1d"/>
+      <forward to="Tour1_Step4"/>
+      <backward to="Tour1_Step2"/>
+    </stage>
+
+    <stage name="Tour1_Step4" title="Тур 1. Подготовка">
+      <target>Цель - сделать поля для сводной таблицы</target>
+      <humantask responsible="economist"  appoint="configuration"/>
+      <rule type="timelimit" value="1d"/>
+    </stage>
+
+    <stage name="Tour2_Step5" title="Тур 2. Торги">
+      <target>Цель - торги во втором туре</target>
+      <humantask responsible="economist"  appoint="configuration" />
+      <rule type="timelimit" value="1d"/>
+    </stage>
+
+    <stage name="Vising" title="Визирование">
+      <target>Цель - завизировать</target>
+      <call process="DMS:Decisions:Visa"/>
+      <humantask responsible="visant"/>
+      <rule type="timelimit" value="1d"/>
+      <forward to="Approving"/>
+      <backward to="Tour2_Step3"/>
+      <backward to="Tour2_Step5"/>
+    </stage>
+
+    <stage name="Approving" title="Утверждение">
+      <target>Цель - утвердить</target>
+      <call process="DMS:Decisions:Approvement"/>
+      <humantask responsible="approver"/>
+      <rule type="timelimit" value="1d"/>
+      <backward to="Tour2_Step3"/>
+      <backward to="Tour2_Step5"/>
+    </stage>
+
+  </responsibility>
+
+  <stages>
+
+    <stage name="CreateDraft" type="automated"/>
+
+    <stage name="Tour1_Step1" type="humantask"/>
+
+    <stage name="Tour1_Step2" type="humantask"/>
+
+    <stage name="Tour1_Step3" type="humantask"/>
+
+    <stage name="Tour1_Step4" type="humantask"/>
+
+    <stage name="Tour2_Step5" type="humantask"/>
+
+    <stage name="Vising" type="delegate"/>
+
+    <stage name="Approving" type="delegate"/>
+
+  </stages>
+
+</process>

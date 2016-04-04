@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- Техническое задание на закупку материалов-->
+
+        <section entity="Document:TechnicalTask:ForMaterials" title="Документация">
+
+            <field name="type" title="Вид работ" type="string"/>
+
+            <field name="CompanyStructureCompanygroup" title="Компания группы" type="select">
+                <query gate="Selector/company/structure/CompanyStructureCompanygroup"/>
+            </field>
+            <field name="DirectoryBranchItem" title="Филиал/подразделение" type="select">
+                <query gate="Selector/company/structure/DirectoryBranchItem"/>
+            </field>
+
+
+        </section>
+
+            <!-- Материалы -->
+        <section title="Материалы и сроки поставки, согласно проектного плана">
+
+            <struct name="DirectoryTechnicalTaskMaterials" entity="Directory:TechnicalTask:Materials" multiple="yes" title="Материал">
+
+                <field name="urn" type="hidden" title="urn"/>
+                <field name="name" type="string" title="Название"/>
+                <field name="quantity" type="string" title="Количество"/>
+                <field name="date"  type="date" title="Срок поставки, согласно проектного плана"/>
+                <field name="materialdesription"  type="richtext" title="Описание (состав, требования о наличии сертификатов СЭС, название, марка материала и т.д.):"/>
+
+            </struct>
+
+        </section>
+
+        <section entity="Document:TechnicalTask:ForMaterials" title="Условия">
+
+                <field name="docpermitsneed" type="richtext" title="Требуемая разрешительная документация"/>
+                <!-- multiple -->
+                <field name="supplierauditneeded" title="Необходимость в проведении предварительного аудита поставщика" type="radio">
+                    <options>
+                        <option title="Да" value="yes"/>
+                        <option title="Нет" value="no"/>
+                    </options>
+                </field>
+                <field name="personreceive" type="ManagementPostIndividual" title="Лицо, ответственное за осуществление приемки товара со стороны заказчика"/>
+                <field name="contactperson"  type="ManagementPostIndividual" title="Контактное лицо для ответа на технические вопросы"/>
+                <field name="deliveryconditions" title="Условия поставки" type="richtext"/>
+                <field name="priority" title="Желаемые приоритеты по порядку выполнения работ" type="richtext"/>
+                <field name="requirement" type="richtext" title="Требования к формированию коммерческого предложения"/>  <!-- Перечень документов, которые должны быть предоставлены подрядчиком в рамках предоставления ценового предложения для проведения сравнительного анализа всех предложений -->
+                <field name="attachments" type="attachment" min="1" multiple="yes" title="Приложения"/>
+
+        </section>
+
+        <section entity="Document:TechnicalTask:ForMaterials" title="Участники Тендера">
+
+                <field name="CompanyLegalEntityCounterparty" type="CompanyLegalEntityCounterparty" multiple="yes" title="Участник тендера"/>
+
+        </section>
+
+    </structure>
+
+</form>

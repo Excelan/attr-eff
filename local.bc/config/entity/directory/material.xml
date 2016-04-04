@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Directory:TechnicalTask:Materials" manager="Business" uid="92051">
+
+    <passport>
+        <title>Материалы</title>
+    </passport>
+
+    <states/>
+
+    <structure>
+
+        <field name="name" type="string"  title="Название"/>
+		<field name="quantity" type="string"  title="Количество"/>
+		<field name="date" type="date"  title="Срок поставки, согласно проектного плана"/>
+        <field name="materialdesription" type="richtext"  title="Описание материалов, которые должны быть поставлены согласно согласно данному техническому заданию "/>
+
+    </structure>
+
+    <lists>
+
+    </lists>
+
+
+    <defaultorder/>
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="title"/>
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes/>
+</entity>

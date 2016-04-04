@@ -1,0 +1,3533 @@
+*{
+    font-family: Roboto, sans-serif;
+}
+
+input[type="text"], input[type="date"], input[type="number"], input[type="email"], input[type="tel"] {
+    font-size: 15px;
+}
+
+.content{
+    width: 1200px;
+    box-sizing: border-box;
+    margin: 0 auto;
+    padding: 0 20px;
+    height: inherit;
+}
+
+a.disabled {
+    pointer-events: none; /* делаем ссылку некликабельной */
+    cursor: default;  /* устанавливаем курсор в виде стрелки */
+    color: #8e8e8e !important; /* цвет текста для нективной ссылки */
+}
+
+
+.MC {
+    margin: 0 auto !important;
+}
+
+.w1 {
+    width: 55px;
+}
+
+.w2 {
+    width: 140px;
+}
+
+.w3 {
+    width: 225px;
+}
+
+.w4 {
+    width: 380px;
+}
+
+.w5 {
+    width: 395px;
+}
+
+.w6 {
+    width: 480px;
+}
+
+.w7 {
+    width: 565px;
+}
+
+.w8 {
+    width: 650px;
+
+}
+
+.w9 {
+    width: 735px;
+}
+
+.wl0 {
+    width: 820px;
+}
+
+.wl1 {
+    width: 905px;
+}
+
+.wl2 {
+    width: 990px;
+}
+
+.w1m {
+    width: 55px;
+}
+
+.w2m {
+    width: 140px;
+}
+
+.w3m {
+    width: 211px;
+    margin: 0 5px 0 0;
+}
+
+.w4m {
+    width: 310px;
+}
+
+.w5m {
+    width: 395px;
+}
+
+.w6m {
+    width: 480px;
+}
+
+.w7m {
+    width: 565px;
+}
+
+.w8m {
+    width: 650px;
+
+}
+
+.w9m {
+    width: 735px;
+}
+
+.wl0m {
+    width: 820px;
+}
+
+.wl1m {
+    width: 905px;
+}
+
+.wl2m {
+    width: 990px;
+}
+
+.w0{
+    width: 100%;
+}
+.w10{
+    width: 10px;
+}
+.w20{
+    width: 20px;
+}
+.w30{
+    width: 30px;
+}
+.w40{
+    width: 40px;
+}
+.w50{
+    width: 50px;
+}
+.w60{
+    width: 60px;
+}
+.w70{
+    width: 70px;
+}
+.w80{
+    width: 80px;
+}
+.w90{
+    width: 90px;
+}
+.w100{
+    width: 100px;
+}
+.w200{
+    width: 200px;
+}
+.w300{
+    width: 300px;
+}
+.w400{
+    width: 400px;
+}
+.w500{
+    width: 500px;
+}
+.w600{
+    width: 600px;
+}
+.w700{
+    width: 700px;
+}
+.w800{
+    width: 800px;
+}
+.w900{
+    width: 900px;
+}
+.w1000{
+    width: 1000px;
+}
+
+.topmenu{
+    background-color: #d2daee;
+    border-top: 2px solid white;
+    border-bottom: 2px solid #1c45ab;
+}
+
+.topnav div.top {
+    background-image: url("/img/BG.png");
+    background-position: center center;
+    background-size: 100% auto;
+    height: inherit;
+    line-height: 70px;
+    text-align: right;
+}
+
+.topnav div.top img {
+    vertical-align: middle;
+}
+
+.topnav .vam input {
+    border: 1px solid white;
+    box-sizing: border-box;
+    height: 28px;
+}
+
+.topnav .vam input:last-child {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    background-color: #000080;
+    background-image: url("/img/search.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    border-color: white white white -moz-use-text-color;
+    border-image: none;
+    border-style: solid solid solid none;
+    border-width: 1px 1px 1px medium;
+    margin: 0 20px 0 -5px;
+    padding: 8px 12px 0;
+}
+
+.incedenttitle {
+    background-color: #d2daee;
+    height: 70px;
+    position: relative;
+}
+
+.incedenttitle h1 {
+    color: #000000;
+    font-size: 22px;
+    line-height: 70px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.incedenttitle h2 {
+    color: #000000;
+    display: inline-block;
+    font-size: 20px;
+    line-height: normal;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+.incedenttitle h2 span{
+    padding: 5px 7px;
+    border: 1px solid #939393;
+    border-radius: 3px;
+    font-size: 18px;
+    margin: 0;
+}
+
+.incedenttitle span{
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: 500;
+    margin: 0 0 0 25px;
+    line-height: 70px;
+}
+
+.incedenttitle .nameblk h1{
+    line-height: normal;
+}
+.incedenttitle .nameblk h1 span{
+    font-size: 18px;
+    line-height: auto;
+    text-transform: none;
+}
+
+nav {
+/*    background-color: #d2daee;
+    border-bottom: 2px solid #1c45ab;
+    border-top: 2px solid white;
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;*/
+}
+
+/*-----------------------------------------------------------------ТОП меню 3 полоса------------------------------------------------------------------------*/
+.infomenu .content{
+    position: relative;
+}
+
+.infomenu .content .floatingButton{
+    background-color: #ff4081;
+    border-radius: 50px;
+    box-shadow: 0 4px 3.5px 1px rgba(0, 0, 0, 0.12), 0 1px 1px 0 rgba(0, 0, 0, 0.24);
+    color: white;
+    font-size: 18px;
+    line-height: 50px;
+    margin-right: 45px;
+    margin-top: -25px;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    top: -15px;
+    width: 50px;
+}
+
+
+.infomenu{
+    height: 70px;
+    clear: both;
+    border-bottom: 2px solid #e9e9e9;
+}
+
+.infomenu .boxim{
+    font-size: 0;
+}
+
+.infomenu .boxim .rightblock{
+    display: table-cell;
+    font-size: 15px;
+    vertical-align: bottom;
+    width: 390px;
+    padding: 0 0 0 20px;
+    background-color: white;
+}
+
+.infomenu .boxim .leftblock{
+    display: table-cell;
+    font-size: 15px;
+    height: 70px;
+    vertical-align: middle;
+    width: 770px;
+}
+
+.infomenu .boxim h1{
+    color: #282828;
+    font-size: 18px;
+    margin: 0;
+    text-transform: uppercase;
+}
+
+
+.infomenu .boxim .rightblock ul,
+.hiddenNavButton ul{
+    margin: 0;
+    text-align: center;
+    font-size: 0;
+}
+
+.infomenu .boxim .rightblock ul li:nth-child(2) a{
+    margin: 0 10px;
+}
+
+.infomenu .boxim .rightblock ul a:hover,
+.hiddenNavButton ul a:hover{
+    background-color: #4364b6;
+    color: white;
+}
+
+.infomenu .boxim .rightblock ul li.active,
+.hiddenNavButton ul li.active{
+    margin: 0 0 -2px 0;
+}
+
+.infomenu .boxim .rightblock ul li,
+.hiddenNavButton ul li{
+    background-color: white;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 400;
+    list-style: outside none none;
+    width: 33.3%;
+    outline: none;
+}
+
+.infomenu .boxim .rightblock ul a{
+
+}
+.infomenu .boxim .rightblock ul a,
+.hiddenNavButton ul a{
+    color: #1c45ab;
+    display: table-cell;
+    font-size: 12px;
+    height: 50px;
+    text-decoration: none;
+    text-transform: uppercase;
+    vertical-align: middle;
+    width: inherit;
+    outline: none;
+}
+
+.infomenu .boxim .rightblock ul li:nth-child(2).active a{
+    margin: 0 10px -2px;
+}
+
+.infomenu .boxim .rightblock ul li.active a,
+.hiddenNavButton ul li.active a{
+    border-bottom: 2px solid #4364b6;
+    margin: 0 0 -2px;
+}
+
+
+/*-----------------------------------------------------------------Конец ТОП меню 3 полоса------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------ПОПАП------------------------------------------------------------------------*/
+.animated {
+    transition: all 0.3s ease-in-out 0s;
+}
+
+.toastlabel{
+    display: inline-block;
+    font-size: 14px;
+    line-height: 30px;
+    color: #000;
+    margin: 0;
+}
+
+#tosatelement .insidelink{
+    margin: 0 0 0 22px;
+}
+
+#tosatelement .insidelink a:hover{
+    text-decoration: underline;
+}
+
+#tosatelement .insidelink a{
+    font-size: 15px;
+    color: #1c45ab;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+#tosatelement input[type='checkbox']{
+    vertical-align: middle;
+}
+
+#tosatelement .toastradio{
+    margin: 30px 0 0;
+}
+
+#tosatelement {
+    /*background-color: rgba(20, 40, 100, 0.8);*/
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 99;
+}
+
+.toastpart, .toastapr, .toastviz, .toast {
+    background: #ffffff none repeat scroll 0 0;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+   /* box-shadow: 1px 7px 30px silver;*/
+    color: green;
+    font-family: DidactGothic;
+    font-size: 17px;
+/*    height: 372px;*/
+    left: 50%;
+    margin-left: -350px;
+    padding: 10px;
+    text-align: center;
+    top: 200px;
+    width: 700px;
+    z-index: 1000;
+}
+
+#segmentClose {
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    width: 15px;
+}
+
+#tosatelement h4 {
+    border-bottom: 1px solid #979797;
+    color: #000000;
+    font-size: 21px;
+    margin: 40px auto 50px;
+    padding: 0 0 34px;
+    width: 400px;
+}
+
+#tosatelement .toasttop {
+    width: 90%;
+    font-size: 0;
+    margin: 20px auto 0;
+}
+
+#tosatelement .leftblock,
+#tosatelement .rightblock{
+    background-color: white;
+    width: 50%;
+    display: inline-block;
+    font-size: 14px;
+    margin: 0;
+}
+
+#tosatelement .toasttop .item:hover{
+    background-color: #1c45ab;
+    color: white !important;
+}
+
+#tosatelement .toasttop .item{
+    font-size: 14px;
+    line-height: 70px;
+    cursor: pointer;
+    text-transform: uppercase;
+    color: #ccc;
+    font-weight: 500;
+    margin: 0;
+}
+
+#tosatelement .toasttop .item.active{
+    border-bottom: 2px solid #1c45ab;
+    color: #000000;
+}
+
+#tosatelement .selectblock {
+    margin: 0 0 20px;
+}
+
+#tosatelement .selectblock select {
+    width: 400px;
+}
+
+#toastrightblock{
+    text-align: left;
+    color: #000000;
+    font-size: 14px;
+    width: 500px;
+    margin: 30px auto 0;
+}
+
+#toastrightblock .tbox{
+    margin: 40px 0;
+}
+
+#toastrightblock .tbox a:hover{
+    text-decoration: underline;
+}
+
+#toastrightblock .tbox a{
+    font-size: 15px;
+    color: #1c45ab;
+    text-decoration: none;
+    font-weight: 400;
+}
+
+#tosatelement button{
+    display: block;
+    margin: 40px auto !important;
+}
+
+#toastrightblock textarea{
+    height: 50px;
+    margin: 0 0 10px;
+    max-width: 100%;
+    width: 100%;
+}
+
+
+/*-----------------------------------------------------------------Конец ПОПАП------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------Кнопки------------------------------------------------------------------------*/
+
+.RBTN, .GBTN, .BBTN {
+    border-radius: 4px;
+    /*box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.42);*/
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    height: 50px !important;
+    line-height: 42px;
+    padding: 0 !important;
+    margin: 0 auto 10px;
+    cursor: pointer;
+}
+
+.RBTN{
+    background-color: #d0021b !important;
+    color: #fff !important;
+    border: 1px solid #d0021b !important;
+    text-transform: uppercase;
+}
+
+.BBTN{
+    background-color: #414cb7 !important;
+    color: #fff !important;
+    border: 1px solid #414cb7 !important;
+    text-transform: uppercase;
+}
+
+.GBTN{
+    background-color: #0c8a34 !important;
+    color: #fff !important;
+    border: 1px solid #0c8a34 !important;
+    text-transform: uppercase;
+}
+
+.RBTN:hover{
+    background-color: rgba(208, 2, 30, 0.76) !important;
+    color: white !important;
+}
+.GBTN:hover{
+    background-color: #417505 !important;
+    color: white !important;
+}
+
+.BBTN:hover{
+    background-color: #455489 !important;
+    color: white !important;
+}
+
+/*-----------------------------------------------------------------Конец кнопки------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------Select button------------------------------------------------------------------------*/
+.selectblock {
+    background: #fff url("/img/arrow_languageb.png") no-repeat scroll 95% 50%;
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    display: inline-block;
+    height: 35px;
+    line-height: 34px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    vertical-align: top;
+}
+
+.selectblock select {
+    -moz-appearance: none;
+    background-color: transparent;
+    /*background-image: url("/img/position.png");*/
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 26px auto;
+    border: medium none;
+    box-shadow: none;
+    color: #3a3a3a;
+    font-family: "Roboto",sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    height: 35px;
+    margin: 0;
+    padding: 5px 8px 5px 5px;
+    width: 300px;
+    outline: none;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.selectblock select option {
+    line-height: 30px;
+    padding: 10px 0;
+    vertical-align: middle;
+}
+/*-----------------------------------------------------------------End select button------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------Content block------------------------------------------------------------------------*/
+.content .contentblock{
+    font-size: 0;
+}
+
+.content .contentblock .leftblock,
+.content .contentblock .rightblock{
+    font-size: 15px;
+    display: inline-block;
+}
+
+.content .contentblock .rightblock{
+    vertical-align: top;
+    width: 370px;
+}
+.content .contentblock .leftblock{
+    width: 770px;
+    margin: 0;
+}
+
+.content .topbox {
+    margin: 20px 0 0 !important;
+}
+
+.content .topbox .part{
+    border: 1px solid #cccccc;
+    padding: 0 30px 30px 30px !important;
+    box-sizing: border-box !important;
+}
+
+.content .topbox .part label{
+    vertical-align: top !important;
+}
+
+.content .topbox .part >div{
+    margin-left: 0 !important;
+    margin-right: 0 !important;
+}
+
+.content .contentblock .part{
+    font-size: 16px;
+    padding: 0 0 20px 0;
+    margin: 0 0 20px;
+}
+
+.content .contentblock .part .titleinpart a.adda:hover{
+    text-decoration: underline;
+}
+
+.content .contentblock .part .titleinpart a.adda{
+    float: right;
+    color: #1c45ab;
+    font-size: 14px;
+    font-weight: 300;
+    outline: none;
+    text-decoration: none;
+    text-transform: lowercase;
+}
+
+.content .contentblock .part .titleinpart{
+    border-bottom: 1px solid #1c45ab;
+    clear: both;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 14px;
+    text-transform: uppercase;
+    margin: 22px 0px 20px;
+    padding-left: 0;
+    padding-bottom: 6px;
+    padding-right: 0;
+}
+
+.content .contentblock .part .textarespart,
+.content .contentblock .part .edituserlist,
+.content .contentblock .part .radiopart,
+.content .contentblock .part .linkfieldpart,
+.content .contentblock .part .datepart,
+.content .contentblock .part .textpart,
+.content .contentblock .part .partparagraph,
+.content .contentblock .part .textlistparte,
+.content .contentblock .part .editlistpart,
+.content .contentblock .part .attachedfilepart,
+.content .contentblock .part .attachedpart,
+.content .contentblock .part .selectpart {
+    clear: both;
+    font-size: 0;
+    margin-left: 24px;
+    margin-right: 24px;
+    margin-top: 15px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.content .contentblock .part .readtextpart{
+    margin-left: 24px;
+    margin-top: 10px;
+    margin-right: 24px;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.content .contentblock .part .textarespart label,
+.content .contentblock .part .edituserlist label,
+.content .contentblock .part .partparagraph label,
+.content .contentblock .part .selectpart label,
+.content .contentblock .part .attachedfilepart label,
+.content .contentblock .part .textpart label,
+.content .contentblock .part .editlistpart label,
+.content .contentblock .part .datepart label,
+.content .contentblock .part .textlistparte label,
+.content .contentblock .part .attachedpart label,
+.content .contentblock .part .linkfieldpart label,
+.content .contentblock .part .radiopart p{
+    color: #000000;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 30px;
+    margin: 0 5px 0 0;
+    vertical-align: top;
+    width: 320px;
+    line-height: 20px;
+}
+
+.content .contentblock .part .textarespart textarea{
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 16px;
+    height: 100px;
+    margin-top: 9px;
+    padding: 5px;
+    vertical-align: top;
+    width: 389px;
+    max-width: 389px;
+}
+
+.content .contentblock .part .partparagraph p{
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 5px 0;
+    vertical-align: top;
+    font-size: 16px;
+    width: 389px;
+}
+
+.content .contentblock .part .radiopart label {
+    color: #000000;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: normal;
+    line-height: 30px;
+    margin-bottom: 0;
+    padding-left: 4px;
+}
+
+.content .contentblock .part .radiopart *{
+    vertical-align: middle !important;
+}
+
+.content .contentblock .part .selectpart .sbp {
+    background: #fff url("/img/arrow_languageb.png") no-repeat scroll 95% 50%;
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    display: inline-block;
+    height: 35px;
+    line-height: 34px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    vertical-align: top;
+}
+
+.content .contentblock .part .selectpart select {
+    -moz-appearance: none;
+    background-color: transparent;
+    background-size: 26px auto;
+    border: medium none;
+    box-shadow: none;
+    box-sizing: border-box;
+    color: #3a3a3a;
+    font-family: "Roboto",sans-serif;
+    font-size: 16px;
+    font-weight: 400;
+    height: 35px;
+    margin: 0;
+    padding: 5px 8px 5px 0px;
+    width: 387px;
+    outline: none;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+.content .contentblock .part .selectpart select option{
+    padding: 0 0 0 10px;
+}
+
+.content .contentblock .part .datepart input{
+    box-sizing: border-box;
+    font-size: 15px;
+    height: 35px;
+    border-radius: 3px;
+    font-weight: normal;
+}
+
+.content .contentblock .part .linkfieldpart{
+    text-align: left;
+}
+
+.content .contentblock .part .linkfieldpart *{
+vertical-align: middle !important;
+}
+
+.content .contentblock .part .linkfieldpart a:hover{
+    text-decoration: underline;
+}
+
+.content .contentblock .part .linkfieldpart span{
+    font-size: 15px;
+    color: #b4b4b4;
+}
+
+.content .contentblock .part a.normal:hover{
+    text-decoration: underline;
+}
+
+.content .contentblock .part a.normal{
+    clear: both;
+    color: #1c45ab;
+    display: inline;
+    font-size: 16px;
+    margin: 5px 0;
+    text-decoration: none;
+}
+
+.content .contentblock .part .linkfieldpart a{
+    display: inline;
+    color: #1c45ab;
+    margin: 5px 0;
+    text-decoration: none;
+    clear: both;
+    font-size: 16px;
+}
+
+.content .contentblock .part .attachedfilepart label{
+    vertical-align: middle;
+}
+
+.content .contentblock .part .attachedfilepart .attachedlist{
+    display: inline-block;
+    vertical-align: middle;
+    /*width: 389px;*/
+}
+
+.content .contentblock .part .attachedfilepart a:hover {
+    text-decoration: underline;
+}
+
+.content .contentblock .part .attachedfilepart a{
+    display: block;
+    color: #1c45ab;
+    /*margin: 5px 0;*/
+    text-decoration: none;
+    clear: both;
+    font-size: 16px;
+}
+
+.content .contentblock .part .textpart label,
+.content .contentblock .part .textpart input{
+    vertical-align: middle;
+}
+
+.content .contentblock .part .textpart input{
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 15px;
+    font-weight: normal;
+    height: 35px;
+    padding: 5px 6px;
+    width: 389px;
+    border-radius: 3px;
+}
+
+.content .contentblock .part .textlistparte .oneinput{
+    display: inline-block;
+    margin: 0 0 5px;
+    position: relative;
+    vertical-align: middle;
+    width: 389px;
+}
+
+.content .contentblock .part .textlistparte label{
+    vertical-align: top;
+}
+
+.content .contentblock .part .textlistparte input{
+    vertical-align: middle;
+}
+
+
+.content .contentblock .part .textlistparte input{
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 15px;
+    font-weight: normal;
+    height: 35px;
+    padding: 5px 6px;
+    width: 389px;
+    border-radius: 3px;
+}
+
+.content .contentblock .part .readtextpart p{
+    margin: 15px 0 0;
+    line-height: 24px;
+}
+
+.content .contentblock .part .readtextpart{
+    font-size: 16px;
+    color: #000000;
+}
+
+.content .contentblock .part .addbut:hover{
+    text-decoration: underline;
+}
+
+.content .contentblock .part .addbut {
+    clear: both;
+    color: #1c45ab;
+    float: right !important;
+    font-size: 14px;
+    font-weight: 300;
+    text-decoration: none;
+}
+
+.content .contentblock .part .removeInputText{
+    visibility: hidden;
+    display: inline-block;
+    height: 25px;
+    left: -25px;
+    position: absolute;
+    top: 8px;
+    width: 25px;
+}
+
+.content .contentblock .part .removeInputText img{
+    cursor: pointer;
+    width: 20px;
+}
+
+.removeInputText:hover {
+    visibility: visible;
+}
+
+.removeInputText {
+    visibility: hidden;
+}
+
+.content .contentblock .part .inputlist{
+    display: inline-block;
+    vertical-align: middle;
+    width: 389px;
+}
+
+.content .contentblock .part .oneinput:hover .removeInputText{
+    visibility: visible;
+}
+
+.content .contentblock .part .editlistpart .addbut{
+    display: block;
+    width: 389px;
+}
+
+.content .contentblock .part .edituserlist .ulist .name{
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.content .contentblock .part .edituserlist .ulist .post{
+    color: #9b9b9b;
+    font-size: 12px;
+    line-height: 18px;
+}
+
+.content .contentblock .part .edituserlist .ulist .user{
+    margin: 5px 0 0;
+}
+
+.content .contentblock .part .linkfieldpart .attachedlist a:hover{
+    text-decoration: underline;
+}
+
+.content .contentblock .part .linkfieldpart .attachedlist a{
+    display: block;
+    color: #1c45ab;
+    font-size: 16px;
+    margin: 5px 0;
+    text-decoration: none;
+}
+
+.content .contentblock .part .linkfieldpart .attachedlist{
+    display: inline-block;
+    float: right;
+    width: 389px;
+    clear: both;
+}
+
+.content .contentblock .part .edituserlist .addbut{
+    margin: 0;
+}
+
+.content .contentblock .part .edituserlist .ulist{
+    display: inline-block;
+    float: right;
+    width: 389px;
+    clear: both;
+}
+
+.content .contentblock .part .editlistpart .plist{
+    display: inline-block;
+    float: right;
+    width: 389px;
+    clear: both;
+}
+
+.content .contentblock .part .editlistpart .onep{
+    font-size: 16px;
+    margin: 10px 0;
+    position: relative;
+}
+
+.content .contentblock .part .editlistpart .onep .removeInputText{
+    display: inline-block;
+    height: 15px;
+    left: -16px;
+    position: absolute;
+    top: 1px;
+    width: 17px;
+}
+
+.content .contentblock .part .editlistpart .onep .removeInputText img{
+    width: 12px;
+}
+
+.content .contentblock .part .onep:hover .removeInputText{
+    visibility: visible;
+}
+/*-----------------------------------------------------------------End content block------------------------------------------------------------------------*/
+
+/*-----------------------------------------------------------------Button block------------------------------------------------------------------------*/
+
+.buttonblock{
+    text-align: center;
+    margin: 40px 0 0;
+}
+
+.buttonblock .lbutoon{
+    /*width: 200px;*/
+    float: left;
+    font-size: 0px;
+    display: inline-block;
+}
+
+.buttonblock .fbut:hover{
+    background-color: #db3e51;
+    color: white;
+}
+
+.buttonblock .fbut{
+    border: none;
+    border-right: 1px solid #ddd;
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 16px 10px;
+    text-decoration: none;
+    color: #db3e51;
+    display: inline-block;
+}
+
+.buttonblock .tbut:hover{
+    background-color: #1c45ab;
+    color: white;
+}
+
+.buttonblock .tbut{
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 16px 10px;
+    color: #1c45ab;
+    text-decoration: none;
+}
+
+.buttonblock .rbutoon{
+    float: right;
+}
+
+.buttonblock .subtext{
+    clear: both;
+    text-align: right;
+    font-size: 14px;
+    font-weight: 300;
+    color: #333;
+}
+
+
+/*-----------------------------------------------------------------End button block------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------New button block------------------------------------------------------------------------*/
+
+.buttons.c{
+    border: none;
+}
+
+.buttons{
+    border: 1px solid #ccc;
+    padding: 25px;
+    margin: 30px 0 0;
+    text-align: center;
+}
+
+.buttons *{
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+
+.buttons .itext{
+    width: 462px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.buttons .gin,
+.buttons .bin,
+.buttons .rin{
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px ;
+    font-weight: 700;
+    height: 50px;
+    line-height: 42px;
+    padding: 0;
+    display: inline-block;
+    margin: 0 auto;
+    width: 250px;
+    text-transform: uppercase;
+
+    text-align: center;
+    text-decoration: none;
+
+}
+
+.buttons a.gin,
+.buttons a.bin,
+.buttons a.rin{
+    line-height: 50px;
+}
+
+.buttons .gin.c{
+    background-color: white;
+    color: #0c8a34;
+}
+
+.buttons .bin.c{
+    background-color: white;
+    color: #1c45ab;
+}
+
+.buttons .rin.c{
+    background-color: white;
+    color: #d0021b;
+}
+
+.buttons .gin{
+    background-color: #0c8a34;
+    border: 1px solid #0c8a34;
+    color: #fff;
+}
+
+.buttons .gin:hover{
+    background-color: #417505;
+    color: white;
+}
+
+.buttons .rin{
+    background-color: #d0021b;
+    border: 1px solid #d0021b;
+    color: #fff;
+}
+
+.buttons .rin:hover{
+    background-color: rgba(208, 2, 30, 0.76);
+    color: white;
+}
+
+.buttons .bin{
+    background-color: #1c45ab;
+    border: 1px solid #1c45ab;
+    color: #fff;
+}
+
+.buttons .bin:hover{
+    background-color: #172F82;
+    color: white;
+}
+
+
+.cause textarea{
+    max-width: 40%;
+    margin: 20px 0 0 27px;
+    border: 2px solid #ff0000;
+}
+
+
+/*-----------------------------------------------------------------End New button block------------------------------------------------------------------------*/
+
+
+/*-----------------------------------------------------------------Right block------------------------------------------------------------------------*/
+#informationid,
+#journalid,
+#commentsid{
+    height: 100%;
+    overflow: scroll;
+}
+
+#journalid,
+#commentsid{
+    margin: 5px 0 0;
+}
+
+#informationid{
+    padding: 20px 0;
+}
+
+.rightblock{
+    box-sizing: border-box;
+    margin: 0 0 0 20px;
+    background-color: #f6f6f6;
+}
+
+.rightblock .userinfopart,
+.rightblock .onecomment,
+.rightblock .filelistpart,
+.rightblock .commentreply,
+.rightblock .when,
+.rightblock .who,
+.rightblock .event,
+.rightblock .whouser,
+.rightblock .infopart,
+.rightblock .toptitle{
+    background-color: #f6f6f6;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+.rightblock .infopart{
+    padding: 0 20px 40px 20px;
+}
+
+.rightblock .infopart .titleinfo {
+    border-bottom: 1px solid #1c45ab;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 14px;
+    margin: 22px 0 0;
+    padding: 0 0 6px;
+    text-transform: uppercase;
+}
+
+.rightblock .infopart .stateinfo {
+    margin: 25px 0 0;
+    text-align: left;
+}
+
+.rightblock .infopart .stateinfo p{
+    font-size: 10px;
+    font-weight: 500;
+    text-transform: uppercase;
+}
+
+.rightblock .infopart .stateinfo span{
+    float: right;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 11px;
+    text-transform: none;
+    vertical-align: top;
+}
+
+.rightblock .infopart .stateinfo p{
+    vertical-align: middle;
+}
+
+.rightblock .userinfopart .box,
+.rightblock .filelistpart .box {
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    font-size: 15px;
+    line-height: 20px;
+    margin: 20px 0 0;
+    padding: 20px;
+}
+
+.rightblock .userinfopart .box .user{
+    margin: 14px 0 0;
+}
+
+.rightblock .userinfopart .box label,
+.rightblock .filelistpart .box label{
+    border-bottom: 1px solid #e1e1e1;
+    color: #000000;
+    font-size: 10px;
+    font-weight: 500;
+    line-height: 14px;
+    margin: 0;
+    padding: 0 0 3px;
+    text-transform: uppercase;
+}
+
+.rightblock .userinfopart .box .name{
+    font-size: 14px;
+    font-weight: 400;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.rightblock .userinfopart .box .post{
+    color: #9b9b9b;
+    font-size: 12px;
+    line-height: 14px;
+
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 100%;
+}
+
+.rightblock .toptitle p{
+    border-bottom: 1px solid #1c45ab;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 14px;
+    margin: 22px 0 20px;
+    padding: 0 0 6px;
+    text-transform: uppercase;
+}
+
+.rightblock .filelistpart .box a:hover{
+    text-decoration: underline;
+}
+
+.rightblock .filelistpart .box a{
+    display: block;
+    margin: 14px 0 0;
+    color: #1c45ab;
+    font-size: 14px;
+    font-weight: 400;
+    text-decoration: none;
+}
+
+.rightblock .btnblock{
+    border-top: 1px solid #e1e1e1;
+    margin: 17px 0 -20px -21px;
+    width: 330px;
+}
+
+.rightblock .btnblock .add {
+    border-left: 1px solid #e1e1e1;
+    font-size: 14px;
+    padding: 15px 0;
+    text-align: center;
+    width: 50%;
+    cursor: pointer;
+    float: right !important;
+}
+
+.rightblock .btnblock .add a {
+    color: #1c45ab;
+    outline: medium none;
+    font-size: 14px;
+    font-weight: 300;
+    text-decoration: none;
+    margin: 0;
+    text-transform: lowercase;
+}
+
+.rightblock .btnblock .add:hover {
+    background-color: #ededed;
+}
+
+.underheaderinfo .rightblock{
+    width: 370px;
+    position: absolute;
+    margin: -20px 0 0;
+    right: 20px;
+    border-right: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    border-left: 1px solid #ccc;
+    z-index: 999;
+}
+
+.underheaderinfo{
+    box-sizing: border-box;
+    height: inherit;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 1200px;
+    position: relative;
+}
+
+/*-----------------------------------------------------------------End Right block------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------Right block comment------------------------------------------------------------------------*/
+.rightblock .when{
+    padding: 42.5px 0 22.5px;
+}
+
+.rightblock #journalid .journalRow:first-child .when{
+    padding: 42.5px 0 22.5px;
+}
+
+.rightblock #journalid .when{
+    padding: 0 0 22.5px;
+}
+
+.rightblock .when span{
+    background-color: #f6f6f6;
+    color: #1c45ab;
+    font-size: 12px;
+    padding: 0 0 0 20px;
+    position: absolute;
+    right: 0;
+    top: -8px;
+}
+
+.rightblock .when p{
+    border-bottom: 1px solid #e1e1e1;
+    position: relative;
+}
+
+#commentsid .rightCommentBlock:first-child > div.onecomment:first-child{
+    padding-top: 3px;
+}
+
+.rightblock .onecomment {
+    width: 330px;
+    clear: both;
+}
+
+.rightblock .onecomment .author{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.rightblock .onecomment .authorpost{
+    color: #9b9b9b;
+    font-size: 12px;
+    line-height: 15px;
+    margin: 3px 0 5px;
+}
+
+.rightblock .onecomment .authorpost span{
+    float: right;
+}
+
+.rightblock .onecomment .textCancelcomment {
+    background-color: white;
+    border: 1px solid rgba(255, 0, 0, 0.48);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    padding: 10px 15px;
+}
+
+.rightblock .onecomment .textcomment {
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    padding: 10px 15px;
+}
+
+.rightblock .commentreply {
+    float: right;
+    padding-top: 3px;
+    text-align: right;
+    width: 93%;
+}
+
+.rightblock .commentreply .author{
+    font-size: 14px;
+    font-weight: 400;
+    text-align: left;
+    margin: 15px 0 0;
+}
+
+.rightblock .commentreply .authorpost{
+    color: #9b9b9b;
+    font-size: 12px;
+    line-height: 15px;
+    margin: 3px 0 5px;
+    text-align: left;
+}
+
+.rightblock .commentreply .authorpost span{
+    float: right;
+}
+
+.rightblock .commentreply .textcomment{
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: left;
+    line-height: 20px;
+    padding: 10px 15px;
+}
+
+.rightblock .buttonReplyTake.Reply2{
+    width: 345px;
+    float: right;
+}
+
+.rightblock .buttonReplyTake{
+    box-sizing: border-box;
+    clear: both;
+    padding: 5px 20px 0;
+    width: 330px;
+}
+
+.rightblock .buttonReplyTake .reply{
+    background-color: white;
+    background-image: url("/img/replay.png");
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-size: 17px auto;
+    border: 1px solid #72953e;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.rightblock .buttonReplyTake .reply:hover{
+    background-color: #72953e;
+    background-image: url("/img/replayw.png");
+}
+
+.rightblock .buttonReplyTake .apply:hover input ,
+.rightblock .buttonReplyTake .reply:hover input {
+    background-color: #72953e;
+    color: white;
+    cursor: pointer;
+}
+
+.rightblock .buttonReplyTake .reply,
+.rightblock .buttonReplyTake .apply {
+    padding: 0 10px 0 27px;
+}
+
+.rightblock .buttonReplyTake .reply input,
+.rightblock .buttonReplyTake .apply input {
+    color: #72953e;
+}
+
+.buttonReplyTake .inputclear {
+    background-color: white;
+    border: medium none;
+}
+
+.rightblock .buttonReplyTake .apply {
+    background-color: white;
+    background-image: url("/img/2ok.png");
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-size: 17px auto;
+    border: 1px solid #72953e;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.rightblock .buttonReplyTake .apply:hover {
+    background-color: #72953e;
+    background-image: url("/img/2okw.png");
+}
+
+.rightblock .buttonAddNewComment {
+    clear: both;
+    padding: 10px 20px 0;
+    position: relative;
+    min-height: 120px;
+}
+
+.rightblock .buttonAddNewComment textarea {
+    border: 1px solid #e5e5e5;
+    box-sizing: border-box;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-size: 14px;
+    max-width: 100%;
+    padding: 5px 10px;
+    width: 100%;
+    border-radius: 10px;
+    height: 70px;
+}
+
+.rightblock .buttonAddNewComment .addCommentButton {
+    background-color: #f5a623;
+    border-radius: 20px;
+    bottom: 5px;
+    box-shadow: 0 2px 3px 1px #ddd;
+    height: 40px;
+    position: absolute;
+    right: 26px;
+    text-align: center;
+    width: 40px;
+}
+
+.rightblock .buttonAddNewComment .addCommentButton input {
+    background-color: transparent;
+    background-image: url("/img/pensil.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 40% auto;
+    border: medium none;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+.rightblock .rightCommentBlock{
+    clear: both;
+}
+
+
+
+
+#showHideMoreInfoHeader{
+    background-color: white;
+    background-image: url("/img/info.png");
+    background-position: 7px center;
+    background-repeat: no-repeat;
+    float: right;
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+    margin: 20px 0;
+    padding: 0 5px 0 35px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+}
+
+
+/*-----------------------------------------------------------------End block comment------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------Journal block------------------------------------------------------------------------*/
+.rightblock .whouser{
+    padding-top: 0;
+    padding-bottom: 5px;
+}
+
+.rightblock .event{
+    padding-bottom: 30px;
+}
+
+.rightblock .who p{
+    background-color: #f6f6f6;
+    color: #9b9b9b;
+    font-size: 14px;
+}
+
+.rightblock .whouser .name{
+    background-color: #f6f6f6;
+    color: #000;
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0 0 3px;
+    display: inline-block;
+}
+
+.rightblock .whouser .post{
+    background-color: #f6f6f6;
+    color: #9b9b9b;
+    font-size: 12px;
+    font-weight: 300;
+}
+
+.rightblock .whouser .post span{
+    float: right;
+}
+
+.rightblock .event p{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+
+    /*-----------------------------------------------------------------End Journal block------------------------------------------------------------------------*/
+    /*-----------------------------------------------------------------Calendar block------------------------------------------------------------------------*/
+
+.calendarblock {
+    width: 340px;
+}
+
+.calendar-people {
+    box-sizing: border-box;
+    margin: 20px 0 0;
+    padding: 0 0 0 20px;
+    width: 390px;
+}
+
+.calendarbox {
+    margin: 20px 0 0;
+}
+
+.calendar{
+    border-spacing: 4px;
+}
+.calendar h3{
+    font-weight: 300;
+}
+
+.calendar .day{
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+
+.calendar tr td{
+    width: 47px;
+    height: 47px;
+    background-color: #d4e0c6;
+}
+
+.calendar tr td:hover{
+    cursor: pointer;
+    border-bottom: 2px solid #ff0000;
+    height: 45px;
+}
+
+.calendar tr td:nth-child(6),
+.calendar tr td:nth-child(7){
+    background-color: #9b9b9b;
+    color: white;
+}
+
+.calendar tr td.past{
+    background-color: #dfdfdf !important;
+    color: #000000 !important;
+}
+
+.calendar tr td.absence{
+    background-color: #ffcadc !important;
+}
+
+.calendar tr td.absence:nth-child(6), .calendar tr td.absence:nth-child(7) {
+    background-color: #9b9b9b !important;
+    color: white;
+}
+
+.calendar tr td.today{
+    border: 2px solid #1c45ab;
+    height: 43px;
+    width: 43px;
+}
+
+.calendar .prev-month,
+.calendar .next-month{
+    background-color: #dfdfdf !important;
+    color: #000000 !important;
+}
+
+.calendar-month-navigation {
+    cursor: pointer;
+    margin: 0;
+    padding: 5px 0 0;
+}
+
+.calendar-month-navigation span.chevron-left {
+    cursor: pointer;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    padding-bottom: 10px;
+    background-image: url("/img/arr_l.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.calendar-month-navigation span.chevron-right {
+    cursor: pointer;
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    padding-bottom: 10px;
+    background-image: url("/img/arr_r.png");
+    background-repeat: no-repeat;
+    background-position: center center;
+}
+
+.calendar-month{
+    height: 50px;
+    background-color: #1c45ab;
+    color: white;
+}
+
+.calendar-month th:first-child:hover,
+.calendar-month th:last-child:hover{
+    background-color: #3C63C6 !important;
+}
+
+.leftblock .calendarbox,
+.leftblock .calendar-people{
+    display: inline-block;
+    vertical-align: top;
+}
+
+.calendar-people .toptitle p {
+    border-bottom: 1px solid #1c45ab;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 14px;
+    margin: 22px 0 5px;
+    padding: 0 0 6px;
+    text-transform: uppercase;
+}
+
+.calendar-people .box .name {
+    font-size: 14px;
+    font-weight: 400;
+    margin: 0 0 0 20px;
+}
+
+.calendar-people .box .post {
+    color: #9b9b9b;
+    font-size: 12px;
+    line-height: 14px;
+    margin: 2px 0 0 20px;
+}
+
+.calendar-people .box .busy{
+    background-color: #ffcadc !important;
+}
+
+.calendar-people .box .replace{
+    background-color: #F2FEA1 !important;
+}
+
+.calendar-people .box .user {
+    padding: 10px 0 8px 8px;
+    border-bottom: 1px solid #f3f3f3;
+}
+
+.calendar-people .box .user .peoplelist{
+    vertical-align: middle;
+    display: inline-block;
+    width: 333px;
+}
+
+.calendar-people .box .user input[type='checkbox']{
+    vertical-align: middle;
+}
+
+.calendar thead tr.week th{
+    font-weight: 300;
+}
+
+.calendar thead tr th{
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.mform{
+    margin: 0;
+}
+    /*-----------------------------------------------------------------End Calendar block------------------------------------------------------------------------*/
+    /*-----------------------------------------------------------------Account block------------------------------------------------------------------------*/
+.main .account{
+    width: 1200px;
+    margin: 10px auto 0;
+    font-size: 0;
+}
+
+.main .account .column:nth-child(2){
+    margin: 0 5px 0 10px;
+}
+
+.main .account .column:nth-child(3){
+    margin: 0 10px 0 5px;
+}
+
+.main .account .column{
+    display: inline-block;
+    border: 1px solid #cecece;
+    width: 290px;
+    vertical-align: top;
+}
+
+.main .account .column .title{
+    background: #1c45ab none repeat scroll 0 0;
+    box-sizing: border-box;
+    color: white;
+    font-size: 14px;
+    line-height: 65px;
+    margin: 0 0 0 -1px;
+    font-weight: 500;
+    text-align: center;
+    text-transform: uppercase;
+    width: 292px;
+}
+
+.main .account .column .group{
+    margin: 0 0 5px;
+}
+
+.main .account .column .group ul{
+    transition: all 0.5s ease 0s;
+    visibility: hidden;
+    display: none;
+}
+
+.main .account .column .group li{
+    color: #000000;
+    font-size: 12px;
+    font-weight: 400;
+    list-style: outside none none;
+    margin: 10px 0;
+    padding: 0 10px 0 12px;
+    line-height: 14px;
+}
+
+.main .account .column .group li a{
+    color: #1c45ab;
+    text-decoration: none;
+}
+
+.main .account .column .group li a:hover{
+    text-decoration: underline;
+}
+
+.main .account .column .group .gname{
+    background-color: #ecf1ff;
+    background-image: url("/img/arrow-down.png");
+    background-position: 255px center;
+    background-repeat: no-repeat;
+    background-size: 5% auto;
+    box-sizing: border-box;
+    color: #000000;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    height: 65px;
+    line-height: 65px;
+    overflow: hidden;
+    padding: 0 38px 0 12px;
+    position: relative;
+    text-overflow: ellipsis;
+    text-transform: uppercase;
+    white-space: nowrap;
+    width: 290px;
+}
+
+.main .account .column .group .event{
+    font-size: 12px;
+    color: #9b9b9b;
+    margin: 3px 0 0;
+    text-transform: lowercase;
+}
+
+.main .account .column .group .liblock a{
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.main .account .inside .group li{
+    margin: 20px 0;
+}
+
+.main .account .employee .gname span{
+    color: #9b9b9b;
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: normal;
+    position: absolute;
+    text-transform: lowercase;
+    top: 38px;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    width: 240px;
+}
+
+.main .account .employee .group .gname{
+    line-height: 55px;
+}
+
+.main .account .employee .group li{
+    margin: 20px 0;
+}
+
+.main .account .employee .group li .liblock a{
+    font-weight: 400;
+    font-size: 12px;
+}
+
+.main .account .almanac .group li{
+    margin: 25px 0;
+}
+
+.main .account .almanac .group li a{
+    line-height: 24px;
+}
+
+
+    /*-----------------------------------------------------------------End Account block------------------------------------------------------------------------*/
+    /*-----------------------------------------------------------------3 Column CAPA block------------------------------------------------------------------------*/
+
+.actionProgramm{
+    display: table;
+}
+
+.lineProgramm{
+    display: table-cell;
+}
+
+.problemlist{
+    margin: 20px 0;
+}
+
+.end{
+    border-left: 1px solid #d8d8d8;
+    border-right: 1px solid #d8d8d8;
+}
+
+.lastcell{
+    border-bottom: 1px solid #d8d8d8;
+}
+
+.T,
+.T2,
+.T3{
+    border-spacing: 9px 0;
+}
+
+.T3{
+    margin: 0 -9px;
+}
+
+.actionProgramm.T .w4:first-child{
+    background-color: #ffffff;
+}
+.actionProgramm.T2 .w4:first-child{
+    background-color: #ffffff;
+}
+.actionProgramm.T3 .w4:first-child{
+    background-color: #ffffff;
+}
+
+.actionProgramm.T3 .w4:last-child{
+    background-color: #f6f6f6;
+}
+
+
+.actionProgramm.T .w4:first-child .titlecolumn{
+    background-color: #1c45ab;
+    color: white;
+    padding: 24px 0;
+    font-size: 16px;
+    margin: 0 0 -20px 0;
+    text-align: center;
+}
+
+.actionProgramm.T2 .w4:first-child .titlecolumn{
+    background-color: #3257b3;
+}
+
+.actionProgramm.T3 .w4:first-child .titlecolumn{
+    background-color: #6d87c9;
+}
+
+.actionProgramm.T3 .w4:last-child .titlecolumn{
+    background-color: #f5a623;
+    color: white;
+    padding: 24px 0;
+    font-size: 16px;
+    margin: 0 0 -20px 0;
+    text-align: center;
+}
+
+.actionProgramm.T .w4:first-child .infotitle {
+    background-color: #d2daee;
+    color: #000000;
+    font-size: 14px;
+    font-weight: bold;
+    margin: 0;
+    padding: 18px 10px;
+    text-align: left;
+}
+
+.actionProgramm.T3 .w4:last-child .infotitle{
+    color: #000000;
+    text-align: left;
+    padding: 18px 10px;
+    font-weight: bold;
+    font-size: 14px;
+    background-color: #f5d5a1;
+}
+
+.infoblock label {
+    color: #9b9b9b;
+    display: block;
+    font-size: 12px;
+    line-height: 23px;
+    margin: 10px 0 0 0;
+}
+
+.infoblock select {
+    border: 1px solid #e5e5e5;
+    margin: 0;
+    width: 100%;
+    height: 25px;
+    line-height: 25px;
+}
+
+.infoblock .infobody{
+    padding: 0 10px;
+}
+
+.infotime .infdt,
+.infotime .infsum{
+    display: inline-block;
+    width: 40%;
+}
+
+.infotime .infdt{
+    margin: 0 20px 0 0;
+}
+
+.infotime input {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    height: 25px;
+    width: 100%;
+}
+
+.commentblock {
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    margin: 5px 10px;
+    padding: 15px 10px;
+    position: relative;
+}
+
+.commentblock .comment p{
+    font-weight: 500;
+
+}
+.commentblock .comment{
+    font-size: 14px;
+    padding: 0 0 10px;
+    border-bottom: 1px solid #d8d8d8;
+}
+
+.commentblock .infocomment{
+    display: table;
+    padding: 15px 0 0;
+}
+
+.commentblock .infocomment .posttime{
+    color: #9b9b9b;
+    font-size: 12px;
+    vertical-align: bottom;
+}
+
+.commentblock .infocomment .posttime,
+.commentblock .infocomment .commentauthor{
+    display: table-cell;
+}
+
+.commentblock .infocomment .commentauthor p:last-child{
+    color: #9b9b9b;
+    font-size: 12px;
+}
+.commentblock .infocomment .commentauthor p{
+    margin: 0 -10px 0 5px;
+}
+
+.commentblock .infocomment .commentauthor p:first-child{
+    font-size: 14px;
+}
+
+.problemlist textarea {
+    box-sizing: border-box;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-size: 14px;
+    padding: 5px 10px;
+    border: 1px solid #e5e5e5;
+    width: 100%;
+    max-width: 360px;
+    word-wrap: break-word;
+
+}
+
+.actionProgramm textarea:disabled,
+.actionProgramm select:disabled,
+.actionProgramm input:disabled{
+    background-color: #f8f8f8;
+    border: 1px solid #e1e1e1;
+}
+
+.addcomment .addCommentButton {
+    background-color: #f5a623;
+    border-radius: 20px;
+    bottom: -20px;
+    height: 40px;
+    position: absolute;
+    right: 26px;
+    text-align: center;
+    width: 40px;
+    box-shadow: 0 2px 3px 1px #ddd;
+}
+
+.addCommentButtonreply {
+    background-color: #0000ff;
+    border-radius: 20px;
+    bottom: -20px;
+    height: 40px;
+    position: absolute;
+    right: 26px;
+    text-align: center;
+    width: 40px;
+    box-shadow: 0 2px 3px 1px #ddd;
+}
+
+
+.addcomment .addCommentButton input {
+    background-color: transparent;
+    background-image: url("/img/pensil.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 50% auto;
+    border: medium none;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+.addCommentButtonreply input {
+    background-color: transparent;
+    background-image: url("/img/pensil.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 50% auto;
+    border: medium none;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+.addcomment .addCommentButton a img {
+    vertical-align: middle;
+    width: 15px;
+}
+
+.addcomment{
+    position: relative;
+    padding: 10px;
+}
+
+.addcomment textarea{
+    border-radius: 10px;
+    height: 70px;
+}
+
+.comBb {
+    margin: 30px 0;
+    padding: 0 20px 42px;
+}
+
+.commentreply{
+    margin-left: 50px;
+}
+.firstreply{
+    margin: 35px 10px 0 50px !important;
+}
+
+input[type="text"], input[type="date"], input[type="number"], input[type="email"], input[type="tel"] {
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+textarea{
+    font-size: 14px;
+}
+
+.addbut:hover{
+    text-decoration: underline;
+}
+
+.addbut{
+    margin: 5px 0;
+    color: #637fc5;
+    text-decoration: none;
+}
+
+.titlerb{
+    border-bottom: 1px solid #1c45ab;
+    font-size: 18px;
+    margin: 0;
+    padding: 0 0 5px;
+}
+
+.wotitle {
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.titleib{
+    color: #1c45ab;
+    margin: 10px 10px 3px;
+    font-size: 17px;
+}
+
+.titleib a:hover{
+    text-decoration: underline;
+}
+.titleib a{
+    text-decoration: none;
+    color: #1c45ab;
+    font-size: 17px;
+}
+
+
+.subtitleib{
+    color: #9b9b9b;
+    font-size: 13px;
+    line-height: 15px;
+    margin: 0 10px 20px;
+}
+
+.animated {
+    transition: all 0.3s ease-in-out 0s;
+}
+
+
+.labelinline {
+    display: inline-block;
+}
+.labelinline label{
+    color: #707070;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 0;
+    margin: 0;
+    padding: 0;
+}
+
+.recomendetuserblock{
+    background-color: green;
+    border-bottom: 1px solid #ddd;
+    color: white;
+    font-size: 13px;
+    padding: 10px;
+}
+
+.usercommentblock{
+    padding: 0 10px;
+    position: relative;
+}
+
+.authorcomment{
+    display: inline-block;
+}
+
+.timepost{
+    display: inline-block;
+    float: right;;
+}
+
+.usercommentblock .comment{
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    border-radius: 10px;
+    padding: 15px 10px;
+    position: relative;
+    font-size: 13px;
+}
+
+.commentinfo{
+    margin: 8px 0 5px 0;
+    color: #979797;
+}
+
+.inputclear{
+    background-color: white;
+    border: none;
+}
+
+.buttonblock .reply input,
+.buttonblock .apply input{
+    color: #72953e;
+}
+
+.buttonblock .reply:hover input,
+.buttonblock .apply:hover input{
+    color: white;
+    cursor: pointer;
+    background-color: #72953e;
+}
+
+.buttonblock .apply:hover {
+    background-color: #72953e;
+    background-image: url("/img/2okw.png");
+}
+
+.buttonblock .reply:hover {
+    background-color: #72953e;
+    background-image: url("/img/replayw.png");
+
+}
+
+.buttonblock .apply {
+    background-color: white;
+    background-image: url("/img/2ok.png");
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-size: 17px auto;
+    border: 1px solid #72953e;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.buttonblock .reply {
+    background-color: white;
+    background-image: url("/img/replay.png");
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-size: 17px auto;
+    border: 1px solid #72953e;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.buttonblock .reply,
+.buttonblock .apply {
+    padding: 0 10px 0 27px;
+}
+
+.buttonblock {
+    margin: 0 0 10px;
+    padding: 16px 10px;
+}
+
+.counted p{
+    margin: 0 0 0 7px;
+    color: #9b9b9b;
+}
+.counted {
+    background-image: url("/img/ok.png");
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-size: 17px auto;
+    padding: 0 10px 0 27px;
+    font-size: 13px;
+}
+
+.yellowbg{
+    background-color: #fdf2e0;
+}
+
+.greenbg{
+    background-color: #e7eee0;
+}
+
+.greybg{
+    background-color: #f2f2f2;
+}
+
+.сhanges{
+    background-image: url("/img/2ok.png");
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-size: 17px auto;
+    padding: 0 10px 0 27px;
+    font-size: 13px;
+}
+
+.сhanges p{
+    margin: 0 0 0 7px;
+    color: #9b9b9b;
+}
+
+.wcolum{
+    width: 380px;
+}
+
+
+/*--------------------------------------------------------------------END 3 Column CAPA----------------------------------------------------------------*/
+
+/*--------------------------------------------------------------------underform CAPA----------------------------------------------------------------*/
+
+.Vstick{
+    border-right: 1px solid #ddd;
+}
+
+.decide {
+    background-color: #d2daee;
+    font-size: 20px;
+    margin: 0 0 20px;
+    padding: 15px 0;
+    text-transform: uppercase;
+}
+
+.underlist label{
+    color: #000000;
+    line-height: 30px;
+}
+
+.underlist textarea {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    display: block;
+    height: 100px;
+    padding: 5px;
+    width: 100%;
+}
+
+.underform {
+    box-sizing: border-box;
+    margin: 30px auto 0;
+    padding: 0 20px;
+    width: 1200px;
+}
+
+.underform a:hover{
+    text-decoration: underline;
+}
+
+.underform a{
+    color: #022fa0;
+    text-decoration: none;
+}
+
+.underform label {
+    font-weight: 500;
+}
+
+.underform label {
+    color: #000000;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.underform .box .titleblock {
+    background-color: #d2daee;
+}
+
+.underform .box .innerbox {
+    margin: 0 0 0 60px;
+    width: 70%;
+}
+
+.underform .titleblock {
+    background-color: #f6f6f6;
+    border-bottom: 1px solid #d6d6d6;
+    font-size: 20px;
+    padding: 10px 8px;
+    text-transform: uppercase;
+}
+
+.underform  textarea {
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    height: 100px;
+    padding: 5px;
+    max-width: 100%;
+}
+
+.underform .subbtext{
+    text-align: left;
+    font-size: 14px;
+    font-weight: 300;
+}
+
+
+.underprotocol .titleblock {
+    background-color: #d2daee;
+}
+
+.underprotocol .titleblock {
+    border-bottom: 1px solid #d6d6d6;
+    font-size: 20px;
+    padding: 10px 8px;
+    text-transform: uppercase;
+}
+
+.underprotocol label{
+    color: #000000;
+    line-height: 30px;
+}
+
+.vizant .list a:hover{
+    text-decoration: underline;
+}
+
+.vizant .list a {
+    color: navy;
+    display: block;
+    margin: 0 0 15px;
+    text-decoration: none;
+}
+
+div[data-array="item"]{
+    position: relative;
+}
+
+.removedatastruct img{
+    width: 20px;
+    cursor: pointer;
+}
+
+.removedatastructcontent img{
+    width: 20px;
+    cursor: pointer;
+}
+
+.removedatastructcontent {
+    display: inline-block;
+    height: 25px;
+    left: -25px;
+    position: absolute;
+    top: 7px;
+    width: 25px;
+}
+
+.removedatastruct {
+    display: inline-block;
+    height: 20px;
+    position: absolute;
+    right: 16px;
+    top: 9px;
+}
+
+#listingapprover .entry{
+    position: relative;
+}
+
+
+.removedatastructcontent:hover{
+    visibility: visible;
+}
+
+.removedatastructcontent{
+    visibility: hidden;
+}
+
+
+.removedatastruct{
+    visibility: hidden;
+}
+
+div[data-array="item"]:hover .removedatastruct{
+    visibility: visible;
+}
+
+div[data-array="item"]:hover .removedatastructcontent{
+    visibility: visible;
+}
+
+#listingapprover .entry:hover .removedatastruct{
+    visibility: visible;
+}
+
+a.doc{
+    color: #666fc5 !important;
+    font-weight: normal !important;
+    margin-left: 20%;
+    font-size: 15px !important;
+}
+
+a.subdoc{
+    color: #666fc5 !important;
+    font-weight: normal !important;
+    margin-left: 25%;
+    font-size: 15px !important;
+}
+
+tr.docrow{
+    /*height: 50px !important;*/
+}
+
+#problem_listing label{
+    color: #000000;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    margin: 0;
+    text-transform: uppercase;
+    vertical-align: top;
+    width: 340px;
+}
+
+
+/*--------------------------------------------------------------------END  underform CAPA----------------------------------------------------------------*/
+/*--------------------------------------------------------------------Опросник----------------------------------------------------------------*/
+#questionnaire{
+    border: 1px solid #ccc;
+    padding: 20px 30px 40px 30px;
+    box-sizing: border-box;
+}
+
+#questionnaire h2{
+    font-size: 25px;
+    text-align: left;
+    margin-right: 0;
+    margin-left: 70px;
+    margin-top: 70px;
+    clear: both;
+    font-weight: 500;
+}
+
+#questionnaire .anwernum{
+    padding: 20px 0;
+}
+
+#questionnaire p.qtime{
+    margin-bottom: 70px;
+}
+
+#questionnaire label{
+    box-sizing: border-box;
+    color: #000000;
+    display: inline-block;
+    font-size: 18px;
+    margin: 0 0 0 40px;
+    vertical-align: middle;
+    width: 82%;
+}
+
+#questionnaire input[type='checkbox']{
+    margin: 0 0 0 70px;
+    vertical-align: middle;
+}
+
+#questionnaire p.qtime{
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+#questionnaire p.qtime span{
+    font-weight: 500;
+    font-size: 20px;
+    color: red;
+}
+
+
+#questionnaire a.nextQuestion{
+    margin: 70px 0 0 70px;
+}
+
+#questionnaire .countQ{
+    float: left;
+    font-weight: 500;
+    font-size: 20px;
+}
+
+#questionnaire .gin, #questionnaire .bin, #questionnaire .rin {
+    border-radius: 4px;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 700;
+    height: 50px;
+    line-height: 42px;
+    margin: 0 auto;
+    padding: 0;
+    text-align: center;
+    text-decoration: none;
+    text-transform: uppercase;
+    width: 250px;
+}
+
+#questionnaire a.gin, #questionnaire a.bin, #questionnaire a.rin {
+    line-height: 50px;
+}
+#questionnaire .gin.c {
+    background-color: white;
+    color: #0c8a34;
+}
+#questionnaire .bin.c {
+    background-color: white;
+    color: #1c45ab;
+}
+#questionnaire .rin.c {
+    background-color: white;
+    color: #d0021b;
+}
+#questionnaire .gin {
+    background-color: #0c8a34;
+    border: 1px solid #0c8a34;
+    color: #fff;
+}
+#questionnaire .gin:hover {
+    background-color: #417505;
+    color: white;
+}
+#questionnaire .rin {
+    background-color: #d0021b;
+    border: 1px solid #d0021b;
+    color: #fff;
+}
+#questionnaire .rin:hover {
+    background-color: rgba(208, 2, 30, 0.76);
+    color: white;
+}
+#questionnaire .bin {
+    background-color: #1c45ab;
+    border: 1px solid #1c45ab;
+    color: #fff;
+}
+#questionnaire .bin:hover {
+    background-color: #172f82;
+    color: white;
+}
+
+
+#questionareResult{
+    font-size: 18px;
+}
+
+
+#alltime{
+    font-size: 20px;
+}
+
+
+.alltime{
+    margin: 20px 0;
+    font-size: 14px;
+    font-weight: 300;
+    text-transform: uppercase;
+}
+
+
+#questionareResult{
+    border: 1px solid #ccc;
+}
+
+#questionareResult .participator{
+    font-size: 14px;
+    text-align: right;
+    margin: 20px 0 0;
+}
+
+#questionareResult .participator p{
+    box-sizing: border-box;
+    margin: 10px 0;
+    padding: 0 40px;
+}
+
+
+#questionareResult .participator p span:first-child{
+    display: inline-block;
+    text-align: left;
+    font-weight: 500;
+}
+
+#questionareResult .participator p span:last-child{
+    display: inline-block;
+    width: 250px;
+}
+
+#questionareResult .yourResult{
+    padding: 0 100px;
+    box-sizing: border-box;
+    margin: 55px 0 80px 0;
+    font-size: 32px;
+    font-weight: 400;
+}
+
+
+#questionareResult .dataCertification{
+    font-size: 0;
+    padding: 0 100px;
+    box-sizing: border-box;
+}
+
+#questionareResult .dataCertification .leftResult,
+#questionareResult .dataCertification .rightResult{
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 16px;
+    padding: 0 180px 0 0;
+    width: 50%;
+}
+
+#questionareResult .dataCertification p{
+    margin: 10px 0;
+    font-weight: 300;
+    font-size: 15px;
+}
+
+#questionareResult .dataCertification p span{
+    font-weight: 500;
+    float: right;
+}
+
+#questionareResult .successful{
+    margin: 80px 0 100px 0;
+    padding: 0 100px;
+    box-sizing: border-box;
+    font-size: 28px;
+    color: #008000;
+    text-transform: uppercase;
+}
+
+#questionareResult .withdraw{
+    margin: 0 0 30px 25px;
+}
+
+#questionareResult .withdraw a{
+    font-size: 16px;
+    font-weight: 300;
+    color: #1c45ab;
+    text-decoration: none;
+}
+
+#questionareResult .withdraw a:hover{
+    text-decoration: underline;
+}
+
+/*--------------------------------------------------------------------END  опросник----------------------------------------------------------------*/
+/*-----------------------------------------------------------------CAPA block comment------------------------------------------------------------------------*/
+.capaComments .when{
+    padding: 42.5px 0 22.5px;
+}
+
+.capaComments .when span{
+    background-color: #f6f6f6;
+    color: #1c45ab;
+    font-size: 12px;
+    padding: 0 0 0 20px;
+    position: absolute;
+    right: 0;
+    top: -8px;
+}
+
+.capaComments .when p{
+    border-bottom: 1px solid #e1e1e1;
+    position: relative;
+}
+
+.rightCommentBlock:first-child > div.onecomment:first-child{
+    padding-top: 3px;
+}
+
+.capaComments .onecomment {
+    width: 330px;
+    clear: both;
+}
+
+.capaComments .onecomment .author{
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.capaComments .onecomment .authorpost{
+    color: #9b9b9b;
+    font-size: 12px;
+    line-height: 15px;
+    margin: 3px 0 5px;
+}
+
+.capaComments .onecomment .authorpost span{
+    float: right;
+}
+
+.capaComments .onecomment .textCancelcomment {
+    background-color: white;
+    border: 1px solid rgba(255, 0, 0, 0.48);
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    padding: 10px 15px;
+}
+
+.capaComments .onecomment .textcomment {
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 20px;
+    padding: 10px 15px;
+    word-wrap: break-word;
+}
+
+.capaComments .commentreply {
+    float: right;
+    padding-top: 3px;
+    text-align: right;
+    width: 93%;
+}
+
+.capaComments .commentreply .author{
+    font-size: 14px;
+    font-weight: 400;
+    text-align: left;
+    margin: 15px 0 0;
+}
+
+.capaComments .commentreply .authorpost{
+    color: #9b9b9b;
+    font-size: 12px;
+    line-height: 15px;
+    margin: 3px 0 5px;
+    text-align: left;
+}
+
+.capaComments .commentreply .authorpost span{
+    float: right;
+}
+
+.capaComments .commentreply .textcomment{
+    background-color: white;
+    border: 1px solid #e1e1e1;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 400;
+    text-align: left;
+    line-height: 20px;
+    padding: 10px 15px;
+}
+
+.capaComments .buttonReplyTake.Reply2{
+    width: 345px;
+    float: right;
+}
+
+.capaComments .buttonReplyTake{
+    box-sizing: border-box;
+    clear: both;
+    padding: 5px 20px 0;
+    width: 330px;
+}
+
+.capaComments .buttonReplyTake .reply{
+    background-color: white;
+    background-image: url("/img/replay.png");
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-size: 17px auto;
+    border: 1px solid #72953e;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.capaComments .buttonReplyTake .reply:hover{
+    background-color: #72953e;
+    background-image: url("/img/replayw.png");
+}
+
+.capaComments .buttonReplyTake .apply:hover input ,
+.capaComments .buttonReplyTake .reply:hover input {
+    background-color: #72953e;
+    color: white;
+    cursor: pointer;
+}
+
+.capaComments .buttonReplyTake .reply,
+.capaComments .buttonReplyTake .apply {
+    padding: 0 10px 0 27px;
+}
+
+.capaComments .buttonReplyTake .reply input,
+.capaComments .buttonReplyTake .apply input {
+    color: #72953e;
+}
+
+.buttonReplyTake .inputclear {
+    background-color: white;
+    border: medium none;
+}
+
+.capaComments .buttonReplyTake .apply {
+    background-color: white;
+    background-image: url("/img/2ok.png");
+    background-position: 10px center;
+    background-repeat: no-repeat;
+    background-size: 17px auto;
+    border: 1px solid #72953e;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+.capaComments .buttonReplyTake .apply:hover {
+    background-color: #72953e;
+    background-image: url("/img/2okw.png");
+}
+
+.capaComments .buttonAddNewComment {
+    clear: both;
+    padding: 25px 20px 0;
+    position: relative;
+}
+
+.capaComments .buttonAddNewComment textarea {
+    border: 1px solid #e5e5e5;
+    box-sizing: border-box;
+    font-family: "Roboto","Helvetica","Arial",sans-serif;
+    font-size: 14px;
+    max-width: 100%;
+    padding: 5px 10px;
+    width: 100%;
+    border-radius: 10px;
+    height: 70px;
+}
+
+.capaComments .buttonAddNewComment .addCommentButton {
+    background-color: #f5a623;
+    border-radius: 20px;
+    bottom: -20px;
+    box-shadow: 0 2px 3px 1px #ddd;
+    height: 40px;
+    position: absolute;
+    right: 26px;
+    text-align: center;
+    width: 40px;
+}
+
+.capaComments .buttonAddNewComment .addCommentButton input {
+    background-color: transparent;
+    background-image: url("/img/pensil.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 40% auto;
+    border: medium none;
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+}
+
+.capaComments .rightCommentBlock{
+    clear: both;
+}
+
+.capaComments .userinfopart,
+.capaComments .onecomment,
+.capaComments .filelistpart,
+.capaComments .commentreply,
+.capaComments .when,
+.capaComments .who,
+.capaComments .event,
+.capaComments .whouser,
+.capaComments .infopart,
+.capaComments .toptitle {
+    background-color: #f6f6f6;
+    box-sizing: border-box;
+    padding: 0 20px;
+}
+
+
+.capaComments .titleAddNewComments {
+    display: none !important;
+}
+.capaComments .rightCommentBlock:first-child {
+    margin-top: 20px;
+}
+
+.capaComments .rightCommentBlock:first-child .when {
+    display: none;
+}
+.capaComments .rightCommentBlock .when {
+    padding: 42.5px 0 22.5px;
+}
+/*-----------------------------------------------------------------End block comment------------------------------------------------------------------------*/
+/*-----------------------------------------------------------------Questionnaire------------------------------------------------------------------------*/
+
+.resultQuestionnaire {
+    margin: 30px 0 0;
+}
+
+.resultQuestionnaire p{
+    font-size: 14px;
+    font-weight: 300;
+    margin: 10px 0;
+}
+.resultQuestionnaire p span{
+    font-weight: 500;
+    margin: 0 0 0 10px;
+}
+
+
+.questionnaireTitle *{
+    vertical-align: middle;
+}
+.questionnaireTitle {
+    height: 60px;
+    background-color: #1c45ab;
+    vertical-align: middle;
+    color: white;
+}
+
+.questionnaireTitle .title{
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 18px;
+    line-height: 60px;
+    padding: 0 0 0 25px;
+    width: 300px;
+}
+
+.questionnaireTitle .good{
+    background-image: url("/img/checkboxGood.png");
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 20px auto;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 0 0 0 30px;
+    width: 210px;
+}
+
+.questionnaireTitle .bad{
+    background-image: url("/img/checkboxBad.png");
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 20px auto;
+    box-sizing: border-box;
+    display: inline-block;
+    padding: 0 0 0 30px;
+    width: 210px;
+}
+
+
+.questionnaireBlock {
+    font-size: 14px;
+}
+
+.questionnaireBlock .qTheme *{
+    vertical-align: middle;
+}
+.questionnaireBlock .qTheme{
+    background-color: #d2daee;
+    height: 50px;
+    font-weight: 500;
+    line-height: 50px;
+}
+
+.questionnaireBlock .qTheme span{
+    margin: 0 10px;
+}
+.questionnaireBlock .qTheme p{
+    display: inline-block;
+    font-weight: 400;
+    line-height: normal;
+    width: 700px;
+}
+
+.questionnaireBlock .questionnaireQA:last-child{
+    border-bottom: 1px solid #ccc;
+}
+
+.questionnaireBlock .questionnaireQA{
+    border-left: 1px solid #ccc;
+    border-right: 1px solid #ccc;
+    box-sizing: border-box;
+    padding: 20px 30px 0;
+}
+
+.questionnaireBlock .questionnaireQA .question .text{
+    color: #A7A6A6;
+}
+
+.questionnaireBlock .questionnaireQA .question .qtext{
+    color: #000;
+}
+
+.questionnaireBlock .questionnaireQA .answer{
+    margin: 30px 0 0;
+}
+
+
+.questionnaireBlock .questionnaireQA .answer .text{
+    color: #A7A6A6;
+    margin: 0 0 10px;
+}
+
+
+.questionnaireBlock .questionnaireQA .answer .atext{
+    margin: 0 0 10px;
+}
+
+.questionnaireBlock .questionnaireQA .answer .atext *{
+    vertical-align: middle;
+}
+
+.questionnaireBlock .questionnaireQA .answer .atext .bgqa.empty{
+    background-image: url("/img/checkboxEmpty.png");
+}
+
+.questionnaireBlock .questionnaireQA .answer .atext .bgqa.bad{
+    background-image: url("/img/checkboxBad.png");
+}
+
+.questionnaireBlock .questionnaireQA .answer .atext .bgqa.good{
+    background-image: url("/img/checkboxGood.png");
+}
+
+.questionnaireBlock .questionnaireQA .answer .atext .bgqa{
+    display: inline-block;
+    height: 26px;
+    width: 26px;
+}
+
+.questionnaireBlock .questionnaireQA .answer .atext .answertext{
+    background-position: left center;
+    background-repeat: no-repeat;
+    box-sizing: border-box;
+    display: inline-block;
+    margin: 0 0 0 10px;
+    padding: 5px 10px;
+    width: 667px;
+}
+
+.questionnaireBlock .questionnaireQA .answer .atext .answertext.good{
+    border: 1px solid #82a45c;
+    background-color: #e7eee0;
+}
+
+.questionnaireBlock .questionnaireQA .answer .atext .answertext.bad{
+    border: 1px solid #ea909b;
+    background-color: #fae5e8;
+}
+
+
+.buttonAblock {
+    font-size: 0;
+}
+
+
+.buttonAblock a:hover{
+    text-decoration: underline;
+}
+
+.buttonAblock a{
+    color: #1c45ab;
+    padding: 8px 10px;
+    text-decoration: none;
+}
+
+.buttonAblock .lbutoon{
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.buttonAblock .rbutoon{
+    display: inline-block;
+    font-size: 15px;
+    font-weight: 300;
+}
+
+
+
+.busy {
+  background: #eee;
+}
+.ready {
+  /*background: lightgreen;*/
+}
+
+.fileAttachPreviewMicro {
+  /*display: none;*/
+  float: left;
+  width: 32px;
+  height: 32px;
+}
+
+
+
+
+
+/*-----------------------------------------------------------------END Questionnaire------------------------------------------------------------------------*/
+
+
+/*Последние комментарии попап*/
+
+#commentPopupClose {
+    float: right;
+    cursor: pointer;
+}
+.fixed-overlay__modal .title{
+    font-size: 18px;
+    color: #333;
+    text-align: center;
+    padding: 0 0 20px;
+}
+
+.fixed-overlay__modal .whouser{
+    padding: 0 0 3px;
+    border-bottom: 1px solid darkgrey;
+}
+
+.fixed-overlay__modal .post{
+    margin: 5px 0 0;
+    font-size: 14px;
+}
+
+
+.fixed-overlay {
+    position: fixed;
+    overflow: auto;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255,255,255,0.9);
+}
+
+.fixed-overlay__modal {
+    text-align: center;
+    white-space: nowrap;
+    z-index: 10;
+}
+
+.fixed-overlay__modal::after {
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 100%;
+    content: '';
+}
+
+.modal {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.modal_container {
+    background-color: #fff;
+    border: 10px solid red;
+    border-radius: 6px;
+    color: #000;
+    height: auto;
+    /*margin: 50px;*/
+    padding: 20px;
+    text-align: left;
+    white-space: normal;
+    width: 500px;
+}
+
+/*----------------------------------------------------------------------------------------------------*/

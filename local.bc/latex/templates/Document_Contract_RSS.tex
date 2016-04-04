@@ -1,0 +1,136 @@
+\input{../templates/DMS_con}
+
+
+{{graphicspath}}
+
+\ExplSyntaxOn
+\newcommand{\changedate}[2][/]{%
+  \tl_set:Nx \l_tmpa_tl {#2}
+  \seq_set_split:NnV \l_tmpa_seq {-} {\l_tmpa_tl}
+  \seq_reverse:N \l_tmpa_seq
+  \seq_use:Nnnn \l_tmpa_seq {#1} {#1} {#1}
+}
+\ExplSyntaxOff
+
+
+{{=<% %>=}}
+\newcommand{\varId}{<% code %>}
+\newcommand{\varDate}{<% date %>}
+\newcommand{\varDirector}{ <%#owncomany%> <%signatoryname%>  <%/owncomany%> }
+\newcommand{\varSignature}{ <%#CompanyLegalEntityCounterparty%>  <%signatoryname%>  <%/CompanyLegalEntityCounterparty%> }
+<%={{ }}=%>
+
+\input{../templates/DMS_Contract}
+
+\begin{document}
+
+\pagestyle{maintext}
+
+\begin{center}
+\large \textbf{\textsc{договор на оказание регулярных услуг №    }}
+\vspace{6mm}\\
+\large \textbf{\textsc{ \varId{}  }}
+\end{center}
+
+{{place}}  \hfill   \changedate{\varDate}    \\
+
+{{introduction}}
+
+\section{\large \textbf{\textsc{Определение терминов и их толкование}}}
+{{wordsdefinition}}
+
+\section{\large \textbf{\textsc{Предмет договора}}}
+{{subjectofcontract}}
+
+\section{\large \textbf{\textsc{Ответственность исполнителя}}}
+{{responsibilityofdoer}}
+
+\section{\large \textbf{\textsc{Ответственность заказчика}}}
+{{responsibility}}
+
+\section{\large \textbf{\textsc{Цена и сроки оплаты}}}
+{{priceandterm}}
+
+\section{\large \textbf{\textsc{Страхование}}}
+{{insurance}}
+
+\section{\large \textbf{\textsc{Учет и возврат продукции}}}
+{{accounting}}
+
+\section{\large \textbf{\textsc{Товарные знаки и упаковка}}}
+{{trademarks}}
+
+\section{\large \textbf{\textsc{Конфиденциальность}}}
+{{confidentiality}}
+
+\section{\large \textbf{\textsc{Срок действия и прекращения}}}
+{{timeofcontract}}
+
+\section{\large \textbf{\textsc{Форс-мажор}}}
+{{forcemajeure}}
+
+\section{\large \textbf{\textsc{Отказ}}}
+{{refuce}}
+
+\section{\large \textbf{\textsc{Полный контракт}}}
+{{fullcontract}}
+
+\section{\large \textbf{\textsc{Язык}}}
+{{language}}
+
+\section{\large \textbf{\textsc{Право, которое применяется и юрисдикция}}}
+{{jurisdiction}}
+
+\section{\large \textbf{\textsc{Другие условия}}}
+{{otherconditions}}
+
+\section{\large \textbf{\textsc{Реквизиты сторон}}}
+\thispagestyle{empty}
+
+\begin{tabularx}{\textwidth}{ X@{\hskip 0.5in} X }
+
+\textbf{Исполнитель:}  & \textbf{Заказчик:} \\
+ & \\
+ \textbf{ {{#CompanyLegalEntityCounterparty}} {{title}}  {{/CompanyLegalEntityCounterparty}}:} & \textbf{ {{#owncomany}} {{title}} {{/owncomany}} :} \\
+ {{#CompanyLegalEntityCounterparty}} {{legaladdress}}  {{/CompanyLegalEntityCounterparty}}  &  {{#owncomany}}  {{legaladdress}}  {{/owncomany}}  \\
+ р/с   {{#CompanyLegalEntityCounterparty}} {{ba}}  {{/CompanyLegalEntityCounterparty}}                                                &  р/с  {{#owncomany}}  {{ba}}  {{/owncomany}}  \\
+ {{#CompanyLegalEntityCounterparty}} {{mfo}}  {{/CompanyLegalEntityCounterparty}} &  МФО {{#owncomany}}  {{mfo}}   {{/owncomany}}   \\
+ ЕДРПОУ {{#CompanyLegalEntityCounterparty}} {{edropou}}  {{/CompanyLegalEntityCounterparty}} & ЕДРПОУ {{#owncomany}} {{edropou}}  {{/owncomany}}  \\
+ & \\
+ \textbf{Директор}  & \textbf{Директор} \\
+ & \\
+ & \\
+ & \\
+ \noindent\rule{4cm}{0.5pt} {{#CompanyLegalEntityCounterparty}} {{signatoryname}}  {{/CompanyLegalEntityCounterparty}}   & \noindent\rule{5cm}{0.5pt} {{#owncomany}} {{signatoryname}}  {{/owncomany}}  \\
+ \end{tabularx}
+
+
+
+{{#contractapplication}}
+
+\newpage
+\pagestyle{dodatki}
+
+
+
+
+{{text}}
+
+  {{#MediaAttributed}}
+
+	  \vfill
+	  \begin{figure}[hb]
+	    \centering
+		{{=<% %>=}}
+	    \includegraphics[width=\textwidth]{<% attachment %>}
+	    \caption{<% text %>}
+		<%={{ }}=%>
+	  \end{figure}
+	  \vfill
+
+
+  {{/MediaAttributed}}
+
+{{/contractapplication}}
+
+\end{document}

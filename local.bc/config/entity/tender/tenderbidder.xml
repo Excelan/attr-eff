@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<entity prototype="Directory:TenderBidder:Simple" code="DTBT" manager="Business" uid="80231">
+
+    <passport>
+        <title>Участники Тендера</title>
+    </passport>
+
+    <states>
+      <!-- <status name="active" default="yes" title=""/> -->
+    </states>
+
+    <structure>
+
+        <useone entity="Document:Tender:Extended" as="DocumentTenderExtended" title="Тендер"/>
+
+
+        <group title="Сводная таблица Результат тендера">
+            <hasmany entity="Document:Tender:Table" as="DocumentTenderTable"/>
+        </group>
+
+        <group title="Дополнительные критерии оценки">
+            <hasmany entity="Document:Tender:TableAdditional" as="DocumentTenderTableAdditional"/>
+        </group>
+
+        <hasone entity="Company:LegalEntity:Counterparty" as="CompanyLegalEntityCounterparty" title="Контрагент"/>
+        <field name="docpermitsneed" type="tarray" title="Требуемая документация"/>
+            <field name="commercialoffer" type="string" title="Загрузить файл"/>
+
+        <field name="techvalidation" type="set" title="Отметка соответствия условиям ТЗ">
+            <value name="yes" title="Да" />
+            <value name="no" title="Нет" />
+            <value name="clarification" title="Требует уточнения" />
+        </field>
+        <field name="techvalidationcomment" type="text" title="Комментарий несоответствия или уточнения" />
+
+        <field name="biddersolution" type="set" title="Принять решение по участию во втором туре">
+            <value name="yes" title="Принимает участие" />
+            <value name="no" title="Не принимает участие" />
+            <value name="clarification" title="Требует согласования" />
+        </field>
+
+        <field name="commentcounterparty" type="text" title="Причина отказа" />
+
+    </structure>
+
+
+    <defaultorder>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		<!-- <column selector="status"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

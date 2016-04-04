@@ -1,0 +1,71 @@
+<process prototype="DMS:Regulation:Study" readyfor="test">
+
+  <!-- Обучение -->
+  <!--ТЗ: https://docs.google.com/document/d/19i3dFAFeCkOP4Us_APKoSF-VwSZUl123lzndhFLSfMI/edit#heading=h.d39lxtrhdtk1  -->
+
+  <!-- нельзя начать процесс вручную, только на основании SOP -->
+
+  <parameters></parameters>
+
+  <responsibility>
+
+    <stage name="CreateDraft">
+      <target>
+        Создание TA, взятие SOP для TA с метаданных процесса
+      </target>
+    </stage>
+
+    <stage name="Editing" type="humantask" title="Редактирование">
+      <target>
+        Редактирование программы обучения (TA) для тестирования сотрудников - создание вопросов и ответов
+      </target>
+      <humantask responsible="initiator" appoint="configuration"/>
+      <rule type="timelimit" value="1d"/>
+    </stage>
+
+    <stage name="Vising" title="Визирование">
+      <target>Цель - завизировать TA</target>
+      <call process="DMS:Decisions:Visa"/>
+      <rule type="timelimit" value="1d"/>
+      <forward to="Approving"/>
+      <backward to="Editing"/>
+    </stage>
+
+    <stage name="Approving" title="Утверждение">
+      <target>Цель - утвердить TA</target>
+      <call process="DMS:Decisions:Approvement"/>
+      <rule type="timelimit" value="1d"/>
+      <forward to="CallA"/>
+      <backward to="Editing"/>
+    </stage>
+
+    <stage name="CallA">
+      <target>
+        вызов Аттестации (ASR) из Study (TA) : НЕ безусловный call!
+        Цель
+          - передача в процесс Attestation sop, ta
+          - Аттестация - не дочерний процесс, а следующий (процесс аттестации проходит сколько угодно раз, но на основе мета параметров процесса - SOP, TA, по которым тестируются)
+        Перенос учащихся из SOP в ASR будет в create draft
+        По факту вызова аттестации процесс создания программы обучения считается завершенным
+      </target>
+      <!--<call process="DMS:Regulation:Attestation"/>-->
+    </stage>
+
+  </responsibility>
+
+  <stages>
+
+    <stage name="CreateDraft" type="automated"/>
+
+    <stage name="Editing" type="humantask"/>
+
+    <stage name="Vising" type="delegate"/>
+
+    <stage name="Approving" type="delegate"/>
+
+    <stage name="CallA" type="automated"/>
+    <!--<stage name="CallA" type="delegate"/>-->
+
+  </stages>
+
+</process>

@@ -1,0 +1,734 @@
+[ ] 02/04 22:53:32	(NULL)	(ProcessRBACControl::processesICanStart) 12:/goldcut/apps/ProcessRBAC/ProcessRBACControl.php
+[ ] 02/04 22:53:32	(NULL)	(ProcessRBACControl::processesICanStart) 13:/goldcut/apps/ProcessRBAC/ProcessRBACControl.php
+[ ] 02/04 22:53:34	URN Object
+(
+    [urn:URN:private] => urn:Definition:DocumentClass:ForPrototype:1936018484
+    [entitymeta] => entitymeta Object
+        (
+            [class] => SystemData
+            [manager] => SystemData Object
+                (
+                    [name] => SystemData
+                    [behaviors:protected] => Array
+                        (
+                            [0] => general_crud
+                            [1] => general_graph
+                            [2] => general_list
+                            [3] => general_multylang
+                            [4] => general_clone
+                            [5] => general_ordered
+                        )
+
+                    [limits:protected] => 
+                )
+
+            [uid] => 9327281
+            [code] => 
+            [legacyname] => 
+            [name] => Definition:DocumentClass:ForPrototype
+            [prototype] => Prototype Object
+                (
+                    [inDomain:Prototype:private] => Definition
+                    [ofClass:Prototype:private] => DocumentClass
+                    [ofType:Prototype:private] => ForPrototype
+                )
+
+            [title] => Array
+                (
+                    [ru] => Document Class
+                    [en] => Document Class
+                )
+
+            [field_metas] => Array
+                (
+                    [0] => 140
+                    [1] => 141
+                )
+
+            [has_one:entitymeta:private] => Array
+                (
+                )
+
+            [use_one:entitymeta:private] => Array
+                (
+                )
+
+            [has_many:entitymeta:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [DefinitionPrototypeSystem] => Definition:Prototype:System
+                        )
+
+                )
+
+            [use_many:entitymeta:private] => 
+            [belongs_to:entitymeta:private] => Array
+                (
+                )
+
+            [category:entitymeta:private] => 
+            [multy_lang:entitymeta:private] => Array
+                (
+                )
+
+            [lang_field_metas] => Array
+                (
+                )
+
+            [communitydata:entitymeta:private] => 
+            [statuses] => Array
+                (
+                )
+
+            [related:entitymeta:private] => 
+            [reverserelated] => Array
+                (
+                )
+
+            [compound_of] => 
+            [media] => 
+            [mediaoptions] => 
+            [imagesettings] => Array
+                (
+                )
+
+            [urn] => urn:Definition:DocumentClass:ForPrototype
+            [directmanage] => 1
+            [adminadd] => 1
+            [container] => 
+            [treeview] => 
+            [translit] => 
+            [alias] => 
+            [checkunique] => Array
+                (
+                    [0] => name
+                )
+
+            [index] => Array
+                (
+                )
+
+            [defaultorder] => Array
+                (
+                    [title] => ASC
+                )
+
+            [adminfields] => Array
+                (
+                    [0] => title
+                    [1] => name
+                )
+
+            [usereditfields] => Array
+                (
+                )
+
+            [cacheMemoryEnabled] => 
+            [lists] => Array
+                (
+                )
+
+            [groupby] => Array
+                (
+                )
+
+            [extendstructure] => Array
+                (
+                )
+
+            [searchtextin] => Array
+                (
+                )
+
+            [adminsearchtextin] => Array
+                (
+                )
+
+            [clonable] => yes
+            [groupnames] => 
+            [groups] => 
+            [virtualgroups] => 
+            [options] => Array
+                (
+                    [clonable] => yes
+                )
+
+            [astitles] => Array
+                (
+                )
+
+            [allOrdered] => Array
+                (
+                    [0] => DefinitionPrototypeSystem
+                    [1] => title
+                    [2] => name
+                )
+
+            [required] => Array
+                (
+                )
+
+            [attributed] => 
+            [overlayed] => 
+            [system:entitymeta:private] => 1
+            [usemany_entities] => Array
+                (
+                )
+
+        )
+
+    [prototype] => Prototype Object
+        (
+            [inDomain:Prototype:private] => Definition
+            [ofClass:Prototype:private] => DocumentClass
+            [ofType:Prototype:private] => ForPrototype
+        )
+
+    [entity] => entitymeta Object
+        (
+            [class] => SystemData
+            [manager] => SystemData Object
+                (
+                    [name] => SystemData
+                    [behaviors:protected] => Array
+                        (
+                            [0] => general_crud
+                            [1] => general_graph
+                            [2] => general_list
+                            [3] => general_multylang
+                            [4] => general_clone
+                            [5] => general_ordered
+                        )
+
+                    [limits:protected] => 
+                )
+
+            [uid] => 9327281
+            [code] => 
+            [legacyname] => 
+            [name] => Definition:DocumentClass:ForPrototype
+            [prototype] => Prototype Object
+                (
+                    [inDomain:Prototype:private] => Definition
+                    [ofClass:Prototype:private] => DocumentClass
+                    [ofType:Prototype:private] => ForPrototype
+                )
+
+            [title] => Array
+                (
+                    [ru] => Document Class
+                    [en] => Document Class
+                )
+
+            [field_metas] => Array
+                (
+                    [0] => 140
+                    [1] => 141
+                )
+
+            [has_one:entitymeta:private] => Array
+                (
+                )
+
+            [use_one:entitymeta:private] => Array
+                (
+                )
+
+            [has_many:entitymeta:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [DefinitionPrototypeSystem] => Definition:Prototype:System
+                        )
+
+                )
+
+            [use_many:entitymeta:private] => 
+            [belongs_to:entitymeta:private] => Array
+                (
+                )
+
+            [category:entitymeta:private] => 
+            [multy_lang:entitymeta:private] => Array
+                (
+                )
+
+            [lang_field_metas] => Array
+                (
+                )
+
+            [communitydata:entitymeta:private] => 
+            [statuses] => Array
+                (
+                )
+
+            [related:entitymeta:private] => 
+            [reverserelated] => Array
+                (
+                )
+
+            [compound_of] => 
+            [media] => 
+            [mediaoptions] => 
+            [imagesettings] => Array
+                (
+                )
+
+            [urn] => urn:Definition:DocumentClass:ForPrototype
+            [directmanage] => 1
+            [adminadd] => 1
+            [container] => 
+            [treeview] => 
+            [translit] => 
+            [alias] => 
+            [checkunique] => Array
+                (
+                    [0] => name
+                )
+
+            [index] => Array
+                (
+                )
+
+            [defaultorder] => Array
+                (
+                    [title] => ASC
+                )
+
+            [adminfields] => Array
+                (
+                    [0] => title
+                    [1] => name
+                )
+
+            [usereditfields] => Array
+                (
+                )
+
+            [cacheMemoryEnabled] => 
+            [lists] => Array
+                (
+                )
+
+            [groupby] => Array
+                (
+                )
+
+            [extendstructure] => Array
+                (
+                )
+
+            [searchtextin] => Array
+                (
+                )
+
+            [adminsearchtextin] => Array
+                (
+                )
+
+            [clonable] => yes
+            [groupnames] => 
+            [groups] => 
+            [virtualgroups] => 
+            [options] => Array
+                (
+                    [clonable] => yes
+                )
+
+            [astitles] => Array
+                (
+                )
+
+            [allOrdered] => Array
+                (
+                    [0] => DefinitionPrototypeSystem
+                    [1] => title
+                    [2] => name
+                )
+
+            [required] => Array
+                (
+                )
+
+            [attributed] => 
+            [overlayed] => 
+            [system:entitymeta:private] => 1
+            [usemany_entities] => Array
+                (
+                )
+
+        )
+
+    [uuid] => 1936018484
+    [listname] => 
+)
+	(ProcessRBACControl::processesICanStart) 12:/goldcut/apps/ProcessRBAC/ProcessRBACControl.php
+[ ] 02/04 22:53:34	(NULL)	(ProcessRBACControl::processesICanStart) 13:/goldcut/apps/ProcessRBAC/ProcessRBACControl.php
+[ ] 04/04 12:41:17	(NULL)	(ProcessRBACControl::processesICanStart) 12:/goldcut/apps/ProcessRBAC/ProcessRBACControl.php
+[ ] 04/04 12:41:17	(NULL)	(ProcessRBACControl::processesICanStart) 13:/goldcut/apps/ProcessRBAC/ProcessRBACControl.php
+[ ] 04/04 12:41:57	URN Object
+(
+    [urn:URN:private] => urn:Definition:DocumentClass:ForPrototype:1936018484
+    [entitymeta] => entitymeta Object
+        (
+            [class] => SystemData
+            [manager] => SystemData Object
+                (
+                    [name] => SystemData
+                    [behaviors:protected] => Array
+                        (
+                            [0] => general_crud
+                            [1] => general_graph
+                            [2] => general_list
+                            [3] => general_multylang
+                            [4] => general_clone
+                            [5] => general_ordered
+                        )
+
+                    [limits:protected] => 
+                )
+
+            [uid] => 9327281
+            [code] => 
+            [legacyname] => 
+            [name] => Definition:DocumentClass:ForPrototype
+            [prototype] => Prototype Object
+                (
+                    [inDomain:Prototype:private] => Definition
+                    [ofClass:Prototype:private] => DocumentClass
+                    [ofType:Prototype:private] => ForPrototype
+                )
+
+            [title] => Array
+                (
+                    [ru] => Document Class
+                    [en] => Document Class
+                )
+
+            [field_metas] => Array
+                (
+                    [0] => 140
+                    [1] => 141
+                )
+
+            [has_one:entitymeta:private] => Array
+                (
+                )
+
+            [use_one:entitymeta:private] => Array
+                (
+                )
+
+            [has_many:entitymeta:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [DefinitionPrototypeSystem] => Definition:Prototype:System
+                        )
+
+                )
+
+            [use_many:entitymeta:private] => 
+            [belongs_to:entitymeta:private] => Array
+                (
+                )
+
+            [category:entitymeta:private] => 
+            [multy_lang:entitymeta:private] => Array
+                (
+                )
+
+            [lang_field_metas] => Array
+                (
+                )
+
+            [communitydata:entitymeta:private] => 
+            [statuses] => Array
+                (
+                )
+
+            [related:entitymeta:private] => 
+            [reverserelated] => Array
+                (
+                )
+
+            [compound_of] => 
+            [media] => 
+            [mediaoptions] => 
+            [imagesettings] => Array
+                (
+                )
+
+            [urn] => urn:Definition:DocumentClass:ForPrototype
+            [directmanage] => 1
+            [adminadd] => 1
+            [container] => 
+            [treeview] => 
+            [translit] => 
+            [alias] => 
+            [checkunique] => Array
+                (
+                    [0] => name
+                )
+
+            [index] => Array
+                (
+                )
+
+            [defaultorder] => Array
+                (
+                    [title] => ASC
+                )
+
+            [adminfields] => Array
+                (
+                    [0] => title
+                    [1] => name
+                )
+
+            [usereditfields] => Array
+                (
+                )
+
+            [cacheMemoryEnabled] => 
+            [lists] => Array
+                (
+                )
+
+            [groupby] => Array
+                (
+                )
+
+            [extendstructure] => Array
+                (
+                )
+
+            [searchtextin] => Array
+                (
+                )
+
+            [adminsearchtextin] => Array
+                (
+                )
+
+            [clonable] => yes
+            [groupnames] => 
+            [groups] => 
+            [virtualgroups] => 
+            [options] => Array
+                (
+                    [clonable] => yes
+                )
+
+            [astitles] => Array
+                (
+                )
+
+            [allOrdered] => Array
+                (
+                    [0] => DefinitionPrototypeSystem
+                    [1] => title
+                    [2] => name
+                )
+
+            [required] => Array
+                (
+                )
+
+            [attributed] => 
+            [overlayed] => 
+            [system:entitymeta:private] => 1
+            [usemany_entities] => Array
+                (
+                )
+
+        )
+
+    [prototype] => Prototype Object
+        (
+            [inDomain:Prototype:private] => Definition
+            [ofClass:Prototype:private] => DocumentClass
+            [ofType:Prototype:private] => ForPrototype
+        )
+
+    [entity] => entitymeta Object
+        (
+            [class] => SystemData
+            [manager] => SystemData Object
+                (
+                    [name] => SystemData
+                    [behaviors:protected] => Array
+                        (
+                            [0] => general_crud
+                            [1] => general_graph
+                            [2] => general_list
+                            [3] => general_multylang
+                            [4] => general_clone
+                            [5] => general_ordered
+                        )
+
+                    [limits:protected] => 
+                )
+
+            [uid] => 9327281
+            [code] => 
+            [legacyname] => 
+            [name] => Definition:DocumentClass:ForPrototype
+            [prototype] => Prototype Object
+                (
+                    [inDomain:Prototype:private] => Definition
+                    [ofClass:Prototype:private] => DocumentClass
+                    [ofType:Prototype:private] => ForPrototype
+                )
+
+            [title] => Array
+                (
+                    [ru] => Document Class
+                    [en] => Document Class
+                )
+
+            [field_metas] => Array
+                (
+                    [0] => 140
+                    [1] => 141
+                )
+
+            [has_one:entitymeta:private] => Array
+                (
+                )
+
+            [use_one:entitymeta:private] => Array
+                (
+                )
+
+            [has_many:entitymeta:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [DefinitionPrototypeSystem] => Definition:Prototype:System
+                        )
+
+                )
+
+            [use_many:entitymeta:private] => 
+            [belongs_to:entitymeta:private] => Array
+                (
+                )
+
+            [category:entitymeta:private] => 
+            [multy_lang:entitymeta:private] => Array
+                (
+                )
+
+            [lang_field_metas] => Array
+                (
+                )
+
+            [communitydata:entitymeta:private] => 
+            [statuses] => Array
+                (
+                )
+
+            [related:entitymeta:private] => 
+            [reverserelated] => Array
+                (
+                )
+
+            [compound_of] => 
+            [media] => 
+            [mediaoptions] => 
+            [imagesettings] => Array
+                (
+                )
+
+            [urn] => urn:Definition:DocumentClass:ForPrototype
+            [directmanage] => 1
+            [adminadd] => 1
+            [container] => 
+            [treeview] => 
+            [translit] => 
+            [alias] => 
+            [checkunique] => Array
+                (
+                    [0] => name
+                )
+
+            [index] => Array
+                (
+                )
+
+            [defaultorder] => Array
+                (
+                    [title] => ASC
+                )
+
+            [adminfields] => Array
+                (
+                    [0] => title
+                    [1] => name
+                )
+
+            [usereditfields] => Array
+                (
+                )
+
+            [cacheMemoryEnabled] => 
+            [lists] => Array
+                (
+                )
+
+            [groupby] => Array
+                (
+                )
+
+            [extendstructure] => Array
+                (
+                )
+
+            [searchtextin] => Array
+                (
+                )
+
+            [adminsearchtextin] => Array
+                (
+                )
+
+            [clonable] => yes
+            [groupnames] => 
+            [groups] => 
+            [virtualgroups] => 
+            [options] => Array
+                (
+                    [clonable] => yes
+                )
+
+            [astitles] => Array
+                (
+                )
+
+            [allOrdered] => Array
+                (
+                    [0] => DefinitionPrototypeSystem
+                    [1] => title
+                    [2] => name
+                )
+
+            [required] => Array
+                (
+                )
+
+            [attributed] => 
+            [overlayed] => 
+            [system:entitymeta:private] => 1
+            [usemany_entities] => Array
+                (
+                )
+
+        )
+
+    [uuid] => 1936018484
+    [listname] => 
+)
+	(ProcessRBACControl::processesICanStart) 12:/goldcut/apps/ProcessRBAC/ProcessRBACControl.php
+[ ] 04/04 12:41:57	[object HTMLInputElement]	(ProcessRBACControl::processesICanStart) 13:/goldcut/apps/ProcessRBAC/ProcessRBACControl.php

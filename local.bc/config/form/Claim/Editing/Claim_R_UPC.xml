@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- CONTEXT BLOCK ЗАЯВКА НА ВЫДАЧУ/ИЗЪЯТИЕ ПЛАСТИКОВОЙ КАРТОЧКИ/ИЗМЕНЕНИЕ КАТЕГОРИИ ДОСТУПА СКД -->
+
+
+        <section entity="Document:Claim:R_UPC" title="Заявка на выдачу/изъятие пластиковой карточки/изменение категории доступа СКД">
+
+            <!--Обязательные поля для всех типов Заявок -->
+            <field name="companyproject" type="select" title="Текущий проект предприятия" required="yes">
+                <query gate="Selector/directory/DirectoryBusinessProjectsItem"/>
+            </field>
+            <field name="CompanyLegalEntityCounterparty" type="CompanyLegalEntityCounterparty" title="Клиент, для которого создается заявка" required="yes">
+                <query gate="Selector/company"/>
+            </field>
+            <field name="warehouse" type="BusinessObject" title="№ склада, для которого создается заявка" required="yes">
+                <query gate="Selector/businessobject"/>
+            </field>
+
+            <!--Индивидуальные поля по каждому типу Заявок -->
+            <field name="mailuser" type="ManagementPostIndividual" title="ФИО" required="yes">
+                <query gate="Selector/management"/>
+            </field>
+            <field name="processtype" type="select" title="Тип процесса" required="yes">
+                <options>
+                    <option value="сhange" title="Изменение"/>
+                    <option value="issue" title="Выдача"/>
+                    <option value="withdrawal" title="Изъятие"/>
+                </options>
+            </field>
+            <field name="descriptionneed" type="text" title="Описание необходимости" required="yes"/>
+            <field name="permissionscurrent" type="text" title="Текущие права доступа" required="yes"/>
+            <field name="permissionsnew" type="text" title="Новые права доступа" required="yes"/>
+
+            <!--Обязательные поля для всех типов Заявок -->
+            <field name="specialrequirement" type="text" title="Специальное требование"/>
+            <field name="attachments" type="attachment" min="1"  multiple="yes" title="Вложение"/>
+
+        </section>
+
+    </structure>
+
+</form>

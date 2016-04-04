@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity manager="SystemData" prototype="Membership:Online:Record" uid="99902">
+  <passport>
+    <title>Сессия онлайн</title>
+  </passport>
+  <states/>
+  <structure>
+
+    <hasone entity="Actor:User:System" />
+    <hasone entity="Management:Post:Individual" />
+    <hasone entity="People:Employee:Internal" as="employee" />
+    <hasone entity="People:Employee:Counterparty" as="agent" />
+    <!-- <hasone entity="Company:LegalEntity:Counterparty" as="company" /> -->
+
+    <field name="securehash" type="integer" title="securehash"/>
+    <field name="hash" type="integer" title="hash"/>
+    <field name="renewhash" type="integer" title="renewhash"/>
+
+    <field name="ip" type="ipv4" title="IP адрес"/>
+
+    <field name="created" type="timestamp" title="Время создания" createDefault="now"/>
+    <field name="lastactivity" type="timestamp" title="Время последней активности"/>
+
+  </structure>
+  <lists/>
+  <defaultorder>
+    <by field="created" order="DESC"/>
+  </defaultorder>
+  <admincolumns/>
+  <options>
+    <aparam name="directmanage" type="boolean" value="no"/>
+  </options>
+  <searchfields/>
+  <indexes>
+    <unique column="hash"/>
+  </indexes>
+</entity>

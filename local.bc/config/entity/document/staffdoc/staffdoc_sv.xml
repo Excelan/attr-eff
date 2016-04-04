@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<entity prototype="Document:Staffdoc:SV" code="SV" manager="Document" uid="70243">
+
+    <passport>
+        <title>Заявление на отпуск</title>
+    </passport>
+
+    <structure>
+
+        <hasone entity="Management:Post:Individual" as="employee" title="Сотрудник"/>
+        <field name="addressed" type="text" title="На имя"/>
+        <field name="masterpart" type="text" title="Основной раздел"/>
+        <field name="createdate" type="date" title="Дата создания"/><!--date (по умолчанию текущая)-->
+        <field name="date" type="date" title="Дата с"/><!--date (по умолчанию текущая)-->
+
+
+        <!--Заявление на отпуск-->
+        <field name="datestart" type="date" title="С какой даты отпуск"/><!--date (по умолчанию текущая)-->
+        <field name="dateend" type="date" title="По какую дату отпуск"/>
+
+    
+
+    </structure>
+
+    <lists />
+    <defaultorder />
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		<!-- <column selector="status"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

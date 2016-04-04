@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- Жалоба - на услуги по обработке товаров -->
+
+        <!--Обязательные поля для всех типов Жалоб -->
+        <section entity="Document:Complaint:C_LP" title="Жалоба на услуги по обработке товаров">
+
+            <field name="CompanyLegalEntityCounterparty" type="CompanyLegalEntityCounterparty" title="Клиент, для которого создается жалоба" required="yes"/>
+            <field name="warehouse" type="BusinessObject" title="№ склада, для которого создается жалоба" required="yes"/>
+            <field name="datestart" type="date" title="Дата начала инцидента" required="yes"/>
+            <field name="dateend" type="date" title="Дата окончания инцидента, если он устранен" required="yes"/>
+            <field name="description" type="text" title="Описание жалобы" required="yes"/>
+            <field name="attachments" type="attachment" min="1"  multiple="yes" title="Вложение"/>
+
+
+        <!--Индивидуальные поля по каждому типу Жалобы -->
+            <field name="documentnumber" type="string" title="Номер отгрузочного или приходного документа"/>
+
+        </section>
+
+    </structure>
+
+</form>

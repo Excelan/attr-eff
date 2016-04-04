@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- ПРОТОКОЛ КАЛИБРОВКИ<-->
+        <section entity="Document:Protocol:VT" title="Выберите Объект Валидации">
+
+            <field name="bo" type="BusinessObject" min="1" title="Объект"/>
+
+        </section>
+
+
+    </structure>
+
+</form>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Calendar:Period:Month" manager="System" uid="114">
+
+    <passport>
+        <title>Период</title>
+    </passport>
+
+    <states>
+        <status name="isactive" default="yes" title="Активен"/>
+    </states>
+
+    <structure>
+
+        <field name="title" type="string" title="Название периода"/>
+        <field name="everynmonth" type="integer" title="шаг месяц"/>
+
+        <field name="created" type="timestamp" title="Время создания" createDefault="now"/>
+        <field name="updated" type="timestamp" title="Время последнего изменения" disabled="yes" createDefault="now" updateDefault="now"/>
+        <field name="ordered" type="integer" title="Порядок" system="yes"/>
+
+    </structure>
+
+    <lists/>
+    <defaultorder/>
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="title"/>
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes/>
+</entity>

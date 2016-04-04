@@ -1,0 +1,654 @@
+
+.ir, .sr, .truncate-text {
+    overflow: hidden;
+}
+#bg, #overlayto {
+    min-height: 100%;
+    min-width: 100%;
+}
+.button a {
+    border-radius: 3px;
+    display: block;
+    font-size: 13px;
+    font-weight: 400;
+    padding: 7px 31px;
+}
+.button a:hover {
+    text-decoration: none;
+}
+.button.big a, .button.big button {
+    border-radius: 4px;
+    font-size: 14px;
+    font-weight: 400;
+    padding: 11px 50px;
+}
+.button.snaps-blue a {
+    background-color: #3e85c1;
+    color: #fff !important;
+}
+.button.snaps-blue a:hover {
+    background-color: #659dcd;
+}
+.button.snaps-blue-faded a {
+    background-color: #659dcd;
+    color: #fff !important;
+}
+.button.snaps-blue-faded a:hover {
+    background-color: #3e85c1;
+}
+.button.layersync-purple a {
+    background-color: #6257ab;
+    color: #fff;
+    font-weight: 600;
+}
+.button.layersync-purple a:hover {
+    background-color: #8279bc;
+}
+.button.layersync a {
+    background-color: #6257ab;
+    background-image: url("../img/assets-sprites.png?v=8272014");
+    background-position: 14px -350px;
+    color: #fff !important;
+    font-weight: 600;
+    padding: 9px 17px 9px 37px;
+}
+/*@media not all, (min--moz-device-pixel-ratio: 2), not all, (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .button.layersync a {
+        background-image: url("../img/assets-sprites@2x.png?v=8272014");
+        background-size: 342px 4186px;
+    }
+}*/
+.button.layersync a:hover {
+    background-color: #8279bc;
+}
+.button.layersync.enabled a {
+    background-position: 14px -394px;
+}
+.button.enterprise-blue a, .button.enterprise-blue button, .button.enterprise-blue input {
+    background-color: #3a87bc;
+    color: #fff !important;
+}
+.button.enterprise-blue a:hover, .button.enterprise-blue button:hover, .button.enterprise-blue input:hover {
+    background-color: #3888ce;
+}
+.hide-text, .ir {
+    background-color: transparent;
+}
+.button.invite-to-company.remove a {
+    background-position: 15px -684px;
+}
+.button.invite-to-company a {
+    background-image: url("../img/enterprise-sprites.png");
+    background-position: 15px -574px;
+    border: 1px solid #d7dbe3;
+    color: #8b97ac;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 19px 8px 50px;
+}
+/*@media not all, (min--moz-device-pixel-ratio: 2), not all, (min-resolution: 192dpi), (min-resolution: 2dppx) {
+    .button.invite-to-company a {
+        background-image: url("../img/enterprise-sprites@2x.png");
+        background-size: 200px 2000px;
+    }
+}*/
+.button.invite-to-company a:hover {
+    border-color: #aab3c3;
+}
+.btn {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: #ccc #ccc #b3b3b3;
+    border-image: none;
+    border-radius: 4px;
+    border-style: solid;
+    border-width: 1px;
+    color: #fff;
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 20px;
+    margin-bottom: 0;
+    padding: 7px 10px;
+    text-align: center;
+    vertical-align: middle;
+}
+.btn.disabled, .btn[disabled] {
+    opacity: 0.65;
+}
+.btn-large {
+    border-radius: 5px;
+    font-size: 15px;
+    line-height: normal;
+    padding: 9px 14px;
+}
+.ir, .sr {
+    border: 0 none;
+}
+.btn-small {
+    font-size: 11px;
+    line-height: 15px;
+    padding: 5px 9px;
+}
+.clearfix::after, .clearfix::before {
+    content: "";
+    display: table;
+}
+.clearfix::after {
+    clear: both;
+}
+.ir {
+    background-repeat: no-repeat;
+    direction: ltr;
+    display: inline-block;
+    text-align: left;
+    text-indent: -999em;
+}
+.sr {
+    clip: rect(0px, 0px, 0px, 0px);
+    height: 1px;
+    margin: -1px;
+    padding: 0;
+    position: absolute;
+    width: 1px;
+}
+.hide-text {
+    border: 0 none;
+    color: transparent;
+    font: 0px/0 a;
+    text-shadow: none;
+}
+.truncate-text {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.unselectable {
+    -moz-user-select: none;
+}
+.crisp-icon {
+    image-rendering: -moz-crisp-edges;
+}
+html {
+    overflow-y: auto;
+}
+
+#bg{
+    opacity: 0.9;
+    background-color: #1D1F33;
+    left: 0;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+header.circle-logo {
+    border-radius: 100%;
+    height: 108px;
+    margin: 0 auto 55px;
+    width: 108px;
+}
+header.circle-logo.invision {
+    background-color: #898f9a;
+    margin-top: 100px;
+}
+header.circle-logo.invision span {
+    background-image: url("/img/logo_biocon.png");
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: 51px auto;
+    display: block;
+    height: 51px;
+    left: 25px;
+    overflow: hidden;
+    position: relative;
+    top: 27px;
+    width: 51px;
+}
+/*@media (min--moz-device-pixel-ratio: 1.5), not all, not all, (min-resolution: 1.5dppx) {
+    header.circle-logo.invision span {
+        background-image: url("/assets/apps/common/img/logos-sprite-x2.png?v=1447082898154");
+        background-size: 233px 164px;
+    }
+}*/
+
+.login-form, .password-reset-form, .request-reset-form, .signup-form {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 3px;
+    padding: 80px 100px;
+}
+.login-form div.form, .password-reset-form div.form, .request-reset-form div.form, .signup-form div.form {
+    margin-bottom: 32px;
+}
+.login-form form, .password-reset-form form, .request-reset-form form, .signup-form form {
+    margin: 0 0 13px;
+}
+.signup-form {
+    padding: 80px 100px 40px;
+}
+.alert-success {
+    background-color: transparent;
+    border-color: transparent;
+    color: #69bb6a;
+    margin: 100px auto 0;
+    padding: 0;
+    position: absolute;
+    text-align: center;
+    text-shadow: none;
+    width: 99%;
+}
+.login-title {
+    color: #1e2431;
+    font: 400 23px "Open Sans";
+    margin: 0;
+    padding: 32px 0 20px;
+    text-align: center;
+}
+.login-title span {
+    color: #f36;
+}
+.login-title span.small {
+    color: #a2aabd;
+    display: block;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 1px;
+    margin-top: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.input-layout {
+    margin-top: 44px;
+    position: relative;
+}
+.input-layout label {
+    color: #b8b5bd;
+    font-size: 18px;
+    font-weight: 400;
+    left: 0;
+    letter-spacing: 0.5px;
+    pointer-events: none;
+    position: absolute;
+    top: 2px;
+    transition: all 0.2s ease 0s;
+}
+.input-layout input[type="text"], .input-layout input[type="password"] {
+    -moz-border-bottom-colors: none;
+    -moz-border-left-colors: none;
+    -moz-border-right-colors: none;
+    -moz-border-top-colors: none;
+    border-color: -moz-use-text-color -moz-use-text-color #dadee6;
+    border-image: none;
+    border-radius: 0;
+    border-style: none none solid;
+    border-width: 0 0 1px;
+    box-shadow: none;
+    color: #1e2431;
+    font-size: 18px;
+    font-weight: 400;
+    height: 26px;
+    padding: 1px 0 20px 2px;
+    transition: none 0s ease 0s ;
+    width: 100%;
+}
+.input-layout input[type="text"]:focus ~ label, .input-layout input[type="text"]:valid ~ label, .input-layout input[type="password"]:focus ~ label, .input-layout input[type="password"]:valid ~ label {
+    color: #a2aabd;
+    font-size: 12px;
+    font-weight: 400;
+    opacity: 1;
+    text-transform: uppercase;
+    top: -30px;
+}
+.input-layout input[type="text"]:focus:not([readonly]) ~ label, .input-layout input[type="password"]:focus:not([readonly]) ~ label {
+    color: #f36;
+    font-weight: 400;
+}
+.input-layout input[type="text"]:focus:required:invalid:focus, .input-layout input[type="password"]:focus:required:invalid:focus {
+    box-shadow: none;
+}
+.input-layout input.error[type="text"], .input-layout input.error[type="password"] {
+    border-bottom-color: #dd2b00;
+    border-bottom-width: 2px;
+    border-radius: 0;
+}
+.input-layout input[type="password"] {
+    font-family: arial;
+    font-size: 21px;
+    font-weight: 600;
+    letter-spacing: 5px;
+    padding: 6px 0 11px;
+}
+.input-layout input[type="password"]:active, .input-layout input[type="password"]:focus {
+    outline: 0 none;
+    text-transform: none;
+}
+.input-layout input[type="text"]:active, .input-layout input[type="text"]:focus {
+    color: #1e2431;
+    font-size: 18px;
+    outline: 0 none;
+    padding-left: 0;
+    text-transform: none;
+}
+.input-layout .alert-danger, .input-layout .alert-error {
+    background-color: transparent;
+    border-color: transparent;
+    border-radius: 0;
+    color: #dd2b00;
+    font-size: 13px;
+    font-weight: 400;
+    margin: 0;
+    padding: 0;
+    text-align: left;
+}
+.input-layout .alert-danger a, .input-layout .alert-error a {
+    color: #dd2b00;
+    text-decoration: underline;
+}
+.input-layout .alert-email, .input-layout .alert-name, .input-layout .alert-password, .input-layout .alert-passwordConfirmation {
+    display: none;
+}
+.input-layout .alert-dynamic {
+    padding-bottom: 20px;
+}
+.input-layout .bar {
+    display: block;
+    position: relative;
+    width: 100%;
+}
+.input-layout .bar::after, .input-layout .bar::before {
+    background: #f36 none repeat scroll 0 0;
+    bottom: 9px;
+    content: "";
+    height: 1px;
+    position: absolute;
+    transition: all 0.2s ease 0s;
+    width: 0;
+}
+.input-layout .bar::before {
+    left: 50%;
+}
+.input-layout .bar::after {
+    right: 50%;
+}
+.input-layout input:focus ~ .bar::after, .input-layout input:focus ~ .bar::before {
+    width: 50%;
+}
+.input-layout .highlight {
+    height: 60%;
+    left: 0;
+    opacity: 0.5;
+    pointer-events: none;
+    position: absolute;
+    top: 25%;
+    width: 100px;
+}
+.input-layout input:focus ~ .highlight {
+    animation: 0.3s ease 0s normal none 1 running inputHighlighter;
+}
+footer .legalNotice {
+    color: #a2aabd;
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: 0.2px;
+    margin: 20px 0 0;
+    text-align: center;
+}
+footer .legalNotice a {
+    color: #55acf0;
+}
+footer .primary.button {
+    background: #414CB7 none repeat scroll 0 0;
+    border: medium none;
+    border-radius: 3px;
+    box-shadow: none;
+    color: #fff;
+    font: 400 12px/1em "Open Sans";
+    letter-spacing: 0.9px;
+    margin: 55px 0 0;
+    padding: 23px 0;
+    text-align: center;
+    text-shadow: none;
+    text-transform: uppercase;
+    transition: all 0.2s linear 0s;
+    width: 100%;
+}
+footer .primary.button:focus {
+    outline: 0 none;
+}
+footer .primary.button:hover {
+    background: #2732A0 none repeat scroll 0 0;
+}
+.bottomlinks {
+    font-size: 12px;
+    font-weight: 400;
+    margin: 30px 0 50px;
+    text-align: center;
+}
+.bottomlinks a {
+    color: #f36;
+}
+.bottomlinks a:hover {
+    text-decoration: none;
+}
+.bottomlinks a.gray, .bottomlinks span.gray {
+    color: #fff;
+    opacity: 0.5;
+}
+.bottomlinks .getStarted {
+    float: right;
+}
+.bottomlinks #forgotPassword {
+    color: #fff;
+    float: left;
+    opacity: 0.5;
+}
+#overlayto {
+    left: 0;
+    position: absolute;
+    top: 0;
+    z-index: 20;
+}
+#overlayto .content {
+    left: 50%;
+    margin-left: -300px;
+    overflow-y: auto;
+    position: absolute;
+    top: 150px;
+    transition: top 0.5s ease 0s;
+    width: 600px;
+}
+#overlayto .content header {
+    height: 102px;
+    margin: 0 auto 55px;
+    width: 102px;
+}
+#overlayto .content .login-title {
+    padding: 0 0 20px;
+}
+#overlayto .enterprise {
+    margin-left: -300px;
+    width: 600px;
+}
+#overlayto .enterprise div.enterprise-signup {
+    padding: 80px 100px 40px;
+}
+#overlayto .enterprise header.enterprise {
+    background-color: #3a87bc;
+}
+#overlayto .enterprise header.enterprise span {
+    background-image: url("/assets/apps/common/img/logos-sprite.png?v=1447082898154");
+    background-position: -25px -109px;
+    background-repeat: no-repeat;
+    display: block;
+    height: 30px;
+    left: 34px;
+    overflow: hidden;
+    position: relative;
+    top: 36px;
+    width: 36px;
+}
+/*@media (min--moz-device-pixel-ratio: 1.5), not all, not all, (min-resolution: 1.5dppx) {
+    #overlayto .enterprise header.enterprise span {
+        background-image: url("/assets/apps/common/img/logos-sprite-x2.png?v=1447082898154");
+        background-size: 233px 164px;
+    }
+}*/
+#overlayto .enterprise div.enterprise-login, #overlayto .enterprise div.enterprise-signup {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 3px;
+    box-sizing: border-box;
+    width: 600px;
+}
+#overlayto .enterprise div.enterprise-login .alert, #overlayto .enterprise div.enterprise-signup .alert {
+    margin: 15px 0 0;
+}
+#overlayto .enterprise div.enterprise-login header.avatar img, #overlayto .enterprise div.enterprise-signup header.avatar img {
+    max-width: 100px;
+}
+#overlayto .enterprise div.enterprise-login header.haslogo, #overlayto .enterprise div.enterprise-signup header.haslogo {
+    background-color: #fff;
+    background-image: none;
+    height: 108px;
+    margin-top: 20px;
+    text-align: center;
+}
+#overlayto .enterprise div.enterprise-login header.haslogo .company-logo, #overlayto .enterprise div.enterprise-signup header.haslogo .company-logo {
+    box-sizing: border-box;
+    display: inline-block;
+    height: 108px;
+    overflow: hidden;
+    width: 108px;
+}
+#overlayto .enterprise div.enterprise-login header.haslogo .company-logo .no-logo, #overlayto .enterprise div.enterprise-signup header.haslogo .company-logo .no-logo {
+    background: #ccc none repeat scroll 0 0;
+}
+#overlayto .enterprise div.enterprise-login div.form-wrap .input-layout .bar::after, #overlayto .enterprise div.enterprise-login div.form-wrap .input-layout .bar::before, #overlayto .enterprise div.enterprise-login div.form-wrap footer button.primary, #overlayto .enterprise div.enterprise-login div.form-wrap footer button.primary:hover, #overlayto .enterprise div.enterprise-signup div.form-wrap .input-layout .bar::after, #overlayto .enterprise div.enterprise-signup div.form-wrap .input-layout .bar::before, #overlayto .enterprise div.enterprise-signup div.form-wrap footer button.primary, #overlayto .enterprise div.enterprise-signup div.form-wrap footer button.primary:hover {
+    background: #3a87bc none repeat scroll 0 0;
+}
+#overlayto .enterprise div.enterprise-login header.haslogo .company-logo img, #overlayto .enterprise div.enterprise-signup header.haslogo .company-logo img {
+    max-height: 108px;
+    max-width: 108px;
+}
+#overlayto .enterprise div.enterprise-login div.form-wrap input[type="text"]:focus:not([readonly]) ~ label, #overlayto .enterprise div.enterprise-login div.form-wrap input[type="password"]:focus:not([readonly]) ~ label, #overlayto .enterprise div.enterprise-signup div.form-wrap input[type="text"]:focus:not([readonly]) ~ label, #overlayto .enterprise div.enterprise-signup div.form-wrap input[type="password"]:focus:not([readonly]) ~ label {
+    color: #3a87bc;
+}
+#overlayto .enterprise div.enterprise-login.saml .form-wrap h2, #overlayto .enterprise div.enterprise-signup.saml .form-wrap h2 {
+    color: #757e87;
+    font-size: 16px;
+    font-weight: 400;
+    padding: 25px 0 0;
+    text-align: center;
+}
+#overlayto .enterprise div.enterprise-login.saml .form-wrap a.continue, #overlayto .enterprise div.enterprise-signup.saml .form-wrap a.continue {
+    background: #fff none repeat scroll 0 0;
+    border: 1px solid #dadee6;
+    border-radius: 3px;
+    box-shadow: none;
+    color: #898f96;
+    display: inline-block;
+    font: 400 12px/1em "Open Sans";
+    letter-spacing: 0.9px;
+    margin: 10px 0 0;
+    outline: 0 none;
+    padding: 23px 0;
+    text-align: center;
+    text-decoration: none;
+    text-shadow: none;
+    text-transform: uppercase;
+    width: 100%;
+}
+#overlayto .enterprise div.enterprise-login.saml .form-wrap a.continue:hover, #overlayto .enterprise div.enterprise-signup.saml .form-wrap a.continue:hover {
+    background: #898f96 none repeat scroll 0 0;
+    color: #fff;
+}
+.enterprise-select-brand {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 5px;
+    overflow: hidden;
+}
+.enterprise-select-brand form {
+    margin: 0;
+    padding: 0;
+}
+.enterprise-select-brand .brand-select {
+    list-style: outside none none;
+    margin: 0;
+    padding: 0;
+}
+.enterprise-select-brand .brand-select li {
+    border-bottom: 1px solid #c5c9cd;
+    color: #3e4b59;
+    cursor: pointer;
+    font: 400 16px/1em "Open Sans";
+    padding: 24px;
+}
+.enterprise-select-brand .brand-select li div, .enterprise-select-brand .brand-select li i, .enterprise-select-brand .brand-select li p {
+    display: inline-block;
+    margin: 0;
+    vertical-align: middle;
+}
+.enterprise-select-brand .brand-select li p {
+    font-weight: 400;
+    line-height: 20px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 315px;
+}
+.enterprise-select-brand .brand-select li p small {
+    color: #a3aebf;
+    display: block;
+    font-size: 13px;
+    font-weight: 200;
+}
+.enterprise-select-brand .brand-select li div.brand-logo {
+    background: #fff none repeat scroll 0 0;
+    border-radius: 3px;
+    height: 65px;
+    margin-right: 20px;
+    overflow: hidden;
+    width: 65px;
+}
+.enterprise-select-brand .brand-select li div.brand-logo.no-logo {
+    background: #ccc none repeat scroll 0 0;
+}
+.enterprise-select-brand .brand-select li div.brand-logo img {
+    max-height: 65px;
+    max-width: 65px;
+    min-width: 65px;
+}
+.enterprise-select-brand .brand-select li div.brand-logo.my-inv {
+    background: rgba(0, 0, 0, 0) none repeat scroll 0 0;
+}
+.enterprise-select-brand .brand-select li input {
+    display: none;
+}
+.enterprise-select-brand .brand-select li:hover {
+    background: #f5f5f5 none repeat scroll 0 0;
+}
+.enterprise-select-brand .brand-select li:last-child {
+    border-bottom: medium none;
+}
+.content {
+    box-sizing: border-box;
+    height: inherit;
+    margin: 0 auto;
+    padding: 0 20px;
+    width: 1200px;
+}
+#notification .nottext {
+
+    height: 70px;
+
+}
+
+.animated {
+    transition: all 0.3s ease-in-out 0s;
+}
+
+#memberNotification{
+    font-size: 14px;
+    visibility: hidden;
+    opacity: 0;
+    margin: 20px 0 0;
+}

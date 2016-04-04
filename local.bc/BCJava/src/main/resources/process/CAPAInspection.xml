@@ -1,0 +1,70 @@
+<process prototype="DMS:Correction:CAPAInspection"  readyfor="test">
+
+    <!-- Контрольная испекция по CAPA -->
+    <!-- ТЗ: https://docs.google.com/document/d/1Xa6QdTsoA9uHJcwy6peDCZO1AvAuHDzk_4oepqfcuyo/edit-->
+
+    <parameters>
+        <param name="Capa" type="urn"/> <!-- создается только автоматически на основании CAPA-->
+    </parameters>
+
+
+    <responsibility>
+        <stage name="CreateDraft"/>
+
+        <stage name="Planing" title="Планирование испекции">
+          <target>Цель - запланировать ивент Контрольная инспекция по САРА</target>
+          <call process="DMS:Decisions:Plan"/>
+          <rule type="timelimit" value="1d"/>
+        </stage>
+
+        <stage name="EditingI" type="humantask" title="Редактирование">
+            <target>Цель - организовать процесс проверки выполнения корректирующих мероприятий (по САРА)</target>
+            <humantask responsible="initiator"  appoint="initiator" />
+            <rule type="timelimit" value="1d"/>
+        </stage>
+
+
+        <stage name="VisingI" title="Визирование">
+          <target>Цель - завизировать</target>
+            <call process="DMS:Decisions:Visa"/>
+            <humantask responsible="visant"/>
+            <rule type="timelimit" value="1d"/>
+            <forward to="ApprovingI"/>
+            <backward to="EditingI"/>
+        </stage>
+
+        <stage name="ApprovingI" title="Утверждение">
+          <target>Цель - утвердить</target>
+            <call process="DMS:Decisions:Approvement"/>
+            <humantask responsible="approver"/>
+            <rule type="timelimit" value="1d"/>
+            <backward to="EditingI"/>
+        </stage>
+
+        <stage name="Route">
+          <target>На основании данных процесса вернуть (или нет) на процесс CAPA на этап doing</target>
+          <delegate optional="yes" process="DMS:Correction:CAPA"/>
+        </stage>
+
+
+    </responsibility>
+
+    <stages>
+
+        <stage name="CreateDraft" type="automated"/>
+
+        <stage name="Planing" type="delegate"/>
+
+        <stage name="EditingI" type="humantask"/>
+
+        <stage name="VisingI" type="delegate"/>
+
+        <stage name="ApprovingI" type="delegate"/>
+
+        <stage name="Route" type="automated"/>
+
+
+    </stages>
+
+
+</process>

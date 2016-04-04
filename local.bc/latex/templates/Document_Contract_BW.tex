@@ -1,0 +1,121 @@
+\input{../templates/DMS_con}
+
+
+{{graphicspath}}
+
+\ExplSyntaxOn
+\newcommand{\changedate}[2][/]{%
+  \tl_set:Nx \l_tmpa_tl {#2}
+  \seq_set_split:NnV \l_tmpa_seq {-} {\l_tmpa_tl}
+  \seq_reverse:N \l_tmpa_seq
+  \seq_use:Nnnn \l_tmpa_seq {#1} {#1} {#1}
+}
+\ExplSyntaxOff
+
+
+{{=<% %>=}}
+\newcommand{\varId}{<% code %>}
+\newcommand{\varDate}{<% date %>}
+\newcommand{\varDirector}{ <%#owncomany%> <%signatoryname%>  <%/owncomany%> }
+\newcommand{\varSignature}{ <%#CompanyLegalEntityCounterparty%>  <%signatoryname%>  <%/CompanyLegalEntityCounterparty%> }
+<%={{ }}=%>
+
+\input{../templates/DMS_Contract}
+
+\begin{document}
+
+\pagestyle{maintext}
+
+\begin{singlespacing}
+\begin{center}
+\large \textbf{\textsc{договор на оказание услуг ТЛС и СТЗ  №  }}
+\vspace{6mm}\\
+\large \textbf{\textsc{ \varId{}  }}
+
+
+%\input{../templates/DMS_Contract_head}
+
+\end{center}
+\end{singlespacing}
+
+
+{{place}}  \hfill   \changedate{\varDate}      \\
+
+
+{{introduction}}
+
+\section{\large \textbf{\textsc{Предмет договора}}}
+{{contractsubject}}
+
+\section{\large \textbf{\textsc{Права и обязанности сторон }}}
+{{rightsandliabilities}}
+
+\section{\large \textbf{\textsc{Срок выполнения работ}}}
+{{timeofworks}}
+
+\section{\large \textbf{\textsc{Условия оплаты таможенных платежей}}}
+{{termofcustompayments}}
+
+\section{\large \textbf{\textsc{Расчеты сторон}}}
+{{payments}}
+
+\section{\large \textbf{\textsc{Особенные условия и ответственность сторон}}}
+{{specialconditions}}
+
+\section{\large \textbf{\textsc{Другие условия}}}
+{{otherconditions}}
+
+\section{\large \textbf{\textsc{Реквизиты сторон}}}
+\thispagestyle{empty}
+
+\begin{tabularx}{\textwidth}{ X@{\hskip 0.5in} X }
+
+\textbf{Исполнитель:}  & \textbf{Заказчик:} \\
+ & \\
+\textbf{ {{#owncomany}} {{title}}  {{/owncomany}}:} & \textbf{ {{#CompanyLegalEntityCounterparty}} {{title}} {{/CompanyLegalEntityCounterparty}} :} \\
+{{#owncomany}} {{legaladdress}}  {{/owncomany}} &  {{#CompanyLegalEntityCounterparty}}  {{legaladdress}}  {{/CompanyLegalEntityCounterparty}}  \\
+р/с   {{#owncomany}} {{ba}}  {{/owncomany}} &  р/с  {{#CompanyLegalEntityCounterparty}}  {{ba}}  {{/CompanyLegalEntityCounterparty}}  \\
+{{#owncomany}} {{mfo}}  {{/owncomany}} &  МФО {{#CompanyLegalEntityCounterparty}}  {{mfo}}   {{/CompanyLegalEntityCounterparty}}   \\
+ЕДРПОУ {{#owncomany}} {{edropou}}  {{/owncomany}} & ЕДРПОУ {{#CompanyLegalEntityCounterparty}} {{edropou}}  {{/CompanyLegalEntityCounterparty}}  \\
+%р/с 26002056204572 & ZZZ \\
+%в Столичном филиале & ZZZ \\
+%ОАО КБ «Приват Банк» в г. Киеве & ZZZ \\
+%МФО 320627 & ZZZ \\
+%код ЕГРПОУ 21672519 & ZZZ \\
+%Выписка из реестра НДС-1410044500011 & ZZZ \\
+ & \\
+\textbf{Директор}  & \textbf{Директор} \\
+ & \\
+ & \\
+ & \\
+\noindent\rule{4cm}{0.5pt} {{#owncomany}} {{signatoryname}}  {{/owncomany}}   & \noindent\rule{5cm}{0.5pt} {{#CompanyLegalEntityCounterparty}} {{signatoryname}}  {{/CompanyLegalEntityCounterparty}}  \\
+\end{tabularx}
+
+
+{{#contractapplication}}
+
+\newpage
+\pagestyle{dodatki}
+
+
+
+{{text}}
+
+  {{#MediaAttributed}}
+
+	  \vfill
+	  \begin{figure}[hb]
+	    \centering
+		{{=<% %>=}}
+	    \includegraphics[width=\textwidth]{<% attachment %>}
+	    \caption{<% text %>}
+		<%={{ }}=%>
+	  \end{figure}
+	  \vfill
+
+
+  {{/MediaAttributed}}
+
+{{/contractapplication}}
+
+\end{document}

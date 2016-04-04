@@ -1,0 +1,39 @@
+[ ] 02/04 22:49:21	{"email":"max@attracti.com","password":"kimtoe93"}	(::) 48:/goldcut/webrouter.php
+[ ] 02/04 22:49:21	{"email":"max@attracti.com","password":"kimtoe93"}	(::) 49:/goldcut/webrouter.php
+[.] 02/04 22:49:21	{"email":"max@attracti.com","password":"kimtoe93","user":null}	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php
+[!] 02/04 22:52:40	No POST.json	(::) 42:/goldcut/webrouter.php
+[ ] 02/04 22:52:40	{"gate":"Selector\/company\/structure\/CompanyStructureDepartment"}	(::) 44:/goldcut/webrouter.php
+[.] 02/04 22:52:40	{"gate":"Selector\/company\/structure\/CompanyStructureDepartment","user":null}	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php
+[ ] 02/04 22:53:38	{"subjectURN":"urn:Document:Claim:R_LSC:856070659"}	(::) 48:/goldcut/webrouter.php
+[ ] 02/04 22:53:38	{"subjectURN":"urn:Document:Claim:R_LSC:856070659"}	(::) 49:/goldcut/webrouter.php
+[.] 02/04 22:53:38	{"subjectURN":"urn:Document:Claim:R_LSC:856070659","user":null}	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php
+[ ] 02/04 22:53:39	{"state":"CreateDraft", "urn":"urn:Document:Claim:R_LSC:856070659"}	(::) 48:/goldcut/webrouter.php
+[ ] 02/04 22:53:39	{"state":"CreateDraft","urn":"urn:Document:Claim:R_LSC:856070659"}	(::) 49:/goldcut/webrouter.php
+[.] 02/04 22:53:39	{"state":"CreateDraft","urn":"urn:Document:Claim:R_LSC:856070659","user":null}	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php
+[ ] 02/04 22:53:43	{"subjectURN":"urn:Document:Claim:R_LSC:856070659"}	(::) 48:/goldcut/webrouter.php
+[ ] 02/04 22:53:43	{"subjectURN":"urn:Document:Claim:R_LSC:856070659"}	(::) 49:/goldcut/webrouter.php
+[.] 02/04 22:53:43	{"subjectURN":"urn:Document:Claim:R_LSC:856070659","user":null}	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php
+[!] 02/04 22:53:43	No POST.json	(::) 42:/goldcut/webrouter.php
+[ ] 02/04 22:53:43	{"gate":"Selector\/directory\/DirectoryBusinessProjectsItem","mpe":"urn:ManagedProcess:Execution:Record:9628694"}	(::) 44:/goldcut/webrouter.php
+[.] 02/04 22:53:43	{"gate":"Selector\/directory\/DirectoryBusinessProjectsItem","mpe":"urn:ManagedProcess:Execution:Record:9628694","user":null}	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php
+[ ] 02/04 22:55:23	{"state":"Editing", "urn":"urn:Document:Claim:R_LSC:856070659"}	(::) 48:/goldcut/webrouter.php
+[ ] 02/04 22:55:23	{"state":"Editing","urn":"urn:Document:Claim:R_LSC:856070659"}	(::) 49:/goldcut/webrouter.php
+[.] 02/04 22:55:23	{"state":"Editing","urn":"urn:Document:Claim:R_LSC:856070659","user":null}	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php
+[!] 04/04 12:40:25	No POST.json	(::) 42:/goldcut/webrouter.php
+[ ] 04/04 12:40:25	{"gate":"Selector\/company\/structure\/CompanyStructureDepartment"}	(::) 44:/goldcut/webrouter.php
+[.] 04/04 12:40:25	{"gate":"Selector\/company\/structure\/CompanyStructureDepartment","user":null}	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php
+[!] 04/04 12:40:53	No POST.json	(::) 42:/goldcut/webrouter.php
+[ ] 04/04 12:40:53	{"gate":"Selector\/directory\/DirectoryBusinessProjectsItem"}	(::) 44:/goldcut/webrouter.php
+[.] 04/04 12:40:53	{"gate":"Selector\/directory\/DirectoryBusinessProjectsItem","user":null}	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php
+[ ] 04/04 12:42:19	{"subjectURN":"urn:Document:Claim:R_LST:721500112"}	(::) 48:/goldcut/webrouter.php
+[ ] 04/04 12:42:19	{"subjectURN":"urn:Document:Claim:R_LST:721500112"}	(::) 49:/goldcut/webrouter.php
+[.] 04/04 12:42:19	{"subjectURN":"urn:Document:Claim:R_LST:721500112","user":null}	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php
+[ ] 04/04 12:42:19	{"state":"CreateDraft", "urn":"urn:Document:Claim:R_LST:721500112"}	(::) 48:/goldcut/webrouter.php
+[ ] 04/04 12:42:19	{"state":"CreateDraft","urn":"urn:Document:Claim:R_LST:721500112"}	(::) 49:/goldcut/webrouter.php
+[.] 04/04 12:42:19	{"state":"CreateDraft","urn":"urn:Document:Claim:R_LST:721500112","user":null}	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php
+[ ] 04/04 12:42:32	{"subjectURN":"urn:Document:Claim:R_LST:721500112"}	(::) 48:/goldcut/webrouter.php
+[ ] 04/04 12:42:32	{"subjectURN":"urn:Document:Claim:R_LST:721500112"}	(::) 49:/goldcut/webrouter.php
+[.] 04/04 12:42:32	{"subjectURN":"urn:Document:Claim:R_LST:721500112","user":null}	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php
+[!] 04/04 12:42:32	No POST.json	(::) 42:/goldcut/webrouter.php
+[ ] 04/04 12:42:32	{"gate":"Selector\/directory\/DirectoryBusinessProjectsItem","mpe":"urn:ManagedProcess:Execution:Record:4219199"}	(::) 44:/goldcut/webrouter.php
+[.] 04/04 12:42:32	{"gate":"Selector\/directory\/DirectoryBusinessProjectsItem","mpe":"urn:ManagedProcess:Execution:Record:4219199","user":null}	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php

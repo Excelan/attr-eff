@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- CONTEXT BLOCK ЗАЯВКА НА ПОСТАВКУ МАТЕРИАЛОВ, ПОСТАВКУ И УСТАНОВКУ ОБОРУДОВАНИЯ, ПРОВЕДЕНИЕ РАБОТ -->
+
+
+        <section entity="Document:Claim:R_TD" title="Заявка на поставку материалов, поставку и установку оборудования, проведение работ">
+
+            <!--Обязательные поля для всех типов Заявок -->
+            <field name="companyproject" type="select" title="Текущий проект предприятия" required="yes">
+                <query gate="Selector/directory/DirectoryBusinessProjectsItem"/>
+            </field>
+            <field name="CompanyLegalEntityCounterparty" type="CompanyLegalEntityCounterparty" title="Клиент, для которого создается заявка" required="yes">
+                <query gate="Selector/company"/>
+            </field>
+            <field name="warehouse" type="BusinessObject" title="№ склада, для которого создается заявка" required="yes">
+                <query gate="Selector/businessobject"/>
+            </field>
+
+            <!--Индивидуальные поля по каждому типу Заявок -->
+            <field name="purchasetype" type="radio" title="Тип задачи" required="yes">
+                <options>
+                    <option value="purchase" title="Покупка" />
+                    <option value="work" title="Работа" />
+                </options>
+            </field>
+            <field name="purchasename" type="text" title="Название ТМЦ/услуг" required="yes"/>
+            <field name="purchaseparam" type="text" title="Параметры/Требования/Марка ТМЦ/услуг" required="yes"/>
+            <field name="priority" type="text" title="Желаемые приоритеты по поставке/выполнению работ, логика работ, их последовательность" required="yes"/>
+
+            <!--Обязательные поля для всех типов Заявок -->
+            <field name="specialrequirement" type="text" title="Специальное требование"/>
+            <field name="attachments" type="attachment" min="1"  multiple="yes" title="Вложение"/>
+
+        </section>
+
+    </structure>
+
+</form>

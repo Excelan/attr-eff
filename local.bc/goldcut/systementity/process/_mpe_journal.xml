@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity manager="SystemData" prototype="ManagedProcess:Journal:Record" uid="123889">
+    <passport>
+        <title>Managed Process Execution Journal</title>
+    </passport>
+
+    <states>
+
+    </states>
+
+    <structure>
+
+        <belongsto entity="ManagedProcess:Execution:Record" />
+
+        <field name="subject" type="string" title="URN документа"/>
+
+        <field name="stagedirection" type="option" title="Направление" >
+            <value name="in" title="In"/>
+            <value name="out" title="Out"/>
+        </field>
+
+        <field name="operationtime" type="hirestimestamp" title="Время действия" />
+
+        <field name="stage" type="string" title="Этап"/>
+
+        <field name="actor" type="string" title="Кто выполнил действие"/>
+
+        <field name="metadata" type="json" title="Metadata"/>
+
+    </structure>
+
+    <lists/>
+
+    <defaultorder>
+        <by field="operationtime" order="DESC"/>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="subject"/>
+        <column selector="ManagedProcessExecutionRecord"/>
+        <column selector="stage"/>
+        <column selector="dirview"/>
+        <column selector="actor"/>
+    </admincolumns>
+
+    <options>
+        <aparam name="directmanage" type="boolean" value="yes"/>
+    </options>
+
+    <searchfields/>
+
+    <indexes>
+        <index column="operationtime"/>
+        <index column="stagedirection"/>
+        <index column="subject"/>
+    </indexes>
+
+</entity>

@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<entity prototype="Document:Contract:RSS" code="RSS" manager="Document" uid="3006">
+
+    <passport>
+        <title>Договор на оказание регулярных услуг </title>
+    </passport>
+
+    <structure>
+
+        <!--Информация о договоре -->
+        <field name="place"  type="string"  title="Место"/>
+        <field name="date"  type="date"  title="Дата заключения"/>
+        <hasone entity="Calendar:Period:Month" as="timecontract" title="Срок действия"/>
+        <field name="prolongation" type="set" title="Прологация договора">
+            <value name="auto" title="Автоматическая пролонгация договора"/>
+            <value name="agreement" title="Пролонгация договора по дополнительному соглашению"/>
+        </field>
+        <hasone entity="Calendar:Period:Month" as="timenotifyfor" title="В случае пересмотра условий договора, уведомить за"/>
+        <field name="enddate"  type="date"  title="Конечная дата"/>
+        <field name="summ"  type="money"  title="Сумма договора"/>
+        <hasone entity="Directory:BusinessProjects:Item" title="Текущий проект предприятия, для которого подписывается договор"/>
+        <hasone entity="Company:LegalEntity:Counterparty"  title="Клиент"/>
+        <hasone entity="BusinessObject:Record:Polymorph"  title="Склад"/>
+        <hasone entity="Company:Structure:Companygroup"  title="Компания плательщик"/>
+        <field name="justification"  type="text"  title="Обоснования необходимости подписания договора"/>
+        <field name="tenderdoc"  type="string" title="Тендер, как обоснование выбора контрагента"/>
+        <field name="attachments"  type="tarray"  title="Вложения"/>  <!--multiple -->
+
+		<!--Договор на оказание регулярных услуг-->
+
+	        <field name="introduction"  type="richtext"  title="Преамбула"/>
+            <field name="wordsdefinition"  type="richtext"  title="Определение терминов и их толкование"/>
+            <field name="subjectofcontract"  type="richtext"  title="Предмет договора"/>
+            <field name="responsibilityofdoer"  type="richtext"  title="Ответственность исполнителя"/>
+            <field name="responsibility"  type="richtext"  title="Ответственность заказчика"/>
+            <field name="priceandterm"  type="richtext"  title="Цена и сроки оплаты"/>
+            <field name="propertyrights"  type="richtext"  title="Право собственности на продукцию"/>
+            <field name="insurance"  type="richtext"  title="Страхование"/>
+            <field name="accounting"  type="richtext"  title="Учет и возврат продукции"/>
+            <field name="trademarks"  type="richtext"  title="Товарные знаки и упаковка"/>
+            <field name="confidentiality"  type="richtext"  title="Конфиденциальность"/>
+            <field name="timeofcontract"  type="richtext"  title="Срок действия и прекращения"/>
+            <field name="forcemajeure"  type="richtext"  title="Форс-мажор"/>
+            <field name="refuce"  type="richtext"  title="Отказ"/>
+            <field name="concession"  type="richtext"  title="Успупка"/>
+            <field name="fullcontract"  type="richtext"  title="Полный договор"/>
+            <field name="language"  type="richtext"  title="Язык"/>
+            <field name="jurisdiction"  type="richtext"  title="Право, которое применяется и юрисдикция"/>
+            <field name="otherconditions"  type="richtext"  title="Другие условия"/>
+
+            <!--Реквизиты  Биокона и предприятия с которым подписывается договор  -->
+
+            <!-- <hasone entity="Company:LegalEntity:Counterparty" system="yes"  title="Клиент"/> -->
+            <hasone entity="Company:LegalEntity:Counterparty" as="owncomany" system="yes"  title="Клиент2"/>
+
+    </structure>
+
+    <lists>
+        <list name="contractapplication" entity="Document:ContractApplication:Universal" ns="1045" title="Приложения к Договору"/>
+        <list name="notifyusercompany" entity="Management:Post:Individual" ns="1047" title="Сотрудники компании для уведомления"/>
+        <list name="notifyusercounterparty" entity="People:Employee:Counterparty" ns="1047" title="Сотрудники контрагента для уведомления"/>
+    </lists>
+
+    <defaultorder>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+		<column selector="CompanyLegalEntityCounterparty"/>
+		<column selector="date"/>
+        <column selector="initiator"/>
+		<!-- <column selector="status"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

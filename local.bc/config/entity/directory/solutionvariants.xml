@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Directory:Solutionvariants:Simple" manager="Business" uid="92997">
+
+    <passport>
+        <title>Решение по риску</title>
+    </passport>
+
+    <states/>
+
+    <structure>
+
+        <hasone entity="Document:Protocol:KI" as="DocumentProtocolKI" title="Протокол по CAPA"/>
+        <hasone entity="Document:Correction:Capa" as="DocumentCorrectionCapa" title="Мероприятия по CAPA"/>
+
+        <field name="checkingresult" title="Результат проверки" type="set">
+            <value name="passed" title="Проверка пройдена успешно" />
+            <value name="yesbut" title="Проверка пройдена с замечаниями" />
+            <value name="fails" title="Проверка не пройдена" />
+        </field>
+
+        <field name="comment" title="Комментарий" type="text"/>
+    </structure>
+
+    <lists>
+        <!--<list name="responsible" entity="Management:Post:Individual" ns="921101" title="Ответственные лица"/>-->
+    </lists>
+
+
+    <defaultorder/>
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="title"/>
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes/>
+</entity>

@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity prototype="Document:Protocol:VT" code="VT" manager="Document" uid="5009">
+
+    <passport>
+        <title>Протокол валидационного исследования</title>
+    </passport>
+
+    <structure>
+
+        <hasone entity="BusinessObject:Record:Polymorph" system="yes" as="bo" title="Объект"/><!--БД Объекты/тип - оборудование-->
+        <hasone entity="Management:Post:Individual" system="yes" as="MateriallyResponsible" title="Материально-ответственный сотрудник"/>
+        <hasone entity="Management:Post:Individual" system="yes" as="ResponsibleMaintenance" title="Ответственный за техническое состояние, за ТО"/>
+        <hasone entity="Management:Post:Individual" system="yes" as="ResponsibleValidation" title="Ответственный за валидацию"/>
+        <hasone entity="BusinessObject:Record:Polymorph" system="yes" as="warehouse" title="№ Склада"/>
+        <hasone entity="Company:LegalEntity:Counterparty" system="yes" as="client" title="Клиент"/>
+        <hasone entity="Calendar:Period:Month" system="yes" title="Периодичность валидации"/>
+
+		<!-- Форма для заполнения-->
+		<hasone entity="BusinessObject:Record:Polymorph" as="scaleapplication" title="Масштаб применения"/>
+        <field name="industryscope" type="richtext" title="Отрасль применения"/>
+        <field name="serialnumber" type="string" title="Серийный номер"/>
+
+
+
+
+        <!--Ответственные лица-->
+        <!--	<field name="worktype" type="string" title="Характер работ"/> -->
+        <!--	<hasmany entity="Management:Post:Individual" title="2.Ответственные лица"/> -->
+        <!-- <hasmany entity="Directory:Responsibletwo:Simple"   title="Ответственные лица"/> -->
+
+        <field name="worktype" type="string" title="Характер работ"/>
+        <field name="normativebase" type="richtext" title="Нормативная база"/>
+
+
+
+		<!--Основные средства-->
+        <!-- 4.Материальная база-->
+        <!-- 4.1.Основнные средства-->
+		<field name="consecutivenumber" type="integer" system='yes' title="№"/>
+
+    <hasmany entity="Directory:Fixedasset:Simple" title="Основные средства"/>
+    <hasmany entity="Directory:Responsibletwo:Simple" title="Ответственное лицо"/>
+
+    <field name="numberequipment" type="string" title="Серийный номер"/>
+    <field name="specification" type="richtext" title="Технические характеристики"/>
+	<!--	<hasone entity="BusinessObject:Record:Polymorph" as="namebrandmodel" title="Название, марка, модель оборудования"/>
+
+		 -->
+
+
+        <field name="currentcheck" type="date" title="Текущая проверка"/><!--Новое-->
+
+		<field name="latestcheck" type="date" title="Проверка последняя"/>
+		<field name="nextcheck" type="date" title="Проверка следующая"/>
+
+		<field name="chemicals" type="richtext" title="4.2.Химические средства"/>
+		<field name="defabbr" type="richtext" title="5.Определения и сокращения"/>
+		<field name="masterpart" type="richtext" title="6.Основная часть"/>
+      <field name="attachments" type="tarray" title="Вложение"/>
+		<field name="finalrecommend" type="richtext" title="Конечные выводы / рекомендации"/>
+
+    </structure>
+
+    <lists>
+        <list name="equipment" entity="BusinessObject:Record:Polymorph" ns="30781" title="Список основных средств"/>
+        <!--<list name="ManagementPostIndividual" entity="Directory:Responsibletwo:Simple" ns="30782" title="Ответственное лицо"/>-->
+    </lists>
+
+
+    <defaultorder>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		<!-- <column selector="status"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

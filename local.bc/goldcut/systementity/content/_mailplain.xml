@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity manager="SystemData" prototype="Mail:Template:Plain" uid="122">
+  <passport>
+    <title>Mail Plain Text</title>
+  </passport>
+  <international>
+    <language code="ru"/>
+    <translations>
+      <language code="en"/>
+    </translations>
+  </international>
+  <states/>
+  <structure>
+    <field name="title" type="string" role="international" title="Заголовок"/>
+    <field name="uri" type="string" title="URI"/>
+    <field name="layout" type="string" title="Layout"/>
+    <field name="fromname" type="string" role="international" title="Email от имени"/>
+    <field name="fromemail" type="string" title="Email обратный адрес"/>
+    <field name="headerplain" type="text" role="international" title="Шапка письма"/>
+    <field name="contentplain" type="text" role="international" title="Контент письма  Кнопка [link http://*text] Заголовок [H text] Текст [TEXT text]"/>
+    <field name="footerplain" type="text" role="international" title="Футер письма"/>
+    <field name="specialplain" type="text" role="international" title="Special"/>
+  </structure>
+  <lists/>
+  <defaultorder>
+    <by field="title" order="ASC"/>
+  </defaultorder>
+  <admincolumns>
+    <column selector="title"/>
+    <column selector="uri"/>
+  </admincolumns>
+  <options>
+    <aparam name="directmanage" type="boolean" value="no"/>
+  </options>
+  <searchfields/>
+  <indexes>
+    <unique column="uri"/>
+  </indexes>
+</entity>

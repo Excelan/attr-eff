@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Directory:TextFragment:ForPrototypeField" manager="Business" uid="100500">
+
+    <passport>
+        <title>Автонаполнение полей</title>
+    </passport>
+
+    <states>
+
+    </states>
+
+    <structure>
+
+        <field name="title" type="string" title="Название"/>
+        <useone entity="Definition:Prototype:Document" as="DefinitionPrototypeDocument" title="ПРОТОТИП Документа" />
+
+
+        <field name="fieldname" type="string" title="Название поля"/>
+        <field name="fieldtext" type="richtext" title="Подставляемый текст" autoparagraph="yes" htmlallowed="p,br,a[href],cite,b,strong,i,em"/>
+
+        <field name="created" type="timestamp" title="Время создания" createDefault="now"/>
+        <field name="updated" type="timestamp" title="Время последнего изменения" disabled="yes" createDefault="now" updateDefault="now"/>
+        <field name="ordered" type="integer" title="Порядок" system="yes"/>
+
+    </structure>
+
+    <lists/>
+    <defaultorder/>
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="title"/>
+        <column selector="DefinitionPrototypeDocument"/>
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes/>
+</entity>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="Process" name="CreateTicketsForTesting">
+
+    <role>
+
+    </role>
+
+    <request>
+
+        <field name="user" type="urn" required="no"/>
+        <field name="mpeId" type="integer" required="yes"/>
+
+    </request>
+
+
+    <response>
+
+        <field name="status" type="integer" required="yes"/>
+
+    </response>
+
+</gate>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- CONTEXT BLOCK Заявка на закрепление/перезакрепление ОС, НМА в 1С-->
+
+        <section type="context" entity="Document:Claim:R_OQF" title="Заявка на закрепление/перезакрепление ОС, НМА в 1С">
+
+            <!--Обязательные поля для всех типов Заявок -->
+            <field name="companyproject" type="select" title="Текущий проект предприятия" edit="lock">
+                <query gate="Selector/directory/DirectoryBusinessProjectsItem"/>
+            </field>
+            <field name="CompanyLegalEntityCounterparty" type="CompanyLegalEntityCounterparty" title="Клиент, для которого создается заявка" edit="lock">
+                <query gate="Selector/company"  />
+            </field>
+            <field name="warehouse" type="BusinessObject" title="№ склада, для которого создается заявка" edit="lock">
+                <query gate="Selector/businessobject"  />
+            </field>
+            <field name="specialrequirement" type="text" title="Специальное требование" edit="lock"/>
+            <field name="attachments" type="attachment" multiple="yes" title="Вложение" edit="lock"/>
+
+            <!--Индивидуальные поля по каждому типу Заявок -->
+            <field name="codenumber" type="text" title="Номер кода/ Название расходного материала/ НМА/ ОС" edit="lock"/>
+            <field name="responsibleold" type="ManagementPostIndividual" title="ФИО текущего ответственного" edit="lock">
+                <query gate="Selector/management"/>
+            </field>
+            <field name="warehouseold" type="BusinessObject" title="Склад текущий" edit="lock">
+                <query gate="Selector/businessobject"/>
+            </field>
+            <field name="responsiblenew" type="ManagementPostIndividual" title="ФИО нового ответственного" edit="lock">
+                <query gate="Selector/management"/>
+            </field>
+            <field name="warehousenew" type="BusinessObject" title="Склад новый" edit="lock">
+                <query gate="Selector/businessobject"/>
+            </field>
+            <field name="descriptionneed" type="text" title="Описание необходимости" edit="lock"/>
+
+        </section>
+
+        <section type="context" title="Предложить один или более варианта решения">
+
+            <struct entity="Document:Solution:Universal" name="solutionvariants" multiple="yes" min="1" title="Вариант решения">
+
+                <field name="realizationtype" type="select" title="Тип реализации">
+                    <options>
+                        <option value="without_contractor_without_money" title="Без подрядчиков и покупки материалов"/>
+                        <option value="without_contractor_with_money" title="Без подрядчиков с покупкой материала"/>
+                        <option value="with_contractor_without_money" title="С подрядчиками без покупки материала"/>
+                        <option value="with_contractor_with_money" title="С подрядчиками с покупкой материала"/>
+                    </options>
+                </field>
+
+                <field name="realizationdate" type="date" title="Дата реализации"/>
+                <field name="cost" type="money" title="Оценочная стоимость"/>
+                <field name="description" type="text" title="Описание решения"/>
+                <field name="executor" type="ManagementPostIndividual" title="Исполнитель"/>
+
+            </struct>
+
+        </section>
+
+
+
+
+    </structure>
+
+</form>

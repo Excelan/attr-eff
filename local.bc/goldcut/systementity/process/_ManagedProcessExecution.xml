@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity manager="SystemData" prototype="ManagedProcess:Execution:Record" uid="123789">
+    <passport>
+        <title>Managed Process Execution</title>
+    </passport>
+    <states/>
+    <structure>
+        <field name="initiator" type="string" title="initiator"/>
+        <field name="prototype" type="string" title="PROTOTYPE"/>
+        <field name="returntopme" type="string" title="returntopme"/>
+        <field name="subject" type="string" title="subject"/>
+        <field name="metadata" type="json" title="metadata"/>
+        <field name="done" type="boolean" title="done"/>
+
+        <field name="noncancellable" type="boolean" title="Нельзя оменить процесс"/>
+
+        <field name="nextstage" type="string" title="nextstage"/>
+        <field name="currentstage" type="string" title="currentstage"/>
+
+        <field name="currentactor" type="string" title="currentactor"/>
+        <field name="currentactorgroup" type="tarray" title="currentactorgroup"/>
+        <hasmany entity="Feed:MPETicket:InboxItem" as="FeedMPETicketInboxItem" title="Feed:MPETicket:InboxItem"/>
+
+        <field name="created" type="hirestimestamp" title="Время создания"/>
+
+
+    </structure>
+
+    <lists>
+      <list name="pushadditionalactors" entity="People:Employee:Internal" ns="100002" title="Раздать тикеты"/>
+      <list name="popadditionalactors" entity="People:Employee:Internal" ns="100002" title="Забрать тикеты"/>
+    </lists>
+
+    <defaultorder>
+        <by field="created" order="DESC"/>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="prototype"/>
+        <column selector="id"/>
+        <column selector="done"/>
+        <column selector="currentstage"/>
+        <column selector="currentactor"/>
+        <column selector="subject"/>
+        <column selector="returntopme"/>
+        <column selector="initiator"/>
+        <column selector="metadata"/>
+    </admincolumns>
+
+    <options>
+        <aparam name="directmanage" type="boolean" value="yes"/>
+    </options>
+
+    <searchfields/>
+
+    <indexes>
+        <index column="prototype"/>
+        <index column="returntopme"/>
+        <index column="done"/>
+        <index column="currentactor"/>
+    </indexes>
+
+</entity>

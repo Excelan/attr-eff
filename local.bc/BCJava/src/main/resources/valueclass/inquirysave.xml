@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<root>
+
+    <!-- json parse from form http post JSON, build value class from json.getVal(), sql insert to db (q per db) -->
+    <!--                           manual instance  value class,                    sql insert to db (q per db) -->
+
+    <!-- simple field update fo o id -->
+</root>

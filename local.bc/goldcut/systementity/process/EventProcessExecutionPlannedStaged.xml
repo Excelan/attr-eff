@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Event:ProcessExecutionPlanned:Staged" manager="SystemData" uid="93131">
+
+    <passport>
+        <title>Event:ProcessExecutionPlanned:Staged</title>
+    </passport>
+
+    <states>
+        <status name="isdateset" default="no" title="Дата установлена"/>
+        <status name="ismpestarted" default="no" title="Процесс пошел"/>
+    </states>
+
+    <structure>
+        <belongsto entity="Management:Post:Individual" as="planningresponsible" title="Ответственный за планирование"/>
+        <belongsto entity="ManagedProcess:Execution:Record" as="ManagedProcessExecutionRecord" title="MPE"/>
+        <field name="eventyear" type="integer" title="Год ивента"/>
+        <field name="eventmonth" type="integer" title="Месяц ивента"/>
+        <field name="eventdate" type="date" title="Дата ивента"/>
+        <field name="subject" type="string" title="Subject"/>
+        <field name="processproto" type="string" title="Process Proto"/>
+        <field name="subjectproto" type="string" title="Subject Proto"/>
+        <field name="created" type="timestamp" title="Создан" createDefault="now"/>
+    </structure>
+
+    <lists>
+      <list name="participants" entity="Management:Post:Individual" ns="1831" reverse="takepartinevents" title="Участники"/>
+    </lists>
+
+    <defaultorder>
+        <by field="eventdate" order="DESC"/>
+        <by field="created" order="DESC"/>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="eventdate"/>
+        <column selector="eventyear"/>
+        <column selector="eventmonth"/>
+        <column selector="planningresponsible"/>
+        <column selector="subject"/>
+        <column selector="processproto"/>
+        <column selector="ManagedProcessExecutionRecord"/>
+    </admincolumns>
+    <options>
+      <aparam name="directmanage" type="boolean" value="no"/>
+    </options>
+    <searchfields/>
+    <indexes/>
+</entity>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Company:LegalEntity:Counterparty" manager="Business" uid="108">
+
+    <passport>
+        <title>Контрагент</title>
+    </passport>
+
+    <states>
+        <status name="isactive" default="yes" title="Действующий/проектный"/>
+        <status name="isself" default="no" title="Биокон"/>
+        <status name="isclient" default="no" title="клиент"/>
+        <status name="iscontractor" default="no" title="подрядчик"/>
+    </states>
+
+    <structure>
+
+        <field name="title" type="string" title="Название контрагента"/>
+        <hasone entity="Directory:KindOfOperations:Item" as="BusinessArea" title="Направление деятельности компании"/>
+
+        <!-- has many employee -->
+        <hasmany entity="People:Employee:Counterparty" title="Сотрудники контрагента"/>
+
+        <!--
+        <hasmany entity="BusinessObject:Record:Polymorph" as="BusinessObjectRecordPolymorph" title="Бизнес Объекты контрагента"/>
+        <hasone entity="BusinessObject:Record:Polymorph" title="Номер склада клиента"/>
+        -->
+
+        <useone entity="Management:Post:Individual" title="КСМ"/>
+        <field name="legaladdress" type="string" title="Юридический адрес"/>
+        <field name="ba" type="string" title="Расчетный счет"/>
+        <field name="mfo" type="string" title="МФО"/>
+        <field name="edropou" type="string" title="ЕДРОПОУ"/>
+        <field name="contactname" type="string" title="ФИО контактного лица"/>
+        <field name="mail" type="string" title="Электронный адрес контактного лица"/>
+        <field name="number" type="integer" title="Номер телефона контактного лица"/>
+        <field name="letter" type="string" title="Первая буква для нумерации договоров"/>
+        <field name="signatoryname" type="string" title="ФИО подписанта"/>
+        <field name="baseaction" type="string" title="Основание действия подписанта"/>
+        <field name="other" type="string" title="Другое"/>
+
+        <!--file upload Документы контрагента (свидетельства, лицензии)-->
+
+
+        <field name="created" type="timestamp" title="Время создания" createDefault="now"/>
+        <field name="updated" type="timestamp" title="Время последнего изменения" disabled="yes" createDefault="now" updateDefault="now"/>
+        <field name="ordered" type="integer" title="Порядок" system="yes"/>
+
+    </structure>
+
+    <lists>
+        <!--<list name="agreement" entity="agreement" ns="1081" title="Договора, которые заключены с контрагентом"/>-->
+    </lists>
+    <defaultorder/>
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="title"/>
+        <column selector="BusinessArea"/>
+		<column selector="edropou"/>
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes/>
+</entity>

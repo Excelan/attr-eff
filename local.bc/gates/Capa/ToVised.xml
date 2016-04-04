@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="Capa" name="ToVised">
+
+    <role>
+
+    </role>
+
+    <request>
+
+        <field name="user" type="integer" required="no"/>
+
+        <field name="urn" type="string" required="yes"/>
+
+        <field name="mpe" type="string" required="yes"/>
+
+        <field name="mpeid" type="string" required="yes"/>
+
+        <field name="ticketurn" type="string" required="yes"/>
+
+
+    </request>
+
+
+    <response>
+
+        <field name="status" type="integer" required="yes"/>
+        <field name="redirect" type="string" required="yes"/>
+
+    </response>
+
+</gate>

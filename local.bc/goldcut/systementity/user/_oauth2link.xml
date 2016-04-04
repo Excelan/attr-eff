@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity manager="SystemData" prototype="OAuth:Link:UserId" uid="99904">
+  <passport>
+    <title>Oauth2 Links</title>
+  </passport>
+  <states/>
+  <structure>
+    <hasone entity="Actor:User:System" as="ActorUserSystem"/>
+    <field name="userid64" type="string" title="userid64"/>
+    <field name="oauth2service" type="string" title="oauth name key (from config)"/>
+  </structure>
+  <lists/>
+  <defaultorder>
+    <by field="created" order="DESC"/>
+  </defaultorder>
+  <admincolumns/>
+  <options>
+    <aparam name="directmanage" type="boolean" value="no"/>
+  </options>
+  <searchfields/>
+  <indexes>
+    <index column="oauth2service"/>
+  </indexes>
+</entity>

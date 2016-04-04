@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="Html" name="getEventHtml">
+
+    <role>
+
+    </role>
+
+    <request>
+
+        <field name="user" type="integer" required="yes"/>
+        <field name="roles" type="iarray" required="no"/>
+
+    </request>
+
+
+    <response>
+
+        <field name="event_html" type="string" required="yes"/>
+
+    </response>
+
+</gate>

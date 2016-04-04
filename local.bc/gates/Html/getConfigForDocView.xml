@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="Html" name="getConfigForDocView">
+
+    <role>
+
+    </role>
+
+    <request>
+
+        <field name="user" type="integer" required="yes"/>
+        <field name="document_id" type="integer" required="yes"/>
+
+    </request>
+
+
+    <response>
+        //важно наличие ключа
+        <field name="view" type="integer" required="no"/> //Можно ли вообще показывать
+        <field name="editable" type="integer" required="no"/> //Можно ли реддактировать поля
+        <field name="coment" type="integer" required="no"/> //Можно ли коментировать пока не используется
+
+
+        <field name="bot" type="struct" required="no" >//Какие кнопки показывать внизу,
+            <field name="vise" type="integer" required="no"/>
+            <field name="aprove" type="integer" required="no"/>
+            <field name="return" type="integer" required="no"/>
+            <field name="sendtovise" type="integer" required="no"/>
+            <field name="save" type="integer" required="no"/>
+        </field>
+
+        //Важно наличие ключа
+        // 1- доступно редактирование, 0-редактирование не доступно
+        <field name="right" type="struct" required="no" >
+
+            <field name="infoblock" type="integer" required="no"/>//Подрузамевает разные даннные для разных ттипов, например для сопа, будет показываться блок с обучением
+            <field name="btncreatevirtualcopy" type="integer" required="no"/>
+            <field name="print" type="integer" required="no"/>
+            <field name="noncontrollcopyblock" type="integer" required="no"/>
+            <field name="realcopyblock" type="integer" required="no"/>
+            <field name="virtualcopyblock" type="integer" required="no"/>
+            <field name="educaationalblock" type="integer" required="no"/>
+            <field name="addrelativedocument" type="integer" required="no"/>
+            <field name="btarchive" type="integer" required="no"/>
+            <field name="fileupload" type="integer" required="no"/>
+            <field name="btncreatechildren" type="integer" required="no"/>
+            <field name="btncreatenewversion" type="integer" required="no"/>
+
+        </field>
+
+    </response>
+
+</gate>
+
+<!--<field name="docstatus" type="integer" required="no"/>
+<field name="create" type="integer" required="no"/>
+<field name="print" type="integer" required="no"/>
+<field name="docid" type="integer" required="no"/>
+<field name="autor" type="integer" required="no"/>
+<field name="virtualcopy" type="integer" required="no"/>
+<field name="realcopy" type="integer" required="no"/>
+<field name="noncontrollcopy" type="integer" required="no"/>
+<field name="educaational" type="integer" required="no"/>
+<field name="teacher" type="integer" required="no"/>
+<field name="postypeforeducational" type="integer" required="no"/>
+<field name="parentdocument" type="integer" required="no"/>
+<field name="relativedocument" type="integer" required="no"/>
+<field name="visants" type="integer" required="no"/>
+<field name="approver" type="integer" required="no"/>
+<field name="btnrealcopy" type="integer" required="no"/>
+<field name="btnvirtualcopy" type="integer" required="no"/>
+<field name="btnnoncontrollcopy" type="integer" required="no"/>
+<field name="btlistrealcopy" type="integer" required="no"/>
+<field name="btlistvirtualcopy" type="integer" required="no"/>
+<field name="btlistnoncontrollcopy" type="integer" required="no"/>
+<field name="btarchive" type="integer" required="no"/>
+<field name="fileupload" type="integer" required="no"/>
+<field name="btnchildrens" type="integer" required="no"/>
+<field name="btncreatenewversion" type="integer" required="no"/>
+ -->

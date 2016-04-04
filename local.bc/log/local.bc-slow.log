@@ -1,0 +1,14 @@
+[.] 02/04 22:52:24	{"action":"load","urn":"urn:ManagedProcess:Journal:Record","subject":"urn:Document:Capa:Deviation:882868313","lang":false}	(::widget_journal) 24:/widgets/journal.php
+[.] 02/04 22:52:24	{ManagedProcess:Journal:Record} [count: 16]	(::widget_journal) 25:/widgets/journal.php
+[.] 02/04 22:52:39	{"action":"load","urn":"urn:ManagedProcess:Journal:Record","subject":"urn:Document:Capa:Deviation:882868313","lang":false}	(::widget_journal) 24:/widgets/journal.php
+[.] 02/04 22:52:39	{ManagedProcess:Journal:Record} [count: 16]	(::widget_journal) 25:/widgets/journal.php
+[.] 02/04 22:52:44	{"action":"load","urn":"urn:ManagedProcess:Journal:Record","subject":"urn:Document:Capa:Deviation:882868313","lang":false}	(::widget_journal) 24:/widgets/journal.php
+[.] 02/04 22:52:44	{ManagedProcess:Journal:Record} [count: 16]	(::widget_journal) 25:/widgets/journal.php
+[.] 02/04 22:53:42	{"action":"load","urn":"urn:ManagedProcess:Journal:Record","subject":"urn:Document:Claim:R_LSC:856070659","lang":false}	(::widget_journal) 24:/widgets/journal.php
+[.] 02/04 22:53:42	{ManagedProcess:Journal:Record} [count: 3]	(::widget_journal) 25:/widgets/journal.php
+[.] 04/04 12:40:23	{"action":"load","urn":"urn:ManagedProcess:Journal:Record","subject":"urn:Document:Capa:Deviation:882868313","lang":false}	(::widget_journal) 24:/widgets/journal.php
+[.] 04/04 12:40:23	{ManagedProcess:Journal:Record} [count: 16]	(::widget_journal) 25:/widgets/journal.php
+[.] 04/04 12:40:51	{"action":"load","urn":"urn:ManagedProcess:Journal:Record","subject":"urn:Document:Claim:R_LSC:856070659","lang":false}	(::widget_journal) 24:/widgets/journal.php
+[.] 04/04 12:40:52	{ManagedProcess:Journal:Record} [count: 5]	(::widget_journal) 25:/widgets/journal.php
+[.] 04/04 12:42:31	{"action":"load","urn":"urn:ManagedProcess:Journal:Record","subject":"urn:Document:Claim:R_LST:721500112","lang":false}	(::widget_journal) 24:/widgets/journal.php
+[.] 04/04 12:42:31	{ManagedProcess:Journal:Record} [count: 3]	(::widget_journal) 25:/widgets/journal.php

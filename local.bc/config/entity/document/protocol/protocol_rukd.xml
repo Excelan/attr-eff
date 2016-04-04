@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity prototype="Document:Protocol:RUKD" code="RUKD" manager="Document" uid="500912">
+
+    <passport>
+        <title>Протокол выдачи/изъятия УКД</title>
+    </passport>
+
+    <structure>
+
+        <useone entity="Document:Regulations:SOP" as="Document:Regulations:SOP" title="Копия какого SOP документа"/>
+        <field name="version" type="integer" title="SOP Version" />
+
+        <hasmany entity="DMS:Copy:Controled" title="Реальная контролируемая копия (УКД)"/>
+        <field name="printarchive" type="string" title="Файл (архив с PDF) для печати"/>
+
+        <field name="eventdate" type="date" title="Плановая дата проведения"/>
+        <hasone entity="Management:Post:Individual" system="yes" as="master" title="Проводящий процедуру"/>
+
+        <!-- <field name="plannedreceivers" type="tarray" title="Получатели" /> -->
+        <hasmany entity="Directory:UKDState:IssueRecord" title="Проведение операции для сотрудника"/>
+
+    </structure>
+
+    <lists>
+      <list name="plannedreceivers" entity="Management:Post:Individual" ns="1198" title="Получатели"/>
+    </lists>
+
+
+    <defaultorder>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		<!-- <column selector="status"/> -->
+    </admincolumns>
+
+    <indexes>
+        <!-- <index column=""/> -->
+    </indexes>
+
+</entity>

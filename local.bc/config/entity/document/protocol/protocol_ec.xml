@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity prototype="Document:Protocol:EC" code="EC" manager="Document" uid="5003">
+
+    <passport>
+        <title>Протокол проверки</title>
+    </passport>
+
+    <structure>
+
+		<!--Поля, которые отображаются (выдаются системой), но не редактируются -->
+        <field name="date" type="date" title="Дата проверки"/>
+        <field name="datep" type="date" title="Дата предыдущей проверки"/>
+
+		<!-- Форма для заполнения-->
+		<hasone entity="Management:Post:Individual" as="commisionhead" title="Глава комиссии"/>
+		<!--<hasone entity="Management:Post:Individual" as="commisionmembers" title="Участники комиссии"/>-->
+		<field name="results" type="richtext" title="Результаты проведенной проверки"/>
+        <field name="attachments" type="tarray" title="Вложения"/>
+
+
+
+    </structure>
+
+    <lists>
+        <list name="commisionmembers" entity="Management:Post:Individual" ns="30123" title="Участники комиссии"/>
+        <list name="boprocedure" entity="BusinessObject:Record:Polymorph" ns="30114" title="Объект проверки"/>
+    </lists>
+
+    <defaultorder/>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		<!-- <column selector="status"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

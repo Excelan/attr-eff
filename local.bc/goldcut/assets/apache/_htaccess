@@ -1,0 +1,14 @@
+Options +Indexes -MultiViews
+#ErrorDocument 404 /index.php
+#DirectorySlash off
+
+# if nginx used dont use f exists checks 
+
+<IfModule mod_rewrite.c>
+  RewriteEngine on
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteCond %{REQUEST_URI} !=/favicon.ico
+  RewriteCond %{REQUEST_URI} !^(.+)\.(jpg|jpeg|png|gif)$
+  RewriteRule ^(.*)$ /goldcut/webrouter.php?uri=$1 [L,QSA]
+</IfModule>

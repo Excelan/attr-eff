@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Directory:KindOfOperations:Item" manager="Business" uid="100">
+
+    <passport>
+        <title>Направление деятельности</title>
+    </passport>
+
+    <states>
+
+    </states>
+
+    <structure>
+
+        <field name="title" type="string" title="Название направления деятельности компании"/>
+
+        <field name="created" type="timestamp" title="Время создания" createDefault="now"/>
+        <field name="updated" type="timestamp" title="Время последнего изменения" disabled="yes" createDefault="now" updateDefault="now"/>
+        <field name="ordered" type="integer" title="Порядок" system="yes"/>
+
+    </structure>
+
+    <lists/>
+    <defaultorder/>
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="title"/>
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes/>
+</entity>

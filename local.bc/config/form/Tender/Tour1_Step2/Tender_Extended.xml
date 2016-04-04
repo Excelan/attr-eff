@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- Тендер ТУР 1 шаг 2-->
+
+        <section entity="Document:Tender:Extended" name="tendercondition"  type="context" title="Информация по тендеру">
+
+            <field name="title" title="Название тендера" type="string"/>
+            <field name="attachment" type="string" title="Детальный свод предложений" />
+            <field name="docpermitsneed" title="Требуемая разрешительная документация" type="text"/>
+
+        </section>
+
+
+        <section entity="Document:Tender:Extended" multiple="yes" title="Участники Тендера" type="context">
+
+                <struct multiple="yes" name="DirectoryTenderBidderSimple" title="Участник Тендера" >
+                    <field edit="unlock" type="hidden" name="urn"/>
+                    <field name="CompanyLegalEntityCounterparty" type="CompanyLegalEntityCounterparty" title="Участник">
+                        <query gate="Selector/counterparty"  />
+                    </field>
+                    <field name="docpermitsneed" type="attachment" multiple="yes" title="Требуемая разрешительная документация"/>
+                    <field name="commercialoffer" type="attachment" title="Коммерческое предложение"/>
+
+
+                    <field edit="unlock" name="techvalidation" type="radio" title="Отметка соответствия условиям ТЗ">
+                        <options>
+                            <option value="yes" title="Да" />
+                            <option value="no" title="Нет" />
+                            <option value="clarification" title="Требует уточнения" />
+                        </options>
+                    </field>
+                    <field edit="unlock" name="techvalidationcomment" type="text" title="Комментарий несоответствия или уточнения" />
+
+            </struct>
+
+        </section>
+
+    </structure>
+
+</form>

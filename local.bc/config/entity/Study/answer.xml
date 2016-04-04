@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Study:RegulationStudy:A" manager="System" code="AA" uid="6010">
+
+    <passport>
+        <title>Ответы</title>
+    </passport>
+
+    <states>
+
+    </states>
+
+    <structure>
+
+        <useone entity="Study:RegulationStudy:Q" as="StudyRegulationStudyQ" title="Вопрос"/>
+        <field name="content" type="text" title="Ответ" />
+
+        <field name="correctly" type="set" title="Верно">
+            <value name="yes" title="Да" />
+            <value name="no" title="Нет" />
+        </field>
+
+        <field name="ordered" type="integer" title="Порядок" system="yes"/>
+        <field name="created" type="timestamp" title="Время создания" createDefault="now"/>
+        <field name="updated" type="timestamp" title="Время последнего изменения" disabled="yes" createDefault="now" updateDefault="now"/>
+
+    </structure>
+    <lists/>
+
+    <parameters />
+
+    <defaultorder>
+        <by field="title" order="ASC"/>
+    </defaultorder>
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="content"/>
+        <column selector="correctly"/>
+        <column selector="Study:RegulationStudy:Q"/>
+
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes/>
+
+
+</entity>

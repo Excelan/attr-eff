@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Definition:Domain:System" manager="SystemData" uid="9327000">
+
+  <passport>
+    <title>DOMAIN</title>
+  </passport>
+
+  <states>
+
+  </states>
+
+  <structure>
+
+    <field name="title" type="string" title="Имя"/>
+
+    <hasmany entity="Definition:Prototype:System" as="DefinitionPrototypeSystem" title="Прототипы"/>
+
+    <hasmany entity="Definition:ProcessModel:System" as="DefinitionProcessModelSystem" title="Модели Процессов"/>
+
+  </structure>
+
+  <defaultorder>
+    <by field="title" order="ASC"/>
+  </defaultorder>
+
+  <admincolumns>
+    <column selector="title"/>
+  </admincolumns>
+  <options>
+    <aparam name="clonable" value="yes" />
+  </options>
+  <searchfields/>
+  <indexes>
+    <unique column="title"/>
+  </indexes>
+</entity>

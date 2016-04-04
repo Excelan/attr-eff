@@ -1,0 +1,22 @@
+
+\usepackage[a4paper, portrait, margin=1in, hmargin=2cm, top=2cm, bottom=4cm, headheight=3cm, footskip=2.5cm]{geometry} % формат бумаги и отступы showframe
+
+
+\pagestyle{fancy}
+%\fancypagestyle{maintext}
+
+\newcounter{example}[section]
+\newenvironment{example}[1][]{\refstepcounter{example}\par\medskip
+   \textbf{Приложение~\theexample #1} \rmfamily}{\medskip}
+
+	 \fancypagestyle{dodatki}
+    {
+    	\fancyhead{}
+     \fancyhf{}
+       \fancyhead[R]{
+    	\begin{example}
+    	 .
+    	\end{example}
+       \renewcommand{\headsep}{40pt}
+    }
+    }

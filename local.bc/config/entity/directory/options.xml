@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Directory:Options:Simple" manager="Business" uid="92112">
+
+    <passport>
+        <title>Параметры</title>
+    </passport>
+
+    <states/>
+
+    <structure>
+
+        <belongsto entity="Document:Regulations:PV" title="Программа валидационного исследования"/>
+
+        <field name="titleparametr"  type="string"  title="Название параметра"/>
+        <field name="descriptionmethodic"  type="richtext"  title="Описание методики испытания и последующей оценки полученных результатов"/>
+
+    </structure>
+
+    <lists/>
+    <defaultorder/>
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="title"/>
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes/>
+</entity>

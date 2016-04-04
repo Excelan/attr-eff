@@ -1,0 +1,103 @@
+\input{../templates/DMS}
+
+\usepackage{ifthen}
+
+{{=<% %>=}}
+\newcommand{\actual}{<%actual%>}
+<%={{ }}=%>
+
+%приказ на принятие на работу
+%You can answer using \CheckedBox\ or \XBox, but don't leave it empty!
+
+{{=<% %>=}}
+\newcommand{\varId}{<% code %>}
+%\newcommand{\job}{<% jobtype %>}
+<%={{ }}=%>
+
+
+
+
+{{graphicspath}}
+
+\begin{document}
+\thispagestyle{empty}
+
+
+
+
+\begin{flushright}
+{ {\textsc{Типова форма N П-1}}} \\
+{ {\textsc{ЗАТВЕРДЖЕННО}}} \\
+{ \textbf{\underline{Товариство з обмеженою відповідальністю "ХФК"Біокон"}} \hfill \textsc{наказом Держкостату України}}} \\
+{ Найменування підприємства(установи, організації) \hfill \textsc{від 5 грудня 2008 р. N 489}}} \\
+\end{flushright}
+
+
+\hspace{1mm}
+
+\begin{center}
+{\large \textbf{\textsc{Наказ (розпорядження) № \varId{}  від  {{date}}  }}} \\
+{\large \textbf{\textsc{ про прийняття на роботу}}} \\
+\end{center}
+
+\begin{center}
+$\stackrel{\hbox{\large{\textsc{  \underline{  {{employeename}}   }}}}}{\hbox{(прізвище,ім'я, по батькові)}}$ \
+\end{center}
+
+
+\noindent
+\begin{tabular}[t]{@{}r}
+Прийняти на роботу з \underline{ {{date}} } \\
+ до \underline{ {{dateend}}  }
+\end{tabular} \hfill
+\begin{tabular}[t]{ | l |  }\firsthline
+    Табельний номер \\  \hline
+    0000000000000  \\  \hline
+\end{tabular}
+
+\vspace{1mm}
+
+\begin{center}
+\stackrel{\hbox{\large{\textsc{  \underline{  {{#CompanyStructureDepartment}} {{title}} {{/CompanyStructureDepartment}}   }}}}}{\hbox{(назва структурного підрозділу)}} \\
+\stackrel{\hbox{\large{\textsc{  \underline{  {{#ManagementPostGroup}} {{title}} {{/ManagementPostGroup}}     }}}}}{\hbox{(назва професії (посади), кваліфікація)}} \\
+\end{center}
+
+\vspace{1mm}
+
+\begin{tabularx}{\textwidth}{ X X }
+
+\textbf{Умови прийняття на роботу:}  & \textbf{Умови роботи:} \\
+(необхідне відмітити позначкою "х"): & (необхідне відмітити позначкою "х"): \\
+\Square\ на конкурсній основі & робота: \ifthenelse{\equal{\actual}{mainplace}}{основне мiсце роботи}{за сумiсництвом} \\
+\Square\ за умовами контракту до {{dateend}} &умови праці (згідно атестації робочого місця): \\
+у разі необхідності вказати дату (дд.мм.рррр.) &  \\
+\Square\ зі строком випробування {{dateterm}}  місяць &  \rule{6cm}{0.5pt} \\
+\Square\ на час виконання певної роботи  & \Square\ тривалість робочого дня (тижня) {{long}}   \\
+\Square\ на період відсутності основного працівника & \Square\ тривалість робочого дня (тижня) при роботі з неповним робочим часом \rule{3cm}{0.5pt} \\
+\Square\ із кадрового резерву &    \\
+\Square\ за результатами успішного стажування & \Square\ \rule{6cm}{0.5pt} \\
+\Square\ переведення & \Square\ \rule{6cm}{0.5pt} \\
+%\rule{8cm}{0.5pt} & \rule{8cm}{0.5pt} \\
+\end{tabularx}
+
+
+\vspace{1mm}
+
+\begin{center}
+оклад (тарифна ставка): {{salary}} \\
+надбавка:   {{moremoney}}  \\
+%надбавка  \rule{2cm}{0.5pt} {{moremoney}}  \\
+%\hfill надбавка  \rule{2cm}{0.5pt}  \\
+% надбавка  \rule{2cm}{0.5pt}  \hfill надбавка \rule{2cm}{0.5pt} \\
+доплата: {{evenmoremoney}} \\
+\end{center}
+
+\vspace{1mm}
+%\nopagebreak
+
+$\stackrel{\hbox{\noindent \underline{Керівник підприємства} }}{\hbox{\small{(посада)}}}$  \hspace{3.2cm} $\stackrel{\hbox{\rule{4cm}{0.5pt} }}{\hbox{\small{(підпис)}}}$\hfill  $\stackrel{\hbox{\underline{Павлова В.В.}}}{\hbox{(Ф.І.О.)}}$\\
+$\stackrel{\hbox{\noindent \underline{З наказом ознайомлений} }}{\hbox{\small{}}}$  \hspace{3.2cm} $\stackrel{\hbox{\rule{4cm}{0.5pt} }}{\hbox{\small{(підпис)}}}$\hfill  $\stackrel{\hbox{\underline{ {{date}} }}}{\hbox{ (дата)}}$\\
+
+%\nopagebreak
+
+\end{document}

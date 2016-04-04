@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- САРА шаг2 - назначение ответственного за контроль мероприятий -->
+
+        <!-- Контекст - Отклонения -->
+        <section entity="Document:Capa:Deviation" title="Отклонение" type="context">
+
+            <field edit="lock" name="descriptiondeviation" title="Описание отклонения" type="text"/>
+
+        </section>
+
+        <!-- Контекст - Риски -->
+        <section title="Риски" type="context">
+            <field edit="lock" multiple="yes" name="RiskManagementRiskApproved" title="Идентифицированный риск" type="RiskManagementRiskApproved"/>
+            <struct entity="RiskManagement:Risk:NotApproved" name="RiskManagementRiskNotApproved" multiple="yes" title="Не идентифицированный риск">
+                <field name="urn" type="hidden"/>
+                <field name="riskdescription" title="Описание не идентифицированного риска" type="text"/>
+                <field name="BusinessObjectRecordPolymorph" title="Объект, в котором появился этот риск" type="BusinessObject">
+                    <query gate="Selector/businessobject"/>
+                </field>
+                <field name="DirectoryBusinessProcessItem" title="Процесс, в котором появился этот риск" type="select">
+                    <query gate="Selector/directory/DirectoryBusinessProcessItem"/>
+                </field>
+            </struct>
+        </section>
+
+        <!-- Контекст - Мероприятие -->
+
+        <section entity="Document:Correction:Capa" type="context" title="Корректирующие мероприятия по устранению отклонения">
+            <struct multiple="yes" name="DocumentCorrectionCapa" title="Корректирующее мероприятие">
+                <field name="urn" type="hidden" edit="unlock"/>
+                <field name="descriptioncorrection" title="Описание Мероприятия" type="text"/>
+                <!--<field name="CompanyStructureDepartment" title="Ответственный департамент" type="select">-->
+                    <!--<query gate="Selector/company/structure/CompanyStructureDepartment"/>-->
+                <!--</field>-->
+                <field name="eventplace" title="Место проведения мероприятия" type="BusinessObject">
+                    <!-- <query gate="Selector/businessobject"/> -->
+                </field>
+                <!-- Решение по контролю мероприятия -->
+                <field name="controlresponsible" edit="unlock" title="Ответственный за контроль" type="ManagementPostIndividual"/>
+                <field name="realizationtype" edit="unlock" title="Подтверждение / выбор Ответственного" type="select">
+                    <options>
+                        <option value="myself" title="Принять, моя сфера ответственности"/>
+                        <option value="myrespwilldelegateordo" title="Делегировать на своего подчиненного"/>
+                        <option value="notmyresp" title="Отклонить, Не моя сфера ответственности"/>
+                    </options>
+                </field>
+                <field edit="unlock" name="comment" title="Причина отклонения (если не моя сфера)" type="text"/>
+            </struct>
+        </section>
+
+    </structure>
+</form>

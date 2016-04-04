@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<entity prototype="Document:Regulations:ASR" code="ASR" manager="Document" uid="600712">
+
+    <passport>
+        <title>Результаты аттестации (итерации-сессии)</title>
+    </passport>
+
+    <structure>
+
+        <useone entity="Document:Regulations:SOP" as="DocumentRegulationsSOP"  title="@ SOP"/>
+        <useone entity="Document:Regulations:TA" as="DocumentRegulationsTA"  title="@ TA"/>
+
+        <hasmany entity="Study:RegulationStudy:R" as='StudyRegulationStudyR' title="Индивидуальные результаты"/>
+
+        <field name="planneddate" type="date" title="Запланированная дата аттестации" />
+        <field name="realeventdate" type="date" title="Фактическая дата аттестации" />
+
+        <field name="plannedattendees" type="tarray" title="Кто должен пройти в этой сессии" />
+        <field name="notpassed" type="tarray" title="Кто не проходил из запланированных" />
+        <field name="successpassed" type="tarray" title="Кто успешно прошел" />
+        <field name="failedpassed" type="tarray" title="Кто не прошел из пытавшихся" />
+
+    </structure>
+
+    <lists>
+        <!-- <list name="plannedattendees" entity="Management:Post:Individual" ns="3011200" title="Кто должен пройти в этой сессии"/> -->
+        <!-- <list name="notpassed" entity="Management:Post:Individual" ns="3011201" title="Кто не проходил из запланированных"/> -->
+        <!-- <list name="successpassed" entity="Management:Post:Individual" ns="3011202" title="Кто успешно прошел"/> -->
+        <!-- <list name="failedpassed" entity="Management:Post:Individual" ns="3011203" title="Кто не прошел из пытавшихся"/> -->
+    </lists>
+
+    <defaultorder>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="DocumentRegulationsSOP"/>
+        <column selector="DocumentRegulationsTA"/>
+        <column selector="planneddate"/>
+        <column selector="realeventdate"/>
+        <column selector="successpassed"/>
+    </admincolumns>
+
+    <indexes>
+        <index column="planneddate"/>
+    </indexes>
+
+</entity>

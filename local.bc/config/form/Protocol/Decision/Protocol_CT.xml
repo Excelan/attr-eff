@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- ПРОТОКОЛ КАЛИБРОВКИ<-->
+        <section type="context" title="Метаинформация по Протоколу Калибровки">
+
+          <struct name="CONTEXT_BusinessObjectRecordPolymorph" anonymous="yes" entity="BusinessObject:Record:Polymorph">
+
+            <field name="bo" type="BusinessObject"  title="Объект"/>
+            <field name="serialnumber" type="string" title="Cерийный номер"/>
+            <field name="description" type="text" title="Описание и характеристики объекта"/>
+            <field name="currentproperties" type="text" title="Текущие свойства объекта"/>
+            <field name="MateriallyResponsible" type="ManagementPostIndividual"  title="Материально-ответственный сотрудник"/>
+            <field name="ResponsibleMaintenance"  type="ManagementPostIndividual"  title="Ответственный за техническое состояние и за техническое обслуживание"/>
+            <field name="ResponsibleCalibration"  type="ManagementPostIndividual"  title="Ответственный за калибровку"/>
+            <field name="location" type="BusinessObject"  title="№ Склада"/>
+            <field name="boofclient" type="CompanyLegalEntityCounterparty"  title="Клиент"/>
+            <field name="periodicitycalibration" type="select"  title="Периодичность калибровки">
+                <query gate="Selector/calendar/CalendarPeriodMonth"/>
+            </field>
+
+          </struct>
+
+        </section>
+
+        <section type="context" entity="Document:Protocol:CT" title="Форма для заполнения Протокола Калибровки">
+
+            <field name="date" type="date" title="Дата проведения калибровки"/>
+            <field name="datep" type="date" title="Дата предыдущей калибровки"/>
+            <field name="contractforcalibration" type="Document" title="Договор на проведение калибровки"/>
+            <field name="relateddocuments" type="Document" multiple="yes" title="Связанные документы"/>
+            <field name="results" type="text" title="Результаты проведения калибровки"/>
+            <field name="upload" type="attachment" multiple="yes" title="Вложения"/>
+
+        </section>
+
+    </structure>
+
+</form>

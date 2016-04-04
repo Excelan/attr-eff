@@ -1,0 +1,12 @@
+../envdevelopment.ini
+../envproduction.ini
+
+[DATABASES]
+RDBMS = PostgreSQL
+
+[DATABASE]
+HOST = localhost
+USER =
+PASSWORD =
+DBNAME =
+REDISDBID =

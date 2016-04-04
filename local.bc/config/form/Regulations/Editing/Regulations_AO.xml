@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+  <structure>
+
+    <!-- Приказ -->
+
+    <section entity="Document:Regulations:AO" title="Приказ">
+
+      <field name="title" title="Название приказа" type="string"/>
+
+      <field name="scaleapplication" type="BusinessObject" title="Масштаб применения"/>
+      <field name="effectivedate" type="date" title="Дата введения в действие"/>
+      <field name="target" type="richtext" title="Цель"/>
+      <field name="userprocedure" type="ManagementPostIndividual" multiple="yes" min="1" title="Участник процедуры">
+        <query gate="Selector/management"/>
+      </field>
+
+      <field name="preamble" title="Преамбула" type="richtext"/>
+      <!-- Приказываю -->
+      <field name="textorder" type="richtext" title="Пункт приказа (текст)"/>
+
+    </section>
+
+  </structure>
+
+</form>

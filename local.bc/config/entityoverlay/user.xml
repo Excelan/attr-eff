@@ -1,0 +1,18 @@
+<?xml version='1.0' standalone='yes'?>
+
+<entity prototype="Actor:User:System">
+
+    <states>
+        <!--<status name="active2" default="no" title="NEWACT" />-->
+    </states>
+
+    <structure>
+        <!--<field name="complain" type="integer" default="0" title="Число жалоб" usereditable="yes"/>-->
+        <!--<hasone entity="routes" />-->
+        <!-- <field name="ordered" type="integer"  title="ORDERED"/> -->
+    </structure>
+
+
+
+
+</entity>

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <!--Инструкция -->
+
+        <structure>
+            <section type="context" entity="Document:Regulations:I" title="Метаинформация Инструкции">
+                <field name="title" type="string" title="Название документа"/>
+                <field name="fileprocessattachment" type="attachment"  title="Блок-схема бизнес-процесса"/>
+                <field name="attachments" type="attachment" multiple="yes" title="Вложения"/>
+
+                <field name="DirectoryBusinessProcessItem" type="select" title="Процесс">
+                    <query gate="Selector/directory/DirectoryBusinessProcessItem"  />
+                </field>
+                <field name="scaleapplication" type="BusinessObject" title="Масштаб применения"/>
+
+                <field name="effectivedate" type="date" title="Дата введения в действие"/>
+                <field name="CalendarPeriodMonth" type="select" title="Срок действия">
+                    <query gate="Selector/calendar/CalendarPeriodMonth"/>
+                </field>
+                <!-- <field name="enddate" type="date" system="yes" title="Конечная дата действия"/>-->  <!-- Выводить на этапе визирования-->
+
+                <field name="boprocedure" type="BusinessObject" multiple="yes" min="1" title="Объект процедуры"/>
+                <field name="userprocedure" type="ManagementPostIndividual" multiple="yes" min="1" title="Участник процедуры">
+                    <query gate="Selector/management"  />
+                </field>
+
+            </section>
+
+            <section type="context" entity="Document:Regulations:I" title="Основная часть Инструкции">
+                <field name="target" type="richtext" title="Цель"/>
+                <field name="realmuse" type="richtext" title="Область применения"/>
+                <field name="response" type="richtext" title="Ответственность и полномочия"/>
+                <field name="resource" type="richtext" title="Материалы и оборудование (ресурсы)"/>
+                <field name="procedure" type="richtext" title="Процедура"/>
+
+                <struct entity="Directory:AdditionalSection:Simple" name="DirectoryAdditionalSectionSimple" multiple="yes" title="Дополнительный раздел">
+
+                    <field name="sectiontitle" type="string" title="Заголовок дополнительного раздела"/>
+                    <field name="sectiontext" type="richtext" title="Текст дополнительного раздела"/>
+
+                </struct>
+
+                <field name="report" type="richtext" title="Отчет"/>
+                <field name="docforlink" type="richtext" title="Документы для ссылок"/>
+            </section>
+
+        </structure>
+
+</form>

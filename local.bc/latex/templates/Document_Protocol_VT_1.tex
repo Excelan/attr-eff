@@ -1,0 +1,64 @@
+\input{../templates/DMS}
+%\input{../templates/DMS_Capa}
+
+{{graphicspath}}
+
+\newcommand{\ValueDocumentNumber}{123}
+%\newcommand{\ValuePlace}{с. Б. Александровка}
+%\newcommand{\ValueDate}{1 февряля 2016 года}
+
+\renewcommand{\headrulewidth}{0.2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\begin{document}
+
+%\pagestyle{maintext}
+
+\begin{center}
+{\large \textbf{\textsc{Корректирующие и предупреждающие действия (САРА) № \ValueDocumentNumber}}}
+\end{center}
+
+%\begin{tabularx}{\textwidth}{ X rX }
+%\ValuePlace & \ValueDate \\
+%\end{tabularx}
+
+
+%Таблица - Отклонение & Риски
+{\small \begin{center}
+\tabulinesep=2mm
+\begin{tabu} to \textwidth {X X}
+\hline
+& \\
+\textbf{Выявленное отклонение:} & {{descriptiondeviation}} \\
+
+\textbf{Риски:} & \textbf{Отметка об уровне критичности риска:} \\
+{{=<% %>=}}
+ <%  RiskManagementRiskApproved %> & 10\\
+<%={{ }}=%>
+
+\end{tabu}
+\end{center}
+}
+
+
+%Таблица - Мероприятия
+{\small \begin{center}
+\tabulinesep=2mm
+\begin{longtabu} to \textwidth { X[1,l,p] X[0.25,l,p]  X[0.25,l,p]  X[0.25,l,p]  X[0.25,l,p]  X[0.25,l,p] }  % {|X|X|X|}
+\hline\hline
+\textbf{Описание корректирующих мероприятий} & \textbf{Место проведения мероприятия} & \textbf{Ответственный за проведение мероприятия}  & \textbf{Плановая дата реализации} & \textbf{Фактическая дата реализации}  & \textbf{Статус реализации}   \\ \hline
+\endfirsthead
+%\endhead
+\hline
+\endfoot
+\caption{Table title 2.}
+\endlastfoot
+{{=<% %>=}}
+<% descriptioncorrection %>  & <% eventplace %> & <% controlresponsible %> & <% eventtime %> & <% eventtime %> & <% matches %> \\ \hline
+<%={{ }}=%>
+
+\end{longtabu}
+\end{center}
+}
+
+\end{document}

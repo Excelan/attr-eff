@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="DMS" name="SetDocumentState">
+
+    <role>
+
+    </role>
+
+    <request>
+
+        <field name="user" type="string" required="no"/>
+        <field name="state" type="string" required="yes"/>
+        <field name="urn" type="string" required="yes"/>
+
+    </request>
+
+
+    <response>
+
+        <field name="status" type="integer" required="yes"/>
+
+    </response>
+
+</gate>

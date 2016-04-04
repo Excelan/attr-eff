@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>GOLDCUT FileAPI, XHR2 ajax file uploading</title>
+
+    <script type="text/javascript" src="/goldcut/js/gcdom.js"></script>
+    <script type="text/javascript" src="/goldcut/js/fapi.js"></script>
+    <script>
+
+        DETECT_FACES = false;
+
+        onAllUploadedLocal = function(data)
+        {
+            console.log('all uploaded local');
+            console.log(data);
+            id('preview').src = data[0].thumbnail.uri;
+            console.log("Uploaded " + data.length + " files. First size is " + data[0].filesize);
+        }
+
+        function showUploadOverlay()
+        {
+            console.log('start')
+        }
+        function hideUploadOverlay()
+        {
+            console.log('stop all')
+        }
+
+    </script>
+    <style>
+
+    </style>
+
+</head>
+<body>
+
+<div id="wrap">
+
+    <form action="/goldcut/upload/stream.php" method="post" enctype="multipart/form-data">
+        <!--
+		<input type="hidden" id="onalluploadedcall" value="onAllUploadedLocal">
+		-->
+        <input accept="image/*" type="file" id="fileField" multiple />
+        <!--
+		if multiple then no capture        
+        <input accept="image/*" capture="camera" type="file" id="fileField"  />		
+        -->
+        <input type="hidden" id="upload_destination" value="urn-photoitem">
+        <!--<input type="hidden" id="upload_container" value="urn-product-78">-->
+    </form>
+
+    <br><img id="preview" src="">
+
+</div>
+
+
+</body>
+</html>

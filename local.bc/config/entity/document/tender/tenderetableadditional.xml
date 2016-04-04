@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<entity prototype="Document:Tender:TableAdditional" code="DTTA" manager="Document" uid="80249">
+
+    <passport>
+        <title>Дополнительные критерии оценки</title>
+    </passport>
+
+    <structure>
+
+        <useone entity="Directory:TenderBidder:Simple" as="DirectoryTenderBidderSimple" title="Участник Тендера"/>
+
+        <field name="titleposition" type="string" title="Название позиции" />
+        <!--<field name="titlecriterion" type="string" multiple="yes" title="Название критерия" />-->
+        <field name="priceoffer" type="string"  title="Стоимость позиции" />
+        <field name="priceofferarray" type="tarray"  title="Стоимость позиции архив" />
+
+
+    </structure>
+
+
+    <defaultorder>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		<!-- <column selector="status"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

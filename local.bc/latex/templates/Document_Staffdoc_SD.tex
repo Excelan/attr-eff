@@ -1,0 +1,65 @@
+\input{../templates/DMS}
+
+{{=<% %>=}}
+\newcommand{\based}{<%based%>}
+<%={{ }}=%>
+
+{{graphicspath}}
+
+\ExplSyntaxOn
+\newcommand{\changedate}[2][/]{%
+  \tl_set:Nx \l_tmpa_tl {#2}
+  \seq_set_split:NnV \l_tmpa_seq {-} {\l_tmpa_tl}
+  \seq_reverse:N \l_tmpa_seq
+  \seq_use:Nnnn \l_tmpa_seq {#1} {#1} {#1}
+}
+\ExplSyntaxOff
+
+\newcommand{\webdate}{ {{date}} }
+
+
+
+
+%\newcommand{\option}[2]{%
+%    \IfEqCase{ no }{%
+%        {no}{ option1 }%
+%        {yes}{  option2}%
+%        % you can add more cases here as desired
+%    }%[\PackageError{option}{Undefined option to option: {{based}} }{}]%
+%}%
+
+
+\begin{document}
+\thispagestyle{empty}
+
+\pagestyle{maintext}
+
+\begin{flushright}
+\textbf{\textsc{Директору}} \\
+\vspace{6mm} \\
+\textbf{\textsc{ООО "ХФК"Биокон"}} \\
+\vspace{6mm} \\
+\textbf{\textsc{Павловой В.В.}} \\
+\end{flushright}
+
+\vspace{1cm}
+
+\begin{center}
+{\large \textbf{\textsc{Заявление}}}
+\end{center}
+
+\vspace{5mm}
+
+{{masterpart}}  .
+
+\vspace{1cm}
+\textbf{Дата увольнения:} \changedate{\webdate}  \\
+\vspace{1mm} \\
+\textbf{На основании:} \ifthenelse{\equal{\based}{yes}}{по согласованию сторон}{по собственному желанию}  \\
+\vspace{5cm}
+
+%\vfill
+
+\noindent \changedate{\webdate} \hspace{5.5cm} \rule{4cm}{0.5pt} \hfill {{#employee}} {{nameofemployee}}  {{/employee}}
+
+\end{document}

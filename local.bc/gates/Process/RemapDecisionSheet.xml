@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="Process" name="RemapDecisionSheet">
+
+    <role>
+
+    </role>
+
+    <request>
+
+        <field name="user" type="urn" required="no"/>
+        <field name="subjectURN" type="urn" required="yes"/>
+        <field name="mpeId" type="integer" required="yes"/>
+        <field name="rand" type="integer" required="no"/>
+
+    </request>
+
+
+    <response>
+
+        <field name="status" type="integer" required="yes"/>
+
+    </response>
+
+</gate>

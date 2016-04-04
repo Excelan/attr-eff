@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Directory:ReasonForOpFailFor:Employee" manager="Business" uid="1001215">
+
+    <passport>
+        <title>Причина не выполнения операции</title>
+    </passport>
+
+    <states>
+
+    </states>
+
+    <structure>
+
+        <field name="title" type="string" title="Причина"/>
+
+        <hasone entity="Management:Post:Individual" system="yes" title="Сотрудник"/>
+
+    </structure>
+
+    <lists/>
+    <defaultorder/>
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="title"/>
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes/>
+</entity>

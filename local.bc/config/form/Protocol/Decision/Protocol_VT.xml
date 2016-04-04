@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- ПРОТОКОЛ ВАЛИДАЦИОННОГО ИССЛЕДОВАНИЯ-->
+
+        <section type="context" title="Метаинформация по Протоколу Валидационного исследования">
+
+            <struct name="CONTEXT_BusinessObjectRecordPolymorph" anonymous="yes" entity="BusinessObject:Record:Polymorph">
+
+                <field name="bo" type="BusinessObject"  title="Объект"/>
+                <field name="serialnumber" type="string" title="Cерийный номер"/>
+                <field name="description" type="richtext" title="Описание и характеристики объекта"/>
+                <field name="currentproperties" type="richtext" title="Текущие свойства объекта"/>
+                <field name="MateriallyResponsible" type="ManagementPostIndividual"  title="Материально-ответственный сотрудник"/>
+                <field name="ResponsibleMaintenance"  type="ManagementPostIndividual"  title="Ответственный за техническое состояние и за техническое обслуживание"/>
+                <field name="ResponsibleValidation"  type="ManagementPostIndividual"  title="Ответственный за валидацию"/>
+                <field name="location" type="BusinessObject"  title="№ Склада"/>
+                <field name="boofclient" type="CompanyLegalEntityCounterparty"  title="Клиент"/>
+                <field name="periodicityvalidation" type="select"  title="Периодичность валидации">
+                    <query gate="Selector/calendar/CalendarPeriodMonth"/>
+                </field>
+
+            </struct>
+
+        </section>
+
+        <!-- Форма для заполнения-->
+        <section type="context" entity="Document:Protocol:VT" title="Форма для заполнения Протокола Валидационного исследования">
+            <!--<field name="scaleapplication" type="BusinessObject" title="Масштаб применения"/>-->
+            <field name="industryscope" type="richtext" title="Отрасль применения"/>
+
+            <struct entity="Directory:Responsibletwo:Simple" name="DirectoryResponsibletwoSimple" multiple="yes" title="Ответственное лицо">
+                <field name="urn" type="hidden"/>
+                <field name="worktype" type="string" title="Характер работ"/>
+                <field name="ManagementPostIndividual" type="ManagementPostIndividual" title="Ответственный"/>
+            </struct>
+
+            <field name="normativebase" type="richtext" title="Нормативная база"/>
+
+            <struct entity="Directory:Fixedasset:Simple" name="DirectoryFixedassetSimple" multiple="yes" title="Основные средства">
+                <field name="equipment" type="BusinessObject" title="Название, марка, модель оборудования"/>
+                <field name="numberequipment" type="string" title="Серийный номер"/>
+                <field name="specification" type="richtext" title="Технические характеристики"/>
+            </struct>
+
+                <field name="chemicals" type="string" title="Химические средства"/>
+                <field name="defabbr" type="richtext" title="Определения и сокращения"/>
+                <field name="masterpart" type="richtext" title="Основная часть"/>
+                <field name="attachments"  type="attachment" multiple="yes" title="Вложение"/>
+                <field name="finalrecommend" type="richtext" title="Конечные выводы / рекомендации"/>
+
+
+
+        </section>
+
+
+</structure>
+
+</form>

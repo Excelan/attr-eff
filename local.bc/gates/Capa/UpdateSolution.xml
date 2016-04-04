@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="Capa" name="UpdateSolution">
+
+    <role>
+
+    </role>
+
+    <request>
+
+        <field name="user" type="" required="no"/>
+        <field name="urn" type="" required="yes"/>
+        <field name="realizationtype" type="" required="no"/>
+        <field name="mpe" type="" required="yes"/>
+        <field name="realizationdate" type="" required="no"/>
+        <field name="executor" type="" required="no"/>
+        <field name="cost" type="" required="no"/>
+        <field name="descriptionsolution" type="" required="no"/>
+
+
+    </request>
+
+
+    <response>
+
+        <field name="status" type="" required="yes"/>
+        <field name="text" type="" required="yes"/>
+
+    </response>
+
+</gate>

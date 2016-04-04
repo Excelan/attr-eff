@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity prototype="Document:Capa:Deviation" code="CAPA" manager="Document" uid="201">
+    <!--Название таблицы в БД + менеджер который будет работать с этой таблицей -->
+
+    <passport>
+        <title>Корректирующие мероприятия (Отклонение САРА)</title>
+    </passport>
+
+    <states>
+
+    </states>
+
+    <structure>
+
+        <group title="Отклонение (Одно на CAPA)">
+            <field name="descriptiondeviation" title="Описание отклонения" type="text"/>
+        </group>
+
+        <group title="Мероприятия">
+            <hasmany entity="Document:Correction:Capa" as="DocumentCorrectionCapa"/>
+        </group>
+
+
+        <field name="eventplace" type="string" title="Место проведения"/>
+        <field name="eventtime" type="timestamp" title="Время проведения"/>
+
+
+        <field name="ordered" type="integer" system="yes" title="system order"/>
+
+    </structure>
+
+    <lists>
+        <list entity="RiskManagement:Risk:Approved" name="RiskManagementRiskApproved" ns="7711" title="Идентифицированные риски"/>
+        <list entity="RiskManagement:Risk:NotApproved" name="RiskManagementRiskNotApproved" ns="7712" title="Не идентифицированные риски"/>
+    </lists>
+
+    <defaultorder>
+        <by field="ordered" order="ASC"/>
+    </defaultorder>
+    <admincolumns>
+        <!--Колонки в админпанели-->
+        <column selector="id"/>
+        <column selector="created"/>
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes>
+        <!--Индексы-->
+        <!-- <index column="capaproblem"/> -->
+        <!-- <index column="risk"/> -->
+    </indexes>
+
+</entity>

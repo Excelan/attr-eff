@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- CONTEXT BLOCK Создание нового риска -->
+        <!-- https://projects.invisionapp.com/share/MW49C7CKZ#/screens/105815262 -->
+
+
+        <section entity="RiskManagement:Risk:Approved" title="Идентификация риска">
+
+            <field name="title" type="text"  title="Название риска"/>
+            <field name="riskdescription" type="text"  title="Описание риска"/>
+            <field name="BusinessObjectRecordPolymorph" type="BusinessObject"  title="Выберите или объект"/>
+            <field name="DirectoryBusinessProcessItem" type="select"  title="Выберите или процесс">
+                <query gate="Selector/directory/DirectoryBusinessProcessItem"  />
+            </field>
+            <field name="DirectorySLAItem" type="select"  title="Критерий SLA">
+                <query gate="Selector/directory/DirectorySLAItem"/>
+            </field>
+
+        </section>
+
+        <section entity="RiskManagement:Risk:Approved" title="Оценка риска">
+
+            <field name="producteffect" type="string"  title="Влияние на товар"/>
+            <field name="emergenceprobability" type="string"  title="Вероятность возникновения"/>
+            <field name="undetectedprobability" type="string"  title="Вероятность не обнаружения"/>
+
+        </section>
+
+        <section entity="RiskManagement:Risk:Approved" title="Контроль риска">
+
+            <field name="responsiblecontrol" type="ManagementPostIndividual"  title="Ответственный за контроль риска"/>
+
+            <struct multiple="yes" title="Контролирующее действие">
+                <field name="controlaction" type="text"  title="Описание контролирующего действия"/>
+                <field name="CalendarPeriodMonth" type="select"  title="Периодичность контроля">
+                    <query gate="Selector/calendar/CalendarPeriodMonth"/>
+                </field>
+            </struct>
+
+        </section>
+
+    </structure>
+
+</form>

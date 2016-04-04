@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<entity prototype="Document:Complaint:C_IW" code="C_IW" manager="Document" uid="2003">
+
+    <passport>
+        <title>Жалоба на выполнение инженерно-технических работ</title>
+    </passport>
+
+	<states>
+		<status name="fromclient" default="no" title="От Клиента"/>
+		<status name="stillactual" default="no" title="Проблема актуальна"/>
+	</states>
+
+    <structure>
+
+		<!-- Обязательные поля для любого типа жалоб -->
+		<hasone entity="Company:LegalEntity:Counterparty" as="client" title="Клиент, для которого создается жалоба"/>
+		<hasone entity="BusinessObject:Record:Polymorph" as="warehouse" title="№ склада, для которого создается жалоба"/>
+		<field name="datestart" type="date" title="Дата начала инцидента"/>
+		<field name="dateend" type="date" title="Дата окончания инцидента"/>
+		<field name="description" type="text" title="Описание жалобы"/>
+		<field name="attachments" type="tarray" title="Вложение"/>
+
+		<!-- Поля по типу жалобы -->
+		<hasone entity="Company:LegalEntity:Counterparty" as="counterparty" title="Контрагент"/>
+		<hasone entity="Document:Contract:TME" title="Договор"/>
+
+
+    </structure>
+
+
+    <defaultorder>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		<column selector="firstlinedescription"/> <!-- В таблице выводить первые две строки описания, а при наведении полный текст -->
+        <column selector="responsible"/> <!-- ответственный, которому приходит жалоба -->
+		<!-- <column selector="status"/> -->
+		<!-- <column selector="CTA TODO"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

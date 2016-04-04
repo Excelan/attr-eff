@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity prototype="Document:Regulations:PV" code="PV" manager="Document" uid="6005">
+
+    <passport>
+        <title>Программа валидационного исследования</title>
+    </passport>
+
+    <structure>
+
+		<!-- -->
+    <field name="title" type="string" title="Название документа"/>
+		<hasone entity="BusinessObject:Record:Polymorph" title="Тип Объекта"/><!-- БД Объекты/Класс оборудование -->
+		<field name="programm" type="richtext"  title="Программа"/>
+
+		<!-- Ответственные-->
+			<hasmany entity="Directory:Responsible:Simple" as="DirectoryResponsibleSimple" title="Ответственные"/>
+
+		<!-- Материальная база -->
+			<hasmany entity="Directory:Materialbase:Simple" as="DirectoryMaterialbaseSimple" title="Материальная база"/>
+
+		<!--Параметры -->
+			<hasmany entity="Directory:Options:Simple" as="DirectoryOptionsSimple" title="Параметры"/>
+
+
+    </structure>
+
+    <lists>
+<!--        <list name="responsible" entity="Management:Post:Individual" ns="30119" title="Ответственные лица"/>
+        <list name="materialbase" entity="BusinessObject:Record:Polymorph" ns="30145" title="Название, марка, модель оборудования"/>-->
+    </lists>
+
+    <defaultorder>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		<!-- <column selector="status"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

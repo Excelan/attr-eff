@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Study:RegulationStudy:Q" manager="System" code="QQ" uid="6009">
+
+    <passport>
+        <title>Вопросы</title>
+    </passport>
+
+    <states>
+
+    </states>
+
+    <structure>
+
+        <hasmany entity="Study:RegulationStudy:A"/>
+        <useone entity="Document:Regulations:TA" as="DocumentRegulationsTA" title="Программа обучения и аттестации"/>
+
+        <field name="content" type="text" title="Вопрос" />
+
+        <field name="ordered" type="integer" title="Порядок" system="yes"/>
+        <field name="created" type="timestamp" title="Время создания" createDefault="now"/>
+        <field name="updated" type="timestamp" title="Время последнего изменения" disabled="yes" createDefault="now" updateDefault="now"/>
+
+    </structure>
+    <lists/>
+
+    <defaultorder/>
+
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="content"/>
+        <column selector="Document:Regulations:TA"/>
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes/>
+
+
+</entity>

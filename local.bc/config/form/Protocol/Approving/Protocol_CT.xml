@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- ПРОТОКОЛ КАЛИБРОВКИ<-->
+        <section entity="Document:Protocol:CT" type="context" title="Метаинформация по Протоколу Калибровки">
+
+            <field name="bo" type="BusinessObject" title="Объект"/>
+            <field name="responsible" type="ManagementPostIndividual" title="Ответственный за калибровку"/>
+            <field name="warehouse" type="BusinessObject" title="№ Склада"/>
+            <field name="client" type="CompanyLegalEntityCounterparty" title="Клиент"/>
+            <field name="CalendarPeriodMonth" type="select" title="Периодичность калибровки">
+                <query gate="Selector/calendar/CalendarPeriodMonth"/>
+            </field>
+        </section>
+
+        <section type="context" entity="Document:Protocol:СТ" title="Форма для заполнения Протокола Калибровки">
+
+            <field name="date" type="date" title="Дата проведения калибровки"/>
+            <field name="datep" type="date" title="Дата предыдущей калибровки"/>             
+            <field name="contractforcalibration" type="Document" title="Договор на проведение калибровки"/>
+            <field name="relateddocuments" type="Document" multiple="yes" title="Связанные документы"/>
+            <field name="results" type="text" title="Результаты проведения калибровки"/>
+            <field name="upload" type="string" multiple="yes" title="Вложения"/>
+
+        </section>
+
+    </structure>
+
+</form>

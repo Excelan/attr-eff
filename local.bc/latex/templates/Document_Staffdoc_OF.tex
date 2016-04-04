@@ -1,0 +1,121 @@
+\input{../templates/DMS}
+% приказ на увольнение
+
+
+{{graphicspath}}
+
+{{=<% %>=}}
+\newcommand{\varId}{<% code %>}
+<%={{ }}=%>
+
+\ExplSyntaxOn
+\newcommand{\changedate}[2][/]{%
+  \tl_set:Nx \l_tmpa_tl {#2}
+  \seq_set_split:NnV \l_tmpa_seq {-} {\l_tmpa_tl}
+  \seq_reverse:N \l_tmpa_seq
+  \seq_use:Nnnn \l_tmpa_seq {#1} {#1} {#1}
+}
+\ExplSyntaxOff
+
+\newcommand{\webdate}{ {{dateofdismissal}} }
+
+\fancypagestyle{maintext}
+{
+\pagenumbering{gobble}
+\renewcommand{\headrulewidth}{0pt}
+\rhead{
+\begin{flushright}
+{\textbf {\textsc{Типова форма № П-4}}} \\
+{\textsc{ЗАТВЕРДЖЕННО}} \\
+{\textbf{\underline{Товариство з обмеженою відповідальністю "ХФК"Біокон"}} \hfill \textsc{наказом Держкостату України}} \\
+{Найменування підприємства(установи, організації) \hfill  \textsc{від 5 грудня 2008 р. N 489}} \\
+\end{flushright}
+}
+}
+
+
+\begin{document}
+%\thispagestyle{empty}
+
+\pagestyle{maintext}
+
+
+
+
+\hfill\begin{minipage}{0.45\textwidth}
+\medskip
+\begin{tabularx}{\textwidth}{ | X | X | }
+    \hline
+ЄДРПОУ  \rule{0pt}{3ex}       &   21672519    \\ [1ex]
+    \hline
+Дата складання \rule{0pt}{3ex} &  \changedate{\webdate}   \\   [1ex]
+    \hline
+\end{tabularx}
+    \end{minipage}
+
+\vspace{5mm}
+
+\begin{center}
+\large \textbf{\textsc{Наказ № \varId{} }} \\
+\vspace{5mm} \\
+\large \textbf{\textsc{(Розпорядження)}}  \\
+\vspace{5mm} \\
+\large \textbf{\textsc{про припинення трудового договору (контракту)}} \\
+\vspace{5mm} \\
+\end{center}
+
+
+ \textbf{\textsc{Звільнити: \changedate{\webdate} }}
+
+\hfill\begin{minipage}{0.27\textwidth}
+\medskip
+\begin{tabularx}{\textwidth}{ | X |  }
+\hline
+Табельний номер \rule{0pt}{3ex} \\ [1ex] \hline
+0000000000000  \rule{0pt}{3ex} \\ [1ex] \hline
+\end{tabularx}
+\end{minipage}
+
+
+\begin{center}
+{\large {  \underline{ {{#ManagementPostIndividual}} {{nameofemployee}} {{/ManagementPostIndividual}}  } }}  \\
+\vspace{0.5mm}
+{\small{  (прізвище, ім'я, по батькові) }} \\
+\vspace{3mm}
+{\large{  \underline{  {{#ManagementPostIndividual}} {{#CompanyStructureDepartment}} {{title}}  {{/CompanyStructureDepartment}}  {{/ManagementPostIndividual}}   } }} \\
+\vspace{0.5mm}
+{\small{ (назва структурного підрозділу)    }}  \\
+\vspace{3mm}
+{\large{ \underline{  {{#ManagementPostIndividual}} {{title}} {{/ManagementPostIndividual}}    } }}  \\
+\vspace{0.5mm}
+{\small{(назва професії (посади), розряд, клас (категорія) кваліфікації) }}  \\
+\vspace{3mm}
+{\large {  \underline{ {{reason}} }  }} \\
+\vspace{0.5mm}
+{\small{ (причина звільнення)  }} \\
+\vspace{3mm}
+{\large {   \underline{ {{base}} } }} \\
+\vspace{0.5mm}
+{\small{ (підстави звільнення) }} \\
+\end{center}
+
+\vspace{5mm}
+
+{\textsc{\Square\ Вихідна допомога: {{severancepay}} } \\
+
+\vspace{1cm}
+
+$\stackrel{\hbox{\noindent \underline{Керівник підприємства} }}{\hbox{\small{(посада)}}}$  \hspace{3.2cm} $\stackrel{\hbox{\rule{4cm}{0.5pt} }}{\hbox{\small{(підпис)}}}$\hfill  $\stackrel{\hbox{\underline{Павлова В.В.}}}{\hbox{(Ф.І.О.)}}$\\
+
+$\stackrel{\hbox{\noindent \underline{З наказом ознайомлений} }}{\hbox{\small{}}}$  \hspace{3.2cm} $\stackrel{\hbox{\rule{4cm}{0.5pt} }}{\hbox{\small{(підпис)}}}$\hfill  $\stackrel{\hbox{\underline{ {{dateofdismissal}} }}}{\hbox{ (дата)}}$\\
+
+
+\vfill
+
+\nopagebreak
+
+\noindent Нарахована компенсація за невикористану щорічну основну відпустку в кількості   {{dateunusedvacation}} днів
+
+\nopagebreak
+
+\end{document}

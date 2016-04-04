@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!--Метаинформация по договору -->
+        <section name="title" title="Выберите вторую сторону договора из базы существующих контрагентов">
+
+            <field name="Counterparty" type="CompanyLegalEntityCounterparty" title="Контрагент">
+                <query gate="Selector/counterparty"/>
+            </field>
+
+		</section>
+
+        <section name="title" title="Или создайте нового контрагента">
+
+            <field name="title" type="string" title="Название контрагента"/>
+            <field name="kindofoperations" type="select" title="Направление деятельности компании">
+                <query gate="Selector/directory/DirectoryKindOfOperationsItem"/>
+            </field>
+            <field name="warehouse" type="BusinessObject" title="Номер склада клиента">
+                <query gate="Selector/businessobject"/>
+            </field>
+            <field name="legaladdress" type="text" title="Юридический адрес"/>
+            <field name="ba" type="string" title="Расчетный счет"/>
+            <field name="mfo" type="string" title="МФО"/>
+            <field name="edropou" type="string" title="ЕДРОПОУ"/>
+            <field name="contactname" type="string" title="ФИО контактного лица"/>
+            <field name="mail" type="string" title="Электронный адрес контактного лица"/>
+            <field name="number" type="integer" title="Номер телефона контрактного лица"/>
+            <field name="letter" type="string" title="Первая буква для нумерации договоров"/>
+            <field name="signatoryname" type="string" title="ФИО подписанта"/>
+            <field name="baseaction" type="string" title="Основание действия подписанта"/>
+            <field name="other" type="string" title="Другое"/>
+
+
+        </section>
+
+    </structure>
+</form>

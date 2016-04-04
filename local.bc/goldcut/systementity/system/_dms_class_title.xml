@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Definition:DocumentClass:ForPrototype" manager="SystemData" uid="9327281">
+
+    <passport>
+        <title>Document Class</title>
+    </passport>
+
+    <states>
+
+    </states>
+
+    <structure>
+        <hasmany entity="Definition:Prototype:System"  title="Прототипы документов"/>
+        <field name="title" type="string" title="Имя Класса документа"/>
+        <field name="name" type="string" title="NAME Класса документа (равен ofclass в прототипе документа)"/>
+    </structure>
+
+    <lists></lists>
+
+    <defaultorder>
+        <by field="title" order="ASC"/>
+    </defaultorder>
+
+    <admincolumns>
+        <!-- <column selector="DefinitionPrototypeSystem"/> -->
+        <column selector="title"/>
+        <column selector="name"/>
+    </admincolumns>
+    <options>
+        <aparam name="clonable" value="yes" />
+    </options>
+    <searchfields/>
+    <indexes>
+      <unique column="name"/>
+    </indexes>
+</entity>

@@ -1,0 +1,52 @@
+\input{../templates/DMS}
+\input{../templates/DMS_Protocol_SI}
+
+{{graphicspath}}
+
+\begin{document}
+
+\pagestyle{maintext}
+
+\begin{document}
+
+\begin{center}
+{\large \textbf{\textsc{Протокол самоинспекции №}}}
+\end{center}
+
+\vspace{3mm}
+
+\noindent Дата самоинспекции: {{date}} \newline \vspace{5mm}
+
+\noindent \textbf{\textsc{Состав группы самоинспекции:}} \vspace{1mm}
+
+\begin{tabularx}{\textwidth}{ |X|X|X| }
+\hline
+№ пп & Должность & ФИО \\ \hline
+\end{tabularx}
+
+\vspace{4mm}
+
+\noindent \textbf{\textsc{Лист проверки:}}  \vspace{2mm}
+
+\begin{tabularx}{\textwidth}{|X|X|X|X|X|X|X|}
+\hline
+№ пп & Название риска & Контролирующее мероприятие & Ответственный за объект риска & Результат проверки & Комментарии при проверке & Прикреплённый файл \\ \hline
+{{#controlriskapproved}}
+{{=<% %>=}}
+1 & <% riskapproved %> & <% controlact %> & <% ManagementPostIndividual %> &  {{solutiononrisk}} & & \\ \hline
+{{/controlriskapproved}}
+\end{tabularx}
+
+
+{{=<% %>=}}
+Участник комиссии & <% ManagementPostIndividual %> \\ \hline
+<%={{ }}=%>
+
+
+
+\vspace{4mm}
+
+\noindent \textbf{\textsc{Заключение:}} \vspace{1mm}
+\noindent  {{solutiononrisk}}
+
+\end{document}

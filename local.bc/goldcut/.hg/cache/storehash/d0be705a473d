@@ -1,0 +1,4 @@
+# ssh://goldcut@dev.icebrg.net:223/hg
+bookmarks = da39a3ee5e6b4b0d3255bfef95601890afd80709
+store/phaseroots = da39a3ee5e6b4b0d3255bfef95601890afd80709
+store/00changelog.i = 11764a6b69b043735820dcf6eb4467f5ab298838

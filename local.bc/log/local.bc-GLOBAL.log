@@ -1,0 +1,964 @@
+[.] 02/04 22:48:30	route 1, app Index, fn/view request	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[ ] 02/04 22:48:30	AuthedReturnUrl, index	(Session::put) 31:/goldcut/framework/session.php	(Session::put) 31:/goldcut/framework/session.php
+[.] 02/04 22:48:31	route 3, app Member, fn/view login	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[ ] 02/04 22:49:21	{"email":"max@attracti.com","password":"kimtoe93"}	(::) 48:/goldcut/webrouter.php	(::) 48:/goldcut/webrouter.php
+[ ] 02/04 22:49:21	{"email":"max@attracti.com","password":"kimtoe93"}	(::) 49:/goldcut/webrouter.php	(::) 49:/goldcut/webrouter.php
+[!] 02/04 22:49:21	{"error":"no_hash_in_message_or_cookie"}	(::) 57:/goldcut/webrouter.php	(::) 57:/goldcut/webrouter.php
+[.] 02/04 22:49:21	{"email":"max@attracti.com","password":"kimtoe93","user":null}	(::) 68:/goldcut/webrouter.php	(::) 68:/goldcut/webrouter.php
+[ ] 02/04 22:49:21	User/Login	(GateRequest::dispatch) 35:/goldcut/framework/gaterequest.php	(GateRequest::dispatch) 35:/goldcut/framework/gaterequest.php
+[.] 02/04 22:49:21	{"email":"max@attracti.com","password":"kimtoe93","user":null}	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php
+[ ] 02/04 22:49:21	{"email":"max@attracti.com","password":"kimtoe93","user":null}	(User\Login::gate) 14:/gates/User/Login.php	(User\Login::gate) 14:/gates/User/Login.php
+[ ] 02/04 22:49:21	after_update_any_dms	(exchange::route) 94:/goldcut/framework/exchange.php	(exchange::route) 94:/goldcut/framework/exchange.php
+[ ] 02/04 22:49:21	after_update_any_dms	(exchange::route) 94:/goldcut/framework/exchange.php	(exchange::route) 94:/goldcut/framework/exchange.php
+[ ] 02/04 22:49:21	after_update_any_dms	(exchange::route) 94:/goldcut/framework/exchange.php	(exchange::route) 94:/goldcut/framework/exchange.php
+[ ] 02/04 22:49:21	hash, 1007849911	(Session::put) 31:/goldcut/framework/session.php	(Session::put) 31:/goldcut/framework/session.php
+[ ] 02/04 22:49:21	user, 1051038495	(Session::put) 31:/goldcut/framework/session.php	(Session::put) 31:/goldcut/framework/session.php
+[.] 02/04 22:49:25	route 1, app Index, fn/view request	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 02/04 22:49:25	route 1, app Inbox, fn/view request	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 02/04 22:52:24	route 6, app Capa, fn/view vise	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 02/04 22:52:24	{"action":"load","urn":"urn:ManagedProcess:Journal:Record","subject":"urn:Document:Capa:Deviation:882868313","lang":false}	(::widget_journal) 24:/widgets/journal.php	(::widget_journal) 24:/widgets/journal.php
+[.] 02/04 22:52:24	{ManagedProcess:Journal:Record} [count: 16]	(::widget_journal) 25:/widgets/journal.php	(::widget_journal) 25:/widgets/journal.php
+[.] 02/04 22:52:25	route 1, app Getcomment, fn/view request	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 02/04 22:52:25	route 1, app Getcomment, fn/view request	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 02/04 22:52:25	route 1, app Getcomment, fn/view request	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 02/04 22:52:25	route 1, app Getcomment, fn/view request	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 02/04 22:52:25	route 1, app Getcomment, fn/view request	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 02/04 22:52:26	route 1, app Getcomment, fn/view request	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 02/04 22:52:38	route 2, app UniversalDocument, fn/view resource	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 02/04 22:52:39	{"action":"load","urn":"urn:ManagedProcess:Journal:Record","subject":"urn:Document:Capa:Deviation:882868313","lang":false}	(::widget_journal) 24:/widgets/journal.php	(::widget_journal) 24:/widgets/journal.php
+[.] 02/04 22:52:39	{ManagedProcess:Journal:Record} [count: 16]	(::widget_journal) 25:/widgets/journal.php	(::widget_journal) 25:/widgets/journal.php
+[.] 02/04 22:52:40	route 8, app UniversalLoad, fn/view exclusive	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 02/04 22:52:40	{"urn":"urn:Document:Capa:Deviation:882868313"}	(UniversalLoadControl::exclusive) 13:/goldcut/apps/UniversalLoad/UniversalLoadControl.php	(UniversalLoadControl::exclusive) 13:/goldcut/apps/UniversalLoad/UniversalLoadControl.php
+[.] 02/04 22:52:40	{Management:Post:Individual} [count: 1]	(UniversalLoadControl::exclusive) 14:/goldcut/apps/UniversalLoad/UniversalLoadControl.php	(UniversalLoadControl::exclusive) 14:/goldcut/apps/UniversalLoad/UniversalLoadControl.php
+[!] 02/04 22:52:40	No POST.json	(::) 42:/goldcut/webrouter.php	(::) 42:/goldcut/webrouter.php
+[ ] 02/04 22:52:40	{"gate":"Selector\/company\/structure\/CompanyStructureDepartment"}	(::) 44:/goldcut/webrouter.php	(::) 44:/goldcut/webrouter.php
+[.] 02/04 22:52:40	{"gate":"Selector\/company\/structure\/CompanyStructureDepartment","user":null}	(::) 68:/goldcut/webrouter.php	(::) 68:/goldcut/webrouter.php
+[ ] 02/04 22:52:40	Selector/company/structure/CompanyStructureDepartment	(GateRequest::dispatch) 35:/goldcut/framework/gaterequest.php	(GateRequest::dispatch) 35:/goldcut/framework/gaterequest.php
+[.] 02/04 22:52:40	{"gate":"Selector\/company\/structure\/CompanyStructureDepartment","user":null}	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php
+[.] 02/04 22:52:44	route 6, app Capa, fn/view vise	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 02/04 22:52:44	{"action":"load","urn":"urn:ManagedProcess:Journal:Record","subject":"urn:Document:Capa:Deviation:882868313","lang":false}	(::widget_journal) 24:/widgets/journal.php	(::widget_journal) 24:/widgets/journal.php
+[.] 02/04 22:52:44	{ManagedProcess:Journal:Record} [count: 16]	(::widget_journal) 25:/widgets/journal.php	(::widget_journal) 25:/widgets/journal.php
+[.] 02/04 22:52:44	route 1, app Getcomment, fn/view request	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 02/04 22:52:44	route 1, app Getcomment, fn/view request	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 02/04 22:52:44	route 1, app Getcomment, fn/view request	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 02/04 22:52:45	route 1, app Getcomment, fn/view request	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 02/04 22:52:45	route 1, app Getcomment, fn/view request	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 02/04 22:52:45	route 1, app Getcomment, fn/view request	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 02/04 22:53:32	route 3, app ProcessRBAC, fn/view processesICanStart	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[ ] 02/04 22:53:32	(NULL)	(ProcessRBACControl::processesICanStart) 12:/goldcut/apps/ProcessRBAC/ProcessRBACControl.php	(ProcessRBACControl::processesICanStart) 12:/goldcut/apps/ProcessRBAC/ProcessRBACControl.php
+[ ] 02/04 22:53:32	(NULL)	(ProcessRBACControl::processesICanStart) 13:/goldcut/apps/ProcessRBAC/ProcessRBACControl.php	(ProcessRBACControl::processesICanStart) 13:/goldcut/apps/ProcessRBAC/ProcessRBACControl.php
+[.] 02/04 22:53:34	route 3, app ProcessRBAC, fn/view processesICanStart	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[ ] 02/04 22:53:34	URN Object
+(
+    [urn:URN:private] => urn:Definition:DocumentClass:ForPrototype:1936018484
+    [entitymeta] => entitymeta Object
+        (
+            [class] => SystemData
+            [manager] => SystemData Object
+                (
+                    [name] => SystemData
+                    [behaviors:protected] => Array
+                        (
+                            [0] => general_crud
+                            [1] => general_graph
+                            [2] => general_list
+                            [3] => general_multylang
+                            [4] => general_clone
+                            [5] => general_ordered
+                        )
+
+                    [limits:protected] => 
+                )
+
+            [uid] => 9327281
+            [code] => 
+            [legacyname] => 
+            [name] => Definition:DocumentClass:ForPrototype
+            [prototype] => Prototype Object
+                (
+                    [inDomain:Prototype:private] => Definition
+                    [ofClass:Prototype:private] => DocumentClass
+                    [ofType:Prototype:private] => ForPrototype
+                )
+
+            [title] => Array
+                (
+                    [ru] => Document Class
+                    [en] => Document Class
+                )
+
+            [field_metas] => Array
+                (
+                    [0] => 140
+                    [1] => 141
+                )
+
+            [has_one:entitymeta:private] => Array
+                (
+                )
+
+            [use_one:entitymeta:private] => Array
+                (
+                )
+
+            [has_many:entitymeta:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [DefinitionPrototypeSystem] => Definition:Prototype:System
+                        )
+
+                )
+
+            [use_many:entitymeta:private] => 
+            [belongs_to:entitymeta:private] => Array
+                (
+                )
+
+            [category:entitymeta:private] => 
+            [multy_lang:entitymeta:private] => Array
+                (
+                )
+
+            [lang_field_metas] => Array
+                (
+                )
+
+            [communitydata:entitymeta:private] => 
+            [statuses] => Array
+                (
+                )
+
+            [related:entitymeta:private] => 
+            [reverserelated] => Array
+                (
+                )
+
+            [compound_of] => 
+            [media] => 
+            [mediaoptions] => 
+            [imagesettings] => Array
+                (
+                )
+
+            [urn] => urn:Definition:DocumentClass:ForPrototype
+            [directmanage] => 1
+            [adminadd] => 1
+            [container] => 
+            [treeview] => 
+            [translit] => 
+            [alias] => 
+            [checkunique] => Array
+                (
+                    [0] => name
+                )
+
+            [index] => Array
+                (
+                )
+
+            [defaultorder] => Array
+                (
+                    [title] => ASC
+                )
+
+            [adminfields] => Array
+                (
+                    [0] => title
+                    [1] => name
+                )
+
+            [usereditfields] => Array
+                (
+                )
+
+            [cacheMemoryEnabled] => 
+            [lists] => Array
+                (
+                )
+
+            [groupby] => Array
+                (
+                )
+
+            [extendstructure] => Array
+                (
+                )
+
+            [searchtextin] => Array
+                (
+                )
+
+            [adminsearchtextin] => Array
+                (
+                )
+
+            [clonable] => yes
+            [groupnames] => 
+            [groups] => 
+            [virtualgroups] => 
+            [options] => Array
+                (
+                    [clonable] => yes
+                )
+
+            [astitles] => Array
+                (
+                )
+
+            [allOrdered] => Array
+                (
+                    [0] => DefinitionPrototypeSystem
+                    [1] => title
+                    [2] => name
+                )
+
+            [required] => Array
+                (
+                )
+
+            [attributed] => 
+            [overlayed] => 
+            [system:entitymeta:private] => 1
+            [usemany_entities] => Array
+                (
+                )
+
+        )
+
+    [prototype] => Prototype Object
+        (
+            [inDomain:Prototype:private] => Definition
+            [ofClass:Prototype:private] => DocumentClass
+            [ofType:Prototype:private] => ForPrototype
+        )
+
+    [entity] => entitymeta Object
+        (
+            [class] => SystemData
+            [manager] => SystemData Object
+                (
+                    [name] => SystemData
+                    [behaviors:protected] => Array
+                        (
+                            [0] => general_crud
+                            [1] => general_graph
+                            [2] => general_list
+                            [3] => general_multylang
+                            [4] => general_clone
+                            [5] => general_ordered
+                        )
+
+                    [limits:protected] => 
+                )
+
+            [uid] => 9327281
+            [code] => 
+            [legacyname] => 
+            [name] => Definition:DocumentClass:ForPrototype
+            [prototype] => Prototype Object
+                (
+                    [inDomain:Prototype:private] => Definition
+                    [ofClass:Prototype:private] => DocumentClass
+                    [ofType:Prototype:private] => ForPrototype
+                )
+
+            [title] => Array
+                (
+                    [ru] => Document Class
+                    [en] => Document Class
+                )
+
+            [field_metas] => Array
+                (
+                    [0] => 140
+                    [1] => 141
+                )
+
+            [has_one:entitymeta:private] => Array
+                (
+                )
+
+            [use_one:entitymeta:private] => Array
+                (
+                )
+
+            [has_many:entitymeta:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [DefinitionPrototypeSystem] => Definition:Prototype:System
+                        )
+
+                )
+
+            [use_many:entitymeta:private] => 
+            [belongs_to:entitymeta:private] => Array
+                (
+                )
+
+            [category:entitymeta:private] => 
+            [multy_lang:entitymeta:private] => Array
+                (
+                )
+
+            [lang_field_metas] => Array
+                (
+                )
+
+            [communitydata:entitymeta:private] => 
+            [statuses] => Array
+                (
+                )
+
+            [related:entitymeta:private] => 
+            [reverserelated] => Array
+                (
+                )
+
+            [compound_of] => 
+            [media] => 
+            [mediaoptions] => 
+            [imagesettings] => Array
+                (
+                )
+
+            [urn] => urn:Definition:DocumentClass:ForPrototype
+            [directmanage] => 1
+            [adminadd] => 1
+            [container] => 
+            [treeview] => 
+            [translit] => 
+            [alias] => 
+            [checkunique] => Array
+                (
+                    [0] => name
+                )
+
+            [index] => Array
+                (
+                )
+
+            [defaultorder] => Array
+                (
+                    [title] => ASC
+                )
+
+            [adminfields] => Array
+                (
+                    [0] => title
+                    [1] => name
+                )
+
+            [usereditfields] => Array
+                (
+                )
+
+            [cacheMemoryEnabled] => 
+            [lists] => Array
+                (
+                )
+
+            [groupby] => Array
+                (
+                )
+
+            [extendstructure] => Array
+                (
+                )
+
+            [searchtextin] => Array
+                (
+                )
+
+            [adminsearchtextin] => Array
+                (
+                )
+
+            [clonable] => yes
+            [groupnames] => 
+            [groups] => 
+            [virtualgroups] => 
+            [options] => Array
+                (
+                    [clonable] => yes
+                )
+
+            [astitles] => Array
+                (
+                )
+
+            [allOrdered] => Array
+                (
+                    [0] => DefinitionPrototypeSystem
+                    [1] => title
+                    [2] => name
+                )
+
+            [required] => Array
+                (
+                )
+
+            [attributed] => 
+            [overlayed] => 
+            [system:entitymeta:private] => 1
+            [usemany_entities] => Array
+                (
+                )
+
+        )
+
+    [uuid] => 1936018484
+    [listname] => 
+)
+	(ProcessRBACControl::processesICanStart) 12:/goldcut/apps/ProcessRBAC/ProcessRBACControl.php	(ProcessRBACControl::processesICanStart) 12:/goldcut/apps/ProcessRBAC/ProcessRBACControl.php
+[ ] 02/04 22:53:34	(NULL)	(ProcessRBACControl::processesICanStart) 13:/goldcut/apps/ProcessRBAC/ProcessRBACControl.php	(ProcessRBACControl::processesICanStart) 13:/goldcut/apps/ProcessRBAC/ProcessRBACControl.php
+[ ] 02/04 22:53:38	{"subjectURN":"urn:Document:Claim:R_LSC:856070659"}	(::) 48:/goldcut/webrouter.php	(::) 48:/goldcut/webrouter.php
+[ ] 02/04 22:53:38	{"subjectURN":"urn:Document:Claim:R_LSC:856070659"}	(::) 49:/goldcut/webrouter.php	(::) 49:/goldcut/webrouter.php
+[!] 02/04 22:53:38	{"error":"no_hash_in_message_or_cookie"}	(::) 57:/goldcut/webrouter.php	(::) 57:/goldcut/webrouter.php
+[.] 02/04 22:53:38	{"subjectURN":"urn:Document:Claim:R_LSC:856070659","user":null}	(::) 68:/goldcut/webrouter.php	(::) 68:/goldcut/webrouter.php
+[ ] 02/04 22:53:38	Process/SetBaseVisantsForDocument	(GateRequest::dispatch) 35:/goldcut/framework/gaterequest.php	(GateRequest::dispatch) 35:/goldcut/framework/gaterequest.php
+[.] 02/04 22:53:38	{"subjectURN":"urn:Document:Claim:R_LSC:856070659","user":null}	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php
+[.] 02/04 22:53:38	Document:Claim:R_LSC	(Process\SetBaseVisantsForDocument::gate) 18:/gates/Process/SetBaseVisantsForDocument.php	(Process\SetBaseVisantsForDocument::gate) 18:/gates/Process/SetBaseVisantsForDocument.php
+[ ] 02/04 22:53:38	APPROVER? urn:Management:Post:Individual:1492988442	(Process\SetBaseVisantsForDocument::gate) 31:/gates/Process/SetBaseVisantsForDocument.php	(Process\SetBaseVisantsForDocument::gate) 31:/gates/Process/SetBaseVisantsForDocument.php
+[ ] 02/04 22:53:38	VISANTS? {1816416714,88814251}	(Process\SetBaseVisantsForDocument::gate) 32:/gates/Process/SetBaseVisantsForDocument.php	(Process\SetBaseVisantsForDocument::gate) 32:/gates/Process/SetBaseVisantsForDocument.php
+[.] 02/04 22:53:38	EACH VISANT ADD TO SHEET #1816416714	(Process\SetBaseVisantsForDocument::gate) 38:/gates/Process/SetBaseVisantsForDocument.php	(Process\SetBaseVisantsForDocument::gate) 38:/gates/Process/SetBaseVisantsForDocument.php
+[ ] 02/04 22:53:38	after_update_any_dms	(exchange::route) 94:/goldcut/framework/exchange.php	(exchange::route) 94:/goldcut/framework/exchange.php
+[.] 02/04 22:53:38	EACH VISANT ADD TO SHEET #88814251	(Process\SetBaseVisantsForDocument::gate) 38:/gates/Process/SetBaseVisantsForDocument.php	(Process\SetBaseVisantsForDocument::gate) 38:/gates/Process/SetBaseVisantsForDocument.php
+[ ] 02/04 22:53:38	after_update_any_dms	(exchange::route) 94:/goldcut/framework/exchange.php	(exchange::route) 94:/goldcut/framework/exchange.php
+[ ] 02/04 22:53:39	{"state":"CreateDraft", "urn":"urn:Document:Claim:R_LSC:856070659"}	(::) 48:/goldcut/webrouter.php	(::) 48:/goldcut/webrouter.php
+[ ] 02/04 22:53:39	{"state":"CreateDraft","urn":"urn:Document:Claim:R_LSC:856070659"}	(::) 49:/goldcut/webrouter.php	(::) 49:/goldcut/webrouter.php
+[!] 02/04 22:53:39	{"error":"no_hash_in_message_or_cookie"}	(::) 57:/goldcut/webrouter.php	(::) 57:/goldcut/webrouter.php
+[.] 02/04 22:53:39	{"state":"CreateDraft","urn":"urn:Document:Claim:R_LSC:856070659","user":null}	(::) 68:/goldcut/webrouter.php	(::) 68:/goldcut/webrouter.php
+[ ] 02/04 22:53:39	DMS/SetDocumentState	(GateRequest::dispatch) 35:/goldcut/framework/gaterequest.php	(GateRequest::dispatch) 35:/goldcut/framework/gaterequest.php
+[.] 02/04 22:53:39	{"state":"CreateDraft","urn":"urn:Document:Claim:R_LSC:856070659","user":null}	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php
+[ ] 02/04 22:53:39	stdClass Object
+(
+    [state] => CreateDraft
+    [urn] => urn:Document:Claim:R_LSC:856070659
+    [user] => 
+)
+	(DMS\SetDocumentState::gate) 15:/gates/DMS/SetDocumentState.php	(DMS\SetDocumentState::gate) 15:/gates/DMS/SetDocumentState.php
+[ ] 02/04 22:53:39	after_update_any_dms	(exchange::route) 94:/goldcut/framework/exchange.php	(exchange::route) 94:/goldcut/framework/exchange.php
+[ ] 02/04 22:53:39	{"action":"update","urn":"urn:Document:Claim:R_LSC:856070659","state":"CreateDraft","id":856070659}	(DMS\SetDocumentState::gate) 22:/gates/DMS/SetDocumentState.php	(DMS\SetDocumentState::gate) 22:/gates/DMS/SetDocumentState.php
+[.] 02/04 22:53:39	route 1, app Inbox, fn/view request	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 02/04 22:53:42	route 8, app Process, fn/view exclusive	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[ ] 02/04 22:53:42	urn:Document:Claim:R_LSC:856070659	(ProcessApp::exclusive) 92:/goldcut/apps/Process/ProcessApp.php	(ProcessApp::exclusive) 92:/goldcut/apps/Process/ProcessApp.php
+[.] 02/04 22:53:42	{"action":"load","urn":"urn:ManagedProcess:Journal:Record","subject":"urn:Document:Claim:R_LSC:856070659","lang":false}	(::widget_journal) 24:/widgets/journal.php	(::widget_journal) 24:/widgets/journal.php
+[.] 02/04 22:53:42	{ManagedProcess:Journal:Record} [count: 3]	(::widget_journal) 25:/widgets/journal.php	(::widget_journal) 25:/widgets/journal.php
+[ ] 02/04 22:53:43	{"subjectURN":"urn:Document:Claim:R_LSC:856070659"}	(::) 48:/goldcut/webrouter.php	(::) 48:/goldcut/webrouter.php
+[ ] 02/04 22:53:43	{"subjectURN":"urn:Document:Claim:R_LSC:856070659"}	(::) 49:/goldcut/webrouter.php	(::) 49:/goldcut/webrouter.php
+[.] 02/04 22:53:43	{"subjectURN":"urn:Document:Claim:R_LSC:856070659","user":null}	(::) 68:/goldcut/webrouter.php	(::) 68:/goldcut/webrouter.php
+[ ] 02/04 22:53:43	Events/GetLastComments	(GateRequest::dispatch) 35:/goldcut/framework/gaterequest.php	(GateRequest::dispatch) 35:/goldcut/framework/gaterequest.php
+[.] 02/04 22:53:43	{"subjectURN":"urn:Document:Claim:R_LSC:856070659","user":null}	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php
+[.] 02/04 22:53:43	route 8, app UniversalLoad, fn/view exclusive	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 02/04 22:53:43	{"urn":"urn:Document:Claim:R_LSC:856070659"}	(UniversalLoadControl::exclusive) 13:/goldcut/apps/UniversalLoad/UniversalLoadControl.php	(UniversalLoadControl::exclusive) 13:/goldcut/apps/UniversalLoad/UniversalLoadControl.php
+[.] 02/04 22:53:43	{Management:Post:Individual} [count: 1]	(UniversalLoadControl::exclusive) 14:/goldcut/apps/UniversalLoad/UniversalLoadControl.php	(UniversalLoadControl::exclusive) 14:/goldcut/apps/UniversalLoad/UniversalLoadControl.php
+[ ] 02/04 22:53:43	NO FN LOAD_Claim_Editing_Claim_R_LSC	(UniversalLoadControl::exclusive) 32:/goldcut/apps/UniversalLoad/UniversalLoadControl.php	(UniversalLoadControl::exclusive) 32:/goldcut/apps/UniversalLoad/UniversalLoadControl.php
+[ ] 02/04 22:53:43	LOAD_FALLBACK	(Goldcut::{closure}) 22:/FormDataStorage/universalLoadSave.php	(Goldcut::{closure}) 22:/FormDataStorage/universalLoadSave.php
+[.] 02/04 22:53:43	LOADED PROMISE urn:Document:Claim:R_LSC:856070659	(Goldcut::{closure}) 23:/FormDataStorage/universalLoadSave.php	(Goldcut::{closure}) 23:/FormDataStorage/universalLoadSave.php
+[.] 02/04 22:53:43	[Document:Claim:R_LSC] id: 856070659, state: CreateDraft, process: UPN:DMS>, children: {}, initiator: urn:Man>, privatedraft: t, returned: f, done: f, archived: f, created: 1459626819, updated: 1459626819, basevisants: {urn:Ma>, version: 1; companyproject:-, CompanyLegalEntityCounterparty:-, warehouse:-, DocumentSolutionUniversal:-, solutionvariants_DocumentSolutionUniversal:-, specialrequirement:-, attachments:-, purchaseorder:-, attachmentdocs:-, plancomingdate:-, code:-, parent:-, related:-, authors:-, vised:-, approved:-, additionalvisants:-, DMSDocumentUniversal:-, rtaken:-, DefinitionPrototypeDocument:-, hardmaster:-, hardcopy:-, effective:-, vnext:-, vprev:-, efrom:-, eto:-	(Goldcut::{closure}) 32:/FormDataStorage/universalLoadSave.php	(Goldcut::{closure}) 32:/FormDataStorage/universalLoadSave.php
+[.] 02/04 22:53:43	{"id":856070659,"urn":"urn:Document:Claim:R_LSC:856070659","specialrequirement":null,"attachments":null,"purchaseorder":null,"attachmentdocs":null,"plancomingdate":null,"rtaken":null,"privatedraft":"t","state":"CreateDraft","code":"","process":"UPN:DMS:Claims:Claim:9628694","parent":"","children":[],"related":null,"initiator":"urn:Management:Post:Individual:1118804000","authors":null,"returned":"f","done":false,"effective":null,"archived":"f","vised":null,"approved":null,"created":"1459626819","updated":"1459626819","basevisants":["urn:Management:Post:Individual:1816416714","urn:Management:Post:Individual:88814251"],"additionalvisants":null,"hardmaster":null,"hardcopy":null,"version":1,"vnext":"","vprev":"","efrom":null,"eto":null}	(Goldcut::{closure}) 33:/FormDataStorage/universalLoadSave.php	(Goldcut::{closure}) 33:/FormDataStorage/universalLoadSave.php
+[!] 02/04 22:53:43	No POST.json	(::) 42:/goldcut/webrouter.php	(::) 42:/goldcut/webrouter.php
+[ ] 02/04 22:53:43	{"gate":"Selector\/directory\/DirectoryBusinessProjectsItem","mpe":"urn:ManagedProcess:Execution:Record:9628694"}	(::) 44:/goldcut/webrouter.php	(::) 44:/goldcut/webrouter.php
+[.] 02/04 22:53:43	{"gate":"Selector\/directory\/DirectoryBusinessProjectsItem","mpe":"urn:ManagedProcess:Execution:Record:9628694","user":null}	(::) 68:/goldcut/webrouter.php	(::) 68:/goldcut/webrouter.php
+[ ] 02/04 22:53:43	Selector/directory/DirectoryBusinessProjectsItem	(GateRequest::dispatch) 35:/goldcut/framework/gaterequest.php	(GateRequest::dispatch) 35:/goldcut/framework/gaterequest.php
+[.] 02/04 22:53:43	{"gate":"Selector\/directory\/DirectoryBusinessProjectsItem","mpe":"urn:ManagedProcess:Execution:Record:9628694","user":null}	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php
+[ ] 02/04 22:55:23	{"state":"Editing", "urn":"urn:Document:Claim:R_LSC:856070659"}	(::) 48:/goldcut/webrouter.php	(::) 48:/goldcut/webrouter.php
+[ ] 02/04 22:55:23	{"state":"Editing","urn":"urn:Document:Claim:R_LSC:856070659"}	(::) 49:/goldcut/webrouter.php	(::) 49:/goldcut/webrouter.php
+[!] 02/04 22:55:23	{"error":"no_hash_in_message_or_cookie"}	(::) 57:/goldcut/webrouter.php	(::) 57:/goldcut/webrouter.php
+[.] 02/04 22:55:23	{"state":"Editing","urn":"urn:Document:Claim:R_LSC:856070659","user":null}	(::) 68:/goldcut/webrouter.php	(::) 68:/goldcut/webrouter.php
+[ ] 02/04 22:55:23	DMS/SetDocumentState	(GateRequest::dispatch) 35:/goldcut/framework/gaterequest.php	(GateRequest::dispatch) 35:/goldcut/framework/gaterequest.php
+[.] 02/04 22:55:23	{"state":"Editing","urn":"urn:Document:Claim:R_LSC:856070659","user":null}	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php
+[ ] 02/04 22:55:23	stdClass Object
+(
+    [state] => Editing
+    [urn] => urn:Document:Claim:R_LSC:856070659
+    [user] => 
+)
+	(DMS\SetDocumentState::gate) 15:/gates/DMS/SetDocumentState.php	(DMS\SetDocumentState::gate) 15:/gates/DMS/SetDocumentState.php
+[ ] 02/04 22:55:23	after_update_any_dms	(exchange::route) 94:/goldcut/framework/exchange.php	(exchange::route) 94:/goldcut/framework/exchange.php
+[ ] 02/04 22:55:23	NON DRAFT, WILL SHADOW urn:Document:Claim:R_LSC:856070659	(::after_update_any_dms) 18:/goldcut/mq/dms/universaldocumentshadow.php	(::after_update_any_dms) 18:/goldcut/mq/dms/universaldocumentshadow.php
+[ ] 02/04 22:55:23	CREATE SHADOW	(::after_update_any_dms) 50:/goldcut/mq/dms/universaldocumentshadow.php	(::after_update_any_dms) 50:/goldcut/mq/dms/universaldocumentshadow.php
+[ ] 02/04 22:55:23	{"action":"update","urn":"urn:Document:Claim:R_LSC:856070659","state":"Editing","id":856070659}	(DMS\SetDocumentState::gate) 22:/gates/DMS/SetDocumentState.php	(DMS\SetDocumentState::gate) 22:/gates/DMS/SetDocumentState.php
+[.] 02/04 22:55:24	route 8, app ProcessActorsDirector, fn/view exclusive	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 02/04 22:55:24	=========================================================================	(ProcessActorsDirectorControl::exclusive) 9:/apps/ProcessActorsDirector/ProcessActorsDirectorControl.php	(ProcessActorsDirectorControl::exclusive) 9:/apps/ProcessActorsDirector/ProcessActorsDirectorControl.php
+[.] 02/04 22:55:24	{"upn":"UPN:DMS:Claims:Claim:9628694","processPrototype":"DMS:Claims:Claim","stage":"Considering","subjectProto":"Document:Claim:R_LSC"}	(ProcessActorsDirectorControl::exclusive) 16:/apps/ProcessActorsDirector/ProcessActorsDirectorControl.php	(ProcessActorsDirectorControl::exclusive) 16:/apps/ProcessActorsDirector/ProcessActorsDirectorControl.php
+[.] 02/04 22:55:24	MPE	(ProcessActorsDirectorControl::exclusive) 27:/apps/ProcessActorsDirector/ProcessActorsDirectorControl.php	(ProcessActorsDirectorControl::exclusive) 27:/apps/ProcessActorsDirector/ProcessActorsDirectorControl.php
+[.] 02/04 22:55:24	[ManagedProcess:Execution:Record] id: 9628694, initiator: urn:Man>, prototype: DMS:Claims:Claim, subject: urn:Doc>, metadata: {"subje>, done: f, currentstage: Considering, created: 2016-04>; returntopme:-, nextstage:-, currentactor:-, pushadditionalactors_PeopleEmployeeInternal:-, popadditionalactors_PeopleEmployeeInternal:-, noncancellable:-, currentactorgroup:-	(ProcessActorsDirectorControl::exclusive) 28:/apps/ProcessActorsDirector/ProcessActorsDirectorControl.php	(ProcessActorsDirectorControl::exclusive) 28:/apps/ProcessActorsDirector/ProcessActorsDirectorControl.php
+[.] 02/04 22:55:24	subject:urn:Document:Claim:R_LSC:856070659	(ProcessActorsDirectorControl::exclusive) 29:/apps/ProcessActorsDirector/ProcessActorsDirectorControl.php	(ProcessActorsDirectorControl::exclusive) 29:/apps/ProcessActorsDirector/ProcessActorsDirectorControl.php
+[!] 02/04 22:55:24	Exception No subject in MPE in processactorsdirector /Users/andrey/Sites/bc/apps/ProcessActorsDirector/ProcessActorsDirectorControl.php:37	(GCException::ghostBuster) 36:/goldcut/framework/gcexception.php	(GCException::ghostBuster) 36:/goldcut/framework/gcexception.php
+[.] 02/04 22:55:24	WEB REQUEST ERROR:	No subject in MPE
+
+URI:	/processactorsdirector (local.bc)
+FILE:	/Users/andrey/Sites/bc/apps/ProcessActorsDirector/ProcessActorsDirectorControl.php : 37
+CODE:	throw new Exception("No subject in MPE");
+TRACE:	ProcessActorsDirectorControl.exclusive /Users/andrey/Sites/bc/goldcut/framework/application.php:296
+TRACE:	application.runApp /Users/andrey/Sites/bc/goldcut/framework/sitemap.php:73
+TRACE:	SiteMap.route /Users/andrey/Sites/bc/goldcut/framework/webrequest.php:66
+TRACE:	WebRequest.dispatch /Users/andrey/Sites/bc/goldcut/webrouter.php:92
+IP:	127.0.0.1 localhost server ip: 127.0.0.1
+BROWSER:	(OS/2) Java/1.8.0_77
+POST:	{"json":"{\"upn\":\"UPN:DMS:Claims:Claim:9628694\",\"processPrototype\":\"DMS:Claims:Claim\",\"stage\":\"Considering\",\"subjectProto\":\"Document:Claim:R_LSC\"}"}
+	(GCException::ghostBuster) 37:/goldcut/framework/gcexception.php	(GCException::ghostBuster) 37:/goldcut/framework/gcexception.php
+[.] 02/04 22:55:24	["max@attracti.com"]	(Mail::sendWithSMTP) 206:/goldcut/framework/mail.php	(Mail::sendWithSMTP) 206:/goldcut/framework/mail.php
+[.] 02/04 22:55:24	NOT SENT	(Mail::sendWithSMTP) 216:/goldcut/framework/mail.php	(Mail::sendWithSMTP) 216:/goldcut/framework/mail.php
+[!] 02/04 22:55:24	AjaxException No subject in MPE in processactorsdirector	(WebRequest::dispatch) 242:/goldcut/framework/webrequest.php	(WebRequest::dispatch) 242:/goldcut/framework/webrequest.php
+[!] 02/04 22:55:24	Exception No subject in MPE in processactorsdirector /Users/andrey/Sites/bc/goldcut/framework/sitemap.php:85	(GCException::ghostBuster) 36:/goldcut/framework/gcexception.php	(GCException::ghostBuster) 36:/goldcut/framework/gcexception.php
+[.] 02/04 22:55:24	WEB REQUEST ERROR:	No subject in MPE
+
+URI:	/processactorsdirector (local.bc)
+FILE:	/Users/andrey/Sites/bc/goldcut/framework/sitemap.php : 85
+CODE:	throw new AjaxException($e->getMessage(), $e->getCode(), $e);
+TRACE:	SiteMap.route /Users/andrey/Sites/bc/goldcut/framework/webrequest.php:66
+TRACE:	WebRequest.dispatch /Users/andrey/Sites/bc/goldcut/webrouter.php:92
+IP:	127.0.0.1 localhost server ip: 127.0.0.1
+BROWSER:	(OS/2) Java/1.8.0_77
+POST:	{"json":"{\"upn\":\"UPN:DMS:Claims:Claim:9628694\",\"processPrototype\":\"DMS:Claims:Claim\",\"stage\":\"Considering\",\"subjectProto\":\"Document:Claim:R_LSC\"}"}
+	(GCException::ghostBuster) 37:/goldcut/framework/gcexception.php	(GCException::ghostBuster) 37:/goldcut/framework/gcexception.php
+[.] 02/04 22:55:24	["max@attracti.com"]	(Mail::sendWithSMTP) 206:/goldcut/framework/mail.php	(Mail::sendWithSMTP) 206:/goldcut/framework/mail.php
+[.] 02/04 22:55:24	NOT SENT	(Mail::sendWithSMTP) 216:/goldcut/framework/mail.php	(Mail::sendWithSMTP) 216:/goldcut/framework/mail.php
+[.] 02/04 22:55:24	route 1, app Inbox, fn/view request	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 04/04 12:40:22	route 2, app UniversalDocument, fn/view resource	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 04/04 12:40:23	{"action":"load","urn":"urn:ManagedProcess:Journal:Record","subject":"urn:Document:Capa:Deviation:882868313","lang":false}	(::widget_journal) 24:/widgets/journal.php	(::widget_journal) 24:/widgets/journal.php
+[.] 04/04 12:40:23	{ManagedProcess:Journal:Record} [count: 16]	(::widget_journal) 25:/widgets/journal.php	(::widget_journal) 25:/widgets/journal.php
+[.] 04/04 12:40:25	route 8, app UniversalLoad, fn/view exclusive	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 04/04 12:40:25	{"urn":"urn:Document:Capa:Deviation:882868313"}	(UniversalLoadControl::exclusive) 13:/goldcut/apps/UniversalLoad/UniversalLoadControl.php	(UniversalLoadControl::exclusive) 13:/goldcut/apps/UniversalLoad/UniversalLoadControl.php
+[.] 04/04 12:40:25	{Management:Post:Individual} [count: 1]	(UniversalLoadControl::exclusive) 14:/goldcut/apps/UniversalLoad/UniversalLoadControl.php	(UniversalLoadControl::exclusive) 14:/goldcut/apps/UniversalLoad/UniversalLoadControl.php
+[!] 04/04 12:40:25	No POST.json	(::) 42:/goldcut/webrouter.php	(::) 42:/goldcut/webrouter.php
+[ ] 04/04 12:40:25	{"gate":"Selector\/company\/structure\/CompanyStructureDepartment"}	(::) 44:/goldcut/webrouter.php	(::) 44:/goldcut/webrouter.php
+[.] 04/04 12:40:25	{"gate":"Selector\/company\/structure\/CompanyStructureDepartment","user":null}	(::) 68:/goldcut/webrouter.php	(::) 68:/goldcut/webrouter.php
+[ ] 04/04 12:40:25	Selector/company/structure/CompanyStructureDepartment	(GateRequest::dispatch) 35:/goldcut/framework/gaterequest.php	(GateRequest::dispatch) 35:/goldcut/framework/gaterequest.php
+[.] 04/04 12:40:25	{"gate":"Selector\/company\/structure\/CompanyStructureDepartment","user":null}	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php
+[.] 04/04 12:40:46	route 1, app Inbox, fn/view request	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 04/04 12:40:51	route 2, app UniversalDocument, fn/view resource	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 04/04 12:40:51	{"action":"load","urn":"urn:ManagedProcess:Journal:Record","subject":"urn:Document:Claim:R_LSC:856070659","lang":false}	(::widget_journal) 24:/widgets/journal.php	(::widget_journal) 24:/widgets/journal.php
+[.] 04/04 12:40:52	{ManagedProcess:Journal:Record} [count: 5]	(::widget_journal) 25:/widgets/journal.php	(::widget_journal) 25:/widgets/journal.php
+[.] 04/04 12:40:52	route 8, app UniversalLoad, fn/view exclusive	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 04/04 12:40:52	{"urn":"urn:Document:Claim:R_LSC:856070659"}	(UniversalLoadControl::exclusive) 13:/goldcut/apps/UniversalLoad/UniversalLoadControl.php	(UniversalLoadControl::exclusive) 13:/goldcut/apps/UniversalLoad/UniversalLoadControl.php
+[.] 04/04 12:40:52	{Management:Post:Individual} [count: 1]	(UniversalLoadControl::exclusive) 14:/goldcut/apps/UniversalLoad/UniversalLoadControl.php	(UniversalLoadControl::exclusive) 14:/goldcut/apps/UniversalLoad/UniversalLoadControl.php
+[!] 04/04 12:40:53	No POST.json	(::) 42:/goldcut/webrouter.php	(::) 42:/goldcut/webrouter.php
+[ ] 04/04 12:40:53	{"gate":"Selector\/directory\/DirectoryBusinessProjectsItem"}	(::) 44:/goldcut/webrouter.php	(::) 44:/goldcut/webrouter.php
+[.] 04/04 12:40:53	{"gate":"Selector\/directory\/DirectoryBusinessProjectsItem","user":null}	(::) 68:/goldcut/webrouter.php	(::) 68:/goldcut/webrouter.php
+[ ] 04/04 12:40:53	Selector/directory/DirectoryBusinessProjectsItem	(GateRequest::dispatch) 35:/goldcut/framework/gaterequest.php	(GateRequest::dispatch) 35:/goldcut/framework/gaterequest.php
+[.] 04/04 12:40:53	{"gate":"Selector\/directory\/DirectoryBusinessProjectsItem","user":null}	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php
+[.] 04/04 12:41:17	route 3, app ProcessRBAC, fn/view processesICanStart	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[ ] 04/04 12:41:17	(NULL)	(ProcessRBACControl::processesICanStart) 12:/goldcut/apps/ProcessRBAC/ProcessRBACControl.php	(ProcessRBACControl::processesICanStart) 12:/goldcut/apps/ProcessRBAC/ProcessRBACControl.php
+[ ] 04/04 12:41:17	(NULL)	(ProcessRBACControl::processesICanStart) 13:/goldcut/apps/ProcessRBAC/ProcessRBACControl.php	(ProcessRBACControl::processesICanStart) 13:/goldcut/apps/ProcessRBAC/ProcessRBACControl.php
+[.] 04/04 12:41:57	route 3, app ProcessRBAC, fn/view processesICanStart	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[ ] 04/04 12:41:57	URN Object
+(
+    [urn:URN:private] => urn:Definition:DocumentClass:ForPrototype:1936018484
+    [entitymeta] => entitymeta Object
+        (
+            [class] => SystemData
+            [manager] => SystemData Object
+                (
+                    [name] => SystemData
+                    [behaviors:protected] => Array
+                        (
+                            [0] => general_crud
+                            [1] => general_graph
+                            [2] => general_list
+                            [3] => general_multylang
+                            [4] => general_clone
+                            [5] => general_ordered
+                        )
+
+                    [limits:protected] => 
+                )
+
+            [uid] => 9327281
+            [code] => 
+            [legacyname] => 
+            [name] => Definition:DocumentClass:ForPrototype
+            [prototype] => Prototype Object
+                (
+                    [inDomain:Prototype:private] => Definition
+                    [ofClass:Prototype:private] => DocumentClass
+                    [ofType:Prototype:private] => ForPrototype
+                )
+
+            [title] => Array
+                (
+                    [ru] => Document Class
+                    [en] => Document Class
+                )
+
+            [field_metas] => Array
+                (
+                    [0] => 140
+                    [1] => 141
+                )
+
+            [has_one:entitymeta:private] => Array
+                (
+                )
+
+            [use_one:entitymeta:private] => Array
+                (
+                )
+
+            [has_many:entitymeta:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [DefinitionPrototypeSystem] => Definition:Prototype:System
+                        )
+
+                )
+
+            [use_many:entitymeta:private] => 
+            [belongs_to:entitymeta:private] => Array
+                (
+                )
+
+            [category:entitymeta:private] => 
+            [multy_lang:entitymeta:private] => Array
+                (
+                )
+
+            [lang_field_metas] => Array
+                (
+                )
+
+            [communitydata:entitymeta:private] => 
+            [statuses] => Array
+                (
+                )
+
+            [related:entitymeta:private] => 
+            [reverserelated] => Array
+                (
+                )
+
+            [compound_of] => 
+            [media] => 
+            [mediaoptions] => 
+            [imagesettings] => Array
+                (
+                )
+
+            [urn] => urn:Definition:DocumentClass:ForPrototype
+            [directmanage] => 1
+            [adminadd] => 1
+            [container] => 
+            [treeview] => 
+            [translit] => 
+            [alias] => 
+            [checkunique] => Array
+                (
+                    [0] => name
+                )
+
+            [index] => Array
+                (
+                )
+
+            [defaultorder] => Array
+                (
+                    [title] => ASC
+                )
+
+            [adminfields] => Array
+                (
+                    [0] => title
+                    [1] => name
+                )
+
+            [usereditfields] => Array
+                (
+                )
+
+            [cacheMemoryEnabled] => 
+            [lists] => Array
+                (
+                )
+
+            [groupby] => Array
+                (
+                )
+
+            [extendstructure] => Array
+                (
+                )
+
+            [searchtextin] => Array
+                (
+                )
+
+            [adminsearchtextin] => Array
+                (
+                )
+
+            [clonable] => yes
+            [groupnames] => 
+            [groups] => 
+            [virtualgroups] => 
+            [options] => Array
+                (
+                    [clonable] => yes
+                )
+
+            [astitles] => Array
+                (
+                )
+
+            [allOrdered] => Array
+                (
+                    [0] => DefinitionPrototypeSystem
+                    [1] => title
+                    [2] => name
+                )
+
+            [required] => Array
+                (
+                )
+
+            [attributed] => 
+            [overlayed] => 
+            [system:entitymeta:private] => 1
+            [usemany_entities] => Array
+                (
+                )
+
+        )
+
+    [prototype] => Prototype Object
+        (
+            [inDomain:Prototype:private] => Definition
+            [ofClass:Prototype:private] => DocumentClass
+            [ofType:Prototype:private] => ForPrototype
+        )
+
+    [entity] => entitymeta Object
+        (
+            [class] => SystemData
+            [manager] => SystemData Object
+                (
+                    [name] => SystemData
+                    [behaviors:protected] => Array
+                        (
+                            [0] => general_crud
+                            [1] => general_graph
+                            [2] => general_list
+                            [3] => general_multylang
+                            [4] => general_clone
+                            [5] => general_ordered
+                        )
+
+                    [limits:protected] => 
+                )
+
+            [uid] => 9327281
+            [code] => 
+            [legacyname] => 
+            [name] => Definition:DocumentClass:ForPrototype
+            [prototype] => Prototype Object
+                (
+                    [inDomain:Prototype:private] => Definition
+                    [ofClass:Prototype:private] => DocumentClass
+                    [ofType:Prototype:private] => ForPrototype
+                )
+
+            [title] => Array
+                (
+                    [ru] => Document Class
+                    [en] => Document Class
+                )
+
+            [field_metas] => Array
+                (
+                    [0] => 140
+                    [1] => 141
+                )
+
+            [has_one:entitymeta:private] => Array
+                (
+                )
+
+            [use_one:entitymeta:private] => Array
+                (
+                )
+
+            [has_many:entitymeta:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [DefinitionPrototypeSystem] => Definition:Prototype:System
+                        )
+
+                )
+
+            [use_many:entitymeta:private] => 
+            [belongs_to:entitymeta:private] => Array
+                (
+                )
+
+            [category:entitymeta:private] => 
+            [multy_lang:entitymeta:private] => Array
+                (
+                )
+
+            [lang_field_metas] => Array
+                (
+                )
+
+            [communitydata:entitymeta:private] => 
+            [statuses] => Array
+                (
+                )
+
+            [related:entitymeta:private] => 
+            [reverserelated] => Array
+                (
+                )
+
+            [compound_of] => 
+            [media] => 
+            [mediaoptions] => 
+            [imagesettings] => Array
+                (
+                )
+
+            [urn] => urn:Definition:DocumentClass:ForPrototype
+            [directmanage] => 1
+            [adminadd] => 1
+            [container] => 
+            [treeview] => 
+            [translit] => 
+            [alias] => 
+            [checkunique] => Array
+                (
+                    [0] => name
+                )
+
+            [index] => Array
+                (
+                )
+
+            [defaultorder] => Array
+                (
+                    [title] => ASC
+                )
+
+            [adminfields] => Array
+                (
+                    [0] => title
+                    [1] => name
+                )
+
+            [usereditfields] => Array
+                (
+                )
+
+            [cacheMemoryEnabled] => 
+            [lists] => Array
+                (
+                )
+
+            [groupby] => Array
+                (
+                )
+
+            [extendstructure] => Array
+                (
+                )
+
+            [searchtextin] => Array
+                (
+                )
+
+            [adminsearchtextin] => Array
+                (
+                )
+
+            [clonable] => yes
+            [groupnames] => 
+            [groups] => 
+            [virtualgroups] => 
+            [options] => Array
+                (
+                    [clonable] => yes
+                )
+
+            [astitles] => Array
+                (
+                )
+
+            [allOrdered] => Array
+                (
+                    [0] => DefinitionPrototypeSystem
+                    [1] => title
+                    [2] => name
+                )
+
+            [required] => Array
+                (
+                )
+
+            [attributed] => 
+            [overlayed] => 
+            [system:entitymeta:private] => 1
+            [usemany_entities] => Array
+                (
+                )
+
+        )
+
+    [uuid] => 1936018484
+    [listname] => 
+)
+	(ProcessRBACControl::processesICanStart) 12:/goldcut/apps/ProcessRBAC/ProcessRBACControl.php	(ProcessRBACControl::processesICanStart) 12:/goldcut/apps/ProcessRBAC/ProcessRBACControl.php
+[ ] 04/04 12:41:57	[object HTMLInputElement]	(ProcessRBACControl::processesICanStart) 13:/goldcut/apps/ProcessRBAC/ProcessRBACControl.php	(ProcessRBACControl::processesICanStart) 13:/goldcut/apps/ProcessRBAC/ProcessRBACControl.php
+[ ] 04/04 12:42:19	{"subjectURN":"urn:Document:Claim:R_LST:721500112"}	(::) 48:/goldcut/webrouter.php	(::) 48:/goldcut/webrouter.php
+[ ] 04/04 12:42:19	{"subjectURN":"urn:Document:Claim:R_LST:721500112"}	(::) 49:/goldcut/webrouter.php	(::) 49:/goldcut/webrouter.php
+[!] 04/04 12:42:19	{"error":"no_hash_in_message_or_cookie"}	(::) 57:/goldcut/webrouter.php	(::) 57:/goldcut/webrouter.php
+[.] 04/04 12:42:19	{"subjectURN":"urn:Document:Claim:R_LST:721500112","user":null}	(::) 68:/goldcut/webrouter.php	(::) 68:/goldcut/webrouter.php
+[ ] 04/04 12:42:19	Process/SetBaseVisantsForDocument	(GateRequest::dispatch) 35:/goldcut/framework/gaterequest.php	(GateRequest::dispatch) 35:/goldcut/framework/gaterequest.php
+[.] 04/04 12:42:19	{"subjectURN":"urn:Document:Claim:R_LST:721500112","user":null}	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php
+[.] 04/04 12:42:19	Document:Claim:R_LST	(Process\SetBaseVisantsForDocument::gate) 18:/gates/Process/SetBaseVisantsForDocument.php	(Process\SetBaseVisantsForDocument::gate) 18:/gates/Process/SetBaseVisantsForDocument.php
+[ ] 04/04 12:42:19	APPROVER? urn:Management:Post:Individual:1492988442	(Process\SetBaseVisantsForDocument::gate) 31:/gates/Process/SetBaseVisantsForDocument.php	(Process\SetBaseVisantsForDocument::gate) 31:/gates/Process/SetBaseVisantsForDocument.php
+[ ] 04/04 12:42:19	VISANTS? {1816416714,88814251}	(Process\SetBaseVisantsForDocument::gate) 32:/gates/Process/SetBaseVisantsForDocument.php	(Process\SetBaseVisantsForDocument::gate) 32:/gates/Process/SetBaseVisantsForDocument.php
+[.] 04/04 12:42:19	EACH VISANT ADD TO SHEET #1816416714	(Process\SetBaseVisantsForDocument::gate) 38:/gates/Process/SetBaseVisantsForDocument.php	(Process\SetBaseVisantsForDocument::gate) 38:/gates/Process/SetBaseVisantsForDocument.php
+[ ] 04/04 12:42:19	after_update_any_dms	(exchange::route) 94:/goldcut/framework/exchange.php	(exchange::route) 94:/goldcut/framework/exchange.php
+[.] 04/04 12:42:19	EACH VISANT ADD TO SHEET #88814251	(Process\SetBaseVisantsForDocument::gate) 38:/gates/Process/SetBaseVisantsForDocument.php	(Process\SetBaseVisantsForDocument::gate) 38:/gates/Process/SetBaseVisantsForDocument.php
+[ ] 04/04 12:42:19	after_update_any_dms	(exchange::route) 94:/goldcut/framework/exchange.php	(exchange::route) 94:/goldcut/framework/exchange.php
+[ ] 04/04 12:42:19	{"state":"CreateDraft", "urn":"urn:Document:Claim:R_LST:721500112"}	(::) 48:/goldcut/webrouter.php	(::) 48:/goldcut/webrouter.php
+[ ] 04/04 12:42:19	{"state":"CreateDraft","urn":"urn:Document:Claim:R_LST:721500112"}	(::) 49:/goldcut/webrouter.php	(::) 49:/goldcut/webrouter.php
+[!] 04/04 12:42:19	{"error":"no_hash_in_message_or_cookie"}	(::) 57:/goldcut/webrouter.php	(::) 57:/goldcut/webrouter.php
+[.] 04/04 12:42:19	{"state":"CreateDraft","urn":"urn:Document:Claim:R_LST:721500112","user":null}	(::) 68:/goldcut/webrouter.php	(::) 68:/goldcut/webrouter.php
+[ ] 04/04 12:42:19	DMS/SetDocumentState	(GateRequest::dispatch) 35:/goldcut/framework/gaterequest.php	(GateRequest::dispatch) 35:/goldcut/framework/gaterequest.php
+[.] 04/04 12:42:19	{"state":"CreateDraft","urn":"urn:Document:Claim:R_LST:721500112","user":null}	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php
+[ ] 04/04 12:42:19	stdClass Object
+(
+    [state] => CreateDraft
+    [urn] => urn:Document:Claim:R_LST:721500112
+    [user] => 
+)
+	(DMS\SetDocumentState::gate) 15:/gates/DMS/SetDocumentState.php	(DMS\SetDocumentState::gate) 15:/gates/DMS/SetDocumentState.php
+[ ] 04/04 12:42:19	after_update_any_dms	(exchange::route) 94:/goldcut/framework/exchange.php	(exchange::route) 94:/goldcut/framework/exchange.php
+[ ] 04/04 12:42:19	{"action":"update","urn":"urn:Document:Claim:R_LST:721500112","state":"CreateDraft","id":721500112}	(DMS\SetDocumentState::gate) 22:/gates/DMS/SetDocumentState.php	(DMS\SetDocumentState::gate) 22:/gates/DMS/SetDocumentState.php
+[.] 04/04 12:42:20	route 1, app Inbox, fn/view request	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 04/04 12:42:31	route 8, app Process, fn/view exclusive	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[ ] 04/04 12:42:31	urn:Document:Claim:R_LST:721500112	(ProcessApp::exclusive) 92:/goldcut/apps/Process/ProcessApp.php	(ProcessApp::exclusive) 92:/goldcut/apps/Process/ProcessApp.php
+[.] 04/04 12:42:31	{"action":"load","urn":"urn:ManagedProcess:Journal:Record","subject":"urn:Document:Claim:R_LST:721500112","lang":false}	(::widget_journal) 24:/widgets/journal.php	(::widget_journal) 24:/widgets/journal.php
+[.] 04/04 12:42:31	{ManagedProcess:Journal:Record} [count: 3]	(::widget_journal) 25:/widgets/journal.php	(::widget_journal) 25:/widgets/journal.php
+[ ] 04/04 12:42:32	{"subjectURN":"urn:Document:Claim:R_LST:721500112"}	(::) 48:/goldcut/webrouter.php	(::) 48:/goldcut/webrouter.php
+[ ] 04/04 12:42:32	{"subjectURN":"urn:Document:Claim:R_LST:721500112"}	(::) 49:/goldcut/webrouter.php	(::) 49:/goldcut/webrouter.php
+[.] 04/04 12:42:32	{"subjectURN":"urn:Document:Claim:R_LST:721500112","user":null}	(::) 68:/goldcut/webrouter.php	(::) 68:/goldcut/webrouter.php
+[ ] 04/04 12:42:32	Events/GetLastComments	(GateRequest::dispatch) 35:/goldcut/framework/gaterequest.php	(GateRequest::dispatch) 35:/goldcut/framework/gaterequest.php
+[.] 04/04 12:42:32	{"subjectURN":"urn:Document:Claim:R_LST:721500112","user":null}	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php
+[.] 04/04 12:42:32	route 8, app UniversalLoad, fn/view exclusive	(application::runApp) 267:/goldcut/framework/application.php	(application::runApp) 267:/goldcut/framework/application.php
+[.] 04/04 12:42:32	{"urn":"urn:Document:Claim:R_LST:721500112"}	(UniversalLoadControl::exclusive) 13:/goldcut/apps/UniversalLoad/UniversalLoadControl.php	(UniversalLoadControl::exclusive) 13:/goldcut/apps/UniversalLoad/UniversalLoadControl.php
+[.] 04/04 12:42:32	{Management:Post:Individual} [count: 1]	(UniversalLoadControl::exclusive) 14:/goldcut/apps/UniversalLoad/UniversalLoadControl.php	(UniversalLoadControl::exclusive) 14:/goldcut/apps/UniversalLoad/UniversalLoadControl.php
+[ ] 04/04 12:42:32	NO FN LOAD_Claim_Editing_Claim_R_LST	(UniversalLoadControl::exclusive) 32:/goldcut/apps/UniversalLoad/UniversalLoadControl.php	(UniversalLoadControl::exclusive) 32:/goldcut/apps/UniversalLoad/UniversalLoadControl.php
+[ ] 04/04 12:42:32	LOAD_FALLBACK	(Goldcut::{closure}) 22:/FormDataStorage/universalLoadSave.php	(Goldcut::{closure}) 22:/FormDataStorage/universalLoadSave.php
+[.] 04/04 12:42:32	LOADED PROMISE urn:Document:Claim:R_LST:721500112	(Goldcut::{closure}) 23:/FormDataStorage/universalLoadSave.php	(Goldcut::{closure}) 23:/FormDataStorage/universalLoadSave.php
+[.] 04/04 12:42:32	[Document:Claim:R_LST] id: 721500112, state: CreateDraft, process: UPN:DMS>, children: {}, initiator: urn:Man>, privatedraft: t, returned: f, done: f, archived: f, created: 1459762939, updated: 1459762939, basevisants: {urn:Ma>, version: 1; companyproject:-, CompanyLegalEntityCounterparty:-, warehouse:-, DocumentSolutionUniversal:-, specialrequirement:-, attachments:-, customsdeclarationtype:-, customsclearancedocs:-, customsclearancedate:-, adddescription:-, code:-, parent:-, related:-, authors:-, vised:-, approved:-, solutionvariants_DocumentSolutionUniversal:-, additionalvisants:-, DMSDocumentUniversal:-, rtaken:-, DefinitionPrototypeDocument:-, hardmaster:-, hardcopy:-, effective:-, vnext:-, vprev:-, efrom:-, eto:-	(Goldcut::{closure}) 32:/FormDataStorage/universalLoadSave.php	(Goldcut::{closure}) 32:/FormDataStorage/universalLoadSave.php
+[.] 04/04 12:42:32	{"id":721500112,"urn":"urn:Document:Claim:R_LST:721500112","specialrequirement":null,"attachments":null,"customsdeclarationtype":null,"customsclearancedocs":null,"customsclearancedate":null,"adddescription":null,"rtaken":null,"privatedraft":"t","state":"CreateDraft","code":"","process":"UPN:DMS:Claims:Claim:4219199","parent":"","children":[],"related":null,"initiator":"urn:Management:Post:Individual:1118804000","authors":null,"returned":"f","done":false,"effective":null,"archived":"f","vised":null,"approved":null,"created":"1459762939","updated":"1459762939","basevisants":["urn:Management:Post:Individual:1816416714","urn:Management:Post:Individual:88814251"],"additionalvisants":null,"hardmaster":null,"hardcopy":null,"version":1,"vnext":"","vprev":"","efrom":null,"eto":null}	(Goldcut::{closure}) 33:/FormDataStorage/universalLoadSave.php	(Goldcut::{closure}) 33:/FormDataStorage/universalLoadSave.php
+[!] 04/04 12:42:32	No POST.json	(::) 42:/goldcut/webrouter.php	(::) 42:/goldcut/webrouter.php
+[ ] 04/04 12:42:32	{"gate":"Selector\/directory\/DirectoryBusinessProjectsItem","mpe":"urn:ManagedProcess:Execution:Record:4219199"}	(::) 44:/goldcut/webrouter.php	(::) 44:/goldcut/webrouter.php
+[.] 04/04 12:42:32	{"gate":"Selector\/directory\/DirectoryBusinessProjectsItem","mpe":"urn:ManagedProcess:Execution:Record:4219199","user":null}	(::) 68:/goldcut/webrouter.php	(::) 68:/goldcut/webrouter.php
+[ ] 04/04 12:42:32	Selector/directory/DirectoryBusinessProjectsItem	(GateRequest::dispatch) 35:/goldcut/framework/gaterequest.php	(GateRequest::dispatch) 35:/goldcut/framework/gaterequest.php
+[.] 04/04 12:42:32	{"gate":"Selector\/directory\/DirectoryBusinessProjectsItem","mpe":"urn:ManagedProcess:Execution:Record:4219199","user":null}	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php	(GateRequest::dispatch) 36:/goldcut/framework/gaterequest.php

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="RBAC:ProcessStartPermission:System" manager="SystemData" uid="12037">
+
+    <passport>
+        <title>OLD! ПРАВА СТАРТА ПРОЦЕССА</title>
+    </passport>
+
+    <states>
+         <status name="accessactive" default="yes" title="Активен"/>
+    </states>
+
+    <structure>
+
+        <useone entity="Management:Post:Individual" as="managementrole" title="Должность"/>
+        <!-- <useone entity="Definition:Prototype:System" as="processprototype" title="Прототип управляющего процесса"/> -->
+        <useone entity="Definition:Prototype:System" as="subjectprototype" title="Прототип управляемого объекта"/>
+
+        <field name="ordered" type="integer" title="Порядок" system="yes"/>
+
+    </structure>
+    <lists />
+    <defaultorder/>
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="managementrole"/>
+        <column selector="processprototype"/>
+        <column selector="subjectprototype"/>
+    </admincolumns>
+    <options>
+      <aparam name="directmanage" type="boolean" value="no"/>
+    </options>
+    <searchfields/>
+    <indexes/>
+</entity>

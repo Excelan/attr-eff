@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="Html" name="getPopupHtml">
+
+    <role>
+
+    </role>
+
+    <request>
+
+        <field name="user" type="integer" required="yes"/>
+        <field name="roles" type="iarray" required="no"/>
+
+        <field name="type" type="string" required="yes"/>
+        <field name="header" type="string" required="yes"/>
+        <field name="content" type="string" required="yes"/>
+        <field name="button" type="string" required="yes"/>
+        <field name="method" type="string" required="yes"/>
+        <field name="action" type="string" required="yes"/>
+        <field name="onsuccess" type="string" required="no"/>
+        <field name="dataselector" type="string" required="no"/>
+        <field name="param" type="string" required="no"/>
+
+    </request>
+
+
+    <response>
+
+        <field name="popup_html" type="string" required="yes"/>
+
+    </response>
+
+</gate>

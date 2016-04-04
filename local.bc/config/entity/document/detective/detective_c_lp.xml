@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<entity prototype="Document:Detective:C_LP" code="DC_LP" manager="Document" uid="5011">
+
+    <passport>
+        <title>Протокол служебного расследования C_LP</title>
+    </passport>
+
+    <structure>
+
+      <useone entity="Document:Complaint:C_LP" as="DocumentComplaintC_LP" title="Жалоба"/><!-- Из жалобы-->
+
+      <!-- Инцидент-->
+      <hasone entity="Company:LegalEntity:Counterparty" system="yes" title="Клиент"/><!-- Из жалобы-->
+      <hasone entity="BusinessObject:Record:Polymorph" as="warehouse" system="yes" title="№ склада"/><!-- Из жалобы-->
+      <field name="datestart" type="date" system="yes" title="Дата начала инцидента"/><!-- Из жалобы-->
+      <field name="dateend" type="date" system="yes" title="Дата окончания инцидента"/><!-- Из жалобы-->
+      <field name="actual" type="set" system="yes" title="Проблема актуальна до текущего момента времени"><!-- Из жалобы-->
+        <value name="yes" title="Да" />
+        <value name="no" title="Нет" />
+      </field>
+      <field name="description" type="richtext" system="yes" title="Описание жалобы"/><!-- Из жалобы-->
+      <field name="attachments" type="tarray" system="yes" title="Вложение"/><!-- Из жалобы-->
+
+      <!-- Реагирование-->
+      <field name="troublefix" type="set" title="Отметка о проведении мер по быстрому устранению проблемы">
+        <value name="yes" title="Да" />
+        <value name="no" title="Нет" />
+      </field>
+      <field name="troublefixdate" type="date" title="Дата проведения мер по быстрому устранению проблемы"/>
+      <field name="troubleevent" type="richtext" title="Меры, принятые для устранения проблемы"/>
+      <hasone entity="Management:Post:Individual" as="responsible" title="Ответственный исполнитель"/>
+
+      <!-- Расследование-->
+      <field name="investigationdate" type="date" title="Дата проведения расследования"/>
+      <field name="factdetected" type="richtext" title="Выявленные факты"/>
+
+
+      <!-- Заключение-->
+      <field name="complaintstatus" type="set" title="Отметка о статусе жалобы">
+        <value name="yes" title="Да" />
+        <value name="no" title="Нет" />
+      </field>
+      <field name="conclusion" type="richtext" title="Заключение"/>
+      <field name="materialsused" type="richtext" title="Опись использованных материалов"/>
+
+
+      <!-- Документация-->
+      <field name="factdetected" type="richtext" title="Выявленные факты"/>
+      <field name="attachments" type="tarray" title="Внешние документы"/><!-- upload-->
+
+      <!-- Отклонение-->
+      <field name="description" type="richtext" title="Описание отклонения"/>
+
+
+
+    </structure>
+
+    <lists>
+        <list name="deviations" entity="Directory:Deviation:PreCapa" ns="3500" title="Отклонения (pre capa)"/>
+      <list name="commissionmember" entity="Management:Post:Individual" ns="3500" title="Члены комиссии"/>
+      <list name="checkbo" entity="BusinessObject:Record:Polymorph" ns="3600" title="Объекты которые проходили проверку"/>
+      <list name="internaldocuments" entity="DMS:Document:Universal" ns="3822" title="Внутренние документы"/>
+      <list name="riskapproved" entity="RiskManagement:Risk:Approved" ns="3800" title="Идентифицированные риски"/>
+      <list name="risknotapproved" entity="RiskManagement:Risk:NotApproved" ns="3809" title="Не идентифицированные риски"/>
+    </lists>
+
+
+    <defaultorder>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		<!-- <column selector="status"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

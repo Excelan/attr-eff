@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>GOLDCUT FileAPI, XHR2 ajax file uploading v2</title>
+
+    <link rel='stylesheet' type='text/css' href='/goldcut/assets/css/normalize.css' media='screen' />
+
+    <!--    <link rel='stylesheet' type='text/css' href='/css/screen.css' media='screen' />-->
+    <link rel='stylesheet' type='text/css' href='/goldcut/assets/css/gcgrid.css' media='screen' />
+    <link rel='stylesheet' type='text/css' href='/goldcut/assets/css/gcform.css' media='screen' />
+
+    <script type="text/javascript" src="/goldcut/js/gcdom.js"></script>
+    <script type="text/javascript" src="/goldcut/js/goldcut.js"></script>
+    <script type="text/javascript" src="/goldcut/js/gcoo.js"></script>
+    <script type="text/javascript" src="/goldcut/js/gcutil.js"></script>
+    <script type="text/javascript" src="/goldcut/js/screen.js"></script>
+
+    <script type="text/javascript" src="/goldcut/js/gcfileupload.js"></script>
+
+    <script>
+
+        onEachUploadedLocal1 = function(f)
+        {
+            processUploadedFiles.call(f.manager.domcontainer, f.response)
+        }
+        onEachUploadedLocal2 = function(f)
+        {
+            processUploadedFiles.call(f.manager.domcontainer, f.response)
+        }
+
+        onAllUploadedLocal = function(data)
+        {
+            console.log('ALL DONE upload.js onAllUploadedLocal');
+        }
+
+        // one or array
+        processUploadedFiles = function(data)
+        {
+
+            console.log(data)
+
+            if (!is_array(data)) data = [data];
+
+            var ratio = 1;
+
+            for (var uploadedimg = 0; uploadedimg < data.length; uploadedimg++)
+            {
+                var CURIMG = data[uploadedimg];
+                //console.log(data)
+                // previewwrap = id('previewwrap')
+                var previewwrap = document.createElement('div');
+                addClass(previewwrap, 'previewwrap');
+                //console.log(this);
+                this.parentNode.querySelector('.lnavid').appendChild(previewwrap); // append to left sidebar
+                this.parentNode.querySelector('.lnavid').appendChild(document.createElement('br'));
+
+                // preview = id('preview')
+                var preview = document.createElement('img');
+                addClass(preview, 'preview')
+                previewwrap.appendChild(preview);
+                preview.src = CURIMG.thumbnail.uri;
+
+                var freeareas = [-1,-1,-1,-1,-1,-1,-1,-1,-1];
+
+                if (!isArray(CURIMG.freeareas))
+                {
+                    for (var k in CURIMG.freeareas)
+                    {
+                        if (CURIMG.freeareas.hasOwnProperty(k))
+                        {
+                            var area = parseInt(k);
+                            freeareas[k] = CURIMG.freeareas[k];
+                        }
+                    }
+                }
+                else
+                {
+                    freeareas = CURIMG.freeareas;
+                }
+
+                //console.log(freeareas.length);
+                if (freeareas.length)
+                {
+                    abox = document.createElement('div');
+                    addClass(abox,'areasbox')
+                    addClass(abox,'BLK')
+                    this.parentNode.querySelector('.lnavid').appendChild(abox);
+                    for (var i=0;i<freeareas.length;i++)
+                    {
+                        //console.log(freeareas[i])
+                        div = document.createElement('div');
+                        abox.appendChild(div);
+                        if (freeareas[i] == 1) addClass(div, 'covered');
+                        if (freeareas[i] == -1) addClass(div, 'blank');
+                    }
+                }
+
+                div = document.createElement('div');
+                addClass(div,'colorbox')
+                setStyle(div, 'backgroundColor', '#'+CURIMG.color);
+                this.parentNode.querySelector('.lnavid').appendChild(div);
+                div = document.createElement('div');
+                addClass(div,'colorbox')
+                setStyle(div, 'backgroundColor', '#'+CURIMG.color2);
+                this.parentNode.querySelector('.lnavid').appendChild(div);
+
+                preview.onload = function()
+                {
+                    var preview = this[0];
+                    var previewwrap = this[1];
+                    var CURIMG = this[2];
+                    //console.log(preview, previewwrap)
+                    //console.log('IMG LOADED')
+                    var w = preview.offsetWidth
+                    var h = preview.offsetHeight
+                    ratio = w/h;
+                    //console.log(this)
+                    //console.log(w,h)
+                    setStyle(previewwrap, 'width', w+'px');
+                    setStyle(previewwrap, 'height', h+'px');
+                    // FACES removed
+
+                }.bind([preview, previewwrap, CURIMG])
+
+                // remove old face border
+                // if (div) id('previewwrap').removeChild(div);
+
+
+            }
+        }
+
+    </script>
+    <style>
+        .ready {
+            /*border: 1px solid green;*/
+        }
+        .busy {
+            background: #f0f0f0;
+        }
+        .dragover {
+            background: yellow;
+        }
+
+        .droparea {
+            width: 100px;
+            height: 50px;
+            border: dashed 1px olive;
+            /*background-color: yellow;*/
+            /*float: left;*/
+            color: black;
+            display: inline-block;
+        }
+        .droparea p {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-size: 1em;
+            line-height: 50px;
+        }
+        /* freeareas */
+        .colorbox {
+            border: 1px solid #eee;
+            width: 50px;
+            height: 50px;
+        }
+
+        .areasbox {
+            border: 1px dotted #fff;
+            width: 98px;
+            height: 98px;
+        }
+        .areasbox div {
+            float: left;
+            background: #eee;
+            border: 1px solid #ccc;
+            width: 30px;
+            height: 30px;
+        }
+        .areasbox div.covered {
+            background: #999;
+        }
+        .areasbox div.blank {
+            background: #fff;
+        }
+
+        .previewwrap {
+            margin-top: 20px;
+        }
+    </style>
+
+</head>
+<body>
+
+<div id="wrap" class="CW">
+
+    <div class="g6 RPM">
+        <h1>Upload test 1</h1>
+        <section>
+            <form data-upload="urn-photoitem" data-eachuploaded="onEachUploadedLocal1" data-alluploaded="onAllUploadedLocal">
+                <input type="file" multiple />
+                <div class="droparea"><p>Drop files here</p></div>
+            </form>
+            <div class="lnavid"></div>
+        </section>
+    </div>
+    <div class="g6">
+        <h1>Upload test 2</h1>
+        <section>
+            <form data-upload="urn-photoitem" data-eachuploaded="onEachUploadedLocal2">
+                <input type="file" multiple />
+                <div class="droparea"><p>Drop files here</p></div>
+            </form>
+            <div class="lnavid"></div>
+        </section>
+    </div>
+
+</div>
+
+
+</body>
+</html>

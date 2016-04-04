@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- CONTEXT BLOCK ЗАЯВКА НА ПЕРЕМЕЩЕНИЕ -->
+
+        <section type="context" entity="Document:Claim:R_LSM" title="Заявка на перемещение">
+
+            <!--Обязательные поля для всех типов Заявок -->
+            <field name="companyproject" type="select" title="Текущий проект предприятия" edit="lock">
+                <query gate="Selector/directory/DirectoryBusinessProjectsItem"/>
+            </field>
+            <field name="CompanyLegalEntityCounterparty" type="CompanyLegalEntityCounterparty" title="Клиент, для которого создается заявка" edit="lock">
+                <query gate="Selector/company"  />
+            </field>
+            <field name="warehouse" type="BusinessObject" title="№ склада, для которого создается заявка" edit="lock">
+                <query gate="Selector/businessobject"  />
+            </field>
+            <field name="specialrequirement" type="text" title="Специальное требование" edit="lock"/>
+            <field name="attachments" type="attachment" multiple="yes" title="Вложение" edit="lock"/>
+
+            <!--Индивидуальные поля по каждому типу Заявок -->
+            <field name="reason" type="text" title="Причина изменения статуса / перемещения в другую складскую зону" edit="lock"/>
+            <field name="goodsdocs" type="attachment" multiple="yes" title="Детальный список товара для изменения статуса / перемещения в другую складскую зону" edit="lock"/>
+            <field name="desireddate" type="date" title="Желаемая дата изменения статуса / перемещения в другую складскую зону" edit="lock"/>
+
+        </section>
+
+        <section title="Предложить один или более варианта решения">
+
+          <!-- TODO -->
+          <field name="rtaken" edit="unlock" title="Принять или отклонить заявку" type="select">
+              <options>
+                <option value="myself" title="Принять заявку и предоставить вариант решения"/>
+                <option value="notmyresp" title="Отклонить заявку"/>
+              </options>
+          </field>
+
+            <struct entity="Document:Solution:Universal" name="solutionvariants" multiple="yes" min="1" title="Вариант решения">
+
+                <field name="urn" type="hidden"/>
+
+                <field name="realizationtype" type="select" title="Тип реализации">
+                    <options>
+                        <option value="without_contractor_without_money" title="Без подрядчиков и покупки материалов"/>
+                        <option value="without_contractor_with_money" title="Без подрядчиков с покупкой материала"/>
+                        <option value="with_contractor_without_money" title="С подрядчиками без покупки материала"/>
+                        <option value="with_contractor_with_money" title="С подрядчиками с покупкой материала"/>
+                    </options>
+                </field>
+
+                <field name="realizationdate" type="date" title="Дата реализации"/>
+                <field name="cost" type="money" title="Оценочная стоимость"/>
+                <field name="description" type="text" title="Описание решения"/>
+                <field name="executor" type="ManagementPostIndividual" title="Исполнитель"/>
+
+            </struct>
+
+        </section>
+
+
+    </structure>
+
+</form>

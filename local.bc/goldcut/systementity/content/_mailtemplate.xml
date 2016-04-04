@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity manager="SystemData" prototype="Mail:Template:HTML" uid="121">
+  <passport>
+    <title>Шаблон html письма</title>
+  </passport>
+  <international>
+    <language code="ru"/>
+    <translations>
+      <language code="en"/>
+    </translations>
+  </international>
+  <states/>
+  <structure>
+    <field name="title" type="string" role="international" title="Заголовок"/>
+    <field name="uri" type="string" title="URI"/>
+    <field name="fromname" type="string" role="international" title="Email от имени"/>
+    <field name="fromemail" type="string" title="Email обратный адрес"/>
+    <field name="headerhtml" type="richtext" role="international" title="Шапка письма" raw="yes"/>
+    <field name="contenthtml" type="richtext" role="international" title="Контент письма  Ссылка [link http://*text*attribute]" raw="yes"/>
+    <field name="footerhtml" type="richtext" role="international" title="Футер письма" raw="yes"/>
+    <field name="specialhtml" type="richtext" role="international" title="Special" raw="yes"/>
+  </structure>
+  <lists/>
+  <defaultorder>
+    <by field="title" order="ASC"/>
+  </defaultorder>
+  <admincolumns>
+    <column selector="title"/>
+    <column selector="uri"/>
+  </admincolumns>
+  <options>
+    <aparam name="directmanage" type="boolean" value="no"/>
+  </options>
+  <searchfields/>
+  <indexes>
+    <unique column="uri"/>
+  </indexes>
+</entity>

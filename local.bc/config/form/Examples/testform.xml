@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+fieldset (with struct meaning). name/structname, legendTitle. Fn: add similar
+field input (string, number, text). name, title
+field radio, check
+field select. name, title, selectorTitle, allowNoselect. inplaceCreate
+field rich text
+diff. changed localy, changed history
+comment field
+locked by - process, access, inedit
+checklist?
+
+generate html - div, fieldset, div (label, div (input, micro icons, buttons))
+
+new ENTRY
+edit (multy struct! )
+
+per struct build table
+data focus (struct as part of entity)
+struct internal typed - depend on internal type field (chain hide/show/enable fields )
+struct external typed - от выбора уровнем выше зависит какая будет структура внутри - полностью динамическая форма без структуры
+
+Object
+    html Struct
+    html Struct[] multy
+        html Field
+
+CAPA FORM
+Problem
+Solution ()
+
+in Context(Solution)
+SolutionPlanVariant
+
+ -->
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- section is gray box, title = +INNER BLOCK WITH TITLE (after context) -->
+        <section title="CLASSIC TITLE SECTION">
+
+            <!-- CONTEXT BLOCK (named or unnamed), <context != <struct -->
+
+            <field name="reason" type="string" title="Причина" />
+            <field name="result" type="text" title="След" />
+
+            <!-- SECT = BLOCK TITLED отклонение (+) те block не struct, но struct это блок -->
+            <struct name="secondstruct">
+                <field name="ireason2dd" type="string" title="Причина2dd" />
+                <field name="iresult2dd" type="string" title="След2dd" />
+                <!-- INNER BLOCK риски идентифицированные select /или/ new неидент -->
+                <!-- 1 FIELD SECT MULT == UNARY UNTITLED BLOCK != BLOCK -->
+                <struct name="riskident">
+                    <field name="risk1" type="string" title="Риск ident" />
+                </struct>
+                <struct name="riskunident">
+                    <field name="risk2" type="string" title="Риск ident" />
+                </struct>
+            </struct>
+
+            <struct name="innerstruct">
+
+                <field name="ireason2messagebased" type="select" title="Причина2 from Gate">
+                    <!-- <message action="load" urn="urn-user" /> -->
+                    <query gate="Selector/TestSelect" user="urn-user-1" />
+                </field>
+                <field name="choser" type="radio" title="След Radio">
+                    <options>
+                        <option value="val1" title="VaR1" />
+                        <option value="val2" title="VaR2" />
+                    </options>
+                </field>
+                <field name="choser" type="select" title="След2">
+                    <options>
+                        <option value="val1" title="Val1" />
+                        <option value="val2" title="Val2" />
+                    </options>
+                </field>
+
+            </struct>
+
+
+
+            <field name="inter" type="integer" title="Intermediate int" />
+
+            <struct name="innerstructmult" multiple="yes" min="1">
+                <field name="reason3m" type="string" title="Причина3m" />
+                <field name="result3m" type="string" title="След3m" />
+
+                <struct name="riskunident">
+                    <field name="risk2" type="string" title="Риск ident" />
+                </struct>
+
+            </struct>
+
+
+
+        </section>
+
+
+
+                    <section title="About section 2">
+
+                        <field name="reasonX" type="string" title="ПричинаX" />
+                        <field name="resultX" type="text" title="СледX" />
+
+                    </section>
+
+
+    </structure>
+
+</form>

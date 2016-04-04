@@ -1,0 +1,77 @@
+\input{../templates/DMS}
+\input{../templates/DMS_TechTask}
+
+{{graphicspath}}
+
+\usepackage{ifthen}
+{{=<% %>=}}
+\newcommand{\supplauditneeded}{ <%supplauditneeded%> }
+\newcommand{\projdocchangesneeded}{ <%projdocchangesneeded%> }
+\newcommand{\varId}{<% code %>}
+<%={{ }}=%>
+
+
+\begin{document}
+
+\pagestyle{maintext}
+
+%\pagestyle{maintext}
+
+\newlength\mylength
+\setlength\mylength{\dimexpr(\textwidth-5\arrayrulewidth-8\tabcolsep)/4}
+\newcommand\sfour{%
+\multicolumn{4}{|>{\raggedright\arraybackslash}p{\dimexpr\textwidth-2\arrayrulewidth-4\tabcolsep}|}}
+\newcommand\stwol{%
+\multicolumn{2}{|>{\raggedright\arraybackslash}p{\dimexpr2\mylength+2\tabcolsep+\arrayrulewidth}|}}
+\newcommand\stwor{%
+\multicolumn{2}{>{\raggedright\arraybackslash}p{\dimexpr2\mylength+2\tabcolsep+\arrayrulewidth}|}}
+
+\setlength\extrarowheight{2pt}
+
+\noindent
+\begin{tabular}
+{|*4{>{\raggedright\arraybackslash}p{\mylength}|} }
+\hline
+\stwol{1.Название документа}   & \stwor{ { \textbf{Техническое задание № \varId{}  } }  }         \\ \hline
+\stwol{2.Компания группы}      & \stwor{ \textbf{ {{#CompanyStructureCompanygroup}} {{title}} {{/CompanyStructureCompanygroup}}  } }    \\  \hline
+\stwol{3.Филиал/подразделение} & \stwor{ \textbf{ {{#DirectoryBranchItem}} {{title}} {{/DirectoryBranchItem}}   } }    \\  \hline
+\sfour{4.Вид работ:}   \\ \hline
+\sfour{\textbf{ {{workstype}}   }}  \\ \hline
+6.Срок начала работ, согласно проектного плана  & \textbf{   {{#DirectoryTechnicalTaskForWorks}} {{datebegin}}  {{/DirectoryTechnicalTaskForWorks}} }  & 7.Срок окончания работ, согласно проектного плана  & \textbf{ {{#DirectoryTechnicalTaskForWorks}} {{dateend}} {{/DirectoryTechnicalTaskForWorks}} } \\ \hline
+\sfour{8.Требуемая разрешительная документация}  \\ \hline
+\sfour{ \textbf{ {{docpermitsneed}} } }  \\ \hline
+\stwol{9.Необходимость в проведении предварительного аудита} &  \stwor{ \textbf{ \ifthenelse{\equal{\supplauditneeded}{yes}}{да}{нет} } } \\ \hline
+\stwol{10.Лицо, ответственное за осуществление технадзора со стороны заказчика} & \stwor{ \textbf{ {{#personreceive}} {{nameofemployee}}  {{/personreceive}} {{#personreceive}} {{title}}  {{/personreceive}}   } } \\ \hline
+\stwol{11.Контактное лицо для ответа на технические вопросы} &  \stwor{ \textbf{ {{#contactperson}}  {{nameofemployee}} {{/contactperson}}  {{#contactperson}}  {{title}} {{/contactperson}}   }  } \\ \hline
+\stwol{12.Необходимость в разработке/ внесении изменений в проектную документацию} & \stwor{ \textbf{ \ifthenelse{\equal{\projdocchangesneeded}{yes}}{да}{нет} } } \\ \hline
+\sfour{13.Название проектной документации достаточной для проведения работ}  \\ \hline
+\sfour{ \textbf{ {{projectdocsmusthave}} }   }  \\ \hline
+\sfour{14.Условия поставки}  \\ \hline
+\sfour{ \textbf{ {{deliveryconditions}} } }  \\ \hline
+\sfour{15.Желаемые приоритеты по порядку выполнения работ}  \\ \hline
+\sfour{ \textbf{ {{priorities}} } }  \\ \hline
+\sfour{16.Требования к формированию коммерческого предложения}  \\ \hline
+\sfour{ \textbf{ {{requirements}} }  }  \\ \hline
+\end{tabular}
+
+%\ifthenelse{\equal{\supplauditneeded}{yes}}{да}{нет}
+%\ifthenelse{\equal{\projdocchangesneeded}{yes}}{да}{нет}
+
+
+\pagebreak
+\pagestyle{dodatki}
+
+{{#attachments}}
+
+\vfill
+\begin{figure}[hb]
+  \centering
+{{=<% %>=}}
+  \includegraphics[width=\textwidth]{<% . %>}
+<%={{ }}=%>
+\end{figure}
+\vfill
+
+{{/attachments}}
+
+\end{document}

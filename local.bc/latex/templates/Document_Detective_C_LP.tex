@@ -1,0 +1,125 @@
+\input{../templates/DMS}
+
+{{=<% %>=}}
+\newcommand{\varIdx}{<%#DocumentComplaintC_LP%>  <%code%> <%/DocumentComplaintC_LP%>}
+\newcommand{\varDate}{25/03/2016}
+
+\newcommand{\varInitiator}{Пшеничная И.В.}
+\newcommand{\varVisant}{Пижук В.М.}
+\newcommand{\varApprover}{Павлова В.В.}
+
+\newcommand{\initiatorPost}{Менеджер по обеспечению качества}
+\newcommand{\visantPost}{Главный инженер}
+\newcommand{\approverPost}{Директор}
+
+\newcommand{\docClass}{Протоколы}
+\newcommand{\docType}{Протоколы служебного расследования}
+
+<%={{ }}=%>
+
+
+\input{../templates/DMS_Detective}
+
+
+{{graphicspath}}
+
+{{=<% %>=}}
+\newcommand{\varId}{<% code %>}
+\newcommand{\varTitle}{СЛУЖЕБНОГО РАССЛЕДОВАНИЯ}
+\newcommand{\complaintstatus}{<%complaintstatus%>}
+<%={{ }}=%>
+
+
+
+\usepackage{etoolbox}
+\newcounter{rowcnt}
+\newcommand\rownum{\ifnumequal{\value{rowcnt}}{0}{№}{\therowcnt.}\refstepcounter{rowcnt}}
+\AtEndEnvironment{tabularx}{\setcounter{rowcnt}{0}}
+
+
+\begin{document}
+
+\input{../templates/DMS_Detective_head}
+\pagestyle{maintext}
+
+\vspace{0.5cm}
+
+\noindent \textbf{ИНЦИДЕНТ} \\
+\vspace{1mm} \\
+\textbf{Клиент:} {{#DocumentComplaintC_LP}} {{#CompanyLegalEntityCounterparty}} {{title}} {{/CompanyLegalEntityCounterparty}} {{/DocumentComplaintC_LP}}  \\
+\vspace{1mm} \\
+\textbf{№ склада:}  {{#DocumentComplaintC_LP}}  {{#warehouse}} {{title}} {{/warehouse}} {{/DocumentComplaintC_LP}}   \\
+\vspace{1mm} \\
+\textbf{Дата начала инцидента:} {{#DocumentComplaintC_LP}} {{datestart}}  {{/DocumentComplaintC_LP}}  \\
+\vspace{1mm} \\
+\textbf{Дата окончания инцидента:}  {{#DocumentComplaintC_LP}} {{dateend}}  {{/DocumentComplaintC_LP}}  \\
+\vspace{1mm} \\
+\textbf{Описание:} \\
+\vspace{1mm} \\
+{{#DocumentComplaintC_LP}} {{description}} {{/DocumentComplaintC_LP}}  \\
+\vspace{7mm} \\
+\noindent\textbf{РЕАГИРОВАНИЕ} \\
+\vspace{1mm} \\
+\noindent\textbf{Дата проведения мер по быстрому устранению проблемы:} {{troublefixdate}}  \\
+\vspace{1mm} \\
+\noindent\textbf{Меры, принятые для устранения проблемы:} \\
+\vspace{1mm} \\
+ {{troubleevent}} \\
+ \vspace{1mm} \\
+\noindent\textbf{Ответственный исполнитель:} \\
+\vspace{1mm} \\
+{{#responsible}}
+ {{nameofemployee}} // {{title}}  \\
+{{/responsible}}
+\vspace{7mm} \\
+\noindent \textbf{РАССЛЕДОВАНИЕ} \\
+\vspace{1mm} \\
+\noindent\textbf{Дата проведения расследования:} {{investigationdate}} \\
+\vspace{1mm} \\
+\noindent\textbf{Члены комиссии:} \\
+\vspace{1mm} \\
+ {{#commissionmember}}
+ {{nameofemployee}}  //  {{ title }}   \\
+ {{/ commissionmember }}
+ \vspace{1mm} \\
+\noindent\textbf{Выявленные факты:} \\
+\vspace{1mm} \\
+  {{factdetected}} \\
+  \vspace{1mm} \\
+\noindent\textbf{Объекты, которые проходили проверку:} \\
+\vspace{1mm} \\
+{{#checkbo}} {{title}} \\ {{/checkbo}}
+\vspace{7mm} \\
+\noindent \textbf{ЗАКЛЮЧЕНИЕ} \\
+\vspace{1mm} \\
+\noindent\textbf{Отметка о статусе жалобы:}  \ifthenelse{\equal{\complaintstatus}{yes}}{жалоба принята}{жалоба отклонена}     \\
+\vspace{1mm} \\
+\noindent\textbf{Заключение:} \\
+\vspace{1mm} \\
+ {{conclusion}} \\
+\vspace{1mm} \\
+\noindent\textbf{Опись использованных материалов:} \\
+\vspace{1mm} \\
+{{materialsused}} \\
+
+
+
+\pagebreak
+
+\pagestyle{dodatki}
+
+{{#attachments}}
+
+  \vfill
+  \begin{figure}[hb]
+    \centering
+    {{=<% %>=}}
+    \includegraphics[width=\textwidth]{{<% . %>}}
+    <%={{ }}=%>
+  \end{figure}
+  \vfill
+
+{{/attachments}}
+
+
+\end{document}

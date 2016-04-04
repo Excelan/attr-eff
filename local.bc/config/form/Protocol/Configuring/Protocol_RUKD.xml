@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- ПРОТОКОЛ УКД -->
+
+        <section entity="Document:Protocol:RUKD" title="Участники">
+
+            <field name="plannedreceivers" type="ManagementPostIndividual" multiple="yes" min="1" title="Плановые получатели" />
+
+        </section>
+
+    </structure>
+
+</form>

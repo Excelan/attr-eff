@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- Техническое задание на проведение работв-->
+
+        <section type="context" entity="Document:TechnicalTask:ForWorks" title="Документация">
+
+            <field name="workstype" type="string" title="Вид работ"/>
+            <field name="CompanyStructureCompanygroup" title="Компания группы" type="select">
+                <query gate="Selector/company/structure/CompanyStructureCompanygroup"/>
+            </field>
+            <field name="DirectoryBranchItem" title="Филиал/подразделение" type="select">
+                <query gate="Selector/company/structure/DirectoryBranchItem"/>
+            </field>
+
+        </section>
+
+            <!-- Работы -->
+        <section title="Описание работ, которые необходимо выполнять согласно данному техническому заданию" type="context">
+
+            <struct name="DirectoryTechnicalTaskForWorks" entity="Directory:TechnicalTask:ForWorks" multiple="yes" title="Работы">
+
+                <field name="urn" type="hidden" title="urn"/>
+                <field name="name" type="string" title="Название"/>
+                <field name="datebegin" type="date"  title="Срок начала работ, согласно проектного плана"/>
+                <field name="dateend" type="date"  title="Cрок окончания работ, согласно проектного плана"/>
+                <field name="volume" type="richtext" title="Объем работ"/>
+
+            </struct>
+
+        </section>
+
+        <section type="context" entity="Document:TechnicalTask:ForWorks" title="Условия">
+
+                <field name="docpermitsneed"  type="richtext" title="Требуемая разрешительная документация"/>
+
+                <field name="supplierauditneeded" title="Необходимость в проведении предварительного аудита поставщика" type="radio">
+                    <options>
+                        <option title="Да" value="yes"/>
+                        <option title="Нет" value="no"/>
+                    </options>
+                </field>
+                <field name="personreceive" type="ManagementPostIndividual" title="Лицо, ответственное за осуществление технадзора со стороны заказчика"/>
+                <field name="contactperson"  type="ManagementPostIndividual" title="Контактное лицо для ответа на технические вопросы"/>
+
+                <field name="projdocchangesneeded" type="radio" title="Необходимость в разработке / внесении изменений в проектную документацию">
+                    <options>
+                        <option value="yes" title="Да" />
+                        <option value="no" title="Нет" />
+                    </options>
+                </field>
+                <field name="projectdocsmusthave" type="richtext"  title="Название проектной документации достаточной для проведения работ"/>
+                <field name="projectdocneed" type="richtext"  title="Название проектной документации в которую необходимо вносить изменения для проведения работ"/>
+
+
+
+                <field name="deliveryconditions" title="Условия поставки" type="richtext"/>
+                <field name="priorities" title="Желаемые приоритеты по порядку выполнения работ" type="richtext"/>
+                <field name="requirements" type="richtext" title="Требования к формированию коммерческого предложения"/>
+                <field name="attachments" multiple="yes" type="attachment" title="Приложения"/>
+
+        </section>
+
+        <section type="context" entity="Document:TechnicalTask:ForWorks" title="Участники Тендера">
+
+                <field name="CompanyLegalEntityCounterparty" type="CompanyLegalEntityCounterparty" multiple="yes" title="Новый участник"/>
+
+        </section>
+
+    </structure>
+
+
+</form>

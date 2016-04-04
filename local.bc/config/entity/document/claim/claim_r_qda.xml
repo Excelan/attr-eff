@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<entity prototype="Document:Claim:R_QDA" code="R_QDA" manager="Document" uid="1010">
+
+    <passport>
+        <title>Заявка на проведение самоинспекций, аудитов, проверок</title>
+    </passport>
+
+    <structure>
+        <hasone entity="Directory:BusinessProjects:Item" as="companyproject" title="Текущий проект предприятия"/>
+		<hasone entity="Company:LegalEntity:Counterparty" title="Клиент, для которого создается заявка"/>
+		<hasone entity="BusinessObject:Record:Polymorph" as="warehouse" title="№ слада, для которого создается заявка"/>
+		<field name="specialrequirement" type="text" title="Специальное требование"/>
+		<field name="attachments" type="tarray" title="Вложение"/>
+
+        <hasone entity="Document:Solution:Universal" title="Утвержденный вариант решения"/>
+
+		<field name="eventtype" type="set" title="Тип мероприятия">
+			            <value name="selfinspection" title="Самоинспекция"/>
+			            <value name="audit" title="Аудит"/>
+			            <value name="checking" title="Проверка"/>
+		</field>
+		<hasone entity="BusinessObject:Record:Polymorph" as="auditwarehouse" title="№ Склада"/>
+		<hasone entity="Company:LegalEntity:Counterparty" as="auditcounterparty" title="Клиент"/> <!-- Контрагент с пометкойй клиент -->
+		<field name="dateprev" type="date" title="Дата предыдущей самоинспекции, аудита, проверки"/>
+		<hasone entity="Calendar:Period:Month" title="Периодичность самоинспекции, аудита, проверки"/>
+		<field name="datenext" type="date" title="Дата следующей самоинспекции, аудита, проверки"/>
+
+    <!-- TODO -->
+    <field name="rtaken" type="set" title="Принятие ответственности">
+      <value name="myself" title="Моя сфера ответственности"/>
+      <value name="notmyresp" title="Не моя сфера ответственности"/>
+    </field>
+
+
+    </structure>
+
+    <lists>
+        <list name="solutionvariants" entity="Document:Solution:Universal" ns="9951" title="Предложенные решения"/>
+    </lists>
+
+    <defaultorder>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		<column selector="firstlinedescription"/> <!-- В таблице выводить первые две строки описания, а при наведении полный текст -->
+        <column selector="responsible"/> <!-- ответственный, которому приходит жалоба -->
+		<!-- <column selector="status"/> -->
+		<!-- <column selector="CTA TODO"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

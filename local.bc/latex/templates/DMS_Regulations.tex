@@ -1,0 +1,113 @@
+\newlength\mylength
+\setlength\mylength{\dimexpr(\textwidth-5\arrayrulewidth-8\tabcolsep)/4}
+\newcommand\sfour{%
+\multicolumn{4}{|>{\raggedright\arraybackslash}p{\dimexpr\textwidth-2\arrayrulewidth-4\tabcolsep}|}}
+\newcommand\stwol{%
+\multicolumn{2}{|>{\raggedright\arraybackslash}p{\dimexpr2\mylength+2\tabcolsep+\arrayrulewidth}|}}
+\newcommand\stwor{%
+\multicolumn{2}{>{\raggedright\arraybackslash}p{\dimexpr2\mylength+2\tabcolsep+\arrayrulewidth}|}}
+
+\setlength\extrarowheight{2pt}
+
+
+\newcommand{\headrulecolour}{white!70!black}
+%\renewcommand{\headrulewidth}{.1\baselineskip}
+
+\let\oldheadrule\headrule
+
+
+\fancypagestyle{prefirstpage}
+{
+\rhead{
+\begin{tabu} to \textwidth { |X[0.15,l,p]|X[0.25,l,p]|X[0.25,l,p]|X[0.4,l,p]|}
+      \hline
+      \taburulecolor{gray}
+    \raisebox{-\height}[0pt][0pt]{\includegraphics[width=0.1\textwidth, height=15mm]{biocon}}   & \stwol{08320, Киевская обл., Бориспольский район\newline с. Большая Александровка, ул. Бориспольская,9 \newline Тел. +38 (044) 585-11-80 \newline Факс +38 (044) 585-11-85}  & \raisebox{-\height}[0pt][0pt]{\includegraphics[width=0.3\textwidth, height=13mm]{\barcode}}   \\ [5ex] \hline
+      & № УКД: \copyid{} \rule{0pt}{3ex} &  Версия: \varVersion{} & Страниц: \pageref{LastPage}  \\ [1ex] \hline
+    \end{tabu}
+  }
+  \renewcommand{\headrule}{{\color{\headrulecolour}\oldheadrule}}%
+}
+\fancyfoot[C]{
+\begin{tabu} to \textwidth { |X[0.19,l,p]|X[0.81,l,p]|   }
+\taburulecolor{gray}
+\hline
+\textbf{Заменяет:\rule{0pt}{3ex}} &  \varChange{} \\   [1ex] \hline
+\textbf{Причина:\rule{0pt}{3ex}}  &  \varReason{} \\   [1ex] \hline
+\end{tabu}
+}
+}
+
+
+
+
+\fancypagestyle{firstpage}
+{
+\rhead{
+\begin{tabu} to \textwidth {  X[0.15,l,p]   X[0.3,l,p]  X[0.3,l,p]  X[0.3,l,p]     }
+%\hline
+ \raisebox{-\height}[0pt][0pt]{\includegraphics[width=0.1\textwidth, height=15mm]{biocon}} & \multicolumn{2}{l}{ \textbf{Название документа:}  \varTitle{}  } &  \raisebox{-\height}[0pt][0pt]{\includegraphics[width=0.3\textwidth, height=15mm]{\barcode}}      \\
+               & \textbf{Тип документа:}  \docType{}   &                                          &       \\
+               & \textbf{№ УКД:}   \copyid{}           &                                          &        \\
+               & \textbf{Версия:} \varVersion{}        &                                          &       \\
+               &\textbf{Страница в документе:}   & \thepage  \hspace{1mm}  из \pageref{LastPage}  &   \\
+\end{tabu}
+}
+
+%\textbf{Страница в документе:}
+%\thepage  \hspace{1mm}  из \pageref{LastPage}
+
+\lhead{}
+\renewcommand{\headrulewidth}{0pt}
+\fancyfoot[C]{
+\begin{tabularx}{\textwidth}{X X X }
+ & & \\
+%    \hline
+% Дата вступления в силу  & Дата последнего пересмотра & Период действия \\ \hline
+%\varDate{}    & \varRevision{} &  \varPeriod{}  \\ \hline
+\end{tabularx}
+}
+}
+
+
+\fancypagestyle{maintext}
+{
+\rhead{
+\tabulinesep=0.5mm
+\begin{tabu} to \textwidth { X[0.15,l,p] X[0.3,l,p]  X[0.3,l,p]  X[0.3,l,p]    }
+  \raisebox{-\height}[0pt][0pt]{\includegraphics[width=0.1\textwidth, height=15mm]{biocon}}  & \textbf{Класс документа:}  & \textbf{Название документа:}  &    \\
+ & \docClass{} &  \varTitle{}  &  \\
+ & \textbf{Тип документа:} &  \textbf{Id документа:}  & \textbf{Страница в документе:}  \\
+ & \docType{} &  \varId{}   & \thepage \hspace{1mm} из \pageref{LastPage}  \\
+\end{tabu}
+}
+
+%\includegraphics[width=3cm]{\barcode}
+
+%нижний колонтитул
+\fancyfoot[C]{
+\begin{tabu} to \textwidth {|X|X|X|}
+\taburulecolor{gray}
+\hline
+\textbf{Разработал:\rule{0pt}{3ex}} & \textbf{Согласовал:} & \textbf{Утвердил:}    \\ [1ex] \hline
+ & &   \\
+\newline \varInitiator{}  \newline \initiatorPost{} \newline & \newline \varVisant{} \newline \visantPost{} \newline  & \newline  \varApprover{} \newline \approverPost{} \newline \\  \hline
+ \end{tabu}
+}
+}
+
+\newcounter{example}[section]
+\newenvironment{example}[1][]{\refstepcounter{example}\par\medskip
+   \textbf{Приложение~\theexample #1} \rmfamily}{\medskip}
+
+	 \fancypagestyle{dodatki}
+    {
+    	\fancyhead{}
+     \fancyhf{}
+       \fancyhead[R]{
+    	\begin{example}
+    	 .
+    	\end{example}
+       \renewcommand{\headsep}{40pt}
+    }
+    }

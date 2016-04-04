@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity prototype="Document:Protocol:CT" code="CT" manager="Document" uid="5001">
+
+    <passport>
+        <title>Протокол калибровки</title>
+    </passport>
+
+    <structure>
+
+		<hasone entity="BusinessObject:Record:Polymorph" system="yes" as="bo" title="Объект"/>
+		<hasone entity="Management:Post:Individual" system="yes" as="ResponsibleCalibration" title="Ответственный за калибровку"/>
+		<hasone entity="BusinessObject:Record:Polymorph" system="yes" as="warehouse" title="№ Склада"/>
+		<hasone entity="Company:LegalEntity:Counterparty" system="yes" as="client" title="Клиент"/>
+		<hasone entity="Calendar:Period:Month" system="yes" title="Периодичность калибровки"/>
+
+		<!-- Форма для заполнения-->
+		<field name="date" type="date" title="Дата проведения калибровки"/>
+    <field name="datep" type="date" title="Дата предыдущей калибровки"/>
+
+        <field name="contractforcalibration" type="string" title="Договор на проведение калибровки"/>
+        <field name="relateddocuments" type="tarray" title="Связанные документы"/>
+        <field name="results" type="richtext" title="Результаты проведения калибровки"/>
+		<field name="upload" type="tarray" title="Вложения"/>
+
+
+    </structure>
+
+    <lists>
+
+    </lists>
+
+
+    <defaultorder>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		<!-- <column selector="status"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

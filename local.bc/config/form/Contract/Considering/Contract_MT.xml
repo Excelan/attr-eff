@@ -1,0 +1,81 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- Договор на закупку материалов -->
+
+        <section name="title" entity="Document:Contract:BW" title="Метаинформация по договору" type="context">
+
+                <field name="place"  type="string"  title="Место"/>
+                <field name="date"  type="date"  title="Дата заключения"/>
+                <field name="timecontract" type="select"  title="Срок действия">
+                    <query gate="Selector/calendar/CalendarPeriodMonth"/>
+                </field>
+                <!-- <field name="enddate"  type="date"  title="Конечная дата"/>  выводить на следующем этапе -->
+                <field name="prolongation" type="select"  title="Прологация договора">
+                    <options>
+                        <option value="auto" title="Пролонгация договора автоматическая"/>
+                        <option value="agreement" title="Пролонгация договора по дополнительному соглашению"/>
+                    </options>
+                </field>
+                <field name="timenotifyfor" type="select"  title="В случае пересмотра условий договора, уведомить за">
+                    <query gate="Selector/calendar/CalendarPeriodMonth"/>
+                </field>
+
+				<field name="summ"  type="money"  title="Сумма договора"/>
+                <field name="DirectoryBusinessProjectsItem" type="select" title="Текущий проект предприятия, для которого подписывается договор">
+                    <query gate="Selector/directory/DirectoryBusinessProjectsItem"/>
+                </field>
+                <field name="CompanyLegalEntityCounterparty" type="CompanyLegalEntityCounterparty" title="Клиент">
+                    <query gate="Selector/counterparty"  />
+                </field>
+                <field name="BusinessObjectRecordPolymorph" type="BusinessObject" title="Склад">
+                    <query gate="Selector/businessobject"/>
+                </field>
+                <field name="CompanyStructureCompanygroup" type="select" title="Компания плательщик (Группа компаний)"> <!-- Группа компаний Company:Structure:Companygroup -->
+                    <query gate="Selector/company/structure/CompanyStructureCompanygroup"/>
+                </field>
+                <field name="tenderdoc"  type="Document" title="Тендер, как обоснование выбора контрагента"/>
+				<field name="justification"  type="text"  title="Другое обоснование выбора контрагента"/>
+                <field name="attachments" type="attachment" multiple="yes"  title="Вложения"/>
+                <field name="notifyusercompany" type="ManagementPostIndividual" multiple="yes" min="1" title="Сотрудники компании для уведомления">
+                    <query gate="Selector/management"  />
+                </field>
+<!--                <field name="notifyusercounterparty" type="select" multiple="yes" min="1" title="Сотрудники контрагента для уведомления">
+                    <query gate="Selector/people/PeopleEmployeeCounterparty"/>
+                </field>-->
+
+			</section>
+
+            <!--Текст договора на закупку материалов -->
+            <section name="title"  entity="Document:Contract:MT" title="Текст договора на закупку материалов" type="context">
+
+                <field name="introduction"  type="richtext"  title="Преамбула"/>
+                <field name="contractsubject"  type="richtext"  title="Предмет договора"/>
+                <field name="qualityofgoods"  type="richtext"  title="Качсетво товара, упаковка и маркировка"/>
+                <field name="deliveryconditions"  type="richtext"  title="Условия поставки"/>
+                <field name="goodstransfer"  type="richtext"  title="Прием-передача товара"/>
+                <field name="termsofpayment"  type="richtext"  title="Цена и порядок оплаты"/>
+                <field name="termsofcontract"  type="richtext"  title="Срок действия договора"/>
+                <field name="liabilities"  type="richtext"  title="Ответственность сторон"/>
+                <field name="final"  type="richtext"  title="Заключительные положения"/>
+
+             <!--Реквизиты Биокона и предприятия с которым подписывается договор подтягивать при присмотре договора -->
+
+            </section>
+
+            <section  title="Приложения к Договору" type="context">
+              <struct name="contractapplication" multiple="yes" entity="Document:ContractApplication:Universal" title="Приложение к Договору">
+                <field name="urn" type="hidden"/>
+                <field name="text" type="richtext"  title="Текст приложения"/>
+                <struct name="MediaAttributed" multiple="yes" entity="Directory:Media:Attributed" title="Изображение, диаграмма, таблица в формате .jpg или .pdf">
+                  <field name="urn" type="hidden"/>
+                  <field name="text"  type="string"  title="Подпись к изображению"/>
+                  <field name="attachment" type="attachment" title="Изображение"/>
+                </struct>
+              </struct>
+            </section>
+          </structure>
+        </form>

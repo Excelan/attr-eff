@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<entity prototype="Directory:Media:Attributed" code="AME" manager="System" uid="330178">
+
+    <passport>
+        <title>MediaAttributed</title>
+    </passport>
+
+    <structure>
+
+        <field name="text"  type="string"  title="Подпись к изображению"/>
+        <field name="attachment"  type="string"  title="Изображение"/>
+        <field name="ordered" type="integer" system="yes" title="system order"/>
+
+    </structure>
+
+    <lists>
+        <!-- <list name="contractapplication" entity="Document:ContractApplication:Universal" ns="1045" title="Приложения к Договору"/> -->
+    </lists>
+
+    <defaultorder>
+        <by field="ordered" order="ASC"/>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="urn"/>
+        <column selector="text"/>
+		<column selector="attachment"/>
+    </admincolumns>
+
+    <indexes>
+
+    </indexes>
+
+</entity>

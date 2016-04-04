@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity prototype="Document:Regulations:I" code="I" manager="Document" uid="6001">
+
+    <passport>
+        <title>Инструкция</title>
+    </passport>
+
+    <structure>
+        <!--Метаинформация Инструкции-->
+        <field name="title" type="string" title="Название документа"/>
+        <field name="fileprocessattachment" type="string" title="Блок-схема бизнес-процесса"/>
+        <field name="attachments" type="tarray" title="Вложения"/>
+        <hasone entity="Directory:BusinessProcess:Item" title="Процесс компании"/>
+        <hasone entity="BusinessObject:Record:Polymorph" as="scaleapplication" title="Масштаб применения"/>
+
+        <field name="causeedit" type="text" title="Причина создания новой версии"/> <!-- Только в случаи создании новой версии -->
+
+        <hasone entity="Calendar:Period:Month" title="Срок действия"/>
+        <field name="effectivedate" type="date" title="Дата введения в действие"/>
+        <field name="enddate" type="date" title="Конечная дата действия"/><!--Автоматически выводится на этапе визирования-->
+
+        <hasmany entity="DMS:Copy:Controled" title="Реальная контролируемая копия (УКД)"/>
+
+        <hasmany entity="Directory:AdditionalSection:Simple" title="Дополнительный раздел"/>
+
+        <!--Основная часть Инструкции-->
+        <field name="target" type="richtext" title="1.Цель"/>
+        <field name="realmuse" type="richtext" title="2.Область применения"/>
+        <field name="response" type="richtext" title="3.Ответственность и полномочия"/>
+        <field name="resource" type="richtext" title="4.Материалы и оборудование"/>
+        <field name="procedure" type="richtext" title="5.Процедура"/>
+
+	    <field name="extrachapter" type="richtext" title="6.Дополнительный раздел"/> <!-- multiple -->
+
+        <hasmany entity="Directory:AdditionalSection:Simple" title="Дополнительный раздел"/>
+
+        <field name="report" type="richtext" title="7.Отчетность"/>
+        <field name="docforlink" type="richtext" title="8.Документы для ссылок"/>
+
+
+
+    </structure>
+
+    <lists>
+        <list name="boprocedure" entity="BusinessObject:Record:Polymorph" ns="30111" title="Список объектов"/>
+        <list name="userprocedure" entity="Management:Post:Individual" ns="30113" title="Участники процедуры"/>
+    </lists>
+    <defaultorder />
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		<!-- <column selector="status"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

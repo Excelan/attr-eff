@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="admin">
+
+    <structure>
+
+        <section title="Сотрудник">
+
+            <field name="fio" type="string" title="ФИО" />
+            <field name="email" type="string" title="E-mail" />
+            <field name="password" type="string" title="Пароль" />
+
+        </section>
+
+
+        <section title="Кем является">
+
+            <field name="posttitle" type="string" title="Должность" />
+            <field name="posttype" type="select" title="Тип должности">
+                <query gate="Selector/management/ManagementPostGroup" />
+            </field>
+            <field name="newposttype" type="string" title="Создать тип должности" />
+
+            <!-- тренер? -->
+            <field name="istrener" type="radio" title="Тренер">
+                <options>
+                    <option value="y" title="да" />
+                    <option value="n" title="нет" />
+                </options>
+            </field>
+
+        </section>
+
+
+        <section title="Где работает">
+
+            <field name="department" type="select" title="Департамент/Отдел">
+                <query gate="Selector/company/structure/CompanyStructureDepartment" />
+            </field>
+            <!--<field name="newdepartment" type="string" title="Создать отдел" />-->
+            <!-- глава этого отдела -->
+            <field name="isheadofdep" type="radio" title="Глава департамента/отдела">
+                <options>
+                    <option value="y" title="да" />
+                    <option value="n" title="нет" />
+                </options>
+            </field>
+
+        </section>
+
+
+        <section title="Ответственность за типы документов">
+
+            <struct name="dctstagerbac" multiple="yes" min="1" title="За тип документа на этапе">
+                <field name="subjectprototype" type="select" title="За тип документа">
+                    <query gate="Selector/process/SubjectProto" />
+                </field>
+                <field name="processprototype" type="select" title="Управляющий процесс">
+                    <query gate="Selector/process/ProcessProto" />
+                </field>
+                <field name="stage" type="string" title="Этап процесса" />
+            </struct>
+
+        </section>
+
+            <!--<struct name="inner" title="Inner Struct">-->
+                <!--<field name="in" type="string" title="in" />-->
+            <!--</struct>-->
+
+            <!--<field name="after" type="string" title="After struct" />-->
+
+        <section title="Право начинать процесс">
+
+            <!-- дать право начинать процесс -->
+            <struct name="processstartaccess" multiple="yes" min="1" title="Права начинать процессы">
+                <field name="processprototype" type="select" title="Управляющий процесс">
+                    <query gate="Selector/process/ProcessProto" />
+                </field>
+                <field name="subjectprototype" type="select" title="Управляемый объект">
+                    <query gate="Selector/process/SubjectProto" />
+                </field>
+            </struct>
+
+        </section>
+
+
+        <section title="Закрепленные Риски">
+
+            <!--<field name="d" type="BusinessObject" title="Документ" />-->
+            <!--<field name="d2" type="RiskManagementRiskApproved" title="Документ 2" />-->
+            <field name="riskattached" type="RiskManagementRiskApproved" multiple="yes" min="1" title="Идентифицированные риски" />
+
+        </section>
+
+        <section title="Закрепленные Бизнес Объекты">
+
+            <!-- BO закрепленные -->
+            <field name="boattached" type="BusinessObject" multiple="yes" min="1" title="Бизнес Объекты" />
+            <!--<struct name="boresp" multiple="yes" min="1" title="Закрепленные Бизнес Объекты">-->
+                <!--<field name="stage" type="string" title="на этапе" />-->
+            <!--</struct>-->
+
+        </section>
+
+
+    </structure>
+
+</form>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="DMS/UniversalDocument" name="AttachHardMaster">
+
+  <role></role>
+
+  <request>
+      <field name="user" type="integer" required="no"/>
+      <field name="UniversalDocumentURN" type="urn" required="yes"/>
+      <field name="hardmasterURN" type="urn" required="yes"/>
+  </request>
+
+  <response>
+      <field name="status" type="integer" required="yes"/>
+  </response>
+
+</gate>

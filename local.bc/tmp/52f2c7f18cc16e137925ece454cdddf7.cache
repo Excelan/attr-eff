@@ -1,0 +1,8 @@
+s:702:"<div class=admin_taxonomy_nav>
+		<div class='formSelector'>
+		<label for=ManagedProcess:Execution:Record>Managed Process Execution</label>
+		<select    name='ManagedProcess:Execution:Record' data-type='urn' data-eclass='ManagedProcess:Execution:Record'><option value='' >во всех</option>
+<option  data-level=''  value='urn:ManagedProcess:Execution:Record:9628694'>9628694 DMS:Claims:Claim  Cons...:856070659</option>
+<option  data-level=''  value='urn:ManagedProcess:Execution:Record:4776943'>4776943 DMS:Decisions:Visa  De...:882868313</option>
+<option  data-level=''  value='urn:ManagedProcess:Execution:Record:9110140'>9110140 DMS:Correction:CAPA  V...:882868313</option>
+</select></div></div>";

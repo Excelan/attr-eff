@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<scenario type="client">
+
+  <title>
+    Сценарий жалобы и служебного расследования
+  </title>
+  <description>
+    Позитивный короткий сценарий
+  </description>
+
+  <actors type="planned">
+    <actor identity="A1" post="" role="initiator" />
+  </actors>
+
+  <init>
+    <send gate="BPM" action="start" model="DMS:Complaints:Complaint" prototype="Document:Complaint:C_IS" />
+  </init>
+
+  <flow>
+
+    <execution stage="Editing">
+      <actor type="exclusive" identity="A1">
+        <send gate="formsave">
+          <data title="x"/>
+        </send>
+      </actor>
+    </execution>
+
+    <execution stage="Considering">
+
+      <actor type="lead" identity="A2">
+        <send gate="formsave">
+          {"solution": {"resp": "yes"}}
+        </send>
+      </actor>
+
+      <actor type="participant" identity="A2">
+        <send gate="formsave">
+          <data sum="10" />
+        </send>
+      </actor>
+
+    </execution>
+
+
+  </flow>
+
+</scenario>

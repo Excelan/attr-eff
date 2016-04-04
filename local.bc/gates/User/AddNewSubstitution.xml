@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="User" name="AddNewSubstitution">
+
+    <role>
+
+    </role>
+
+    <request>
+
+        <field name="user" type="integer" required="yes"/>
+        <field name="from" type="integer" required="yes"/>
+        <field name="to" type="integer" required="yes"/>
+        <field name="startDate" type="date" required="yes"/>
+        <field name="endDate" type="date" required="no"/>
+        <field name="urn" type="text" required="yes"/>
+
+    </request>
+
+
+    <response>
+
+        <field name="status" type="integer" required="yes"/>
+
+    </response>
+
+</gate>

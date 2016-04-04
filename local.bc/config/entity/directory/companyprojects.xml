@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Directory:BusinessProjects:Item" manager="Business" uid="920">
+
+    <passport>
+        <title>Проекты компании</title>
+    </passport>
+
+    <states/>
+
+    <structure>
+
+        <field name="title" type="string" title="Название проекта"/>
+
+        <!--<hasmany entity="parentdocs" title="Документы описывающие процесс (регламентирующие)"/>-->
+        <!--<hasmany entity="relateddocs" title="Документы в которых упоминается процесс (не регламентирующие)"/>-->
+
+
+        <field name="created" type="timestamp" title="Время создания" createDefault="now"/>
+        <field name="updated" type="timestamp" title="Время последнего изменения" disabled="yes" createDefault="now" updateDefault="now"/>
+        <field name="ordered" type="integer" title="Порядок" system="yes"/>
+
+    </structure>
+
+    <lists/>
+    <defaultorder/>
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="title"/>
+		<column selector="PeopleEmployeeInternal"/>
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes/>
+</entity>

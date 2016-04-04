@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- ПРОТОКОЛ УКД ПЛАНИРОВАНИЕ -->
+
+        <section entity="Document:Protocol:RUKD" title="Планирование">
+
+            <field name="eventdate" type="date" title="Дата проведения"/>
+
+        </section>
+
+    </structure>
+
+</form>

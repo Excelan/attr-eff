@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity code="KI" manager="Document" prototype="Document:Protocol:KI" uid="5055">
+
+    <passport>
+        <title>Протокол контрольной инспекции по CAPA</title>
+    </passport>
+
+    <structure>
+
+        <hasone entity="Document:Capa:Deviation" as="DocumentCapaDeviation" title="Место проведения контрольной самоинспекции"/>
+
+        <field name="date" title="Дата контрольной самоинспекции" type="date"/>
+        <hasone entity="BusinessObject:Record:Polymorph" title="Место проведения контрольной самоинспекции"/>
+        <field name="placetime" title="Время проведения мероприятия" type="timestamp"/>
+
+
+
+        <hasmany entity="Directory:Solutionvariants:Simple" title="Результат самоинспекции по мероприятию"/>
+
+        <!--
+                <field name="checkingresult" title="Результат проверки" type="set">
+                    <value name="passed" title="Проверка пройдена успешно"/>
+                    <value name="yesbut" title="Проверка пройдена с замечаниями"/>
+                    <value name="fails" title="Проверка не пройдена"/>
+                </field>
+
+                <field name="comment" title="Комментарий" type="text"/>
+        -->
+
+    </structure>
+
+    <defaultorder></defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+        <!-- <column selector="status"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity manager="Document" prototype="Document:Solution:Correction" uid="203">
+
+    <passport>
+        <title>Решения по мероприятию (капа)</title>
+    </passport>
+
+    <states>
+        <status name="approveded" default="no" title="Утверждено"/>
+        <status name="ready" default="no" title="Выполнено"/>
+    </states>
+
+    <structure>
+
+        <field name="matches" title="Соотвествует или не соответствует требованиям выявленным на проверке" type="set">
+            <value name="match" title="Соотвествует"/>
+            <value name="matchparcel" title="Соотвествует частично"/>
+            <value name="notmatch" title="Не соотвествует"/>
+        </field>
+        <field name="comment" title="Описание решения" type="text" system="yes"/><!--Для поля соответствий-->
+
+        <useone entity="Document:Correction:Capa" as="DocumentCorrectionCapa"/> <!--Связь с владельцем-->
+
+        <field name="realizationtype" title="Тип реализации" type="set">
+            <value name="without_contractor_without_money" title="Без подрядчиков и покупки материалов"/>
+            <value name="without_contractor_with_money" title="Без подрядчиков с покупкой материала"/>
+            <value name="with_contractor_without_money" title="С подрядчиками без покупки материала"/>
+            <value name="with_contractor_with_money" title="С подрядчиками с покупкой материала"/>
+        </field>
+
+        <field name="realizationdate" title="Дата реализации" type="date"/>
+        <field name="cost" title="Оценочная стоимость" type="money"/>
+        <field name="descriptionsolution" title="Описание решения" type="text"/>
+
+        <hasone as="executor" entity="Management:Post:Individual" title="Исполнитель"/>
+
+
+        <field name="datedone" title="Дата выполнения" type="date"/>
+        <!--        <hasone entity="capatask"/>-->
+        <field name="ordered" type="integer" system="yes" title="system order"/>
+
+    </structure>
+
+    <lists>
+        <list name="visauser" entity="Management:Post:Individual" ns="4202" title="Юзеры которые рекомендовали данное решение"/>
+    </lists>
+
+    <defaultorder>
+        <by field="ordered" order="ASC"/>
+    </defaultorder>
+    
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="DocumentCorrectionCapa"/>
+        <column selector="realizationtype"/>
+        <column selector="confirmed"/>
+        <column selector="realizationdate"/>
+        <column selector="cost"/>
+        <column selector="descriptionsolution"/>
+        <column selector="created"/>
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes>
+        <index column="capaevent"/>
+    </indexes>
+
+</entity>

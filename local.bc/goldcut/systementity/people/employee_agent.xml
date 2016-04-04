@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="People:Employee:Counterparty" manager="People" uid="109">
+
+    <passport>
+        <title>Сотрудники контрагентов</title>
+    </passport>
+
+    <states>
+        <status name="isactive" default="yes" title="Активен"/>
+    </states>
+
+    <structure>
+
+        <useone entity="Actor:User:System" title="SYSTEM USER"/>
+        <useone entity="Management:Post:Individual" title="Должность"/>
+
+        <useone entity="Company:LegalEntity:Counterparty" as="CompanyLegalEntityCounterparty" title="Контрагент, которому принадлежит сотрудник"/>
+
+        <field name="title" type="string" title="ФИО сотрудника контрагента"/>
+        <field name="mail" type="string" title="Электронная почта сотрудника контрагента"/>
+        <field name="number" type="integer" title="Телефонный номер сотрудника контрагента"/>
+
+        <field name="created" type="timestamp" title="Время создания" createDefault="now"/>
+        <field name="updated" type="timestamp" title="Время последнего изменения" disabled="yes" createDefault="now" updateDefault="now"/>
+        <field name="ordered" type="integer" title="Порядок" system="yes"/>
+
+    </structure>
+
+    <lists/>
+    <defaultorder/>
+    <admincolumns>
+        <column selector="id"/>
+		<column selector="title"/>
+        <column selector="CompanyLegalEntityCounterparty"/>
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes>
+          <unique column="ActorUserSystem"/>
+    </indexes>
+</entity>

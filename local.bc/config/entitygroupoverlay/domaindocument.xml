@@ -1,0 +1,59 @@
+<?xml version='1.0' standalone='yes'?>
+
+<entity prototype="Document:*:*">
+
+    <states>
+      <!-- <status name="draft" default="no" title="Черновик"/> -->
+    </states>
+
+    <structure>
+
+        <hasone entity="DMS:Document:Universal" as="DMSDocumentUniversal" title="Shadow Doc" system="yes" />
+
+        <hasone entity="Definition:Prototype:Document" as="DefinitionPrototypeDocument" title="Definition:Prototype:Document" system="yes" />
+
+        <!-- Entity base (in java): id, initiator, state, created, updated  -->
+
+        <field name="privatedraft" type="boolean" title="privatedraft"/>
+        <field name="state" type="string" title="state"/>
+
+        <field name="code" type="string" title="code"/>
+
+        <field name="process" type="string" title="process"/>
+
+        <field name="parent" type="string" title="parent"/>
+        <field name="children" type="tarray" title="children"/>
+        <field name="related" type="tarray" title="related"/>
+
+        <field name="initiator" type="string" title="initiator"/>
+        <field name="authors" type="tarray" title="authors"/>
+
+        <field name="returned" type="boolean" title="returned"/>
+        <field name="done" type="boolean" title="done"/>
+        <field name="effective" type="boolean" title="действует"/>
+        <field name="archived" type="boolean" title="archived"/>
+        <field name="vised" type="boolean" title="vised"/>
+        <field name="approved" type="boolean" title="approved"/>
+
+        
+
+        <field name="created" type="timestamp" title="Время создания" createDefault="now"/>
+        <field name="updated" type="timestamp" title="Время последнего изменения" disabled="yes" />
+
+        <field name="basevisants" type="tarray" title="Базовые византы" />
+        <field name="additionalvisants" type="tarray" title="Дополнительные византы" />
+
+        <field name="hardmaster" type="tarray" title="Hard Master"/>
+        <field name="hardcopy" type="tarray" title="Hard Copy"/>
+
+        <field name="version" type="integer" title="Version" default="1" />
+        <field name="vnext" type="string" title="Next Version"/>
+        <field name="vprev" type="string" title="Prev Version"/>
+
+        <field name="efrom" type="date" title="Effective from" />
+        <field name="eto" type="date" title="Effective to" />
+
+    </structure>
+
+
+</entity>

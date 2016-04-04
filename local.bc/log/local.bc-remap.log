@@ -1,0 +1,10 @@
+[.] 02/04 22:53:38	Document:Claim:R_LSC	(Process\SetBaseVisantsForDocument::gate) 18:/gates/Process/SetBaseVisantsForDocument.php
+[ ] 02/04 22:53:38	APPROVER? urn:Management:Post:Individual:1492988442	(Process\SetBaseVisantsForDocument::gate) 31:/gates/Process/SetBaseVisantsForDocument.php
+[ ] 02/04 22:53:38	VISANTS? {1816416714,88814251}	(Process\SetBaseVisantsForDocument::gate) 32:/gates/Process/SetBaseVisantsForDocument.php
+[.] 02/04 22:53:38	EACH VISANT ADD TO SHEET #1816416714	(Process\SetBaseVisantsForDocument::gate) 38:/gates/Process/SetBaseVisantsForDocument.php
+[.] 02/04 22:53:38	EACH VISANT ADD TO SHEET #88814251	(Process\SetBaseVisantsForDocument::gate) 38:/gates/Process/SetBaseVisantsForDocument.php
+[.] 04/04 12:42:19	Document:Claim:R_LST	(Process\SetBaseVisantsForDocument::gate) 18:/gates/Process/SetBaseVisantsForDocument.php
+[ ] 04/04 12:42:19	APPROVER? urn:Management:Post:Individual:1492988442	(Process\SetBaseVisantsForDocument::gate) 31:/gates/Process/SetBaseVisantsForDocument.php
+[ ] 04/04 12:42:19	VISANTS? {1816416714,88814251}	(Process\SetBaseVisantsForDocument::gate) 32:/gates/Process/SetBaseVisantsForDocument.php
+[.] 04/04 12:42:19	EACH VISANT ADD TO SHEET #1816416714	(Process\SetBaseVisantsForDocument::gate) 38:/gates/Process/SetBaseVisantsForDocument.php
+[.] 04/04 12:42:19	EACH VISANT ADD TO SHEET #88814251	(Process\SetBaseVisantsForDocument::gate) 38:/gates/Process/SetBaseVisantsForDocument.php

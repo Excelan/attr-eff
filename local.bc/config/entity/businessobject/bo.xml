@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="BusinessObject:Record:Polymorph" manager="Businessobject" uid="11130">
+
+    <passport>
+        <title>Бизнес объекты</title>
+    </passport>
+
+    <states>
+        <status name="isarchive" default="no" title="Списан"/>
+    </states>
+
+    <structure>
+
+        <field name="title" type="string" title="Название объекта"/>
+        <useone entity="Definition:Class:BusinessObject" as="DefinitionClassBusinessObject" title="Класс объекта"/>
+        <useone entity="Definition:Type:BusinessObject" as="DefinitionTypeBusinessObject" title="Тип объекта"/>
+
+        <field name="_parent" type="integer" title="Parent or ETC"/>
+        <!--<hasone entity="bo" as="boparent" title="какому объекту принадлежит"/>-->
+        <useone entity="BusinessObject:Record:Polymorph" as="location" title="Местонахождение объекта"/>
+
+        <useone entity="People:Employee:Internal" as="MateriallyResponsible" title="Материально-ответственный сотрудник"/>
+        <useone entity="Company:LegalEntity:Counterparty" as="boofclient" title="Объект Клиента"/>
+
+        <field name="inventorynumber" type="string" title="Инвентарный номер"/>
+        <field name="serialnumber" type="string" title="Cерийный номер"/>
+        <field name="description" type="text" title="Описание и характеристики объекта"/>
+        <field name="currentproperties" type="text" title="Текущие свойства объекта"/>
+        <field name="value" type="money" units="UAH" title="Стоимость объекта"/>
+        <field name="currency" type="string" title="Валюта"/>
+        <field name="maker" type="string" title="Производитель объекта"/>
+        <field name="expirationdate" type="timestamp" title="Срок годности объекта"/>
+        <field name="startupdate" type="timestamp" title="Дата ввода в эксплуатацию"/>
+
+        <group title="ТЕХНИЧЕСКОЕ ОБСЛУЖИВАНИЕ">
+          <hasone entity="Calendar:Period:Month" as="periodicitymaintenance" title="Периодичность ТО"/>
+          <useone entity="People:Employee:Internal" as="ResponsibleMaintenance" title="Ответственный за техническое состояние и за проведение ТО"/>
+          <field name="maintenancework" type="text" title="Список регламентных работ для проведения ТО"/>
+        </group>
+
+        <group title="ВАЛИДАЦИЯ">
+        <hasone entity="Calendar:Period:Month" as="periodicityvalidation" title="Периодичность валидации"/>
+        <useone entity="People:Employee:Internal" as="ResponsibleValidation" title="Ответственный за валидацию"/>
+        </group>
+
+        <group title="ПОВЕРКА">
+        <hasone entity="Calendar:Period:Month" as="periodicityverification" title="Периодичность поверки"/>
+        <useone entity="People:Employee:Internal" as="ResponsibleVerification" title="Ответственный за поверку"/>
+        </group>
+
+        <group title="КАЛИБРОВКА">
+        <hasone entity="Calendar:Period:Month" as="periodicitycalibration" title="Периодичность калибровки"/>
+        <useone entity="People:Employee:Internal" as="ResponsibleCalibration" title="Ответственный за калибровку"/>
+        </group>
+
+        <group title="УБОРКА">
+        <hasone entity="Calendar:Period:Month" as="periodicitycleaning" title="Периодичность уборки"/>
+        <useone entity="People:Employee:Internal" as="ResponsibleCleaning" title="Ответственный за уборку"/>
+        </group>
+
+        <!--parentdoc   upload    Документы, по которым куплен объект-->
+
+
+
+
+
+
+        <field name="created" type="timestamp" title="Время создания" createDefault="now"/>
+        <field name="updated" type="timestamp" title="Время последнего изменения" disabled="yes" createDefault="now" updateDefault="now"/>
+        <field name="ordered" type="integer" title="Порядок" system="yes"/>
+
+    </structure>
+
+    <parameters>
+        <param name="treeview" value="yes" />
+    </parameters>
+
+    <lists>
+        <!--<list name="relateddocs" entity="document" ns="1131" title="Связанные документы"/>-->
+    </lists>
+
+    <defaultorder/>
+    <admincolumns>
+        <column selector="id"/>
+		<column selector="title"/>
+        <column selector="boofclient"/>
+        <column selector="DefinitionTypeBusinessObject"/>
+        <column selector="inventorynumber"/>
+		    <column selector="MateriallyResponsible"/>
+        <column selector="periodicityмaintenance"/>
+        <column selector="periodicityvalidation"/>
+        <column selector="periodicityverification"/>
+        <column selector="periodicitycalibration"/>
+
+    </admincolumns>
+    <options>
+        <aparam name="clonable" value="yes" />
+    </options>
+    <searchfields/>
+    <indexes/>
+</entity>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+        <section name="title" title="Выберите стороны договора из базы существующих контрагентов">
+          <field name="owncomany" type="select" title="Сторона 1(Биокон)">
+              <query gate="Selector/company/CompanyLegalEntityCounterparty"  />
+          </field>
+          <field name="CompanyLegalEntityCounterparty" type="select" title="Сторона 2(Контрагент)">
+              <query gate="Selector/company/CompanyLegalEntityCounterparty"  />
+          </field>
+        </section>
+    </structure>
+</form>

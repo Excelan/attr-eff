@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- CONTEXT BLOCK Протокол проверки-->
+
+    <!--    <section entity="Document:Protocol:EC" type="context" title="Метаинформация по Протоколу Проверки">
+            <field name="date" type="date"  title="Дата предыдущей проверки"/>
+        </section> -->
+
+        <section entity="Document:Protocol:EA" title="Форма для заполнения Протокола Проверки">
+
+            <field name="boprocedure" type="BusinessObject" multiple="yes" min="1" title="Объект(ы) проверки"/>
+            <field name="date" type="date" title="Дата проведения проверки"/>
+            <field name="datep" type="date" title="Дата предыдущей проверки"/>
+            <field name="commisionhead"  type="ManagementPostIndividual"  title="Глава комиссии"/>
+            <field name="commisionmembers" type="ManagementPostIndividual" multiple="yes" title="Участники комиссии"/>
+            <field name="results" type="richtext" title="Результаты проведения проверки"/>
+            <field name="attachments" type="attachment" min="1"  multiple="yes" title="Вложения"/>
+
+        </section>
+
+    </structure>
+
+</form>

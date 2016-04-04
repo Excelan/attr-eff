@@ -1,0 +1,22 @@
+{
+    "reason":"123",
+    "result":"xx",
+    "inter": 123,
+    "innerstruct": {
+        "ireason2":"inner"
+    },
+    "secondstruct": {
+        "ireason2dd":"inner2dup"
+    },
+    "innerstructmult": [
+        {
+            "reason3m":"a1",
+            "result3m":"b1",
+            "riskunident" : {"risk2":"xx"}
+        },
+        {
+            "reason3m":"a2",
+            "result3m":"b2"
+        }
+    ]
+}

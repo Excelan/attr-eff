@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- ПРОТОКОЛ УКД ПЕЧАТЬ -->
+
+        <section entity="Document:Protocol:RUKD" title="Печать">
+
+            <field name="eventdate" type="date" title="Дата проведения"/>
+
+            <field name="printarchive" type="attachment" title="Архив для печати" edit="lock"/>
+
+        </section>
+
+    </structure>
+
+</form>

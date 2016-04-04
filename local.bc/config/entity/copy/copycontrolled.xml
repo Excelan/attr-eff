@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="DMS:Copy:Controled" manager="System" uid="119">
+
+  <passport>
+    <title>Физическая управляемая копия (УКД)</title>
+  </passport>
+
+  <states>
+    <status name="isvalid" default="yes" title="Действительна"/>
+  </states>
+
+  <structure>
+
+    <field name="wfstate" title="WF State" type="set">
+        <value name="generated" title="Сгенерирована" />
+        <value name="linked" title="Выдана" />
+        <value name="unlinked" title="Изъята" />
+    </field>
+
+    <field name="pdflink" type="string" title="Файл PDF"/>
+
+    <hasone system="yes" entity="Management:Post:Individual" as="holder" title="Сотрудник, получил копию"/>
+    <hasone system="yes" entity="Management:Post:Individual" as="master" title="Сотрудник, который выдал копию"/>
+
+    <belongsto entity="Document:Regulations:SOP" as="DocumentRegulationsSOP" title="Копия какого SOP документа"/>
+    <belongsto entity="Document:Protocol:RUKD" as="issueDocumentProtocolRUKD" title="По какому протоколу выдана"/>
+    <belongsto entity="Document:Protocol:RUKD" as="withdrawDocumentProtocolRUKD" title="По какому протоколу изъята"/>
+
+
+
+    <field system="yes" name="created" type="timestamp" title="Дата генерации" createDefault="now"/>
+    <field system="yes" name="issuedate" type="timestamp" title="Дата выдачи" />
+    <field system="yes" name="returndate" type="timestamp" title="Дата возврата" />
+
+  </structure>
+
+  <lists>
+    <!-- <list name="holdersactive" entity="People:Employee:Internal" ns="1191" title="Держатели копии"/> -->
+    <!-- <list name="holdershistorical" entity="People:Employee:Internal" ns="1192" title="Бывшие держатели копии"/> -->
+  </lists>
+
+  <defaultorder/>
+
+  <admincolumns>
+    <column selector="DocumentRegulationsSOP"/>
+    <column selector="created"/>
+    <column selector="dateissue"/>
+    <column selector="datereturn"/>
+    <column selector="PeopleEmployeeInternal"/>
+    <!-- <column selector="status"/> -->
+  </admincolumns>
+
+  <options/>
+  <searchfields/>
+  <indexes/>
+</entity>

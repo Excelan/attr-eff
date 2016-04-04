@@ -1,0 +1,76 @@
+\nonstopmode
+%\batchmode
+\documentclass{article}
+
+\usepackage{wasysym}
+\usepackage{ucs}
+\usepackage[utf8x]{inputenc} % Включаем поддержку UTF8
+\usepackage[russian]{babel}  % Включаем пакет для поддержки русского языка
+%\usepackage{literat}
+
+\usepackage{multirow, tabularx}
+\usepackage{tabu}
+%\usepackage{ltablex}
+\usepackage{setspace}
+\usepackage{lastpage}
+
+
+%\usepackage[a4paper, portrait, margin=1in]{geometry} % формат бумаги и отступы
+%\usepackage[hmargin=2cm,top=2cm,headheight=65pt,footskip=65pt]{geometry}
+\usepackage[a4paper, portrait, margin=1in, hmargin=2cm, top=3.5cm, bottom=4cm, headheight=3cm, footskip=2.5cm]{geometry} % формат бумаги и отступы showframe
+
+
+\usepackage{ifthen}
+
+\usepackage{hyperref} % ссылки в списках
+\usepackage{fancyhdr} % колонтитулы
+
+%pandoc
+\newcommand{\tightlist}{%
+	\setlength{\itemsep}{1pt}\setlength{\parskip}{7pt}\setlength{\parsep}{0pt}}
+
+%\usepackage [showframe]{geometry}
+
+% paragraphs
+\setlength{\parindent}{0em} % красная строка
+\renewcommand{\baselinestretch}{1}
+\setlength{\parskip}{1em}
+%\setlength{\parskip}{10pt plus 1pt minus 2pt}
+%Tells TeX to space paragraph by 15pt, reducible to 13 or enlarged to 16. Such a spacing will disappear at page breaks.
+%However, many respected typographers frown upon paragraph spacing, that interrupts the flow of reading and spoils the uniformity of the page. While paragraph spacing may be considered for documents such as letters, it's really not recommended for longer texts
+
+%--------------------------------------------------------------------------------------
+%INCLUDE SECTION NUMBER IN LIST NUMBER
+
+\renewcommand*{\theenumi}{\thesection.\arabic{enumi}}
+\renewcommand*{\theenumii}{\theenumi.\arabic{enumii}}
+%--------------------------------------------------------------------------------------
+
+
+%--------------------------------------------------------------------------------------
+%GRAPHICX & IMAGES
+
+\usepackage{graphicx}
+%\graphicspath{ {images/} }
+
+%--------------------------------------------------------------------------------------
+
+% TABLES
+%\usepackage{tabular}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{tabu}
+
+%\tabulinesep=2mm
+%\renewcommand{\arraystretch}{2} % Vertical padding [array]
+%\setlength\extrarowheight{20pt} % [array]
+%\setlength{\arraycolsep}{10pt} % [array]
+
+
+\usepackage{ragged2e}
+
+\usepackage{xparse}
+%\usepackage{xcolor}
+\usepackage[svgnames,x11names,dvipsnames]{xcolor}

@@ -1,0 +1,646 @@
+[.] 02/04 22:49:21	ENTITY after.update.Actor:User:System [{},{"entitymeta":{"class":"RBAC","manager":{"name":"RBAC"},"uid":99901,"code":"","legacyname":null,"name":"Actor:User:System","prototype":{},"title":{"ru":"\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c","en":"\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c"},"field_metas":[175,176,177,178,179,180,181,182,183,184,185,186],"lang_field_metas":[],"statuses":["active","tester","system"],"reverserelated":[],"compound_of":null,"media":null,"mediaoptions":null,"imagesettings":[],"urn":"urn:Actor:User:System","directmanage":true,"adminadd":true,"container":null,"treeview":null,"translit":null,"alias":null,"checkunique":["email"],"index":[],"defaultorder":{"created":"DESC"},"adminfields":["name","email","date","time","wallet","actas","prefs"],"usereditfields":["name"],"cacheMemoryEnabled":null,"lists":[{"ns":42,"entity":"Actor:Role:System","name":"actas","title":"\u0414\u0435\u043b\u0435\u0433\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0435 \u0440\u043e\u043b\u0438","notify":"","graph":false,"reverse":"delegatedto","membership":"","order":{"id":"desc"}},{"ns":789,"entity":"Actor:User:System","name":"following","title":"Following","notify":"","graph":false,"reverse":"followers","membership":"","order":{"id":"desc"}},{"ns":987,"entity":"Actor:User:System","name":"followers","title":"Following","notify":"","graph":false,"reverse":"following","membership":"","order":{"id":"desc"}}],"groupby":[],"extendstructure":[],"searchtextin":[],"adminsearchtextin":[],"clonable":null,"groupnames":null,"groups":null,"virtualgroups":null,"options":[],"astitles":[],"allOrdered":["active","tester","system","origin","company","partner","client","ActorRoleSystem","oauth2link","oauth2session","email","phone","dynamicsalt","password","name","wallet","bonus","created","lastlogin","prefs","wrbacgroups","actas","following","followers"],"required":[],"attributed":null,"overlayed":true,"usemany_entities":[]},"extended":false}]	(Broker::send) 117:/goldcut/framework/broker.php
+[.] 02/04 22:49:21	MANAGERS user.onlogin datarow Object
+(
+    [entitymeta] => entitymeta Object
+        (
+            [class] => RBAC
+            [manager] => rbac Object
+                (
+                    [name] => RBAC
+                    [behaviors:protected] => Array
+                        (
+                            [0] => general_crud
+                            [1] => general_graph
+                            [2] => general_list
+                            [3] => general_clone
+                        )
+
+                    [limits:protected] => 
+                )
+
+            [uid] => 99901
+            [code] => 
+            [legacyname] => 
+            [name] => Actor:User:System
+            [prototype] => Prototype Object
+                (
+                    [inDomain:Prototype:private] => Actor
+                    [ofClass:Prototype:private] => User
+                    [ofType:Prototype:private] => System
+                )
+
+            [title] => Array
+                (
+                    [ru] => Пользователь
+                    [en] => Пользователь
+                )
+
+            [field_metas] => Array
+                (
+                    [0] => 175
+                    [1] => 176
+                    [2] => 177
+                    [3] => 178
+                    [4] => 179
+                    [5] => 180
+                    [6] => 181
+                    [7] => 182
+                    [8] => 183
+                    [9] => 184
+                    [10] => 185
+                    [11] => 186
+                )
+
+            [has_one:entitymeta:private] => Array
+                (
+                )
+
+            [use_one:entitymeta:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [ActorRoleSystem] => Actor:Role:System
+                        )
+
+                )
+
+            [has_many:entitymeta:private] => Array
+                (
+                    [0] => Array
+                        (
+                            [oauth2link] => OAuth:Link:UserId
+                        )
+
+                    [1] => Array
+                        (
+                            [oauth2session] => OAuth:Session:Tokens
+                        )
+
+                )
+
+            [use_many:entitymeta:private] => 
+            [belongs_to:entitymeta:private] => Array
+                (
+                )
+
+            [category:entitymeta:private] => 
+            [multy_lang:entitymeta:private] => Array
+                (
+                )
+
+            [lang_field_metas] => Array
+                (
+                )
+
+            [communitydata:entitymeta:private] => 
+            [statuses] => Array
+                (
+                    [0] => active
+                    [1] => tester
+                    [2] => system
+                )
+
+            [related:entitymeta:private] => 
+            [reverserelated] => Array
+                (
+                )
+
+            [compound_of] => 
+            [media] => 
+            [mediaoptions] => 
+            [imagesettings] => Array
+                (
+                )
+
+            [urn] => urn:Actor:User:System
+            [directmanage] => 1
+            [adminadd] => 1
+            [container] => 
+            [treeview] => 
+            [translit] => 
+            [alias] => 
+            [checkunique] => Array
+                (
+                    [0] => email
+                )
+
+            [index] => Array
+                (
+                )
+
+            [defaultorder] => Array
+                (
+                    [created] => DESC
+                )
+
+            [adminfields] => Array
+                (
+                    [0] => name
+                    [1] => email
+                    [2] => date
+                    [3] => time
+                    [4] => wallet
+                    [5] => actas
+                    [6] => prefs
+                )
+
+            [usereditfields] => Array
+                (
+                    [0] => name
+                )
+
+            [cacheMemoryEnabled] => 
+            [lists] => Array
+                (
+                    [0] => Array
+                        (
+                            [ns] => 42
+                            [entity] => Actor:Role:System
+                            [name] => actas
+                            [title] => Делегированные роли
+                            [notify] => 
+                            [graph] => 
+                            [reverse] => delegatedto
+                            [membership] => 
+                            [order] => Array
+                                (
+                                    [id] => desc
+                                )
+
+                        )
+
+                    [1] => Array
+                        (
+                            [ns] => 789
+                            [entity] => Actor:User:System
+                            [name] => following
+                            [title] => Following
+                            [notify] => 
+                            [graph] => 
+                            [reverse] => followers
+                            [membership] => 
+                            [order] => Array
+                                (
+                                    [id] => desc
+                                )
+
+                        )
+
+                    [2] => Array
+                        (
+                            [ns] => 987
+                            [entity] => Actor:User:System
+                            [name] => followers
+                            [title] => Following
+                            [notify] => 
+                            [graph] => 
+                            [reverse] => following
+                            [membership] => 
+                            [order] => Array
+                                (
+                                    [id] => desc
+                                )
+
+                        )
+
+                )
+
+            [groupby] => Array
+                (
+                )
+
+            [extendstructure] => Array
+                (
+                )
+
+            [searchtextin] => Array
+                (
+                )
+
+            [adminsearchtextin] => Array
+                (
+                )
+
+            [clonable] => 
+            [groupnames] => 
+            [groups] => 
+            [virtualgroups] => 
+            [options] => Array
+                (
+                )
+
+            [astitles] => Array
+                (
+                )
+
+            [allOrdered] => Array
+                (
+                    [0] => active
+                    [1] => tester
+                    [2] => system
+                    [3] => origin
+                    [4] => company
+                    [5] => partner
+                    [6] => client
+                    [7] => ActorRoleSystem
+                    [8] => oauth2link
+                    [9] => oauth2session
+                    [10] => email
+                    [11] => phone
+                    [12] => dynamicsalt
+                    [13] => password
+                    [14] => name
+                    [15] => wallet
+                    [16] => bonus
+                    [17] => created
+                    [18] => lastlogin
+                    [19] => prefs
+                    [20] => wrbacgroups
+                    [21] => actas
+                    [22] => following
+                    [23] => followers
+                )
+
+            [required] => Array
+                (
+                )
+
+            [attributed] => 
+            [overlayed] => 1
+            [system:entitymeta:private] => 1
+            [usemany_entities] => Array
+                (
+                )
+
+        )
+
+    [link_to_dataset:datarow:private] => DataSet Object
+        (
+            [loaded:DataSet:private] => 
+            [dataset] => Array
+                (
+                    [urn:Actor:User:System:1051038495] => Array
+                        (
+                            [id] => 1051038495
+                            [active] => 1
+                            [tester] => 0
+                            [system] => 0
+                            [ActorRoleSystem] => 
+                            [actas_ActorRoleSystem] => 
+                            [following_ActorUserSystem] => 
+                            [followers_ActorUserSystem] => 
+                            [email] => max@attracti.com
+                            [phone] => 
+                            [dynamicsalt] => 1718047713
+                            [password] => 4e60344db619895b9675208acb74e42155c7536b
+                            [name] => Max Bezugly
+                            [wallet] => 0.00
+                            [bonus] => 0
+                            [created] => 1450863798
+                            [lastlogin] => 1457708030
+                            [prefs] => 
+                            [wrbacgroups] => 
+                            [origin] => 
+                        )
+
+                )
+
+            [query] => Message Object
+                (
+                    [message:Message:private] => Array
+                        (
+                            [action] => load
+                            [urn] => urn:Actor:User:System
+                            [email] => max@attracti.com
+                            [lang] => 
+                        )
+
+                )
+
+            [entitymeta] => entitymeta Object
+                (
+                    [class] => RBAC
+                    [manager] => rbac Object
+                        (
+                            [name] => RBAC
+                            [behaviors:protected] => Array
+                                (
+                                    [0] => general_crud
+                                    [1] => general_graph
+                                    [2] => general_list
+                                    [3] => general_clone
+                                )
+
+                            [limits:protected] => 
+                        )
+
+                    [uid] => 99901
+                    [code] => 
+                    [legacyname] => 
+                    [name] => Actor:User:System
+                    [prototype] => Prototype Object
+                        (
+                            [inDomain:Prototype:private] => Actor
+                            [ofClass:Prototype:private] => User
+                            [ofType:Prototype:private] => System
+                        )
+
+                    [title] => Array
+                        (
+                            [ru] => Пользователь
+                            [en] => Пользователь
+                        )
+
+                    [field_metas] => Array
+                        (
+                            [0] => 175
+                            [1] => 176
+                            [2] => 177
+                            [3] => 178
+                            [4] => 179
+                            [5] => 180
+                            [6] => 181
+                            [7] => 182
+                            [8] => 183
+                            [9] => 184
+                            [10] => 185
+                            [11] => 186
+                        )
+
+                    [has_one:entitymeta:private] => Array
+                        (
+                        )
+
+                    [use_one:entitymeta:private] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [ActorRoleSystem] => Actor:Role:System
+                                )
+
+                        )
+
+                    [has_many:entitymeta:private] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [oauth2link] => OAuth:Link:UserId
+                                )
+
+                            [1] => Array
+                                (
+                                    [oauth2session] => OAuth:Session:Tokens
+                                )
+
+                        )
+
+                    [use_many:entitymeta:private] => 
+                    [belongs_to:entitymeta:private] => Array
+                        (
+                        )
+
+                    [category:entitymeta:private] => 
+                    [multy_lang:entitymeta:private] => Array
+                        (
+                        )
+
+                    [lang_field_metas] => Array
+                        (
+                        )
+
+                    [communitydata:entitymeta:private] => 
+                    [statuses] => Array
+                        (
+                            [0] => active
+                            [1] => tester
+                            [2] => system
+                        )
+
+                    [related:entitymeta:private] => 
+                    [reverserelated] => Array
+                        (
+                        )
+
+                    [compound_of] => 
+                    [media] => 
+                    [mediaoptions] => 
+                    [imagesettings] => Array
+                        (
+                        )
+
+                    [urn] => urn:Actor:User:System
+                    [directmanage] => 1
+                    [adminadd] => 1
+                    [container] => 
+                    [treeview] => 
+                    [translit] => 
+                    [alias] => 
+                    [checkunique] => Array
+                        (
+                            [0] => email
+                        )
+
+                    [index] => Array
+                        (
+                        )
+
+                    [defaultorder] => Array
+                        (
+                            [created] => DESC
+                        )
+
+                    [adminfields] => Array
+                        (
+                            [0] => name
+                            [1] => email
+                            [2] => date
+                            [3] => time
+                            [4] => wallet
+                            [5] => actas
+                            [6] => prefs
+                        )
+
+                    [usereditfields] => Array
+                        (
+                            [0] => name
+                        )
+
+                    [cacheMemoryEnabled] => 
+                    [lists] => Array
+                        (
+                            [0] => Array
+                                (
+                                    [ns] => 42
+                                    [entity] => Actor:Role:System
+                                    [name] => actas
+                                    [title] => Делегированные роли
+                                    [notify] => 
+                                    [graph] => 
+                                    [reverse] => delegatedto
+                                    [membership] => 
+                                    [order] => Array
+                                        (
+                                            [id] => desc
+                                        )
+
+                                )
+
+                            [1] => Array
+                                (
+                                    [ns] => 789
+                                    [entity] => Actor:User:System
+                                    [name] => following
+                                    [title] => Following
+                                    [notify] => 
+                                    [graph] => 
+                                    [reverse] => followers
+                                    [membership] => 
+                                    [order] => Array
+                                        (
+                                            [id] => desc
+                                        )
+
+                                )
+
+                            [2] => Array
+                                (
+                                    [ns] => 987
+                                    [entity] => Actor:User:System
+                                    [name] => followers
+                                    [title] => Following
+                                    [notify] => 
+                                    [graph] => 
+                                    [reverse] => following
+                                    [membership] => 
+                                    [order] => Array
+                                        (
+                                            [id] => desc
+                                        )
+
+                                )
+
+                        )
+
+                    [groupby] => Array
+                        (
+                        )
+
+                    [extendstructure] => Array
+                        (
+                        )
+
+                    [searchtextin] => Array
+                        (
+                        )
+
+                    [adminsearchtextin] => Array
+                        (
+                        )
+
+                    [clonable] => 
+                    [groupnames] => 
+                    [groups] => 
+                    [virtualgroups] => 
+                    [options] => Array
+                        (
+                        )
+
+                    [astitles] => Array
+                        (
+                        )
+
+                    [allOrdered] => Array
+                        (
+                            [0] => active
+                            [1] => tester
+                            [2] => system
+                            [3] => origin
+                            [4] => company
+                            [5] => partner
+                            [6] => client
+                            [7] => ActorRoleSystem
+                            [8] => oauth2link
+                            [9] => oauth2session
+                            [10] => email
+                            [11] => phone
+                            [12] => dynamicsalt
+                            [13] => password
+                            [14] => name
+                            [15] => wallet
+                            [16] => bonus
+                            [17] => created
+                            [18] => lastlogin
+                            [19] => prefs
+                            [20] => wrbacgroups
+                            [21] => actas
+                            [22] => following
+                            [23] => followers
+                        )
+
+                    [required] => Array
+                        (
+                        )
+
+                    [attributed] => 
+                    [overlayed] => 1
+                    [system:entitymeta:private] => 1
+                    [usemany_entities] => Array
+                        (
+                        )
+
+                )
+
+            [total] => 
+            [totalOnAllLevels] => 
+            [distinctgroups] => 
+            [cursor] => 1051038495
+            [position] => 0
+            [preloads] => Array
+                (
+                )
+
+            [rowsCreated] => Array
+                (
+                    [1051038495] => datarow Object
+ *RECURSION*
+                )
+
+        )
+
+    [datarow:datarow:private] => Array
+        (
+            [id] => 1051038495
+            [active] => 1
+            [tester] => 0
+            [system] => 0
+            [ActorRoleSystem] => 
+            [actas_ActorRoleSystem] => 
+            [following_ActorUserSystem] => 
+            [followers_ActorUserSystem] => 
+            [email] => max@attracti.com
+            [phone] => 
+            [dynamicsalt] => 1718047713
+            [password] => 4e60344db619895b9675208acb74e42155c7536b
+            [name] => Max Bezugly
+            [wallet] => 0.00
+            [bonus] => 0
+            [created] => 1450863798
+            [lastlogin] => 1457708030
+            [prefs] => 
+            [wrbacgroups] => 
+            [origin] => 
+        )
+
+    [dblink:datarow:private] => 
+    [extended] => 
+)
+	(Broker::send) 117:/goldcut/framework/broker.php
+[.] 02/04 22:49:21	ENTITY after.update.Management:Post:Individual [{},{"entitymeta":{"class":"System","manager":{"name":"System"},"uid":106,"code":"","legacyname":null,"name":"Management:Post:Individual","prototype":{},"title":{"ru":"\u0414\u043e\u043b\u0436\u043d\u043e\u0441\u0442\u044c","en":"\u0414\u043e\u043b\u0436\u043d\u043e\u0441\u0442\u044c"},"field_metas":[46,47,48,49,50,51],"lang_field_metas":[],"statuses":["isactive"],"reverserelated":[],"compound_of":null,"media":null,"mediaoptions":null,"imagesettings":[],"urn":"urn:Management:Post:Individual","directmanage":true,"adminadd":true,"container":null,"treeview":null,"translit":null,"alias":null,"checkunique":[],"index":[],"defaultorder":[],"adminfields":["id","title","nameofemployee","ManagementPostGroup","CompanyStructureDepartment","CompanyStructureDivision","employee"],"usereditfields":[],"cacheMemoryEnabled":null,"lists":[{"ns":1381,"entity":"Event:ProcessExecutionPlanned:Staged","name":"takepartinevents","title":"\u041f\u0440\u0438\u043d\u0438\u043c\u0430\u0435\u0442 \u0443\u0447\u0430\u0441\u0442\u0438\u0435 \u0432 \u0438\u0432\u0435\u043d\u0442\u0430\u0445","notify":"","graph":false,"reverse":"participants","membership":"","order":{"id":"desc"}}],"groupby":[],"extendstructure":[],"searchtextin":[],"adminsearchtextin":[],"clonable":null,"groupnames":null,"groups":null,"virtualgroups":null,"options":[],"astitles":{"ManagementPostGroup":"\u0422\u0438\u043f \u0434\u043e\u043b\u0436\u043d\u043e\u0441\u0442\u0438","CompanyStructureDepartment":"\u0414\u0435\u043f\u0430\u0440\u0442\u0430\u043c\u0435\u043d\u0442","managedbypost":"\u041d\u0430\u0447\u0430\u043b\u044c\u043d\u0438\u043a"},"allOrdered":["isactive","origin","internal","external","FeedMPETicketInboxItem","ManagementPostGroup","CompanyStructureDepartment","title","nameofemployee","managedbypost","managedposts","created","updated","ordered","takepartinevents"],"required":[],"attributed":null,"overlayed":null,"usemany_entities":[{"managedposts":"Management:Post:Individual"}]},"extended":false}]	(Broker::send) 117:/goldcut/framework/broker.php
+[.] 02/04 22:49:21	ENTITY after.update.Actor:User:System [{},{"entitymeta":{"class":"RBAC","manager":{"name":"RBAC"},"uid":99901,"code":"","legacyname":null,"name":"Actor:User:System","prototype":{},"title":{"ru":"\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c","en":"\u041f\u043e\u043b\u044c\u0437\u043e\u0432\u0430\u0442\u0435\u043b\u044c"},"field_metas":[175,176,177,178,179,180,181,182,183,184,185,186],"lang_field_metas":[],"statuses":["active","tester","system"],"reverserelated":[],"compound_of":null,"media":null,"mediaoptions":null,"imagesettings":[],"urn":"urn:Actor:User:System","directmanage":true,"adminadd":true,"container":null,"treeview":null,"translit":null,"alias":null,"checkunique":["email"],"index":[],"defaultorder":{"created":"DESC"},"adminfields":["name","email","date","time","wallet","actas","prefs"],"usereditfields":["name"],"cacheMemoryEnabled":null,"lists":[{"ns":42,"entity":"Actor:Role:System","name":"actas","title":"\u0414\u0435\u043b\u0435\u0433\u0438\u0440\u043e\u0432\u0430\u043d\u043d\u044b\u0435 \u0440\u043e\u043b\u0438","notify":"","graph":false,"reverse":"delegatedto","membership":"","order":{"id":"desc"}},{"ns":789,"entity":"Actor:User:System","name":"following","title":"Following","notify":"","graph":false,"reverse":"followers","membership":"","order":{"id":"desc"}},{"ns":987,"entity":"Actor:User:System","name":"followers","title":"Following","notify":"","graph":false,"reverse":"following","membership":"","order":{"id":"desc"}}],"groupby":[],"extendstructure":[],"searchtextin":[],"adminsearchtextin":[],"clonable":null,"groupnames":null,"groups":null,"virtualgroups":null,"options":[],"astitles":[],"allOrdered":["active","tester","system","origin","company","partner","client","ActorRoleSystem","oauth2link","oauth2session","email","phone","dynamicsalt","password","name","wallet","bonus","created","lastlogin","prefs","wrbacgroups","actas","following","followers"],"required":[],"attributed":null,"overlayed":true,"usemany_entities":[]},"extended":false}]	(Broker::send) 117:/goldcut/framework/broker.php
+[.] 02/04 22:53:38	ENTITY after.update.Document:Claim:R_LSC [{},{"entitymeta":{"class":"Document","manager":{"name":"Document"},"uid":1001,"code":"R_LSC","legacyname":null,"name":"Document:Claim:R_LSC","prototype":{},"title":{"ru":"\u0417\u0430\u044f\u0432\u043a\u0430 \u043d\u0430 \u043f\u0440\u0438\u0445\u043e\u0434","en":"\u0417\u0430\u044f\u0432\u043a\u0430 \u043d\u0430 \u043f\u0440\u0438\u0445\u043e\u0434"},"field_metas":[380,381,382,383,384,385,"privatedraft","state","code","process","parent","children","related","initiator","authors","returned","done","effective","archived","vised","approved","created","updated","basevisants","additionalvisants","hardmaster","hardcopy","version","vnext","vprev","efrom","eto"],"lang_field_metas":[],"statuses":[],"reverserelated":[],"compound_of":null,"media":null,"mediaoptions":null,"imagesettings":[],"urn":"urn:Document:Claim:R_LSC","directmanage":true,"adminadd":true,"container":null,"treeview":null,"translit":null,"alias":null,"checkunique":[],"index":[""],"defaultorder":[],"adminfields":["code","created","initiator","firstlinedescription","responsible"],"usereditfields":[],"cacheMemoryEnabled":null,"lists":[{"ns":9951,"entity":"Document:Solution:Universal","name":"solutionvariants","title":"\u041f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u043d\u044b\u0435 \u0440\u0435\u0448\u0435\u043d\u0438\u044f","notify":"","graph":false,"reverse":"","membership":"","order":{"id":"desc"}}],"groupby":[],"extendstructure":[],"searchtextin":[],"adminsearchtextin":[],"clonable":null,"groupnames":null,"groups":null,"virtualgroups":null,"options":[],"astitles":{"companyproject":"\u0422\u0435\u043a\u0443\u0449\u0438\u0439 \u043f\u0440\u043e\u0435\u043a\u0442 \u043f\u0440\u0435\u0434\u043f\u0440\u0438\u044f\u0442\u0438\u044f","CompanyLegalEntityCounterparty":"\u041a\u043b\u0438\u0435\u043d\u0442, \u0434\u043b\u044f \u043a\u043e\u0442\u043e\u0440\u043e\u0433\u043e \u0441\u043e\u0437\u0434\u0430\u0435\u0442\u0441\u044f \u0437\u0430\u044f\u0432\u043a\u0430","warehouse":"\u2116 \u0441\u043b\u0430\u0434\u0430, \u0434\u043b\u044f \u043a\u043e\u0442\u043e\u0440\u043e\u0433\u043e \u0441\u043e\u0437\u0434\u0430\u0435\u0442\u0441\u044f \u0437\u0430\u044f\u0432\u043a\u0430","DocumentSolutionUniversal":"\u0423\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u043d\u044b\u0439 \u0432\u0430\u0440\u0438\u0430\u043d\u0442 \u0440\u0435\u0448\u0435\u043d\u0438\u044f"},"allOrdered":["companyproject","CompanyLegalEntityCounterparty","warehouse","specialrequirement","attachments","DocumentSolutionUniversal","purchaseorder","attachmentdocs","plancomingdate","rtaken","myself","notmyresp","solutionvariants","privatedraft","state","code","process","parent","children","related","initiator","authors","returned","done","effective","archived","vised","approved","created","updated","basevisants","additionalvisants","hardmaster","hardcopy","version","vnext","vprev","efrom","eto",{"DMSDocumentUniversal":"DMS:Document:Universal"},{"DefinitionPrototypeDocument":"Definition:Prototype:Document"}],"required":[],"attributed":null,"overlayed":true,"usemany_entities":[]},"extended":false}]	(Broker::send) 117:/goldcut/framework/broker.php
+[.] 02/04 22:53:38	ENTITY after.update.Document:Claim:R_LSC [{},{"entitymeta":{"class":"Document","manager":{"name":"Document"},"uid":1001,"code":"R_LSC","legacyname":null,"name":"Document:Claim:R_LSC","prototype":{},"title":{"ru":"\u0417\u0430\u044f\u0432\u043a\u0430 \u043d\u0430 \u043f\u0440\u0438\u0445\u043e\u0434","en":"\u0417\u0430\u044f\u0432\u043a\u0430 \u043d\u0430 \u043f\u0440\u0438\u0445\u043e\u0434"},"field_metas":[380,381,382,383,384,385,"privatedraft","state","code","process","parent","children","related","initiator","authors","returned","done","effective","archived","vised","approved","created","updated","basevisants","additionalvisants","hardmaster","hardcopy","version","vnext","vprev","efrom","eto"],"lang_field_metas":[],"statuses":[],"reverserelated":[],"compound_of":null,"media":null,"mediaoptions":null,"imagesettings":[],"urn":"urn:Document:Claim:R_LSC","directmanage":true,"adminadd":true,"container":null,"treeview":null,"translit":null,"alias":null,"checkunique":[],"index":[""],"defaultorder":[],"adminfields":["code","created","initiator","firstlinedescription","responsible"],"usereditfields":[],"cacheMemoryEnabled":null,"lists":[{"ns":9951,"entity":"Document:Solution:Universal","name":"solutionvariants","title":"\u041f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u043d\u044b\u0435 \u0440\u0435\u0448\u0435\u043d\u0438\u044f","notify":"","graph":false,"reverse":"","membership":"","order":{"id":"desc"}}],"groupby":[],"extendstructure":[],"searchtextin":[],"adminsearchtextin":[],"clonable":null,"groupnames":null,"groups":null,"virtualgroups":null,"options":[],"astitles":{"companyproject":"\u0422\u0435\u043a\u0443\u0449\u0438\u0439 \u043f\u0440\u043e\u0435\u043a\u0442 \u043f\u0440\u0435\u0434\u043f\u0440\u0438\u044f\u0442\u0438\u044f","CompanyLegalEntityCounterparty":"\u041a\u043b\u0438\u0435\u043d\u0442, \u0434\u043b\u044f \u043a\u043e\u0442\u043e\u0440\u043e\u0433\u043e \u0441\u043e\u0437\u0434\u0430\u0435\u0442\u0441\u044f \u0437\u0430\u044f\u0432\u043a\u0430","warehouse":"\u2116 \u0441\u043b\u0430\u0434\u0430, \u0434\u043b\u044f \u043a\u043e\u0442\u043e\u0440\u043e\u0433\u043e \u0441\u043e\u0437\u0434\u0430\u0435\u0442\u0441\u044f \u0437\u0430\u044f\u0432\u043a\u0430","DocumentSolutionUniversal":"\u0423\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u043d\u044b\u0439 \u0432\u0430\u0440\u0438\u0430\u043d\u0442 \u0440\u0435\u0448\u0435\u043d\u0438\u044f"},"allOrdered":["companyproject","CompanyLegalEntityCounterparty","warehouse","specialrequirement","attachments","DocumentSolutionUniversal","purchaseorder","attachmentdocs","plancomingdate","rtaken","myself","notmyresp","solutionvariants","privatedraft","state","code","process","parent","children","related","initiator","authors","returned","done","effective","archived","vised","approved","created","updated","basevisants","additionalvisants","hardmaster","hardcopy","version","vnext","vprev","efrom","eto",{"DMSDocumentUniversal":"DMS:Document:Universal"},{"DefinitionPrototypeDocument":"Definition:Prototype:Document"}],"required":[],"attributed":null,"overlayed":true,"usemany_entities":[]},"extended":false}]	(Broker::send) 117:/goldcut/framework/broker.php
+[.] 02/04 22:53:39	ENTITY after.update.Document:Claim:R_LSC [{},{"entitymeta":{"class":"Document","manager":{"name":"Document"},"uid":1001,"code":"R_LSC","legacyname":null,"name":"Document:Claim:R_LSC","prototype":{},"title":{"ru":"\u0417\u0430\u044f\u0432\u043a\u0430 \u043d\u0430 \u043f\u0440\u0438\u0445\u043e\u0434","en":"\u0417\u0430\u044f\u0432\u043a\u0430 \u043d\u0430 \u043f\u0440\u0438\u0445\u043e\u0434"},"field_metas":[380,381,382,383,384,385,"privatedraft","state","code","process","parent","children","related","initiator","authors","returned","done","effective","archived","vised","approved","created","updated","basevisants","additionalvisants","hardmaster","hardcopy","version","vnext","vprev","efrom","eto"],"lang_field_metas":[],"statuses":[],"reverserelated":[],"compound_of":null,"media":null,"mediaoptions":null,"imagesettings":[],"urn":"urn:Document:Claim:R_LSC","directmanage":true,"adminadd":true,"container":null,"treeview":null,"translit":null,"alias":null,"checkunique":[],"index":[""],"defaultorder":[],"adminfields":["code","created","initiator","firstlinedescription","responsible"],"usereditfields":[],"cacheMemoryEnabled":null,"lists":[{"ns":9951,"entity":"Document:Solution:Universal","name":"solutionvariants","title":"\u041f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u043d\u044b\u0435 \u0440\u0435\u0448\u0435\u043d\u0438\u044f","notify":"","graph":false,"reverse":"","membership":"","order":{"id":"desc"}}],"groupby":[],"extendstructure":[],"searchtextin":[],"adminsearchtextin":[],"clonable":null,"groupnames":null,"groups":null,"virtualgroups":null,"options":[],"astitles":{"companyproject":"\u0422\u0435\u043a\u0443\u0449\u0438\u0439 \u043f\u0440\u043e\u0435\u043a\u0442 \u043f\u0440\u0435\u0434\u043f\u0440\u0438\u044f\u0442\u0438\u044f","CompanyLegalEntityCounterparty":"\u041a\u043b\u0438\u0435\u043d\u0442, \u0434\u043b\u044f \u043a\u043e\u0442\u043e\u0440\u043e\u0433\u043e \u0441\u043e\u0437\u0434\u0430\u0435\u0442\u0441\u044f \u0437\u0430\u044f\u0432\u043a\u0430","warehouse":"\u2116 \u0441\u043b\u0430\u0434\u0430, \u0434\u043b\u044f \u043a\u043e\u0442\u043e\u0440\u043e\u0433\u043e \u0441\u043e\u0437\u0434\u0430\u0435\u0442\u0441\u044f \u0437\u0430\u044f\u0432\u043a\u0430","DocumentSolutionUniversal":"\u0423\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u043d\u044b\u0439 \u0432\u0430\u0440\u0438\u0430\u043d\u0442 \u0440\u0435\u0448\u0435\u043d\u0438\u044f"},"allOrdered":["companyproject","CompanyLegalEntityCounterparty","warehouse","specialrequirement","attachments","DocumentSolutionUniversal","purchaseorder","attachmentdocs","plancomingdate","rtaken","myself","notmyresp","solutionvariants","privatedraft","state","code","process","parent","children","related","initiator","authors","returned","done","effective","archived","vised","approved","created","updated","basevisants","additionalvisants","hardmaster","hardcopy","version","vnext","vprev","efrom","eto",{"DMSDocumentUniversal":"DMS:Document:Universal"},{"DefinitionPrototypeDocument":"Definition:Prototype:Document"}],"required":[],"attributed":null,"overlayed":true,"usemany_entities":[]},"extended":false}]	(Broker::send) 117:/goldcut/framework/broker.php
+[.] 02/04 22:55:23	ENTITY after.update.Document:Claim:R_LSC [{},{"entitymeta":{"class":"Document","manager":{"name":"Document"},"uid":1001,"code":"R_LSC","legacyname":null,"name":"Document:Claim:R_LSC","prototype":{},"title":{"ru":"\u0417\u0430\u044f\u0432\u043a\u0430 \u043d\u0430 \u043f\u0440\u0438\u0445\u043e\u0434","en":"\u0417\u0430\u044f\u0432\u043a\u0430 \u043d\u0430 \u043f\u0440\u0438\u0445\u043e\u0434"},"field_metas":[380,381,382,383,384,385,"privatedraft","state","code","process","parent","children","related","initiator","authors","returned","done","effective","archived","vised","approved","created","updated","basevisants","additionalvisants","hardmaster","hardcopy","version","vnext","vprev","efrom","eto"],"lang_field_metas":[],"statuses":[],"reverserelated":[],"compound_of":null,"media":null,"mediaoptions":null,"imagesettings":[],"urn":"urn:Document:Claim:R_LSC","directmanage":true,"adminadd":true,"container":null,"treeview":null,"translit":null,"alias":null,"checkunique":[],"index":[""],"defaultorder":[],"adminfields":["code","created","initiator","firstlinedescription","responsible"],"usereditfields":[],"cacheMemoryEnabled":null,"lists":[{"ns":9951,"entity":"Document:Solution:Universal","name":"solutionvariants","title":"\u041f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u043d\u044b\u0435 \u0440\u0435\u0448\u0435\u043d\u0438\u044f","notify":"","graph":false,"reverse":"","membership":"","order":{"id":"desc"}}],"groupby":[],"extendstructure":[],"searchtextin":[],"adminsearchtextin":[],"clonable":null,"groupnames":null,"groups":null,"virtualgroups":null,"options":[],"astitles":{"companyproject":"\u0422\u0435\u043a\u0443\u0449\u0438\u0439 \u043f\u0440\u043e\u0435\u043a\u0442 \u043f\u0440\u0435\u0434\u043f\u0440\u0438\u044f\u0442\u0438\u044f","CompanyLegalEntityCounterparty":"\u041a\u043b\u0438\u0435\u043d\u0442, \u0434\u043b\u044f \u043a\u043e\u0442\u043e\u0440\u043e\u0433\u043e \u0441\u043e\u0437\u0434\u0430\u0435\u0442\u0441\u044f \u0437\u0430\u044f\u0432\u043a\u0430","warehouse":"\u2116 \u0441\u043b\u0430\u0434\u0430, \u0434\u043b\u044f \u043a\u043e\u0442\u043e\u0440\u043e\u0433\u043e \u0441\u043e\u0437\u0434\u0430\u0435\u0442\u0441\u044f \u0437\u0430\u044f\u0432\u043a\u0430","DocumentSolutionUniversal":"\u0423\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u043d\u044b\u0439 \u0432\u0430\u0440\u0438\u0430\u043d\u0442 \u0440\u0435\u0448\u0435\u043d\u0438\u044f"},"allOrdered":["companyproject","CompanyLegalEntityCounterparty","warehouse","specialrequirement","attachments","DocumentSolutionUniversal","purchaseorder","attachmentdocs","plancomingdate","rtaken","myself","notmyresp","solutionvariants","privatedraft","state","code","process","parent","children","related","initiator","authors","returned","done","effective","archived","vised","approved","created","updated","basevisants","additionalvisants","hardmaster","hardcopy","version","vnext","vprev","efrom","eto",{"DMSDocumentUniversal":"DMS:Document:Universal"},{"DefinitionPrototypeDocument":"Definition:Prototype:Document"}],"required":[],"attributed":null,"overlayed":true,"usemany_entities":[]},"extended":false}]	(Broker::send) 117:/goldcut/framework/broker.php
+[.] 04/04 12:42:19	ENTITY after.update.Document:Claim:R_LST [{},{"entitymeta":{"class":"Document","manager":{"name":"Document"},"uid":1004,"code":"R_LST","legacyname":null,"name":"Document:Claim:R_LST","prototype":{},"title":{"ru":"\u0417\u0430\u044f\u0432\u043a\u0430 \u043d\u0430 \u0442\u0430\u043c\u043e\u0436\u0435\u043d\u043d\u043e\u0435 \u043e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u0438\u0435","en":"\u0417\u0430\u044f\u0432\u043a\u0430 \u043d\u0430 \u0442\u0430\u043c\u043e\u0436\u0435\u043d\u043d\u043e\u0435 \u043e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u0438\u0435"},"field_metas":[400,401,402,403,404,405,406,"privatedraft","state","code","process","parent","children","related","initiator","authors","returned","done","effective","archived","vised","approved","created","updated","basevisants","additionalvisants","hardmaster","hardcopy","version","vnext","vprev","efrom","eto"],"lang_field_metas":[],"statuses":[],"reverserelated":[],"compound_of":null,"media":null,"mediaoptions":null,"imagesettings":[],"urn":"urn:Document:Claim:R_LST","directmanage":true,"adminadd":true,"container":null,"treeview":null,"translit":null,"alias":null,"checkunique":[],"index":[""],"defaultorder":[],"adminfields":["code","created","initiator","firstlinedescription","responsible"],"usereditfields":[],"cacheMemoryEnabled":null,"lists":[{"ns":9951,"entity":"Document:Solution:Universal","name":"solutionvariants","title":"\u041f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u043d\u044b\u0435 \u0440\u0435\u0448\u0435\u043d\u0438\u044f","notify":"","graph":false,"reverse":"","membership":"","order":{"id":"desc"}}],"groupby":[],"extendstructure":[],"searchtextin":[],"adminsearchtextin":[],"clonable":null,"groupnames":null,"groups":null,"virtualgroups":null,"options":[],"astitles":{"companyproject":"\u0422\u0435\u043a\u0443\u0449\u0438\u0439 \u043f\u0440\u043e\u0435\u043a\u0442 \u043f\u0440\u0435\u0434\u043f\u0440\u0438\u044f\u0442\u0438\u044f","CompanyLegalEntityCounterparty":"\u041a\u043b\u0438\u0435\u043d\u0442, \u0434\u043b\u044f \u043a\u043e\u0442\u043e\u0440\u043e\u0433\u043e \u0441\u043e\u0437\u0434\u0430\u0435\u0442\u0441\u044f \u0437\u0430\u044f\u0432\u043a\u0430","warehouse":"\u2116 \u0441\u043b\u0430\u0434\u0430, \u0434\u043b\u044f \u043a\u043e\u0442\u043e\u0440\u043e\u0433\u043e \u0441\u043e\u0437\u0434\u0430\u0435\u0442\u0441\u044f \u0437\u0430\u044f\u0432\u043a\u0430","DocumentSolutionUniversal":"\u0423\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u043d\u044b\u0439 \u0432\u0430\u0440\u0438\u0430\u043d\u0442 \u0440\u0435\u0448\u0435\u043d\u0438\u044f"},"allOrdered":["companyproject","CompanyLegalEntityCounterparty","warehouse","specialrequirement","attachments","DocumentSolutionUniversal","customsdeclarationtype","im40","im74","tpbn","customsclearancedocs","customsclearancedate","adddescription","rtaken","myself","notmyresp","solutionvariants","privatedraft","state","code","process","parent","children","related","initiator","authors","returned","done","effective","archived","vised","approved","created","updated","basevisants","additionalvisants","hardmaster","hardcopy","version","vnext","vprev","efrom","eto",{"DMSDocumentUniversal":"DMS:Document:Universal"},{"DefinitionPrototypeDocument":"Definition:Prototype:Document"}],"required":[],"attributed":null,"overlayed":true,"usemany_entities":[]},"extended":false}]	(Broker::send) 117:/goldcut/framework/broker.php
+[.] 04/04 12:42:19	ENTITY after.update.Document:Claim:R_LST [{},{"entitymeta":{"class":"Document","manager":{"name":"Document"},"uid":1004,"code":"R_LST","legacyname":null,"name":"Document:Claim:R_LST","prototype":{},"title":{"ru":"\u0417\u0430\u044f\u0432\u043a\u0430 \u043d\u0430 \u0442\u0430\u043c\u043e\u0436\u0435\u043d\u043d\u043e\u0435 \u043e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u0438\u0435","en":"\u0417\u0430\u044f\u0432\u043a\u0430 \u043d\u0430 \u0442\u0430\u043c\u043e\u0436\u0435\u043d\u043d\u043e\u0435 \u043e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u0438\u0435"},"field_metas":[400,401,402,403,404,405,406,"privatedraft","state","code","process","parent","children","related","initiator","authors","returned","done","effective","archived","vised","approved","created","updated","basevisants","additionalvisants","hardmaster","hardcopy","version","vnext","vprev","efrom","eto"],"lang_field_metas":[],"statuses":[],"reverserelated":[],"compound_of":null,"media":null,"mediaoptions":null,"imagesettings":[],"urn":"urn:Document:Claim:R_LST","directmanage":true,"adminadd":true,"container":null,"treeview":null,"translit":null,"alias":null,"checkunique":[],"index":[""],"defaultorder":[],"adminfields":["code","created","initiator","firstlinedescription","responsible"],"usereditfields":[],"cacheMemoryEnabled":null,"lists":[{"ns":9951,"entity":"Document:Solution:Universal","name":"solutionvariants","title":"\u041f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u043d\u044b\u0435 \u0440\u0435\u0448\u0435\u043d\u0438\u044f","notify":"","graph":false,"reverse":"","membership":"","order":{"id":"desc"}}],"groupby":[],"extendstructure":[],"searchtextin":[],"adminsearchtextin":[],"clonable":null,"groupnames":null,"groups":null,"virtualgroups":null,"options":[],"astitles":{"companyproject":"\u0422\u0435\u043a\u0443\u0449\u0438\u0439 \u043f\u0440\u043e\u0435\u043a\u0442 \u043f\u0440\u0435\u0434\u043f\u0440\u0438\u044f\u0442\u0438\u044f","CompanyLegalEntityCounterparty":"\u041a\u043b\u0438\u0435\u043d\u0442, \u0434\u043b\u044f \u043a\u043e\u0442\u043e\u0440\u043e\u0433\u043e \u0441\u043e\u0437\u0434\u0430\u0435\u0442\u0441\u044f \u0437\u0430\u044f\u0432\u043a\u0430","warehouse":"\u2116 \u0441\u043b\u0430\u0434\u0430, \u0434\u043b\u044f \u043a\u043e\u0442\u043e\u0440\u043e\u0433\u043e \u0441\u043e\u0437\u0434\u0430\u0435\u0442\u0441\u044f \u0437\u0430\u044f\u0432\u043a\u0430","DocumentSolutionUniversal":"\u0423\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u043d\u044b\u0439 \u0432\u0430\u0440\u0438\u0430\u043d\u0442 \u0440\u0435\u0448\u0435\u043d\u0438\u044f"},"allOrdered":["companyproject","CompanyLegalEntityCounterparty","warehouse","specialrequirement","attachments","DocumentSolutionUniversal","customsdeclarationtype","im40","im74","tpbn","customsclearancedocs","customsclearancedate","adddescription","rtaken","myself","notmyresp","solutionvariants","privatedraft","state","code","process","parent","children","related","initiator","authors","returned","done","effective","archived","vised","approved","created","updated","basevisants","additionalvisants","hardmaster","hardcopy","version","vnext","vprev","efrom","eto",{"DMSDocumentUniversal":"DMS:Document:Universal"},{"DefinitionPrototypeDocument":"Definition:Prototype:Document"}],"required":[],"attributed":null,"overlayed":true,"usemany_entities":[]},"extended":false}]	(Broker::send) 117:/goldcut/framework/broker.php
+[.] 04/04 12:42:19	ENTITY after.update.Document:Claim:R_LST [{},{"entitymeta":{"class":"Document","manager":{"name":"Document"},"uid":1004,"code":"R_LST","legacyname":null,"name":"Document:Claim:R_LST","prototype":{},"title":{"ru":"\u0417\u0430\u044f\u0432\u043a\u0430 \u043d\u0430 \u0442\u0430\u043c\u043e\u0436\u0435\u043d\u043d\u043e\u0435 \u043e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u0438\u0435","en":"\u0417\u0430\u044f\u0432\u043a\u0430 \u043d\u0430 \u0442\u0430\u043c\u043e\u0436\u0435\u043d\u043d\u043e\u0435 \u043e\u0444\u043e\u0440\u043c\u043b\u0435\u043d\u0438\u0435"},"field_metas":[400,401,402,403,404,405,406,"privatedraft","state","code","process","parent","children","related","initiator","authors","returned","done","effective","archived","vised","approved","created","updated","basevisants","additionalvisants","hardmaster","hardcopy","version","vnext","vprev","efrom","eto"],"lang_field_metas":[],"statuses":[],"reverserelated":[],"compound_of":null,"media":null,"mediaoptions":null,"imagesettings":[],"urn":"urn:Document:Claim:R_LST","directmanage":true,"adminadd":true,"container":null,"treeview":null,"translit":null,"alias":null,"checkunique":[],"index":[""],"defaultorder":[],"adminfields":["code","created","initiator","firstlinedescription","responsible"],"usereditfields":[],"cacheMemoryEnabled":null,"lists":[{"ns":9951,"entity":"Document:Solution:Universal","name":"solutionvariants","title":"\u041f\u0440\u0435\u0434\u043b\u043e\u0436\u0435\u043d\u043d\u044b\u0435 \u0440\u0435\u0448\u0435\u043d\u0438\u044f","notify":"","graph":false,"reverse":"","membership":"","order":{"id":"desc"}}],"groupby":[],"extendstructure":[],"searchtextin":[],"adminsearchtextin":[],"clonable":null,"groupnames":null,"groups":null,"virtualgroups":null,"options":[],"astitles":{"companyproject":"\u0422\u0435\u043a\u0443\u0449\u0438\u0439 \u043f\u0440\u043e\u0435\u043a\u0442 \u043f\u0440\u0435\u0434\u043f\u0440\u0438\u044f\u0442\u0438\u044f","CompanyLegalEntityCounterparty":"\u041a\u043b\u0438\u0435\u043d\u0442, \u0434\u043b\u044f \u043a\u043e\u0442\u043e\u0440\u043e\u0433\u043e \u0441\u043e\u0437\u0434\u0430\u0435\u0442\u0441\u044f \u0437\u0430\u044f\u0432\u043a\u0430","warehouse":"\u2116 \u0441\u043b\u0430\u0434\u0430, \u0434\u043b\u044f \u043a\u043e\u0442\u043e\u0440\u043e\u0433\u043e \u0441\u043e\u0437\u0434\u0430\u0435\u0442\u0441\u044f \u0437\u0430\u044f\u0432\u043a\u0430","DocumentSolutionUniversal":"\u0423\u0442\u0432\u0435\u0440\u0436\u0434\u0435\u043d\u043d\u044b\u0439 \u0432\u0430\u0440\u0438\u0430\u043d\u0442 \u0440\u0435\u0448\u0435\u043d\u0438\u044f"},"allOrdered":["companyproject","CompanyLegalEntityCounterparty","warehouse","specialrequirement","attachments","DocumentSolutionUniversal","customsdeclarationtype","im40","im74","tpbn","customsclearancedocs","customsclearancedate","adddescription","rtaken","myself","notmyresp","solutionvariants","privatedraft","state","code","process","parent","children","related","initiator","authors","returned","done","effective","archived","vised","approved","created","updated","basevisants","additionalvisants","hardmaster","hardcopy","version","vnext","vprev","efrom","eto",{"DMSDocumentUniversal":"DMS:Document:Universal"},{"DefinitionPrototypeDocument":"Definition:Prototype:Document"}],"required":[],"attributed":null,"overlayed":true,"usemany_entities":[]},"extended":false}]	(Broker::send) 117:/goldcut/framework/broker.php

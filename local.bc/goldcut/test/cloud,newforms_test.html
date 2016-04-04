@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>newform test</title>
+    <link rel="stylesheet" href="/goldcut/assets/css/admin.css">
+	 <script src="/lib/js/when/when.js"></script>
+    <script src="/goldcut/js/gcdom.js"></script>
+	<script src="/goldcut/js/newforms.js"></script>
+	<script>
+	function gcmain()
+	{
+		ajax('/goldcut/loadentityconfig.php', function(configXML) { new RootFormControl(configXML, id('adminarea')) }, {'responseType': 'XML'}, 'GET', {entity: 'product'});
+		//ajax('/goldcut/loadentityconfig.php', function(configXML) { new RootFormControl(configXML, id('adminarea')) }, {'responseType': 'XML'}, 'GET', {entity: 'photoalbum'});
+		//ajax('http://localhost:9090/_admin/mq', function(d) { console.log(d); }, {}, 'GET', {action: 'load', urn: 'urn-product'});
+		//ajax('http://localhost:9090/_admin/mq', function(d) { console.log(d); }, {}, 'POST', {action: 'create', urn: 'urn-product', title: 'ProductTitle', price: 12.5});
+		
+	}
+	
+	</script>
+  </head>
+  <body>
+
+	<div id="adminarea">
+		
+	</div>
+
+  </body>
+</html>

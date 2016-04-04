@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="Ns/Deep" name="GateClass">
+
+    <role>
+
+    </role>
+
+    <request>
+
+        <field name="" type="" required="yes"/>
+
+    </request>
+
+
+    <response>
+
+        <field name="" type="" required="yes"/>
+
+    </response>
+
+</gate>

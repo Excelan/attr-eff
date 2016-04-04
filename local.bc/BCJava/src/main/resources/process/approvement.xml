@@ -1,0 +1,26 @@
+<process prototype="DMS:Decisions:Approvement" readyfor="test">
+
+    <!-- Утверждение -->
+
+    <parameters>
+        <param name="initiator" type="urn"  />
+        <param name="subject" type="urn"  /> <!-- передача из вызывающего процесса, что утверждать -->
+    </parameters>
+
+    <responsibility>
+        <stage name="Approve" title="Утверждение">
+            <humantask responsible="system" appoint="system" />
+            <rule type="timelimit" value="1d" />
+        </stage>
+    </responsibility>
+
+    <stages>
+
+        <!-- subject -->
+        <stage name="Approve" type="humantask">
+            <ui task="dataapprove"></ui>
+        </stage>
+
+    </stages>
+
+</process>

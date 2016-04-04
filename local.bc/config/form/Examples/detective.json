@@ -1,0 +1,20 @@
+{
+    "urn":"urn:a:b:c:1",
+    "upn":"UPN:ClaimsManagement:Claims:Claim:5371792",
+    "donefor": "Сделано все возможное",
+    "result": "Отчет",
+    "doc1": "urn-document-x-x-1",
+    "links": ["jfvdf", "1233", "frweffr"],
+    "ots": [
+        {
+            "desc": "DESC",
+            "oldrisk": {"riskID":"123"},
+            "newrisk": [{"risktitle": "Rt", "depart": "Dep1"}, {"risktitle": "Rt2", "depart": "Dep2"}]
+        },
+        {
+            "desc": "DESC2",
+            "oldrisk": {"riskID":"456"},
+            "newrisk": [{"risktitle": "RtB", "depart": "Dep1B", "links": ["jfvdf", "1233"]}]
+        }
+    ]
+}

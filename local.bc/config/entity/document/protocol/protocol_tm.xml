@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity prototype="Document:Protocol:TM" code="TM" manager="Document" uid="5028">
+
+    <passport>
+        <title>Протокол технического обслуживания</title>
+    </passport>
+
+    <structure>
+
+		<hasone entity="BusinessObject:Record:Polymorph" system="yes" as="bo" title="Объект"/><!--БД Объекты/тип - оборудование-->
+		<hasone entity="Management:Post:Individual" system="yes" as="responsiblemo" title="Материально-ответственный сотрудник"/>
+		<hasone entity="Management:Post:Individual" system="yes" as="responsibleto" title="Ответственный за техническое состояние, за ТО"/>
+		<hasone entity="BusinessObject:Record:Polymorph" system="yes" as="warehouse" title="№ Склада"/>
+		<hasone entity="Company:LegalEntity:Counterparty" system="yes" as="client" title="Клиент"/>
+		<hasone entity="Calendar:Period:Month" system="yes" title="Периодичность ТО"/>
+
+		<!-- Форма для заполнения-->
+		<field name="servicedate" type="date" title="Дата проведения ТО"/>
+    <field name="datep" type="date" title="Дата предыдущего ТО"/>
+		<field name="contractforcalibration" type="string" title="Договор на проведение ТО"/>
+        <field name="relateddocuments" type="tarray" title="Связанные документы"/>
+        <field name="results" type="richtext" title="Результаты проведения ТО"/>
+		<field name="upload" type="tarray" title="Вложения"/>
+
+
+    </structure>
+
+    <lists>
+
+    </lists>
+
+
+    <defaultorder>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		<!-- <column selector="status"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

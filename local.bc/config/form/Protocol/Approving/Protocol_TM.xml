@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- Протокол Технического обслуживания-->
+
+        <section entity="Document:Protocol:TM" type="context" title="Метаинформация по Протоколу Технического обслуживания">
+            <field name="bo" type="BusinessObject"  title="Объект"/>
+            <field name="responsiblemo" type="ManagementPostIndividual"  title="Материально-ответственный сотрудник"/>
+            <field name="responsibleto"  type="ManagementPostIndividual"  title="Ответственный за техническое состояние и за техническое обслуживание"/>
+            <field name="warehouse" type="BusinessObject"  title="№ Склада"/>
+            <field name="client" type="CompanyLegalEntityCounterparty"  title="Клиент"/>
+            <field name="CalendarPeriodMonth" type="select"  title="Периодичность ТО">
+                <query gate="Selector/calendar/CalendarPeriodMonth"/>
+            </field>
+            </section>
+
+            <!-- Форма для заполнения-->
+            <section type="context" entity="Document:Protocol:TM" title="Форма для заполнения Протокола Технического обслуживания">
+
+                <field name="servicedate" type="date" title="Дата проведения ТО"/>
+                <field name="datep" type="date" title="Дата предыдущего ТО"/>     
+                <field name="contractforcalibration" type="Document" title="Договор на проведение ТО"/>
+                <field name="relateddocuments" type="Document" multiple="yes" title="Связанные документы"/>
+                <field name="results" type="text" title="Результаты проведения ТО"/>
+                <field name="upload" type="string" multiple="yes" title="Вложения"/>
+            </section>
+
+    </structure>
+</form>

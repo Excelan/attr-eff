@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- CONTEXT BLOCK Протокол служебного расследования по жалобе на брокерские услуги -->
+        <section entity="Document:Complaint:C_LB" type="context" title="Инцидент">
+
+          <struct name="CONTEXT_DocumentComplaintC_LB" anonymous="yes">
+
+            <field name="CompanyLegalEntityCounterparty" type="CompanyLegalEntityCounterparty" title="Клиент, для которого создается жалоба" edit="lock"/>
+            <field name="warehouse" type="BusinessObject" title="№ склада, для которого создается жалоба" edit="lock"/>
+            <field name="datestart" type="date" title="Дата начала инцидента" edit="lock"/>
+            <field name="dateend" type="date" title="Дата окончания инцидента" edit="lock"/>
+            <field name="description" type="richtext" title="Описание жалобы" edit="lock"/>
+            <field name="attachments" type="attachment" multiple="yes" title="Вложение" edit="lock"/>
+            <field name="invoice" type="string" title="Номер инвойса" edit="lock"/>
+            <field name="invoicedate" type="date" title="Дата инвойса" edit="lock"/>
+            <field name="invoicesum" type="money" title="Сумма инвойса" edit="lock"/>
+
+          </struct>
+
+        </section>
+
+        <!-- Реагирование -->
+        <section entity="Document:Detective:C_LB" title="Реагирование (заполнять, если были приняты меры по устранению проблемы)">
+          <field name="troublefixdate" type="date" title="Дата проведения мер по быстрому устранению проблемы"/>
+          <field name="troubleevent" type="richtext" title="Меры, принятые для устранения проблемы"/>
+          <field name="responsible" type="ManagementPostIndividual" title="Ответственный исполнитель">
+            <query gate="Selector/management"/>
+          </field>
+        </section>
+
+        <!-- Расследование-->
+        <section entity="Document:Detective:C_LB" title="Расследование">
+          <field name="investigationdate" type="date" title="Дата проведения расследования" required="yes"/>
+          <field name="commissionmember" type="ManagementPostIndividual" multiple="yes" min="1" title="Члены комиссии" required="yes">
+            <query gate="Selector/management"/>
+          </field>
+          <field name="factdetected" type="richtext" title="Выявленные факты" required="yes"/>
+          <field name="checkbo" type="BusinessObject" multiple="yes" min="1" title="Объекты, которые проходили проверку" required="yes"/>
+        </section>
+
+        <!-- Заключение-->
+        <section entity="Document:Detective:C_LB" title="Заключение">
+          <field name="complaintstatus" type="radio" title="Отметка о статусе жалобы" required="yes">
+            <options>
+              <option value="yes" title="Принять"/>
+              <option value="no" title="Отклонить"/>
+            </options>
+          </field>
+          <field name="conclusion" type="richtext" title="Заключение" required="yes"/>
+          <field name="materialsused" type="richtext" title="Опись использованных материалов" required="yes"/>
+
+          <field name="attachments" type="attachment" multiple="yes" min="1" title="Внешние документы"/>
+          <field name="internaldocuments" type="Document" multiple="yes" min="1" title="Внутренние документы"></field>
+        </section>
+
+        <!-- Отклонение-->
+        <section title="Список отклонений">
+          <struct name="deviations" entity="Directory:Deviation:PreCapa" multiple="yes" title="Отклонение">
+            <field name="urn" type="hidden"/>
+            <field name="description" type="richtext" title="Описание отклонения"/>
+            <field name="CompanyStructureDepartment"  type="select"  title="Департамент">
+              <query gate="Selector/company/structure/CompanyStructureDepartment"/>
+            </field>
+            <!--<struct name="approvedrisks" multiple="yes" title="Идентифицированный риск">-->
+            <field name="approvedrisks" type="RiskManagementRiskApproved" multiple="yes" title="Идентифицированный риск"/>
+            <!--</struct>-->
+            <struct name="notapprovedrisks" entity="RiskManagement:Risk:NotApproved" min="0" multiple="yes" title="Не идентифицированный риск">
+              <field name="urn" type="hidden"/>
+              <field name="riskdescription" type="richtext" title="Описание не идентифицированного риска"/>
+              <field name="BusinessObjectRecordPolymorph" type="BusinessObject"  title="Объект, в котором появился этот риск"/>
+              <field name="DirectoryBusinessProcessItem" type="select"  title="Процесс, в котором появился этот риск">
+                <query gate="Selector/directory/DirectoryBusinessProcessItem"  />
+              </field>
+            </struct>
+          </struct>
+        </section>
+
+      </structure>
+
+    </form>

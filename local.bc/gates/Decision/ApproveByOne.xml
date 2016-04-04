@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="Decision" name="ApproveByOne">
+
+    <role>
+
+    </role>
+
+    <request>
+
+        <field name="user" type="integer" required="no"/>
+        <field name="actor" type="urn" required="yes"/>
+        <field name="actorEmployee" type="urn" required="yes"/>
+        <field name="status" type="integer" required="no"/>
+        <field name="param" type="integer" required="no"/>
+        <field name="text" type="integer" required="no"/>
+        <field name="visedvariants" type="array" required="no"/>
+        <field name="mpeid" type="integer" required="yes"/>
+        <field name="urn" type="integer" required="no"/>
+        <field name="ticketurn" type="integer" required="no"/>
+
+    </request>
+
+
+    <response>
+
+        <field name="mpeid" type="integer" required="no"/>
+        <field name="globaldecision" type="string" required="yes"/>
+
+    </response>
+
+</gate>

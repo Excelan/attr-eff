@@ -1,0 +1,115 @@
+<process prototype="DMS:Regulation:Attestation"  readyfor="test">
+
+  <parameters>
+    <!--
+    Стартует
+      новым процессом (не call/return control to) из Study
+      + новым процесом с хвоста этого для не сдавших
+      - возможен старт досдачи как дочернего процесса, чтобы считать завершенным процесс только, когда сдадут все для этого интервала
+      И
+      после интервала повторного обучения для всех, досдача аналогична
+      - Один лист аттестации и возврат процесса на этап bind, если не все сдали - тогда документ не закрыт очень долго
+      + заново стартует процесс аттестации для несдавших (тогда на одну TA много ASR) - нужно merge для сводного отчета (как минимум отдельный ASR создается на интервальные обучения)
+    -->
+  </parameters>
+
+  <responsibility>
+
+    <stage name="CreateDraft">
+      <target>
+        TA имеет один номер текущей итерации-сессии обучения (0, 1, 2ое переобучение и тд)
+          сам ASR привязан к итерации
+
+        Создаем лист аттестации ASR сразу с ссылками на SOP и TA! (берем из parent процесса).
+          ! Центр хранения кто должен быть обучен и кто уже обучен - в самом SOP.
+          ! TA вообще не связана с людьми, только с SOP и вопросами. TA определяет интервал переобучения
+
+        - передача в конце процесса данных в новый - почти старт с параметрами (сначала стартовали, потом наполнил созданный draft ASR), о том, что еще одна сессия сдачи нужна для несдавших мы знали именно в конце (сразу на TestingOut) процесса - наполнять учащимися ASR created draft из прошлого процесса в Route?
+        + pull запрос в самом черновике - data in side effect
+        -> Process/Study/fillASRIterationFromSOPForTAInterval
+        PHP переносит из SOP в лист аттестации ASR тех, для кого требуется обучение (по Должности и Типу Должности)
+          в первый раз - sop.требуется_для - merge(0*ASR) = берем всех
+          повторная сдача в этом интервале - всех несдавших (не в прошлом процессе, а в принципе!) sop.требуется_для - merge(ASR всех итераций-сессий этого интервала) = кому еще сдавать
+      </target>
+    </stage>
+
+    <stage name="AttendeesSelection" title="Выбор дополнительных учащихся">
+      <target>
+        Цель - ручной выбор дополнительных обучающихся по SOP (готовый список + выбор любой должности) - добавление их в SOP! и в ASR лист (те из sop в asr всех уже перенесли на createdraft)
+        -> Process/Study/ExtendSOPASRRequiredFor
+      </target>
+      <humantask responsible="initiator" appoint="initiator"/>
+      <!-- configuration -->
+      <rule type="timelimit" value="1d"/>
+    </stage>
+
+    <!--
+    <stage name="AttendeesBind">
+      <target>
+        return point -> failed add
+      </target>
+    </stage>
+    -->
+
+    <stage name="Planing"  title="Планирование обучения/аттестации">
+      <target>
+        Цель - запланировать ивент обучение/аттестация
+        ??? ASR.plannedattendees наполнить,
+        ASR.planneddate
+      </target>
+      <call process="DMS:Decisions:Plan"/>
+      <rule type="timelimit" value="1d"/>
+    </stage>
+
+    <!--<stage name="Check"  title="Проверка присутствующих">-->
+      <!--<target>Цель - редактирование допуска</target>-->
+      <!--<humantask responsible="initiator" appoint="initiator"/>-->
+      <!--<rule type="timelimit" value="1d"/>-->
+    <!--</stage>-->
+
+    <stage name="Testing" title="Аттестация">
+      <target>
+        обучившиеся проходят тестирование
+          tickets всем сдающим
+        после тестирования (TestingOut) и до Route на каждого уже создан EmployeeResult и он внесится в списки ASR сдавших и SOP обученных/актуализированных
+      </target>
+      <call process="DMS:Attestations:Test"/>
+      <!--
+      appoint="configurable" members="configurable"
+      -->
+      <rule type="timelimit" value="1d"/>
+    </stage>
+
+    <stage name="Route">
+      <target>
+        По результатам Аттестации возможно планирование 2х ивентов -
+        1 - выдача УКД, для тех кто успешно прошел : start Process:UKD/IssueList, fill IssueList with ASR:successpassed
+          -> Process/Study/ConditionalStartUKDForASRPassed
+        2-повторная аттестация, для тех кто не прошел (plannedattendees - successpassed) : if recursive start Attestation again
+          -> Process/Study/ConditionalRecursiveStartAttestationForASRNonPassed
+      </target>
+      <delegate optional="yes" process="DMS:Regulation:UKD"/>
+      <delegate optional="yes" process="DMS:Regulation:Attestation"/>
+    </stage>
+
+  </responsibility>
+
+  <stages>
+
+    <stage name="CreateDraft" type="automated"/>
+
+    <stage name="AttendeesSelection" type="humantask"/>
+
+    <!--<stage name="AttendeesBind" type="automated"/>-->
+
+    <stage name="Planing" type="delegate"/>
+
+    <!--<stage name="Check" type="humantask"/>-->
+
+    <stage name="Testing" type="delegate"/>
+
+    <stage name="Route" type="automated"/>
+
+  </stages>
+
+</process>

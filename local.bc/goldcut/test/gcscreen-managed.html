@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, user-scalable=no">
+<title>GC MANAGED SCREEN</title>
+<script type="text/javascript" src="/goldcut/js/gcdom.js?1"></script>
+<script type="text/javascript" src="/goldcut/js/screen.js?1"></script>
+<style>
+
+html, body { 
+	margin:0; 
+	padding:0; 
+	height: 100%; 
+}
+
+body {
+	font: 16px/24px sans-serif;
+	color: #000;
+	margin: 0;
+	padding: 0;
+}
+
+.fixed, .screen, .area {
+	position: fixed;
+	/* opacity: 0.7; */
+}
+.fixed {
+	/* display: none; */
+}
+aside, header, footer { overflow: hidden; }
+aside {
+	width: 200px;
+	/* background: white; */
+}
+aside.left {
+	border-right: 1px solid #ddd;
+}
+aside.right {
+	border-left: 1px solid #ddd;
+}
+header, footer {
+	height: 42px;
+}
+header {
+	background: #f0f0f0;
+	width: 100%;
+}
+footer {
+	background: #eee;
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+.contenthead
+{
+	background: #fff;
+	border-bottom: 1px solid #ccc;
+}
+#main {
+	padding: 10px;
+	/* background: yellow; */
+}
+#main p {
+	margin: 0;
+	padding: 0px;
+	margin-bottom: 0.5em;
+}
+</style>
+
+<script>
+function gcmain()
+{
+	s = new GCScreen(null, null, {asidewidth: 150, headheight: 32});
+	//s.addLSide(function(d){ d.innerHTML += ' RENDERED LS 01'; });
+	s.addLSide('navmain');
+	s.addRSide(function(d){ d.innerHTML += ' RENDERED RS A'; });
+	//s.addHeader(function(headerdom){ headerdom.innerHTML = id('mainhead').innerHTML; id('mainhead').parentNode.removeChild(id('mainhead')); });
+	s.addHeader('mainhead');
+	//s.setAreaRenderCallback(function(headerdom){ headerdom.innerHTML += 'CONTENT'; });
+	s.render();
+	
+	ss = s.addSubScreen(); // {asidewidth: 150, headheight: 32}
+	ss.addLSide(function(d){ d.innerHTML += 'INNER LS1'; });
+	//ss.addLSide('navmain');
+	ss.addLSide(function(d){ d.innerHTML += ' INNER LS2'; });
+	//ss.addLSide(function(d){ d.innerHTML += ' INNER LS3'; });
+	ss.addRSide(function(d){ d.innerHTML += ' RENDERED RSi A'; });
+	//ss.addRSide(function(d){ d.innerHTML += ' RENDERED RSi B'; });
+	//ss.addRSide('navmain');
+	ss.addHeader(function(headerdom){ headerdom.innerHTML += ' INNER H'; }, 'contenthead');
+	//ss.addHeader('navmain', 'contenthead');
+	
+	
+	ss.setAreaRenderCallback(function(headerdom){ headerdom.innerHTML += 'JS RENDER CALLBACK <a href="/">Home</a>'; });
+	//ss.useStaticContent('main');
+	hide(id("main"));
+	
+	
+	ss.render();
+	
+	s.onclick("SSS")
+	
+	//console.log()
+	
+	//s.render();
+	//ss.render();
+	
+	/*
+	sss = ss.addSubScreen();
+	sss.addLSide(function(d){ d.innerHTML += ' INNER LSi 1'; });
+	//sss.addLSide(function(d){ d.innerHTML += ' INNER LSi 2'; });
+	sss.addHeader(function(headerdom){ headerdom.innerHTML += ' INNER H 2'; });
+	sss.setAreaRenderCallback(function(headerdom){ headerdom.innerHTML += 'AREA 2'; });
+	sss.render();
+	*/
+}
+</script>
+
+
+</head>
+
+<body>
+
+<header id='mainhead'>
+	Top head
+</header>
+
+<nav id='navmain'>
+	Main nav
+</nav>
+
+<div id='main' role='main' class="" style='z-index: 1000; position: relative;'>
+	<h1>Static html in page. Not JS rendered</h1>
+	<p>Content ipsum dolor sit amet, <a href='/'>consectetur adipiscing</a> elit. Aliquam auctor interdum elit faucibus scelerisque. Curabitur eleifend orci eget ante egestas viverra ac nec mauris. Pellentesque et dolor et leo pellentesque sollicitudin vitae vel velit. Phasellus ullamcorper sapien in sapien fermentum viverra. Sed dignissim est nec risus elementum molestie. Morbi placerat pharetra massa vitae aliquam. Curabitur laoreet suscipit leo, sit amet lacinia dolor placerat eu. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Nulla lacinia, ante ac dignissim viverra, nunc orci rhoncus odio, porttitor aliquet orci massa non lorem.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor interdum elit faucibus scelerisque. Curabitur eleifend orci eget ante egestas viverra ac nec mauris. Pellentesque et dolor et leo pellentesque sollicitudin vitae vel velit. Phasellus ullamcorper sapien in sapien fermentum viverra. Sed dignissim est nec risus elementum molestie. Morbi placerat pharetra massa vitae aliquam. Curabitur laoreet suscipit leo, sit amet lacinia dolor placerat eu. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Nulla lacinia, ante ac dignissim viverra, nunc orci rhoncus odio, porttitor aliquet orci massa non lorem.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor interdum elit faucibus scelerisque. Curabitur eleifend orci eget ante egestas viverra ac nec mauris. Pellentesque et dolor et leo pellentesque sollicitudin vitae vel velit. Phasellus ullamcorper sapien in sapien fermentum viverra. Sed dignissim est nec risus elementum molestie. Morbi placerat pharetra massa vitae aliquam. Curabitur laoreet suscipit leo, sit amet lacinia dolor placerat eu. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Nulla lacinia, ante ac dignissim viverra, nunc orci rhoncus odio, porttitor aliquet orci massa non lorem.</p>
+	<p>Content ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor interdum elit faucibus scelerisque. Curabitur eleifend orci eget ante egestas viverra ac nec mauris. Pellentesque et dolor et leo pellentesque sollicitudin vitae vel velit. Phasellus ullamcorper sapien in sapien fermentum viverra. Sed dignissim est nec risus elementum molestie. Morbi placerat pharetra massa vitae aliquam. Curabitur laoreet suscipit leo, sit amet lacinia dolor placerat eu. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Nulla lacinia, ante ac dignissim viverra, nunc orci rhoncus odio, porttitor aliquet orci massa non lorem.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor interdum elit faucibus scelerisque. Curabitur eleifend orci eget ante egestas viverra ac nec mauris. Pellentesque et dolor et leo pellentesque sollicitudin vitae vel velit. Phasellus ullamcorper sapien in sapien fermentum viverra. Sed dignissim est nec risus elementum molestie. Morbi placerat pharetra massa vitae aliquam. Curabitur laoreet suscipit leo, sit amet lacinia dolor placerat eu. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Nulla lacinia, ante ac dignissim viverra, nunc orci rhoncus odio, porttitor aliquet orci massa non lorem.</p>
+	<p>Lorem ipsum dolor sit amet, <a href='/'>consectetur adipiscing</a> elit. Aliquam auctor interdum elit faucibus scelerisque. Curabitur <a href='/'>consectetur adipiscing</a> orci eget ante egestas viverra ac nec mauris. Pellentesque et dolor et leo pellentesque sollicitudin vitae vel velit. Phasellus ullamcorper sapien in sapien fermentum viverra. Sed dignissim est nec risus elementum molestie. Morbi placerat pharetra massa vitae aliquam. Curabitur laoreet suscipit leo, sit amet lacinia dolor placerat eu. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Nulla lacinia, ante ac dignissim viverra, nunc orci rhoncus odio, porttitor aliquet orci massa non lorem.</p>
+	<p>Content ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor interdum elit faucibus scelerisque. Curabitur eleifend orci eget ante egestas viverra ac nec mauris. Pellentesque et dolor et leo pellentesque sollicitudin vitae vel velit. Phasellus ullamcorper sapien in sapien fermentum viverra. Sed dignissim est nec risus elementum molestie. Morbi placerat pharetra massa vitae aliquam. Curabitur laoreet suscipit leo, sit amet lacinia dolor placerat eu. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Nulla lacinia, ante ac dignissim viverra, nunc orci rhoncus odio, porttitor aliquet orci massa non lorem.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor interdum elit faucibus scelerisque. Curabitur eleifend orci eget ante egestas viverra ac nec mauris. Pellentesque et dolor et leo pellentesque sollicitudin vitae vel velit. Phasellus ullamcorper sapien in sapien fermentum viverra. Sed dignissim est nec risus elementum molestie. Morbi placerat pharetra massa vitae aliquam. Curabitur laoreet suscipit leo, sit amet lacinia dolor placerat eu. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Nulla lacinia, ante ac dignissim viverra, nunc orci rhoncus odio, porttitor aliquet orci massa non lorem.</p>
+	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam auctor interdum elit faucibus scelerisque. Curabitur eleifend orci eget ante egestas viverra ac nec mauris. Pellentesque et dolor et leo pellentesque sollicitudin vitae vel velit. Phasellus ullamcorper sapien in sapien fermentum viverra. Sed dignissim est nec risus elementum molestie. Morbi placerat pharetra massa vitae aliquam. Curabitur laoreet suscipit leo, sit amet lacinia dolor placerat eu. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla facilisi. Nulla lacinia, ante ac dignissim viverra, nunc orci rhoncus odio, porttitor aliquet orci massa non lorem.</p>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,26 @@
+[ ] 02/04 22:53:39	stdClass Object
+(
+    [state] => CreateDraft
+    [urn] => urn:Document:Claim:R_LSC:856070659
+    [user] => 
+)
+	(DMS\SetDocumentState::gate) 15:/gates/DMS/SetDocumentState.php
+[ ] 02/04 22:53:39	{"action":"update","urn":"urn:Document:Claim:R_LSC:856070659","state":"CreateDraft","id":856070659}	(DMS\SetDocumentState::gate) 22:/gates/DMS/SetDocumentState.php
+[ ] 02/04 22:55:23	stdClass Object
+(
+    [state] => Editing
+    [urn] => urn:Document:Claim:R_LSC:856070659
+    [user] => 
+)
+	(DMS\SetDocumentState::gate) 15:/gates/DMS/SetDocumentState.php
+[ ] 02/04 22:55:23	NON DRAFT, WILL SHADOW urn:Document:Claim:R_LSC:856070659	(::after_update_any_dms) 18:/goldcut/mq/dms/universaldocumentshadow.php
+[ ] 02/04 22:55:23	CREATE SHADOW	(::after_update_any_dms) 50:/goldcut/mq/dms/universaldocumentshadow.php
+[ ] 02/04 22:55:23	{"action":"update","urn":"urn:Document:Claim:R_LSC:856070659","state":"Editing","id":856070659}	(DMS\SetDocumentState::gate) 22:/gates/DMS/SetDocumentState.php
+[ ] 04/04 12:42:19	stdClass Object
+(
+    [state] => CreateDraft
+    [urn] => urn:Document:Claim:R_LST:721500112
+    [user] => 
+)
+	(DMS\SetDocumentState::gate) 15:/gates/DMS/SetDocumentState.php
+[ ] 04/04 12:42:19	{"action":"update","urn":"urn:Document:Claim:R_LST:721500112","state":"CreateDraft","id":721500112}	(DMS\SetDocumentState::gate) 22:/gates/DMS/SetDocumentState.php

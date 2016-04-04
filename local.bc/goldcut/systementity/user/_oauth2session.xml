@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity manager="SystemData" prototype="OAuth:Session:Tokens" uid="99905">
+  <passport>
+    <title>OAuth2 Sessions</title>
+  </passport>
+  <states/>
+  <structure>
+    <belongsto entity="Actor:User:System" as="ActorUserSystem"/>
+    <field name="oauth2service" type="string" title="oauth name key (from config)"/>
+    <field name="oauthaccesstoken" type="string" title="oauthaccesstoken" raw="yes"/>
+    <field name="oauthtokensecret" type="string" title="oauth v1 token secret"/>
+    <field name="created" type="timestamp" title="Время создания" createDefault="now"/>
+    <field name="expire" type="integer" units="сек" title="Expire"/>
+  </structure>
+  <lists/>
+  <defaultorder>
+    <by field="created" order="DESC"/>
+  </defaultorder>
+  <admincolumns/>
+  <options>
+    <aparam name="directmanage" type="boolean" value="no"/>
+  </options>
+  <searchfields/>
+  <indexes>
+    <index column="oauth2service"/>
+  </indexes>
+</entity>

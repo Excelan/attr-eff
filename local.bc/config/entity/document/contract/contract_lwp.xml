@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<entity prototype="Document:Contract:LWP" code="LWP" manager="Document" uid="3004">
+
+    <passport>
+        <title>Договор аренды складских помещений</title>
+    </passport>
+
+    <structure>
+
+        <!--Информация о договоре -->
+        <field name="place"  type="string"  title="Место"/>
+        <field name="date"  type="date"  title="Дата заключения"/>
+        <hasone entity="Calendar:Period:Month" as="timecontract" title="Срок действия"/>
+        <field name="prolongation" type="set" title="Прологация договора">
+            <value name="auto" title="Автоматическая пролонгация договора"/>
+            <value name="agreement" title="Пролонгация договора по дополнительному соглашению"/>
+        </field>
+        <hasone entity="Calendar:Period:Month" as="timenotifyfor" title="В случае пересмотра условий договора, уведомить за"/>
+        <field name="enddate"  type="date"  title="Конечная дата"/>
+        <field name="summ"  type="money"  title="Сумма договора"/>
+        <hasone entity="Directory:BusinessProjects:Item" title="Текущий проект предприятия, для которого подписывается договор"/>
+        <hasone entity="Company:LegalEntity:Counterparty"  title="Клиент"/>
+        <hasone entity="BusinessObject:Record:Polymorph"  title="Склад"/>
+        <hasone entity="Company:Structure:Companygroup"  title="Компания плательщик"/>
+        <field name="justification"  type="text"  title="Обоснования необходимости подписания договора"/>
+        <field name="tenderdoc"  type="string" title="Тендер, как обоснование выбора контрагента"/>
+        <field name="attachments"  type="tarray"  title="Вложения"/>  <!--multiple -->
+
+
+		<!-- Договор на аренду складских помещений-->
+
+		 <field name="introduction"  type="richtext"  title="Преамбула"/>
+		 <field name="definitions"  type="richtext"  title="Толкование терминов"/>
+		 <field name="contractsubject"  type="richtext"  title="Предмет договора"/>
+		 <field name="warehouseconditions"  type="richtext"  title="Условия передачи и возвращения складских помещений"/>
+		 <field name="leabilities"  type="richtext"  title="Обязанности Арендатора"/>
+		 <field name="rights"  type="richtext"  title="Права Арендатора"/>
+		 <field name="lenlordleabilities"  type="richtext"  title="Обязанности Арендодателя"/>
+		 <field name="lenlordrights"  type="richtext"  title="Права Арендодателя"/>
+		 <field name="rentpayments"  type="richtext"  title="Арендная плата"/>
+		 <field name="partyliabilities"  type="richtext"  title="Ответственность сторон и разрешение споров"/>
+		 <field name="contractterm"  type="richtext"  title="Срок действия, условия изменения и расторжения Договора"/>
+         <field name="specialconditions"  type="richtext"  title="Особые условия Договора"/>
+         <field name="final"  type="richtext"  title="Заключительные положения"/>
+
+        <!--Реквизиты  Биокона и предприятия с которым подписывается договор  -->
+
+		  <!-- <hasone entity="Company:LegalEntity:Counterparty" system="yes"  title="Клиент"/> -->
+      <hasone entity="Company:LegalEntity:Counterparty" as="owncomany" system="yes"  title="Клиент2"/>
+
+
+      </structure>
+
+      <lists>
+          <list name="contractapplication" entity="Document:ContractApplication:Universal" ns="1045" title="Приложения к Договору"/>
+          <list name="notifyusercompany" entity="Management:Post:Individual" ns="1047" title="Сотрудники компании для уведомления"/>
+          <list name="notifyusercounterparty" entity="People:Employee:Counterparty" ns="1047" title="Сотрудники контрагента для уведомления"/>
+      </lists>
+
+    <defaultorder>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+		<column selector="CompanyLegalEntityCounterparty"/>
+		<column selector="date"/>
+        <column selector="initiator"/>
+		<!-- <column selector="status"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="DMS" name="SetDocumentSeen">
+
+    <role>
+    </role>
+
+    <request>
+
+        <field name="user" type="urn" required="no"/>
+        <field name="actor" type="urn" required="no"/>
+        <field name="unidoc" type="string" required="yes"/>
+        <field name="status" type="string" required="no"/>
+
+    </request>
+
+
+    <response>
+
+        <field name="status" type="integer" required="yes"/>
+
+    </response>
+
+</gate>

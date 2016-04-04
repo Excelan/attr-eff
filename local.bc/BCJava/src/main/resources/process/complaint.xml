@@ -1,0 +1,39 @@
+<process prototype="DMS:Complaints:Complaint"  readyfor="test">
+<!-- ЖАЛОБА -->
+    <parameters>
+        <param name="initiator" type="urn"  />
+    </parameters>
+
+    <responsibility>
+
+        <stage name="CreateDraft">
+
+        </stage>
+
+        <stage name="Editing" title="Редактирование">
+            <humantask responsible="initiator" appoint="initiator" />
+            <rule type="timelimit" value="1d" />
+        </stage>
+
+        <stage name="CallCP">
+            <call process="DMS:Complaints:Detective"/>
+            <rule type="timelimit" value="10d"/>
+        </stage>
+
+    </responsibility>
+
+
+    <stages>
+
+        <stage name="CreateDraft" type="automated"/>
+
+        <stage name="Editing" type="humantask">
+            <ui task="formedit"/>
+        </stage>
+
+        <stage name="CallCP" type="delegate" />
+
+    </stages>
+
+
+</process>

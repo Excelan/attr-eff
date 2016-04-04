@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity prototype="Document:Protocol:RR" code="RR" manager="Document" uid="502712">
+
+    <passport>
+        <title>Протокол пересмотра рисков по объекту или процессу</title>
+    </passport>
+
+    <structure>
+
+        <field name="date" type="date" title="Дата мероприятия"/>
+        <hasone entity="BusinessObject:Record:Polymorph" title="Место проведения мероприятия"/>
+
+        <hasone entity="BusinessObject:Record:Polymorph" title="Объект" />
+        <hasone entity="Directory:BusinessProcess:Item" title="Процесс" />
+
+        <!-- <hasmany entity="Directory:RiskProtocolSolution:SI" as="DirectoryRiskProtocolSolutionSI" title="Результаты самоинспекции по каждому риску"/> -->
+                                                 <!-- riskselfinspection -->
+
+		<!--Поля, которые отображаются (выдаются системой), но не редактируются -->
+
+		<!-- <hasone entity="Management:Post:Individual" title="Ответственный за контроль"/>
+	    <field name="riskname" type="string" title="Названия риска"/>
+
+        <hasone entity="BusinessObject:Record:Polymorph" title="Объект"/>
+        <hasone entity="Directory:BusinessProcess:Item" title="Процесс"/>
+
+        <field name="controlaction" type="text" title="Контролирующее действие"/>
+        <hasone entity="Management:Post:Individual" title="Ответственный по мероприятию"/>
+		<field name="date" type="date" title="Дата предыдущей самоинспекции"/> -->
+
+		<!-- Форма для заполнения-->
+
+
+</structure>
+
+<lists>
+    <list name="commissionmember" entity="Management:Post:Individual" ns="186114" title="Члены комиссии риски" />
+    <list name="riskapproved" entity="RiskManagement:Risk:Approved" ns="186112" title="Идентифицированные риски" />
+    <!-- <list name="controlactions" entity="Directory:ControlAction:Universal" ns="1861192" title="Идентифицированные риски" /> -->
+</lists>
+
+    <defaultorder>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		<!-- <column selector="status"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

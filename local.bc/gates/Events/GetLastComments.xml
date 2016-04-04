@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="Events" name="GetLastComments">
+
+    <role>
+
+    </role>
+
+    <request>
+
+        <field name="user" type="integer" required="no"/>
+        <field name="subjectURN" type="string" required="yes"/>
+
+
+    </request>
+
+
+    <response>
+
+        <field name="status" type="string" required="yes"/>
+
+    </response>
+
+</gate>

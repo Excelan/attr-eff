@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<entity prototype="Document:Claim:R_LST" code="R_LST" manager="Document" uid="1004">
+
+    <passport>
+        <title>Заявка на таможенное оформление</title>
+    </passport>
+
+    <structure>
+        <hasone entity="Directory:BusinessProjects:Item" as="companyproject" title="Текущий проект предприятия"/>
+		<hasone entity="Company:LegalEntity:Counterparty" title="Клиент, для которого создается заявка"/>
+		<hasone entity="BusinessObject:Record:Polymorph" as="warehouse" title="№ слада, для которого создается заявка"/>
+		<field name="specialrequirement" type="text" title="Специальное требование"/>
+		<field name="attachments" type="tarray" title="Вложение"/>
+
+        <hasone entity="Document:Solution:Universal" title="Утвержденный вариант решения"/>
+
+		<field name="customsdeclarationtype" type="set" title="Тип таможенной декларации">
+            <value name="im40" title="ИМ-40"/>
+            <value name="im74" title="ИМ-74"/>
+            <value name="tpbn" title="ТР-ВН"/>
+		</field>
+        <field name="customsclearancedocs" type="tarray" title="Пакет документов для таможенного оформления"/>
+		<field name="customsclearancedate" type="date" title="Планируемая дата проведения таможенного оформления"/>
+		<field name="adddescription" type="text" title="Дополнительное описание"/>
+
+    <!-- TODO -->
+    <field name="rtaken" type="set" title="Принятие ответственности">
+      <value name="myself" title="Моя сфера ответственности"/>
+      <value name="notmyresp" title="Не моя сфера ответственности"/>
+    </field>
+
+    </structure>
+
+    <lists>
+        <list name="solutionvariants" entity="Document:Solution:Universal" ns="9951" title="Предложенные решения"/>
+    </lists>
+
+    <defaultorder>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		<column selector="firstlinedescription"/> <!-- В таблице выводить первые две строки описания, а при наведении полный текст -->
+        <column selector="responsible"/> <!-- ответственный, которому приходит жалоба -->
+		<!-- <column selector="status"/> -->
+		<!-- <column selector="CTA TODO"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

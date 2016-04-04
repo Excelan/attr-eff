@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="RiskManagement:Risk:Approved" code="AR" manager="System" uid="116">
+
+    <passport>
+        <title>Идентифицированный риск</title>
+    </passport>
+
+    <states>
+        <status name="critical" default="yes" title="Критичный риск / не критичный (расчет 20% - критичный, 80% - не критичный)"/>
+    </states>
+
+    <structure>
+
+        <field name="title" type="string" title="Название риска"/>
+
+        <field name="riskdescription" type="text" title="Описание риска"/>
+
+        <hasone entity="BusinessObject:Record:Polymorph" title="Обьект в котором появился этот риск"/>
+        <hasone entity="Directory:BusinessProcess:Item" title="Процесс в котором появился этот риск"/>
+
+        <field name="producteffect" type="integer" title="Влияние на товар"/>
+        <field name="emergenceprobability" type="integer" title="Вероятность возникновения"/>
+        <field name="undetectedprobability" type="integer" title="Вероятность необнаружения"/>
+
+        <field name="weighted" type="integer" title="Общий вес"/>
+
+        <hasone entity="Directory:SLA:Item" title="Критерии SLA"/>
+        <hasone entity="Management:Post:Individual" title="Ответственный за контроль риска"/>
+        <field name="controlact" type="text" title="Контролирующее действие"/>
+        <hasone entity="Calendar:Period:Month" as="controlperiod" title="Периодичность контроля в мес"/>
+
+        <hasmany entity="RiskManagement:Risk:NotApproved" title="Привязанные не идентифицированные риски"/>
+
+    </structure>
+
+    <lists>
+        <!--<list name="relateddocs" entity="document" ns="1161" title="Документы, где появляется риск"/>-->
+        <list name="controlactions" entity="Directory:ControlAction:Universal" ns="1861192" title="Идентифицированные риски" />
+    </lists>
+    <defaultorder/>
+
+    <admincolumns>
+        <column selector="title"/>
+        <column selector="BusinessObjectRecordPolymorph"/>
+        <column selector="DirectoryBusinessProcessItem"/>
+        <column selector="ManagementPostIndividual"/>
+        <column selector="weighted"/>
+    </admincolumns>
+
+    <options/>
+    <searchfields/>
+    <indexes/>
+</entity>

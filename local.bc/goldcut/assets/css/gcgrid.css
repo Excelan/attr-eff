@@ -1,0 +1,1016 @@
+/* For modern browsers */
+.BLK:before,
+.BLK:after {
+    content: "";
+    display: table;
+}
+
+.BLK:after {
+    clear: both;
+}
+
+/* For IE 6/7 (trigger hasLayout) */
+.BLK {
+    zoom: 1;
+}
+
+.IBLK {
+	display: inline-block;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    /* box-sizing: border-box; */
+}
+
+input[type=file] {
+    margin: 5px 0;
+}
+
+select {
+    margin: 2px 0;
+}
+
+img {
+    border: 0;
+}
+
+body {
+    font-size: 0.75em;
+}
+
+/* li li, li p { font-size: 1em; } if base is 62.5%*/
+
+body.legacy18pxline {
+    font-family: 'Lucida Grande', Arial, sans-serif;
+    font-size: 0.75em;
+    line-height: 18px;
+}
+
+.grid {
+    background: #fff url('/goldcut/assets/img/verticalgrid.png') 50% 0 repeat;
+}
+
+.hide {
+    display: none !important;
+}
+.hide2 {
+    visibility: hidden;
+    opacity: 0;
+}
+.margeRight {
+    margin-right: 100%;
+}
+
+.posrelative {
+    position: relative;
+}
+
+.posabsolute {
+    position: absolute;
+}
+
+.vam * {
+    vertical-align: middle;
+}
+
+.vat > * {
+    vertical-align: top;
+}
+
+.FW {
+    width: 100%;
+}
+
+.CW {
+    width: 990px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.CWP {
+    max-width: 1024px;
+    min-width: 990px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.FL {
+    float: left;
+}
+
+.FR {
+    float: right !important;
+}
+
+.MARK {
+    border-top: 1px solid red;
+}
+
+.MARK2 {
+    border-top: 1px dotted #777;
+}
+
+.innerpadlhalf > * {
+    padding-left: 9px;
+}
+
+ul,
+ol,
+h2, h3, h4 {
+    margin-bottom: 18px;
+}
+
+.text p {
+    margin-bottom: 18px;
+}
+
+.TO, .TOF, .TOF p {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.TAC {
+    text-align: center;
+}
+.TAR {
+    text-align: right;
+}
+.TAL {
+    text-align: left;
+}
+
+
+.cursorpointer {
+    cursor: pointer;
+}
+
+.OH {
+    overflow: hidden;
+}
+
+.DB {
+    display: block;
+}
+
+.FS10 {
+    font-size: 10px;
+}
+
+.FS11 {
+    font-size: 11px;
+}
+
+.FS12 {
+    font-size: 12px;
+}
+
+.FS13 {
+    font-size: 13px;
+}
+
+.FS14 {
+    font-size: 14px;
+}
+
+.FS15 {
+    font-size: 15px;
+}
+
+/**
+GOLDCUT TOP/BOTTOM MARGINS
+*/
+.TM {
+    margin-top: 9px;
+}
+
+.TM1 {
+    margin-top: 18px;
+    padding-top: 0;
+}
+
+.TM2 {
+    margin-top: 36px;
+    padding-top: 0;
+}
+
+.TM3 {
+    margin-top: 54px;
+    padding-top: 0;
+}
+
+.TM4 {
+    margin-top: 72px;
+    padding-top: 0;
+}
+
+.TM5 {
+    margin-top: 90px;
+    padding-top: 0;
+}
+
+.TP {
+    padding-top: 9px;
+}
+
+.TP1 {
+    padding-top: 18px;
+    margin-top: 0;
+}
+
+.TP2 {
+    padding-top: 36px;
+    margin-top: 0;
+}
+
+.TP3 {
+    padding-top: 54px;
+    margin-top: 0;
+}
+
+.TP4 {
+    padding-top: 72px;
+    margin-top: 0;
+}
+
+.TP5 {
+    padding-top: 90px;
+    margin-top: 0;
+}
+
+.BM {
+    margin-top: 9px;
+}
+
+.BM1 {
+    margin-bottom: 18px;
+    padding-bottom: 0;
+}
+
+.BM2 {
+    margin-bottom: 36px;
+    padding-bottom: 0;
+}
+
+.BM3 {
+    margin-bottom: 54px;
+    padding-bottom: 0;
+}
+
+.BM4 {
+    margin-bottom: 72px;
+    padding-bottom: 0;
+}
+
+.BM5 {
+    margin-bottom: 90px;
+    padding-bottom: 0;
+}
+
+/**
+GOLDCUT VERTICALS GRID
+*/
+.g1 {
+    width: 55px;
+    float: left;
+}
+
+.g2 {
+    width: 140px;
+    float: left;
+}
+
+.g3 {
+    width: 225px;
+    float: left;
+}
+
+.g4 {
+    width: 310px;
+    float: left;
+}
+
+.g5 {
+    width: 395px;
+    float: left;
+}
+
+.g6 {
+    width: 480px;
+    float: left;
+}
+
+.g7 {
+    width: 565px;
+    float: left;
+}
+
+.g8 {
+    width: 650px;
+    float: left;
+}
+
+.g9 {
+    width: 735px;
+    float: left;
+}
+
+.gl0 {
+    width: 820px;
+    float: left;
+}
+
+.gl1 {
+    width: 905px;
+    float: left;
+}
+
+.gl2 {
+    width: 990px;
+    float: left;
+}
+
+.g2:nth-child(6n+6) {
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+}
+
+.g3:nth-child(4n+4) {
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+}
+
+.g4:nth-child(3n+3) {
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+}
+
+.g6:nth-child(2n+2) {
+    margin-right: 0 !important;
+    padding-right: 0 !important;
+}
+
+/**
+GOLDCUT VERTICALS GRID EXTENDED (content equals to base width with margin)
+*/
+.GE1 {
+    width: 85px;
+    float: left;
+}
+
+.GE2 {
+    width: 170px;
+    float: left;
+}
+
+.GE3 {
+    width: 255px;
+    float: left;
+}
+
+.GE4 {
+    width: 340px;
+    float: left;
+}
+
+.GE5 {
+    width: 425px;
+    float: left;
+}
+
+.GE6 {
+    width: 510px;
+    float: left;
+}
+
+.GE7 {
+    width: 595px;
+    float: left;
+}
+
+.GE8 {
+    width: 680px;
+    float: left;
+}
+
+.GE9 {
+    width: 765px;
+    float: left;
+}
+
+.GEl0 {
+    width: 850px;
+    float: left;
+}
+
+.GEl1 {
+    width: 935px;
+    float: left;
+}
+
+/**
+GOLDCUT LINES
+*/
+.r1 {
+    height: 18px;
+}
+
+.e1 {
+    line-height: 18px;
+}
+
+.r2 {
+    height: 36px;
+}
+
+.e2 {
+    line-height: 36px;
+}
+
+.r3 {
+    height: 54px;
+}
+
+.e3 {
+    line-height: 54px;
+}
+
+.r4 {
+    height: 72px;
+}
+
+.e4 {
+    line-height: 72px;
+}
+
+.r5 {
+    height: 90px;
+}
+
+.e5 {
+    line-height: 90px;
+}
+
+.r6 {
+    height: 108px;
+}
+
+.e6 {
+    line-height: 108px;
+}
+
+.r7 {
+    height: 126px;
+}
+
+.e7 {
+    line-height: 126px;
+}
+
+.r8 {
+    height: 144px;
+}
+
+.e8 {
+    line-height: 144px;
+}
+
+.r9 {
+    height: 162px;
+}
+
+.e9 {
+    line-height: 162px;
+}
+
+.r10 {
+    height: 180px;
+}
+
+.e10 {
+    line-height: 180px;
+}
+
+.r11 {
+    height: 198px;
+}
+
+.e11 {
+    line-height: 198px;
+}
+
+.r12 {
+    height: 216px;
+}
+
+.e12 {
+    line-height: 216px;
+}
+
+.r13 {
+    height: 234px;
+}
+
+.e13 {
+    line-height: 234px;
+}
+
+.r14 {
+    height: 252px;
+}
+
+.e14 {
+    line-height: 252px;
+}
+
+.r15 {
+    height: 270px;
+}
+
+.e15 {
+    line-height: 270px;
+}
+
+.r16 {
+    height: 288px;
+}
+
+.e16 {
+    line-height: 288px;
+}
+
+.r17 {
+    height: 306px;
+}
+
+.e17 {
+    line-height: 306px;
+}
+
+.r18 {
+    height: 324px;
+}
+
+.e18 {
+    line-height: 324px;
+}
+
+.r19 {
+    height: 342px;
+}
+
+.e19 {
+    line-height: 342px;
+}
+
+.r20 {
+    height: 360px;
+}
+
+.e20 {
+    line-height: 360px;
+}
+
+/**
+GOLDCUT MARGINS
+*/
+.D00 {
+    padding-left: 0;
+    margin-left: 0;
+    padding-right: 0;
+    margin-right: 0;
+}
+
+.L00 {
+    padding-left: 0;
+    margin-left: 0;
+}
+
+.R00 {
+    padding-right: 0;
+    margin-right: 0;
+}
+
+.LP {
+    padding-left: 15px;
+}
+
+.RP0 {
+    padding-right: 15px;
+    margin-right: 0;
+}
+
+.LP0 {
+    padding-left: 15px;
+    margin-left: 0;
+}
+
+.RM0 {
+    padding-right: 0;
+    margin-right: 15px;
+}
+
+.LM0 {
+    padding-left: 0;
+    margin-left: 15px;
+}
+
+.RPM {
+    padding-right: 15px;
+    margin-right: 15px;
+}
+
+.LPM {
+    padding-left: 15px;
+    margin-left: 15px;
+}
+
+.RPP {
+    padding-right: 30px;
+    margin-right: 0;
+}
+
+.RMM {
+    padding-right: 0;
+    margin-right: 30px;
+}
+
+.LPP {
+    padding-left: 30px;
+    margin-left: 0;
+}
+
+.LMM {
+    padding-left: 0;
+    margin-left: 30px;
+}
+
+.DP0 {
+    padding-left: 15px;
+    margin-left: 0;
+    padding-right: 15px;
+    margin-right: 0;
+}
+
+.DM0 {
+    padding-left: 0;
+    margin-left: 15px;
+    padding-right: 0;
+    margin-right: 15px;
+}
+
+.DPP {
+    padding-left: 30px;
+    margin-left: 0;
+    padding-right: 30px;
+    margin-right: 0;
+}
+
+.DMM {
+    padding-left: 0;
+    margin-left: 30px;
+    padding-right: 0;
+    margin-right: 30px;
+}
+
+.DPM {
+    padding-left: 15px;
+    margin-left: 15px;
+    padding-right: 15px;
+    margin-right: 15px;
+}
+
+/* use rights instead of this R + L combos */
+.L0M {
+    padding-left: 0;
+    margin-left: 15px;
+}
+
+.L0M {
+    padding-left: 0;
+    margin-left: 15px;
+}
+
+.R0M {
+    padding-right: 0;
+    margin-right: 15px;
+}
+
+.R0M {
+    padding-right: 0;
+    margin-right: 15px;
+}
+
+.MW100 {
+    min-width: 100%
+}
+
+.H100 {
+    height: 100%;
+}
+
+.W100 {
+    width: 100% !important;
+}
+
+.read p {
+    margin-bottom: 18px;
+}
+
+.TAJ p {
+    text-align: justify;
+}
+
+.WBG {
+    background-color: white
+}
+
+.YBG {
+    background-color: yellow
+}
+
+.GBG {
+    background-color: silver
+}
+
+dl.gcdl {
+    margin: 0;
+    margin-bottom: 15px;
+}
+
+dl.gcdl dt {
+    background: transparent;
+    float: left;
+    font-weight: normal;
+    margin-right: 8px;
+    font-size: 10pt;
+    padding: 2px;
+    width: 100px;
+    border-bottom: 1px dotted #ccc;
+}
+
+dl.gcdl dd {
+    margin: 2px 0;
+    padding: 2px 0;
+    font-weight: bold;
+}
+
+.animated {
+    -webkit-transition: all 1s ease-in-out;
+    -moz-transition: all 1s ease-in-out;
+    -o-transition: all 1s ease-in-out;
+    -ms-transition: all 1s ease-in-out;
+    transition: all 1s ease-in-out;
+}
+
+.animatedFast {
+    -webkit-transition-duration: 0.5s !important;
+    -moz-transition-duration: 0.5s !important;
+    -o-transition-duration: 0.5s !important;
+    -ms-transition-duration: 0.5s !important;
+    transition-duration: 0.5s !important;
+}
+
+.fast {
+    -webkit-transition-duration: 0.25s !important;
+    -moz-transition-duration: 0.25s !important;
+    -o-transition-duration: 0.25s !important;
+    -ms-transition-duration: 0.25s !important;
+    transition-duration: 0.25s !important;
+}
+
+.winget {
+    background: white;
+    padding: 10px;
+    border: 10px solid rgb(127, 127, 127);
+    border: 10px solid rgba(127, 127, 127, .7);
+    -webkit-background-clip: padding-box; /* for Safari */
+    background-clip: padding-box; /* for IE9+, Firefox 4+, Opera, Chrome */
+    /* http://css-tricks.com/transparent-borders-with-background-clip/ */
+    border-radius: 10px;
+    min-width: 400px;
+    min-height: 200px;
+}
+
+.whiteboxinset {
+    box-shadow: inset 0 0 10px #000000;
+}
+
+/*
+semantic tabs
+<div id="tabsholder" class="contentwidth">
+	 <dl class="tabs">
+		 <dt class="selected">Tab title 1</dt>
+		 <dd class="selected">
+			<div class="tab-content">
+				Tab content 1
+			</div>
+		 </dd>
+		 <dt>Tab title 2</dt>
+		 <dd>
+			<div class="tab-content">
+			Tab content 2
+			</div>
+		 </dd>
+	 </dl>
+</div>
+*/
+.tabs {
+    overflow: hidden;
+    font-size: 1em;
+    margin: 1em 0em;
+    zoom: 1;
+    padding: 1px;
+    position: relative;
+}
+
+.tabs dt {
+    width: auto;
+    float: left;
+    line-height: 2;
+    height: 2em;
+    background: navy;
+    color: white;
+    border: 1px solid #e8f0f5;
+    border-bottom: 0;
+    padding: 0 1em;
+    position: relative;
+    left: 10px;
+    margin-right: 2px;
+    cursor: pointer;
+}
+
+.tabs dt:hover {
+    background-color: #bfdff4;
+}
+
+.tabs dt.selected {
+    border-color: #b0d0e9;
+    background: #fff;
+    color: navy;
+    z-index: 3;
+    cursor: auto;
+}
+
+.tabs dd {
+    display: none;
+    float: right;
+    width: 100%;
+    margin: 2em 0 0 -100%;
+    position: relative;
+    z-index: 2;
+    background: white;
+}
+
+/* background:#fff; */
+.tabs dd.selected {
+    display: block;
+}
+
+.tabs .tab-content {
+    border: 1px solid #b0d0e9;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+.whitegradient {
+    background: rgb(254, 254, 254); /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2ZlZmVmZSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmMmYyZjIiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -moz-linear-gradient(top, rgba(254, 254, 254, 1) 0%, rgba(242, 242, 242, 1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(254, 254, 254, 1)), color-stop(100%, rgba(242, 242, 242, 1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(254, 254, 254, 1) 0%, rgba(242, 242, 242, 1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(254, 254, 254, 1) 0%, rgba(242, 242, 242, 1) 100%); /* Opera 11.10+ */
+    background: -ms-linear-gradient(top, rgba(254, 254, 254, 1) 0%, rgba(242, 242, 242, 1) 100%); /* IE10+ */
+    background: linear-gradient(to bottom, rgba(254, 254, 254, 1) 0%, rgba(242, 242, 242, 1) 100%); /* W3C */
+}
+
+.whitegradient2 {
+    background: rgb(226, 226, 226); /* Old browsers */
+    /* IE9 SVG, needs conditional override of 'filter' to 'none' */
+    background: url(data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiA/Pgo8c3ZnIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgd2lkdGg9IjEwMCUiIGhlaWdodD0iMTAwJSIgdmlld0JveD0iMCAwIDEgMSIgcHJlc2VydmVBc3BlY3RSYXRpbz0ibm9uZSI+CiAgPGxpbmVhckdyYWRpZW50IGlkPSJncmFkLXVjZ2ctZ2VuZXJhdGVkIiBncmFkaWVudFVuaXRzPSJ1c2VyU3BhY2VPblVzZSIgeDE9IjAlIiB5MT0iMCUiIHgyPSIwJSIgeTI9IjEwMCUiPgogICAgPHN0b3Agb2Zmc2V0PSIwJSIgc3RvcC1jb2xvcj0iI2UyZTJlMiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUwJSIgc3RvcC1jb2xvcj0iI2RiZGJkYiIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjUxJSIgc3RvcC1jb2xvcj0iI2QxZDFkMSIgc3RvcC1vcGFjaXR5PSIxIi8+CiAgICA8c3RvcCBvZmZzZXQ9IjEwMCUiIHN0b3AtY29sb3I9IiNmZWZlZmUiIHN0b3Atb3BhY2l0eT0iMSIvPgogIDwvbGluZWFyR3JhZGllbnQ+CiAgPHJlY3QgeD0iMCIgeT0iMCIgd2lkdGg9IjEiIGhlaWdodD0iMSIgZmlsbD0idXJsKCNncmFkLXVjZ2ctZ2VuZXJhdGVkKSIgLz4KPC9zdmc+);
+    background: -ms-linear-gradient(top, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 50%, rgba(209, 209, 209, 1) 51%, rgba(254, 254, 254, 1) 100%); /* IE10+ */
+    background: -moz-linear-gradient(top, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 50%, rgba(209, 209, 209, 1) 51%, rgba(254, 254, 254, 1) 100%); /* FF3.6+ */
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, rgba(226, 226, 226, 1)), color-stop(50%, rgba(219, 219, 219, 1)), color-stop(51%, rgba(209, 209, 209, 1)), color-stop(100%, rgba(254, 254, 254, 1))); /* Chrome,Safari4+ */
+    background: -webkit-linear-gradient(top, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 50%, rgba(209, 209, 209, 1) 51%, rgba(254, 254, 254, 1) 100%); /* Chrome10+,Safari5.1+ */
+    background: -o-linear-gradient(top, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 50%, rgba(209, 209, 209, 1) 51%, rgba(254, 254, 254, 1) 100%); /* Opera 11.10+ */
+    background: linear-gradient(to bottom, rgba(226, 226, 226, 1) 0%, rgba(219, 219, 219, 1) 50%, rgba(209, 209, 209, 1) 51%, rgba(254, 254, 254, 1) 100%); /* W3C */
+    /* filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e2e2e2', endColorstr='#fefefe',GradientType=0 ); */
+    /* IE6-8 */
+    /*
+        <!--[if gte IE 9]>
+          <style type="text/css">
+            .whitegradient {
+               filter: none;
+            }
+          </style>
+        <![endif]-->
+    */
+}
+
+.CP {
+    cursor: pointer;
+}
+
+.nobold {
+    font-weight: normal;
+}
+
+.linkbutton
+{
+	cursor: pointer;
+}
+
+
+
+.windowcenter {
+  background: white;
+  border: 10px solid #ccc;
+  box-shadow: 0 0 150px rgba(0, 0, 0, 0.4);
+  border-radius: 10px;
+  position: absolute;
+  padding: 10px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 80%;
+  min-height: 35%;
+}
+
+.windowcenterraw {
+    background: white;
+    border: 10px solid #ccc;
+    box-shadow: 0 0 150px rgba(0, 0, 0, 0.4);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    padding: 10px;
+    width: 80%;
+    min-height: 35%;
+    z-index: 1000;
+}
+
+.reddebugbox100
+{
+    background: red;
+    min-width: 100px;
+    min-height: 100px;
+}
+
+
+
+
+
+/*--------------------------------------------------------------------notification block----------------------------------------------------------------*/
+
+#notification{
+    height: 0;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 999;
+}
+
+#notification .content{
+    display: table;
+}
+
+#notification .nottext{
+    color: white;
+    text-align: center;
+    font-size: 20px;
+    font-weight: 500;
+    display: table-cell;
+    vertical-align: middle;
+    width: 100%;
+}
+
+#notification .notimg{
+    display: table-cell;
+    height: inherit;
+    vertical-align: middle;
+}
+
+#notification .notimg img{
+    cursor: pointer;
+}
+
+
+.notification_good{
+    background-color: green;
+}
+
+.notification_bad{
+    background-color: red;
+}
+
+.notification_other{
+    background-color: grey;
+}
+
+
+/*--------------------------------------------------------------------END  unotification block----------------------------------------------------------------*/

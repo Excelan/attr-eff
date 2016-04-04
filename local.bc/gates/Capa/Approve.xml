@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="Capa" name="Approve">
+
+    <role>
+
+    </role>
+
+    <request>
+
+        <field name="user" type="integer" required="no"/>
+
+        <field name="userUrn" type="string" required="yes"/>
+
+        <field name="urn" type="string" required="yes"/>
+
+        <field name="selected_variants" type="struct" required="yes" multiple="yes" minimum="1" maximum="1000">
+
+            <field name="solutionUrn" type="string" required="yes"/>
+            <field name="correctionUrn" type="string" required="yes"/>
+
+        </field>
+
+
+
+        <field name="actor" type="urn" required="yes"/>
+        <field name="actorEmployee" type="urn" required="yes"/>
+        <field name="mpeid" type="integer" required="yes"/>
+        <field name="ticketurn" type="integer" required="yes"/>
+
+
+
+
+    </request>
+
+
+    <response>
+
+        <field name="status" type="integer" required="yes"/>
+
+    </response>
+
+</gate>

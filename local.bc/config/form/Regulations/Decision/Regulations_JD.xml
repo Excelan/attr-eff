@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+        <section type="context" entity="Document:Regulations:JD" title="Должностная инструкция">
+            <field name="instructionname" type="string" title="Название должностной инструкции"/>
+            <field name="effectivedate" type="date" title="Дата введения в действие"/>
+            <field name="position" type="richtext" title="Общие положения"/>
+            <field name="duty" type="richtext" title="Функциональные обязанности"/>
+            <field name="authority" type="richtext" title="Права"/>
+            <field name="responsibility" type="richtext" title="Ответственность"/>
+            <field name="userprocedure" type="ManagementPostIndividual" multiple="yes" min="1" title="Участник процедуры">
+                <query gate="Selector/management"  />
+            </field>
+
+
+        </section>
+
+    </structure>
+
+</form>

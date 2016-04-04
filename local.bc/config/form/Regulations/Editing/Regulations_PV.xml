@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- Программа валидационного исследования -->
+
+        <section entity="Document:Regulations:PV" title="Валидационные исследования">
+            <field name="title" type="string" title="Название документа"/>
+            <field name="BusinessObjectRecordPolymorph" title="Тип Объекта" type="BusinessObject"><!-- Класс оборудование-->
+                <query gate="Selector/businessobject"/>
+            </field>
+
+            <field name="programm" title="Программа" type="richtext"/>
+
+            <!-- Ответственные-->
+            <struct entity="Directory:Responsible:Simple" name="DirectoryResponsibleSimple" multiple="yes" title="Ответственные">
+                <field type="hidden" name="urn"/>
+                <field name="typeofwork" title="Тип работ" type="text"/>
+                <field name="ManagementPostIndividual" title="Ответственные лица" type="ManagementPostIndividual"/>
+            </struct>
+
+            <!-- Материальная база -->
+            <struct entity="Directory:Materialbase:Simple" name="DirectoryMaterialbaseSimple" multiple="yes" title="Материальная база">
+                <field type="hidden" name="urn"/>
+                <field name="BusinessObjectRecordPolymorph" title="Название, марка, модель оборудования" type="BusinessObject">
+                    <query gate="Selector/businessobject"/>
+                </field>
+                <field name="numberequipment" title="Количество оборудования" type="string"/>
+                <field name="specification" title="Технические характеристики" type="richtext"/>
+            </struct>
+
+            <!--Параметры -->
+            <struct multiple="yes" name="DirectoryOptionsSimple" entity="Directory:Options:Simple" title="Параметры">
+                <field type="hidden" name="urn"/>
+                <field name="titleparametr" title="Название параметра" type="string"/>
+                <field name="descriptionmethodic" title="Описание методики испытания и последующей оценки полученных результатов" type="richtext"/>
+            </struct>
+
+        </section>
+
+    </structure>
+
+</form>

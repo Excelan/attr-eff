@@ -1,0 +1,26 @@
+<process prototype="DMS:Decisions:Reviewing" readyfor="test">
+
+    <!-- Визирование -->
+
+    <parameters>
+        <param name="initiator" type="urn"  />
+        <param name="subject" type="urn"  /> <!-- передача из вызывающего процесса, что визировать -->
+    </parameters>
+
+    <responsibility>
+        <stage name="Review" title="Проверка исполнения">
+            <humantask responsible="initiator"  appoint="configuration" />
+            <rule type="timelimit" value="1d" />
+        </stage>
+    </responsibility>
+
+    <stages>
+
+        <!-- subject -->
+        <stage name="Review" type="humantask">
+            <ui task="dataapprove"></ui>
+        </stage>
+
+    </stages>
+
+</process>

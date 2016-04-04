@@ -1,0 +1,117 @@
+[
+
+    "User/GetUsersByPost",
+    "User/AddNewSubstitution",
+    "User/Register",
+    "User/Login",
+    "User/Forgot",
+    "User/Changepassword",
+
+
+    "Capa/Vise",
+    "Capa/Approve",
+    "Capa/UpdateSolution",
+    "Capa/CancelVisa",
+    "Capa/CancelApproving",
+    "Capa/ToVised",
+
+
+    "Html/AddVisauser",
+    "Html/getEventHtml",
+    "Html/getVariantHtml",
+    "Html/getProblemHtml",
+    "Html/getEventHtml",
+    "Html/getControlactionHtml",
+    "Html/getConfigForDocView",
+    "Html/getPopupHtml",
+
+
+
+    "Process/SetBaseVisantsForDocument",
+    "Process/CreateActiveSheetAndTicketsForVisants",
+    "Process/CreateTicketForApprover",
+    "Process/CreateTicketFor",
+
+    "Process/AddRelatedDocument",
+    "Process/CreateTicketsForTesting",
+    "Process/CreateTicketsForPlaning",
+
+    "Process/Study/fillASRIterationFromSOPForTAInterval",
+    "Process/Study/ExtendSOPASRRequiredFor",
+    "Process/Study/ConditionalRecursiveStartAttestationForASRNonPassed",
+    "Process/Study/ConditionalStartUKDForASRPassed",
+
+    "Decision/VisaByOne",
+    "Decision/ApproveByOne",
+    "Decision/ReviewByOne",
+    "Decision/AddAdditionalVisant",
+
+    "Selector/TestSelect",
+    "Selector/document/risks/RiskApproved",
+    "Selector/document/risks/NotApprovedRisk",
+    "Selector/company/structure/CompanyStructureCompanygroup",
+    "Selector/company/structure/CompanyStructureDepartment",
+    "Selector/company/structure/DirectoryBranchItem",
+    "Selector/company/CompanyLegalEntityCounterparty",
+    "Selector/people/PeopleEmployeeInternal",
+    "Selector/people/PeopleEmployeeCounterparty",
+    "Selector/businessobject/BusinessObjectRecordPolymorph",
+    "Selector/management/ManagementPostIndividual",
+    "Selector/management/ManagementPostGroup",
+    "Selector/calendar/CalendarPeriodMonth",
+    "Selector/directory/DirectorySLAItem",
+    "Selector/directory/DirectoryBusinessProcessItem",
+    "Selector/directory/DirectoryBusinessProjectsItem",
+    "Selector/directory/DirectoryKindOfOperationsItem",
+    "Selector/process/ProcessProto",
+    "Selector/process/SubjectProto",
+
+
+    "Comments/AddNewComment",
+    "Comments/ChangeCommentStatus",
+
+
+    "Questionnaire/getQA",
+    "Questionnaire/getResult",
+    "Questionnaire/getUserList",
+
+
+
+    "DMS/UKD/PrepareProtocolRUKD",
+    "DMS/UKD/GenerateAllPDFForSOP",
+
+    "DMS/SetDocumentState",
+
+    "DMS/SetDocumentSeen",
+
+    "DMS/UniversalDocument/CreateDirect",
+
+    "DMS/UniversalDocument/AttachHardCopy",
+    "DMS/UniversalDocument/AttachHardMaster",
+
+    "DMS/UniversalDocument/ReIndex",
+    "DMS/UniversalDocument/Search",
+
+    "DMS/UniversalDocument/ListAllThatRoleHasAccessTo",
+
+
+    "RBAC/DMS/PrototypeStartersToAtomicPermissions",
+    "RBAC/grantAtomicRight",
+    "RBAC/revokeAtomicRight",
+
+
+    "Events/SetEventDay",
+    "Events/NextStage",
+    "Events/GetNecessaryUser",
+    "Events/GetUserCapaEnent",
+    "Events/SetCapaDay",
+    "Events/AutoCreateField",
+    "Events/GetLastComments",
+    "Events/CloseTicket",
+
+
+    "HardCopy/GetPDF",
+
+
+    "TEST/TEST"
+]

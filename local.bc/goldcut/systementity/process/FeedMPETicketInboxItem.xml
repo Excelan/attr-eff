@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Feed:MPETicket:InboxItem" manager="System" uid="9322">
+
+    <passport>
+        <title>Входящие (ticket)</title>
+    </passport>
+
+    <states>
+        <status name="isvalid" default="yes" title="isvalid"/>
+        <status name="allowopen" default="no" title="allowopen"/>
+        <status name="allowsave" default="no" title="allowsave"/>
+        <status name="allowcomplete" default="no" title="allowcomplete"/>
+        <status name="allowcomment" default="no" title="allowcomment"/>
+        <status name="allowreadcomments" default="no" title="allowreadcomments"/>
+        <status name="allowknowcuurentstage" default="no" title="allowknowcuurentstage"/>
+        <status name="allowseejournal" default="no" title="allowseejournal"/>
+        <status name="allowearly" default="no" title="early"/>
+    </states>
+
+    <structure>
+        <belongsto entity="Management:Post:Individual" as="ManagementPostIndividual" title="Действующая должность"/>
+        <belongsto entity="ManagedProcess:Execution:Record" as="ManagedProcessExecutionRecord" title="MPE"/>
+        <field name="activateat" type="datetime" title="Активируется в"/>
+        <field name="expiresat" type="datetime" title="Доступен до"/>
+        <field name="created" type="timestamp" title="Поступил в" createDefault="now"/>
+    </structure>
+
+    <lists>
+    </lists>
+
+    <defaultorder>
+        <by field="activateat" order="DESC"/>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="ManagementPostIndividual"/>
+        <column selector="ManagedProcessExecutionRecord"/>
+        <column selector="activateat"/>
+        <column selector="states"/>
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes/>
+</entity>

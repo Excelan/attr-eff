@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<entity prototype="Document:ContractApplication:Universal" code="APP" manager="System" uid="33019">
+
+    <passport>
+        <title>ПРИЛОЖЕНИЕ К ДОГОВОРУ</title>
+    </passport>
+
+    <structure>
+
+        <field name="text"  type="richtext"  title="Текст приложения"/>
+        <!-- <field name="text"  type="string"  title="Подпись к изображению"/> -->
+        <!-- <field name="attachment"  type="string" multiple="yes" title="Вложения"/> -->
+        <field name="contractlink"  type="string" title="Ссылка на договор"/>
+        <field name="ordered" type="integer" system="yes" title="system order"/>
+    </structure>
+
+    <lists>
+        <list name="MediaAttributed" entity="Directory:Media:Attributed" ns="834145" title="Directory:Media:Attributed"/>
+    </lists>
+
+    <defaultorder>
+        <by field="ordered" order="ASC"/>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+		    <column selector="date"/>
+    </admincolumns>
+
+    <indexes>
+
+    </indexes>
+
+</entity>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Directory:AdditionalSection:Simple" manager="Business" uid="92081">
+
+    <passport>
+        <title>Дополнительный раздел</title>
+    </passport>
+
+    <states/>
+
+    <structure>
+
+        <belongsto entity="Document:Regulations:I" title="Инструкция"/>
+        <belongsto entity="Document:Regulations:SOP" title="Стандартные операционные процедуры (СОП)"/>
+
+        <belongsto entity="Document:Regulations:P" title="Положение/Регламент/Политика"/>
+
+        <field name="sectiontitle" type="string" title="Заголовок дополнительного раздела"/>
+        <field name="sectiontext" type="richtext" title="Текст дополнительного раздела"/>
+
+    </structure>
+
+    <lists>
+       <list name="approvedrisks" entity="RiskManagement:Risk:Approved" ns="7283" title="Идент риск"/>
+    </lists>
+
+
+    <defaultorder/>
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="title"/>
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes/>
+</entity>

@@ -1,0 +1,64 @@
+<process prototype="DMS:Deviations:RISKInspection"  readyfor="test">
+    <!-- Самоинспекция -->
+    <parameters>
+      <!-- <param name="complaint" type="urn"  /> -->
+    </parameters>
+
+    <responsibility>
+
+      <stage name="CreateDraft"/>
+
+      <stage name="Planing" title="Планирование">
+        <target>Цель - запланировать ивент</target>
+        <call process="DMS:Decisions:Plan"/>
+        <rule type="timelimit" value="1d"/>
+      </stage>
+
+      <stage name="Editing" title="Редактирование">
+        <target>Цель - редактирование документа</target>
+        <humantask responsible="initiator"  appoint="initiator"/>
+        <rule type="timelimit" value="1d"/>
+      </stage>
+
+      <stage name="Vising" title="Визирование">
+        <target>Цель - завизировать</target>
+        <call process="DMS:Decisions:Visa"/>
+        <humantask responsible="visant"/>
+        <rule type="timelimit" value="1d"/>
+        <forward to="Approving"/>
+        <backward to="Editing"/>
+      </stage>
+
+      <stage name="Approving" title="Утверждение">
+        <target>Цель - утвердить</target>
+        <call process="DMS:Decisions:Approvement"/>
+        <humantask responsible="approver"/>
+        <rule type="timelimit" value="1d"/>
+        <backward to="Editing"/>
+      </stage>
+
+      <stage name="Route">
+        <target>По результатам инспекции создается САРА</target>
+        <delegate optional="yes" process="DMS:Correction:CAPA"/>
+      </stage>
+
+    </responsibility>
+
+    <stages>
+
+      <stage name="CreateDraft" type="automated"/>
+
+      <stage name="Planing" type="delegate"/>
+
+      <stage name="Editing" type="humantask"/>
+
+      <stage name="Vising" type="delegate"/>
+
+      <stage name="Approving" type="delegate"/>
+
+      <stage name="Route" type="automated"/>
+
+    </stages>
+
+
+</process>

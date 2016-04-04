@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="DMS:Acquaintance:Document" manager="System" uid="120931">
+
+    <passport>
+        <title>Факт ознакомления</title>
+    </passport>
+
+    <states>
+        <status name="done" default="no" title="Ознакомлен"/>
+    </states>
+
+    <structure>
+
+        <hasone entity="DMS:Document:Universal" as="DMSDocumentUniversal" title="Универсальный документ"/>
+
+        <useone entity="Management:Post:Individual" as="ManagementPostIndividual" title="Кто ознакомлен" />
+
+        <field name="document" type="string" title="Документ"/>
+        <field name="created" type="timestamp" title="Создан" system="yes" createDefault="now" />
+
+    </structure>
+    <lists />
+
+    <defaultorder>
+        <by field="created" order="DESC"/>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="DMSDocumentUniversal"/>
+        <column selector="done"/>
+    </admincolumns>
+
+    <searchfields/>
+    <indexes/>
+</entity>

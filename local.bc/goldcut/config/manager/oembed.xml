@@ -1,0 +1,125 @@
+<?xml version='1.0' standalone='yes'?>
+<core>
+
+	<ns>oembed</ns>
+	
+	<someexamples>https://github.com/starfishmod/jquery-oembed-all/blob/master/jquery.oembed.js</someexamples>
+		
+	<section>
+		<name>providers</name>
+		<title>
+			<string lang="en">oembed providers</string>
+			<string lang="ru">oembed провайдеры</string>
+		</title>
+		
+		<section>
+			<name>twitter</name>
+			<title><string>Twitter</string></title>
+			<urlschemes>
+				<array>
+					<item><char>http://twitter.com/*</char></item>
+				</array>
+			</urlschemes>
+			<endpoint><char>http://api.twitter.com/1/statuses/oembed.json</char></endpoint>
+			<documentation><url>https://dev.twitter.com/docs/api/1/get/statuses/oembed</url></documentation>
+		</section>
+		
+		<section>
+			<name>youtube</name>
+			<title><string>YouTube</string></title>
+			<urlschemes>
+				<array>
+					<item><char>http://youtube.com/watch*</char></item>
+					<item><char>http://youtu.be/*</char></item>
+					<item><char>http://youtube.com/embed*</char></item>
+					<item><char>http://www.youtube.com/embed*</char></item>
+				</array>
+			</urlschemes>
+			<endpoint><char>http://www.youtube.com/oembed</char></endpoint>
+			<additional>
+				http://gdata.youtube.com/feeds/api/videos/{vid_id}?v=2&amp;alt=jsonc
+			</additional>
+		</section>
+		
+		<section>
+			<name>vimeo</name>
+			<title><string>Vimeo</string></title>
+			<urlschemes>
+				<array>
+					<item><char>http://vimeo.com/*</char></item>
+					<item><char>http://vimeo.com/channels/*/*</char></item>
+					<item><char>http://vimeo.com/groups/*/videos/*</char></item>
+				</array>
+			</urlschemes>
+			<endpoint><char>http://vimeo.com/api/oembed.json</char></endpoint>
+			<documentation><url>http://vimeo.com/api/docs/oembed</url></documentation>
+		</section>
+		
+		<section>
+			<name>slideshare</name>
+			<title><string>Slideshare</string></title>
+			<urlschemes>
+				<array>
+					<item><char>http://www.slideshare.net/*</char></item>
+					<item><char>http://www.slideshare.net/*/*</char></item>
+				</array>
+			</urlschemes>
+			<endpoint><char>http://www.slideshare.net/api/oembed/2</char></endpoint>
+			<documentation><url>http://www.slideshare.net/developers/oembed</url></documentation>
+		</section>
+		
+		<section>
+			<name>instagram</name>
+			<title><string>Instagram</string></title>
+			<urlschemes>
+				<array>
+					<item><char>http://instagr.am/*</char></item>
+					<item><char>http://instagram.com/*</char></item>
+					<item><char>http://www.instagram.com/*</char></item>
+				</array>
+			</urlschemes>
+			<endpoint><char>http://api.instagram.com/oembed</char></endpoint>
+		</section>
+		
+		<section>
+			<name>flickr</name>
+			<title><string>Flickr</string></title>
+			<urlschemes>
+				<array>
+					<item><char>http://www.flickr.com/photos/*</char></item>
+				</array>
+			</urlschemes>
+			<endpoint><char>http://www.flickr.com/services/oembed/</char></endpoint>
+			<documentation><url>http://developer.yahoo.net/blog/archives/2008/05/oembed_embeddin.html</url></documentation>
+		</section>
+		
+		<section>
+			<name>deviantart</name>
+			<title><string>Deviantart</string></title>
+			<urlschemes>
+				<array>
+					<item><char>http://*.deviantart.com/*</char></item>
+					<item><char>http://deviantart.com/*</char></item>
+					<item><char>http://fav.me/*</char></item>
+				</array>
+			</urlschemes>
+			<endpoint><char>http://backend.deviantart.com/oembed</char></endpoint>
+		</section>
+		
+		<section>
+			<name>proxy</name>
+			<title><string>Proxy</string></title>
+			<urlschemes>
+				<array>
+					<item><char>http://www.ebay.com/itm/</char></item>
+					<item><char>http://www.amazon.com/*/*/*</char></item>
+				</array>
+			</urlschemes>
+			<endpoint><char>http://oohembed.com/oohembed/</char></endpoint>
+		</section>
+		
+		
+		
+	</section>
+		
+</core>

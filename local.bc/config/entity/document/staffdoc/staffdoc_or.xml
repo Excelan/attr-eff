@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<entity prototype="Document:Staffdoc:OR" code="OR" manager="Document" uid="7002">
+
+    <passport>
+        <title>Приказ на принятие на работу</title>
+    </passport>
+
+    <structure>
+
+		<!-- Приказ на принятие на работу -->
+
+            <field name="employeename"  type="string"  title="ФИО сотрудника"/>
+	    	<hasone entity="Company:Structure:Department" title="Название структурного подразделения"/>
+	    	<hasone entity="Management:Post:Group"   title="Должность"/>
+	    	<field name="date"  type="date"  title="Дата принятия на работу"/>
+	    	<field name="dateend"  type="date"  title="Дата окончания"/>   <!--Если контракт-->
+	    	<field name="dateterm"  type="string"  title="Испытательный срок"/>
+	    	<field name="actual" type="set" title="Условия работы">
+                <value name="mainplace" title="основное место работы" />
+                <value name="sametime" title="за совместительством" />
+            </field>
+	    	<field name="long"  type="string"  title="Продолжительность рабочей недели"/>
+	    	<field name="salary"  type="string"  title="Оклад/ тарифная ставка"/>
+	    	<field name="jobtype" type="set" title="Условия принятия на работу">
+
+                        <value name="val1" title="на конкурсной основе" />
+                        <value name="val2" title="за условиями контракта" />
+                        <value name="val3" title="на время выполнения какой-то работы" />
+                        <value name="val4" title="с испытательным сроком" />
+                        <value name="val5" title="на период отсутствия основного работника" />
+                        <value name="val6" title="из кадрового резерва" />
+                        <value name="val7" title="по результатам успешной стажировки"/>
+                        <value name="val8" title="перевод"/>
+                        <value name="val9" title="другое"/>
+
+            </field>
+	    	<field name="moremoney"  type="string"  title="Надбавка"/>
+           	<field name="evenmoremoney"  type="string"  title="Доплата"/>
+            <hasone entity="Management:Post:Individual" as="manager"  title="Руководитель"/>
+
+
+    </structure>
+
+    <defaultorder>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		<!-- <column selector="status"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

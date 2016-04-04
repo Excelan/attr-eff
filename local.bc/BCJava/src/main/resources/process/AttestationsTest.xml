@@ -1,0 +1,31 @@
+<process prototype="DMS:Attestations:Test" readyfor="test">
+
+    <!-- Тестирование в аттестации -->
+
+    <parameters>
+
+    </parameters>
+
+    <responsibility>
+        <stage name="Testing" title="Аттестация">
+            <target>
+                Каждому сдающиему ticket
+                Каждый начавший тест получит результат Study:RegulationStudy:R
+                TODO для начавших, но не закончивших (закрывших браузер) как считать результаты?
+                TODO если закрыть браузер и снова зайти - чтобы тест считался завершенным на том вопросе, на котором ты вышел
+            </target>
+            <humantask responsible="trener" appoint="configuration" members="configurable" />
+            <rule type="timelimit" value="1d" />
+        </stage>
+    </responsibility>
+
+    <stages>
+
+        <!-- subject -->
+        <stage name="Testing" type="humantask">
+            <ui task="dataapprove"></ui>
+        </stage>
+
+    </stages>
+
+</process>

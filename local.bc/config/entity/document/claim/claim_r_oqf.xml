@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<entity prototype="Document:Claim:R_OQF" code="R_OQF" manager="Document" uid="1005">
+
+    <passport>
+        <title>Заявка на закрепление/перезакрепление ОС, НМА в 1С</title>
+    </passport>
+
+    <structure>
+        <hasone entity="Directory:BusinessProjects:Item" as="companyproject" title="Текущий проект предприятия"/>
+		<hasone entity="Company:LegalEntity:Counterparty" title="Клиент, для которого создается заявка"/>
+		<hasone entity="BusinessObject:Record:Polymorph" as="warehouse" title="№ слада, для которого создается заявка"/>
+		<field name="specialrequirement" type="text" title="Специальное требование"/>
+		<field name="attachments" type="tarray" title="Вложение"/>
+
+        <hasone entity="Document:Solution:Universal" title="Утвержденный вариант решения"/>
+
+		<field name="codenumber" type="text" title="Номер кода/ Название расходного материала/ НМА/ ОС"/>
+		<hasone entity="Management:Post:Individual" as="responsibleold" title="Ф.И.О. текущего ответственного"/>
+		<hasone entity="BusinessObject:Record:Polymorph" as="warehouseold" title="Склад текущий"/>
+		<field name="descriptionneed" type="text" title="Описание необходимости"/>
+		<hasone entity="Management:Post:Individual" as="responsiblenew" title="Ф.И.О. ответственного"/><!--для начальников, для остальных юзеров - текущий юзер без редактирования-->
+		<hasone entity="BusinessObject:Record:Polymorph" as="warehousenew" title="Склад новый"/>
+
+    <!-- TODO -->
+    <field name="rtaken" type="set" title="Принятие ответственности">
+      <value name="myself" title="Моя сфера ответственности"/>
+      <value name="notmyresp" title="Не моя сфера ответственности"/>
+    </field>
+
+    </structure>
+
+    <lists>
+        <list name="solutionvariants" entity="Document:Solution:Universal" ns="9951" title="Предложенные решения"/>
+    </lists>
+
+    <defaultorder>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		<column selector="firstlinedescription"/> <!-- В таблице выводить первые две строки описания, а при наведении полный текст -->
+        <column selector="responsible"/> <!-- ответственный, которому приходит жалоба -->
+		<!-- <column selector="status"/> -->
+		<!-- <column selector="CTA TODO"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

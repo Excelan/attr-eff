@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- САРА шаг1 - создание отклонения, привязка отклонения к рискам, и создание на отклонения необходимых мероприятий -->
+
+        <!--Отклонение -->
+        <section title="Выявленное отклонение">
+
+            <!-- <struct anonymous="yes" entity="Document:Capa:Deviation" title="Отклонение"> -->
+
+                <field name="descriptiondeviation" title="Описание отклонения" type="text"/>
+
+            <!-- </struct> -->
+
+            <!-- Риски и(или) тут выбираем -->
+            <!-- <struct multiple="yes" name="RiskManagementRiskApproved" title="Идентифицированный риск"> -->
+                <field name="RiskManagementRiskApproved" multiple="yes" title="Идентифицированный риск" type="RiskManagementRiskApproved">
+                    <query gate="Selector/document/risks/RiskApproved"/>
+                </field>
+            <!-- </struct> -->
+
+            <!-- Риски и(или) тут создаем -->
+            <struct entity="RiskManagement:Risk:NotApproved" name="RiskManagementRiskNotApproved" multiple="yes" title="Не идентифицированный риск">
+                <field name="urn" type="hidden"/>
+                <field name="riskdescription" title="Описание не идентифицированного риска" type="text"/>
+                <field name="BusinessObjectRecordPolymorph" title="Объект, в котором появился этот риск" type="BusinessObject">
+                    <query gate="Selector/businessobject"/>
+                </field>
+                <field name="DirectoryBusinessProcessItem" title="Процесс, в котором появился этот риск" type="select">
+                    <query gate="Selector/directory/DirectoryBusinessProcessItem"/>
+                </field>
+            </struct>
+
+        </section>
+
+
+        <!--Мероприятия -->
+        <section entity="Document:Correction:Capa" title="Корректирующие мероприятия по устранению отклонения">
+
+            <struct multiple="yes" name="DocumentCorrectionCapa" title="Корректирующее мероприятие">
+                <field name="urn" type="hidden"/>
+
+
+                <field name="cancelstat" type="hidden" title="Не моя сфера">
+                    <options>
+                        <option value="1" title="Да" />
+                        <option value="0" title="Нет" />
+                    </options>
+                </field>
+
+                <field name="descriptioncorrection" title="Описание Мероприятия" type="text"/>
+
+                <!--<field name="CompanyStructureDepartment" title="Ответственный департамент" type="select">-->
+                    <!--<query gate="Selector/company/structure/CompanyStructureDepartment"/>-->
+                <!--</field>-->
+
+                <field name="eventplace" title="Место проведения мероприятия" type="BusinessObject">
+                    <!-- <query gate="Selector/businessobject"/> -->
+                </field>
+                <field name="controlresponsible" title="Назначьте ответственного за контроль" type="ManagementPostIndividual"/>
+            </struct>
+        </section>
+
+    </structure>
+</form>

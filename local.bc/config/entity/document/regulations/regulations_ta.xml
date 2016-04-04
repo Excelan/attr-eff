@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<entity prototype="Document:Regulations:TA" code="TA" manager="Document" uid="6007">
+
+    <passport>
+        <title>Программа обучения и аттестации</title>
+    </passport>
+
+    <structure>
+
+      <field name="interval" type="integer" default="0" title="Номер интервала переобучения"/>
+
+        <hasone entity="Document:Regulations:SOP" as="DocumentRegulationsSOP"  title="@ SOP"/>
+
+		<!-- -->
+		<hasone entity="Management:Post:Individual" as="trainer"  title="Тренер"/>
+		<hasone entity="Calendar:Period:Month"  title="Периодичность проведения"/>
+
+        <field name="attachments" type="tarray" title="Вложение"/>
+
+		<field name="moreinfo" type="text"  title="Дополнительная информация"/>
+		<field name="questions" type="text"  title="Дополнительные вопорсы к освящению"/>
+		<field name="number" type="text" system="yes"  title="№"/>
+		<field name="questiondescription" type="text"   title="Описание аттестационного вопроса"/>
+        <field name="questiondescrip" type="text"   title="Все варианты ответов + отметка правильного ответа"/>
+        <field name="percentage" type="string"   title="Суммарный % правильных ответов для прохождения аттестации "/>
+
+        <field name="statementoftopics" type="text"  title="Формулировка темы к освещению"/>
+        <field name="time" type="integer" title="Врямя на ответ (минуты)"/>
+        <field name="percent" type="integer" title="Проходной процент(%)"/>
+
+        <field name="currentcheck" type="date" title="Выбраная дата тестирования при планировании"/><!--Новое-->
+
+        <hasmany entity="Study:RegulationStudy:Q"/>
+
+    </structure>
+
+    <lists>
+        <!-- <list name="requiredforstudents" entity="Management:Post:Individual" ns="3011301" title="Кто должен пройти"/> -->
+        <!-- <list name="completedstudents" entity="Management:Post:Individual" ns="3011302" title="Кто успешно прошел"/> -->
+        <!-- <list name="iterationstudents" entity="Management:Post:Individual" ns="3011303" title="Кто будет сдавать на этой итерации"/> -->
+    </lists>
+
+    <defaultorder>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		<!-- <column selector="status"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

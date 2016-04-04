@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Directory:Deviation:PreCapa" manager="Business" uid="92011">
+
+    <passport>
+        <title>Отклонения (до CAPA)</title>
+    </passport>
+
+    <states/>
+
+    <structure>
+
+        <field name="description" type="text" title="Описание отклонения"/>
+        <hasone entity="Company:Structure:Department" as="CompanyStructureDepartment" title="Департамент"/>
+        <field name="created" type="timestamp" title="Время создания" createDefault="now"/>
+        <field name="updated" type="timestamp" title="Время последнего изменения" disabled="yes" createDefault="now" updateDefault="now"/>
+
+        <field name="ordered" type="integer" system="yes" title="system order"/>
+
+    </structure>
+
+    <lists>
+       <list name="approvedrisks" entity="RiskManagement:Risk:Approved" ns="7283" title="Идент риск"/>
+       <list name="notapprovedrisks" entity="RiskManagement:Risk:NotApproved" ns="7283" title="Идент риск"/>
+    </lists>
+
+
+    <defaultorder>
+        <by field="ordered" order="ASC"/>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="title"/>
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes/>
+</entity>

@@ -1,0 +1,4 @@
+TODO должность с двумя сотрудниками
+CREATE UNIQUE INDEX stagerespprocess_uniquness ON "RBAC_DocumentPrototypeResponsible_System" (processprototype, subjectprototype, stage);
+CREATE UNIQUE INDEX startprocess_uniquness ON "RBAC_ProcessStartPermission_System" (managementrole, processprototype, subjectprototype);
+CREATE UNIQUE INDEX startprocess_unquness on "Definition_Prototype_System" (indomain, ofclass, oftype);

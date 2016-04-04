@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>GC MANAGED SCREEN</title>
+    <script type="text/javascript" src="/goldcut/js/gcdom.js"></script>
+    <script type="text/javascript" src="/goldcut/js/screen.js"></script>
+
+    <script type="text/javascript" src="/goldcut/js/fapi.js"></script>
+    <script type="text/javascript" src="/goldcut/js/facedetect/ccv.js"></script>
+    <script type="text/javascript" src="/goldcut/js/facedetect/face.js"></script>
+    <style>
+
+        html, body {
+            margin:0;
+            padding:0;
+            height: 100%;
+        }
+
+        body {
+            font: 16px/24px sans-serif;
+            color: #000;
+            margin: 0;
+            padding: 0;
+        }
+
+        .fixed, .screen, .area {
+            position: fixed;
+            /* opacity: 0.7; */
+        }
+        .fixed {
+            /* display: none; */
+        }
+        aside, header, footer { overflow: hidden; }
+        aside {
+            width: 200px;
+            /* background: white; */
+        }
+        aside.left {
+            border-right: 1px solid #ddd;
+        }
+        aside.right {
+            border-left: 1px solid #ddd;
+        }
+        header, footer {
+            height: 42px;
+        }
+        header {
+            background: #f0f0f0;
+            width: 100%;
+        }
+        footer {
+            background: #eee;
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+        }
+        .contenthead
+        {
+            background: #fff;
+            border-bottom: 1px solid #ccc;
+        }
+        #main {
+            padding: 10px;
+            /* background: yellow; */
+        }
+        #main p {
+            margin: 0;
+            padding: 0px;
+            margin-bottom: 0.5em;
+        }
+    </style>
+
+    <style>
+        #fileDrop {
+            width: 100%;
+            height: 100px;
+            border: dashed 1px olive;
+            background-color: yellow;
+            float: left;
+            color: black;
+        }
+        #fileDrop p {
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            font-size: 1.6em;
+            line-height: 100px;
+        }
+        .black_overlay{
+            display: none;
+            position: absolute;
+            top: 0%;
+            left: 0%;
+            width: 100%;
+            height: 100%;
+            background-color: black;
+            z-index:1001;
+            -moz-opacity: 0.6;
+            opacity:.60;
+            filter: alpha(opacity=60);
+        }
+        .white_content {
+            display: none;
+            position: absolute;
+            top: 25%;
+            left: 25%;
+            width: 50%;
+            height: 50%;
+            padding: 16px;
+            border: 6px solid white;
+            border-radius: 20px;
+            background-color: white;
+            z-index:1002;
+            overflow: auto;
+        }
+        #src {
+            display: none;
+        }
+
+        #lnavid {
+            text-align: center;
+        }
+        .previewwrap {
+            width: 120px;
+            height: 120px;
+            position: relative;
+            border: 1px solid gray;
+            margin: 0.5em auto;
+            /*display: inline-block;*/
+        }
+        .preview {
+            position: absolute; top:0; left:0
+        }
+    </style>
+
+    <script>
+        function gcmain()
+        {
+            s = new GCScreen(null, null, {asidewidth: 150, headheight: 32});
+            //s.addLSide(function(d){ d.innerHTML += ' RENDERED LS 01'; });
+            s.addLSide('navmain');
+            s.addRSide(function(d){ d.innerHTML += ' RENDERED RS A'; });
+            //s.addHeader(function(headerdom){ headerdom.innerHTML = id('mainhead').innerHTML; id('mainhead').parentNode.removeChild(id('mainhead')); });
+            s.addHeader('mainhead');
+            //s.setAreaRenderCallback(function(headerdom){ headerdom.innerHTML += 'CONTENT'; });
+            s.render();
+            ss = s.addSubScreen(); // {asidewidth: 150, headheight: 32}
+            ss.addLSide(null, 'mylsideclass', 'lnavid');
+            //ss.addLSide('navmain');
+            //ss.addLSide(function(d){ d.innerHTML += ' INNER LS2'; });
+            //ss.addLSide(function(d){ d.innerHTML += ' INNER LS3'; });
+            //ss.addRSide(function(d){ d.innerHTML += ' RENDERED RSi A'; });
+            //ss.addRSide(function(d){ d.innerHTML += ' RENDERED RSi B'; });
+            //ss.addRSide('navmain');
+            ss.addHeader(function(headerdom){ headerdom.innerHTML += ' INNER H'; }, 'contenthead');
+            //ss.addHeader('navmain', 'contenthead');
+            //ss.setAreaRenderCallback(function(headerdom){ headerdom.innerHTML += 'JS RENDER CALLBACK <a href="/">Home</a>'; });
+            ss.useStaticContent('main');
+            hide(id("main"));
+            ss.render();
+            s.onclick() // ini click proxing
+        }
+    </script>
+
+    <script>
+
+        DETECT_FACES = true;
+
+        function showUploadOverlay()
+        {
+            document.getElementById('light').style.display='block';
+            document.getElementById('fade').style.display='block'
+        }
+        function hideUploadOverlay()
+        {
+            document.getElementById('light').style.display='none';
+            document.getElementById('fade').style.display='none'
+        }
+
+        onAllUploadedLocal = function(data)
+        {
+            console.log('all uploaded local');
+            console.log(data);
+            console.log("Uploaded " + data.length + " files. First size is " + data[0].filesize);
+
+            var ratio = 1;
+
+            for (var uploadedimg = 0; uploadedimg < data.length; uploadedimg++)
+            {
+                var CURIMG = data[uploadedimg];
+                // previewwrap = id('previewwrap')
+                var previewwrap = document.createElement('div');
+                addClass(previewwrap, 'previewwrap');
+                id('lnavid').appendChild(previewwrap); // append to left sidebar
+                id('lnavid').appendChild(document.createElement('br'));
+
+                // preview = id('preview')
+                var preview = document.createElement('img');
+                addClass(preview, 'preview')
+                previewwrap.appendChild(preview);
+                preview.src = CURIMG.thumbnail.uri;
+
+                preview.onload = function()
+                {
+                    var preview = this[0];
+                    var previewwrap = this[1];
+                    var CURIMG = this[2];
+                    //console.log(preview, previewwrap)
+                    //console.log('IMG LOADED')
+                    var w = preview.offsetWidth
+                    var h = preview.offsetHeight
+                    ratio = w/h;
+                    //console.log(this)
+                    //console.log(w,h)
+                    setStyle(previewwrap, 'width', w+'px');
+                    setStyle(previewwrap, 'height', h+'px');
+
+                    if (CURIMG.facelist)
+                    {
+                        var facelist = CURIMG.facelist;
+                        facelist = JSON.parse(facelist)
+                        for (var i=0;i<facelist.length;i++)
+                        {
+                            var face = facelist[i];
+                            //console.log(face)
+                            var offsetX = parseFloat(face[0])
+                            var offsetY = parseFloat(face[1])
+                            var radius = parseFloat(face[2])
+                            //console.log(offsetX, offsetY, radius)
+                            div = document.createElement('div');
+                            setStyle(div, 'border', '2px solid red');
+                            setStyle(div, 'position', 'absolute');
+                            setStyle(div, 'left', (offsetX*100  - radius*100) + '%'); // - radius*100
+                            setStyle(div, 'top', (offsetY*100  - radius*100) + '%'); // - radius*100
+                            setStyle(div, 'width', radius*100*2 + '%');
+                            setStyle(div, 'height', radius*100*2 * ratio + '%');
+                            previewwrap.appendChild(div);
+                        }
+                    }
+
+                }.bind([preview, previewwrap, CURIMG])
+
+                // remove old face border
+                // if (div) id('previewwrap').removeChild(div);
+
+
+            }
+        }
+
+        var action_selectnews = function(urn)
+        {
+            console.log("CALL action_selectnews")
+            if (urn != undefined) console.log("URN " + urn)
+            console.log(this.target)
+            this.preventDefault();
+        }
+
+
+    </script>
+
+
+</head>
+
+<body>
+
+<header id='mainhead'>
+    Top head
+</header>
+
+<nav id='navmain'>
+    Main nav
+</nav>
+
+<div id='main' role='main' class="" style='z-index: 1000; position: relative;'>
+
+
+    <div id="wrap">
+
+        <form action="/goldcut/upload/stream.php" method="post" enctype="multipart/form-data">
+
+            <input type="hidden" id="onalluploadedcall" value="onAllUploadedLocal">
+            <input type="hidden" id="upload_destination" value="urn-photoitem">
+            <input type="hidden" id="upload_container" value="urn-photoalbum-78">
+
+            <input data-click="transparent" class="stdfileinput" type="file" id="fileField" name="fileField" multiple />
+
+            <div id="fileDrop">
+                <p>Drop files here</p>
+            </div>
+
+            <!-- used in face detect -->
+            <canvas id="src"></canvas>
+
+            <div id="light" class="white_content">
+                Processing...
+            </div>
+            <div id="fade" class="black_overlay"></div>
+
+        </form>
+
+        <br style="clear: both;">
+
+        <ul data-click="" class="x0">
+            <li class="action_selectnews">Test</li>
+            <li class="action_selectnews" data-urn="urn-news-78">Test</li>
+            <li class="action_selectnews selected" data-urn="urn-news-123">Test</li>
+            <li><a href="#some" class="action_selectnews selected" data-urn="urn-news-123">Test a</a></li>
+            <li class="action_editnews">Edit Test</li>
+        </ul>
+
+
+    </div>
+
+</div>
+
+</body>
+</html>

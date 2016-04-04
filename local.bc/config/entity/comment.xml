@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Communication:Comment:Level2withEditingSuggestion" manager="Content" uid="2541512">
+
+    <passport>
+        <title>Комментарий</title>
+    </passport>
+
+    <states>
+
+        <status name="iseditingsuggestion" default="0" title="если да то это EditingSuggestion"/>
+        <status name="cancel" default="0" title="Отклоненный документ"/>
+
+    </states>
+
+    <structure>
+        <field name="content" type="text" title="Либо текст либо патч"/>
+
+
+        <field name="appliedstatus" type="set" title="статус выставляемый инициаторами документа">
+            <value name="new" title="Коментарий новый и ещё не обработан"/>
+            <value name="applied" title="Коментарий принят и выполнен"/>
+            <!--<value name="canceled" title="Коментарий не принят"/>-->
+        </field>
+
+        <field name="approvedstatus" type="set" title="статус выставляемый человеком который его написал">
+            <value name="approved" title="Коментарий был принят и выполнен"/>
+        </field>
+
+        <field name="editingsuggestionstatus" type="set" title="статус">
+            <value name="new" title="новый и ещё не обработан"/>
+            <value name="applied" title="этот патч был применён"/>
+            <value name="covertintocomment" title="этот патч не приняли и конвертунули его в коментарий"/>
+        </field>
+
+
+        <!--<hasone entity="document"  title="документ"/>-->
+        <field name="document" type="string" title="Документ"/><!--урн документа-->
+        <field name="docpath" type="string" title="Поле документа"/><!--Путь к филду документа-->
+
+        <!--<hasmany entity="reply"  title="дочерние reply"/>-->
+        <field name="replyto" type="integer" title="Ответ на" />
+        <field name="toreplyto" type="integer" title="Был ответом на" />
+
+        <!--<field name="children" type="iarray"  title="дочерние reply"/>-->
+        <hasone entity="People:Employee:Internal" as="autor"  title="автор"/>
+        <hasone entity="People:Employee:Internal" as="appliedautor"  title="тот кто проставил статус donestatus"/>
+        <hasone entity="People:Employee:Internal" as="approvedautor"  title="тот кто проставил статус realydonestatus"/>
+        <hasone entity="People:Employee:Internal" as="editingsuggestionautor"  title="тот кто проставил статус editingsuggestionstatus"/>
+
+
+        <field name="created" type="timestamp" title="Время создания" createDefault="now"/>
+
+
+    </structure>
+
+    <lists/>
+    <defaultorder/>
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="content"/>
+        <column selector="appliedstatus"/>
+        <column selector="approvedstatus"/>
+        <column selector="editingsuggestionstatus"/>
+        <column selector="document"/>
+        <column selector="docpath"/>
+        <column selector="autor"/>
+        <column selector="appliedautor"/>
+        <column selector="approvedautor"/>
+        <column selector="editingsuggestionautor"/>
+        <column selector="created"/>
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes/>
+</entity>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity manager="SystemData" prototype="Membership:RegisterIntent:ActivationToken" uid="99906">
+  <passport>
+    <title>Register Intent</title>
+  </passport>
+  <states/>
+  <structure>
+    <field name="email" type="string" title="E-mail"/>
+    <field name="activationcode" type="string" title="activationcode"/>
+    <field name="created" type="timestamp" title="Время создания" createDefault="now"/>
+    <field name="emailssent" type="integer" title="emailssent"/>
+  </structure>
+  <lists/>
+  <defaultorder>
+    <by field="created" order="DESC"/>
+  </defaultorder>
+  <admincolumns/>
+  <options>
+    <aparam name="directmanage" type="boolean" value="no"/>
+  </options>
+  <searchfields/>
+  <indexes/>
+</entity>

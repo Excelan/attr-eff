@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<entity prototype="Document:Contract:TMC" code="TMC" manager="Document" uid="3008">
+
+    <passport>
+        <title>Договор на ТО холодильников, кондиционеров </title>
+    </passport>
+
+    <structure>
+
+
+        <!--Информация о договоре -->
+        <field name="place"  type="string"  title="Место"/>
+        <field name="date"  type="date"  title="Дата заключения"/>
+        <hasone entity="Calendar:Period:Month" as="timecontract" title="Срок действия"/>
+        <field name="prolongation" type="set" title="Прологация договора">
+            <value name="auto" title="Автоматическая пролонгация договора"/>
+            <value name="agreement" title="Пролонгация договора по дополнительному соглашению"/>
+        </field>
+        <hasone entity="Calendar:Period:Month" as="timenotifyfor" title="В случае пересмотра условий договора, уведомить за"/>
+        <field name="enddate"  type="date"  title="Конечная дата"/>
+        <field name="summ"  type="money"  title="Сумма договора"/>
+        <hasone entity="Directory:BusinessProjects:Item" title="Текущий проект предприятия, для которого подписывается договор"/>
+        <hasone entity="Company:LegalEntity:Counterparty"  title="Клиент"/>
+        <hasone entity="BusinessObject:Record:Polymorph"  title="Склад"/>
+        <hasone entity="Company:Structure:Companygroup"  title="Компания плательщик"/>
+        <field name="justification"  type="text"  title="Обоснования необходимости подписания договора"/>
+        <field name="tenderdoc"  type="string" title="Тендер, как обоснование выбора контрагента"/>
+        <field name="attachments"  type="tarray"  title="Вложения"/>  <!--multiple -->
+
+		<!--Договор на ТО Холодильников, кондиционеров -->
+
+	    <field name="introduction"  type="richtext"  title="Преамбула"/>
+        <field name="contractsubject"  type="richtext"  title="Предмет договора"/>
+        <field name="orderofworksexecution"  type="richtext"  title="Обязанности Исполнителя"/>
+        <field name="rights"  type="richtext"  title="Права Заказчика"/>
+        <field name="termsofpayment"  type="richtext"  title="Условия оплаты"/>
+        <field name="liabilities"  type="richtext"  title="Ответственность сторон"/>
+        <field name="changesofcontracts"  type="richtext"  title="Условия расторжения или изменнения договора"/>
+        <field name="specialconditions"  type="richtext"  title="Особые условия"/>
+        <field name="termsofcontract"  type="richtext"  title="Срок действия договора"/>
+
+
+        <!--Реквизиты  Биокона и предприятия с которым подписывается договор  -->
+        <!-- <hasone entity="Company:LegalEntity:Counterparty" system="yes"  title="Клиент"/> -->
+        <hasone entity="Company:LegalEntity:Counterparty" as="owncomany" system="yes"  title="Клиент2"/>
+
+
+    </structure>
+
+    <lists>
+        <list name="contractapplication" entity="Document:ContractApplication:Universal" ns="1045" title="Приложения к Договору"/>
+        <list name="notifyusercompany" entity="Management:Post:Individual" ns="1047" title="Сотрудники компании для уведомления"/>
+        <list name="notifyusercounterparty" entity="People:Employee:Counterparty" ns="1047" title="Сотрудники контрагента для уведомления"/>
+    </lists>
+
+    <defaultorder>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+		<column selector="CompanyLegalEntityCounterparty"/>
+		<column selector="date"/>
+        <column selector="initiator"/>
+		<!-- <column selector="status"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

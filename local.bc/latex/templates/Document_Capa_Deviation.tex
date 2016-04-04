@@ -1,0 +1,88 @@
+\input{../templates/DMS_land}
+\input{../templates/DMS_Capa}
+
+
+\newcommand{\ValueDocumentNumber}{123}
+%\newcommand{\ValuePlace}{с. Б. Александровка}
+%\newcommand{\ValueDate}{1 февряля 2016 года}
+
+{{=<% %>=}}
+\newcommand{\varId}{<% code %>}
+\newcommand{\datedone}{  <%#DocumentCorrectionCapa%>  <%#selectedsolution%>  <%datedone%> <%/selectedsolution%>  <%/DocumentCorrectionCapa%> }
+
+\newcommand{\varInitiator}{Фурс C.Л.}
+\newcommand{\varVisant}{Пижук В.М.}
+\newcommand{\varApprover}{Павлова В.В.}
+
+\newcommand{\initiatorPost}{Контролер качества}
+\newcommand{\visantPost}{Главный инженер}
+\newcommand{\approverPost}{Директор}
+
+\newcommand{\varDatecreation}{21.01.2016 / 9:30}
+\newcommand{\varDatevise}{25.01.2016 / 9:30}
+\newcommand{\varDateapprove}{28.01.2016 / 9:30}
+
+
+<%={{ }}=%>
+
+
+\renewcommand{\headrulewidth}{0.2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+{{graphicspath}}
+
+\begin{document}
+
+%\pagestyle{maintext}
+
+\begin{center}
+{\large \textbf{\textsc{Корректирующие и предупреждающие действия (САРА) № \varId{} }}}
+\end{center}
+
+%\begin{tabularx}{\textwidth}{ X rX }
+%\ValuePlace & \ValueDate \\
+%\end{tabularx}
+
+
+%Таблица - Отклонение & Риски
+{\small \begin{center}
+\tabulinesep=2mm
+\begin{tabu} to \textwidth {X X}
+\hline
+& \\
+\textbf{Выявленное отклонение:} & {{descriptiondeviation}} \\
+
+\textbf{Риски:} & \textbf{Отметка об уровне критичности риска:} \\
+ {{#RiskManagementRiskApproved}}
+ {{title}}  &  {{critical}} \\
+ {{/RiskManagementRiskApproved}}
+\end{tabu}
+\end{center}
+}
+
+
+%Таблица - Мероприятия
+{\small \begin{center}
+\tabulinesep=2mm
+\begin{longtabu} to \textwidth { X[1,l,p] X[0.25,l,p]  X[0.25,l,p]  X[0.25,l,p]  X[0.25,l,p]  X[0.25,l,p] }  % {|X|X|X|}
+\hline\hline
+\textbf{Описание корректирующих мероприятий} & \textbf{Место проведения мероприятия} & \textbf{Ответственный за проведение мероприятия}  & \textbf{Плановая дата реализации} & \textbf{Фактическая дата реализации}  & \textbf{Статус реализации}   \\ \hline
+\endfirsthead
+%\endhead
+\hline
+\endfoot
+\caption{CAPA}
+\endlastfoot
+
+ {{#DocumentCorrectionCapa}}
+ {{descriptioncorrection}}&    {{#eventplace}} {{title}}  {{/eventplace}}    &    {{#controlresponsible}}  {{title}}  {{/controlresponsible}}  & {{#DocumentSolutionCorrection}} {{realizationdate}} {{/DocumentSolutionCorrection}}  &  {{#selectedsolution}} {{datedone}} {{/selectedsolution}}  & \ifthenelse{\equal{\datedone}{}}{не выполнено }{выполнено} \\ \hline
+{{/DocumentCorrectionCapa}}
+
+
+
+\end{longtabu}
+\end{center}
+}
+
+\end{document}

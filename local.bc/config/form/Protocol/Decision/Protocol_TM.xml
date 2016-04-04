@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- Протокол Технического обслуживания-->
+
+        <section type="context" title="Метаинформация по Протоколу Технического обслуживания">
+
+          <struct name="CONTEXT_BusinessObjectRecordPolymorph" anonymous="yes" entity="BusinessObject:Record:Polymorph">
+
+            <field name="bo" type="BusinessObject"  title="Объект"/>
+            <field name="serialnumber" type="string" title="Cерийный номер"/>
+            <field name="description" type="text" title="Описание и характеристики объекта"/>
+            <field name="currentproperties" type="text" title="Текущие свойства объекта"/>
+            <field name="MateriallyResponsible" type="ManagementPostIndividual"  title="Материально-ответственный сотрудник"/>
+            <field name="ResponsibleMaintenance"  type="ManagementPostIndividual"  title="Ответственный за техническое состояние и за техническое обслуживание"/>
+            <field name="location" type="BusinessObject"  title="№ Склада"/>
+            <field name="boofclient" type="CompanyLegalEntityCounterparty"  title="Клиент"/>
+            <field name="periodicitymaintenance" type="select"  title="Периодичность ТО">
+                <query gate="Selector/calendar/CalendarPeriodMonth"/>
+            </field>
+            <field name="maintenancework" type="text" title="Список регламентных работ для проведения ТО"/>
+
+          </struct>
+
+        </section>
+
+            <!-- Форма для заполнения-->
+            <section type="context" entity="Document:Protocol:TM" title="Форма для заполнения Протокола Технического обслуживания">
+
+                <field name="servicedate" type="date" title="Дата проведения ТО"/>
+                <field name="datep" type="date" title="Дата предыдущего ТО"/>
+                <field name="contractforcalibration" type="Document" title="Договор на проведение ТО"/>
+                <field name="relateddocuments" type="Document" multiple="yes" title="Связанные документы"/>
+                <field name="results" type="text" title="Результаты проведения ТО"/>
+                <field name="upload" type="attachment" multiple="yes" title="Вложения"/>
+            </section>
+
+    </structure>
+</form>

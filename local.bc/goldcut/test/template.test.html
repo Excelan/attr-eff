@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="initial-scale=1.0; maximum-scale=1.0; user-scalable=0;">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+    <title>GOLDCUT template test</title>
+
+    <script type="text/javascript" src="/goldcut/js/gcdom.js"></script>
+    <script>
+
+
+        // TODO see goldcut/js/screen.js action_* dompath usage
+
+        Event.add(id('wmslist'), "click", function(e) {
+            var dpath = new DomPath2(e.target);
+            e.preventDefault();
+            //console.log(dpath.dompath[0]);
+            if (dpath.dompath[0].tag != 'A') return;
+            var urn = new URN(dpath.dompath[0].dom.getAttribute('data-urn'))
+
+            var inputsdom = dpath.dompath[0].dom.getParent().getParent();
+            xs = inputsdom.querySelectorAll('input');
+            amountdom = inputsdom.querySelector('input[name="amount"]');
+            pricedom = inputsdom.querySelector('input[name="price"]');
+            var amount = parseInt(amountdom.value);
+            var price = parseFloat(pricedom.value);
+            //var amount = dpath.dompath[0].dom.getParent().getParent().querySelector('input[name="amount"]').value
+            //var price = parseFloat(dpath.dompath[0].dom.getParent().getParent().querySelector('input[name="price"]').value)
+            if (isNaN(price)) {
+                alert("Укажите цену");
+                return;
+            }
+
+            var p = {urn: urn.urn, amount: amount, price: price};
+            //console.log( {urn: urn.urn, amount: amount, price: price} );
+            ORDER.products.push(p); // <<<
+
+            console.log(JSON.stringify(ORDER))
+
+            var frag2 = createFrag(id('templateSelectedItem').innerHTML);
+            renderFrag(frag2, {title: urn.uuid, amount: amount, price: price});
+            id('wmsselectedlist').appendChild(frag2)
+            id('wmslist').innerHTML = '';
+        })
+
+        // список клиентов
+        var listCRMClients = function(d)
+        {
+            //console.log(d[0].name)
+            var frag2 = createFrag(id('template1').innerHTML);
+            renderFrag(frag2, d);
+            id('crmlist').innerHTML = '';
+            id('crmlist').appendChild(frag2)
+        }
+        // список товаров
+        var listWMSProducts = function(d)
+        {
+            //for (var i=0; i < d.length; i++)
+            //    console.log(d[i])
+            var frag2 = createFrag(id('template2').innerHTML);
+            renderFrag(frag2, d);
+            id('wmslist').innerHTML = '';
+            id('wmslist').appendChild(frag2)
+        }
+
+        var crmclient = document.querySelectorAll('.crmclient');
+        for (var i=0; i < crmclient.length; i++)
+        {
+            var input1 = crmclient[i];
+            Event.add(input1, "keyup", function(e)
+            {
+                var current_value = input1.value
+                var old = input1.getAttribute('data-old');
+                input1.setAttribute('data-old', current_value);
+
+                addClass(id('fragmentSelectedAgent'),'hide');
+
+                if (old != current_value && current_value.length >= 3)
+                {
+                    show(id('crmlist'));
+                    hide(id('fragmentAddAgent'));
+                    m = {}
+                    m.action = 'load'
+                    m.urn = 'urn-crmclient'
+                    m.search = current_value
+                    m.order = 'created desc'
+                    //console.log(m);
+                    var opts = {}
+                    ajax('/goldcut/admin/ajax.php', listCRMClients, opts, 'POST', m)
+                }
+
+                return false;
+            });
+        }
+
+
+
+    </script>
+
+</head>
+<body>
+
+<div id="wrap">
+
+    <div class='hide' id='template2'>
+        <div data-list='root' class='list BLK g12 e2 BLINE'>
+            <div class='g2 RPM'><a href="#" class="additem" data-write-urn="data-urn" data-urn="">Добавить</a></div>
+            <div class='g1 RPM'><input type="text" name="amount" value="1" size="3" data-write-amount='value'></div>
+            <div class='g1 RPM'><input type="text" name="price" value="" size="5" data-write-price='value'>$</div>
+            <div class='title g4 RPM TOF'>Title</div>
+            <!--
+            <div class='image g3'>
+                <img data-proc='gofullimg' data-id='' data-src2='src' data-write-src='src' src='nonex.png'>
+            </div>
+             -->
+        </div>
+    </div>
+    <div class='hide' id='templateSelectedItem'>
+        <div class='BLK g12 e2 BLINE'>
+            <div class='g2 RPM'>Выбран</div>
+            <div class='g1 RPM'><input type="text" name="amount" value="1" size="3" disabled="disabled" data-write-amount='value'></div>
+            <div class='g1 RPM'><input type="text" name="price" value="" size="5" disabled="disabled" data-write-price='value'>$</div>
+            <div class='title g4 RPM TOF' style="font-size: 16px; font-weight: bold;">Title</div>
+        </div>
+    </div>
+
+    <div class='hide' id='templateSelectedClient'>
+        <div class='BLK g12 YBG e2'>
+            <div class='name g3 RPM'  style="font-size: 16px; font-weight: bold;"></div>
+            <div class='phone g2 RPM'></div>
+            <div class='address g6'></div>
+        </div>
+    </div>
+
+    <div id="wmslist" class="0BG">
+
+    </div>
+    <div id="wmsselectedlist" class="YBG">
+
+    </div>
+
+</div>
+
+
+</body>
+</html>

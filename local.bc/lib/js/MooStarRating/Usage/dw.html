@@ -1,0 +1,208 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"  dir="ltr">
+<head>
+	<title>MooTools Star Ratings with MooStarRating Example</title>
+	<meta name="description" content="Star rating systems are attractive, allow us to avoid ugly forms, and prevent unnecessary page reloads.  MooStarRating is a MooTools plugin to create star rating systems with AJAX." />
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Droid+Serif" />
+<style type="text/css">
+
+	/*  all media  */
+	@media all
+	{
+		/* global */
+		* 							{ margin:0; padding:0; } html { overflow-y:scroll; }
+		body						{ font-family:'lucida grande',tahoma,verdana,arial,sans-serif; font-size:62.5%; color:#222; }
+
+		/*	layout */
+		.center			{ width:1000px; margin:0 auto; }
+			#page			{  }
+			#header		{ height:40px; background:url(/wp-content/themes/walshhub/images/header.gif) 0 bottom repeat-x #fcfcfc; position:relative; }
+				a#header-logo	{ position:absolute; top:7px; left:0; text-indent:-99999px; width:32px; height:25px; display:block; background:url(/wp-content/themes/walshhub/images/dwavatar.png) 0 0 no-repeat; }
+				#header-title 	{ font-weight:normal; font-family:"Droid Serif",Cambria,Georgia,Palatino,"Palatino Linotype",Myriad Pro,Serif; font-size:2em; }
+					#header-title a	{ color:#000; text-decoration:none; position:absolute; top:10px; left:40px; }
+					
+		#content	{ background:#fff; padding:10px 0 10px 0; }
+			#content-left 	{ width:700px; margin:0 20px 0 0; float:left; }
+			#content-right 	{ width:280px; float:left; }
+				#content-right a	{ float:left; padding-right:10px; display:block; width:125px; height:125px; }
+
+		#footer		{ background:#eee; border-top:1px solid #ccc; padding:10px 0; }
+					#footer1, #footer2, #footer3 { width:300px; float:left; margin:0 30px 0 0; }
+					#footer3 { width:330px; margin-right:0; }
+		
+		/* tags */
+		abbr						{ border-bottom:1px dotted #ccc; cursor:help; }
+		blockquote					{ background:#eee; margin:0 20px; padding:10px 20px; }
+		code						{ font-family:'Consolas', 'Monaco', 'Bitstream Vera Sans Mono', 'Courier New', Courier, monospace !important; }
+		h1							{ font-size:4.3em; margin:0 0 20px 0; }
+		h2							{ font-size:2.8em;  }
+			h1, h2, h3, h6			{ font-weight:normal; font-family:"Droid Serif",Cambria,Georgia,Palatino,"Palatino Linotype","Myriad Pro",Serif; }
+		h3, h6						{ font-size:2em; }
+		h6							{ padding:0 0 5px 0; }
+		label,select,input[type='submit'],.point { cursor:pointer; }
+		li							{  }
+		li,p						{ line-height:19px; margin-top:5px; }
+		ol, ul						{ padding:0 0 10px 35px; }
+		p							{ margin:5px 0 14px 0; font-size:1.2em; line-height:1.8em; }
+		textarea,input[type='text'], input[type='email'], input[type='password']	{ border:1px solid #ccc; padding:5px; font-size:120%; font-family:'lucida grande',tahoma,verdana,arial,sans-serif; }
+		
+		/* stuff */
+		.clear 						{ clear:both; }
+		.exhead						{ background:#e8f0f6; border-top:1px solid #fff; color:#000; padding:10px 10px; font-size:120%; }
+			.exhead a				{ color:#6D84B4; }
+		.intro						{ background:#ffd987; font-style:italic; padding:5px 10px; margin-bottom:20px; }
+		.relative					{ position:relative; }
+		
+		/* links */
+		a								{ color:#3b5998; }
+		a:link, a:visited			{ text-decoration:underline; }
+		a:hover, a:active			{ text-decoration:none; }
+		a img							{ border:0; }
+		
+	}
+	
+	
+</style>
+<script type="text/javascript">
+window.onload = function() {
+	var paras = document.getElementById('content').getElementsByTagName('p');
+	if(paras.length) {
+		paras[0].className = paras[0].className + ' intro';
+	}
+};
+</script>	<style type="text/css">
+		/* CSS for this example. You don't need any in your pages */
+
+		form {
+		    margin: 10px 0; }
+
+		form label, form span {
+		    font-size: 12px;
+		    color: #999999;
+		    position: relative;
+		    top: -3px;
+		    display: inline-block;
+		    font-weight: bold;
+		    font-family: sans-serif; }
+
+		form label {
+		    display:block;
+		    padding-right: 3px;
+		    color: #666666;
+		}
+		
+	</style>
+	<script src="mootools-1.3.js"></script>
+	<script src="lorenzos-MooStarRating-422072a/Source/moostarrating.js"></script>
+	<script>
+		
+		// Configure the image paths
+		var MooStarRatingImages = {
+			defaultImageFolder: 'lorenzos-MooStarRating-422072a/Graphics/',
+			defaultImageEmpty:  'star_empty.png',
+			defaultImageFull:   'star_full.png',
+			defaultImageHover:  "star_boxed_hover.png"
+		};
+		
+		// Post iD
+		var postId = 10;
+		
+		// When the DOM is ready....
+		window.addEvent("domready",function() {
+			
+			// Create our instance
+			// Advanced options
+			var advancedRating = new MooStarRating({
+				form: 'ratingsForm',
+				radios: 'rating',
+				half: true,
+				//imageEmpty: 'star_boxed_empty.png',
+				//imageFull:  'star_boxed_full.png',
+				//imageHover: "star_boxed_hover.png", 
+				width: 17, 
+				tip: 'Rate <i>[VALUE] / 10.0</i>', 
+				tipTarget: $('htmlTip'),
+				tipTargetType: 'html', 
+				click: function(value) {
+					// Send ajax request to server
+					new Request.send({
+						url: "rating.php",
+						data: { rating: value, postId: postId }
+					});
+				}
+			});
+			
+			
+			
+		});
+		
+	</script>
+</head>
+<body>
+<script type="text/javascript">
+(function(){
+  var bsa = document.createElement('script');
+     bsa.type = 'text/javascript';
+     bsa.async = true;
+     bsa.src = '//s3.buysellads.com/ac/bsa.js';
+  (document.getElementsByTagName('head')[0]||document.getElementsByTagName('body')[0]).appendChild(bsa);
+})();
+</script>
+		<!-- HEADER -->
+		<div id="header"><div class="center relative">
+			<a href="/" id="header-logo">David Walsh Blog</a>
+			<div id="header-title"><a href="/">David Walsh Blog</a></div>
+		</div></div>
+
+
+<div class="exhead"><div class="center">
+	<strong>Example Page for:</strong> <a href="http://davidwalsh.name/mootools-star-rating">MooTools Star Ratings with MooStarRating</a>.
+	<a href="/demos" style="color:green;">Click here</a> to view more demos!
+</div></div>
+<div id="content"><div class="center">
+	
+	<div id="content-left">
+		<h1 style="margin-top:20px;">MooTools Star Ratings with MooStarRating Example</h1>	
+	<p>Check out MooStarRating below! Click the controls below to play around with the rating system!</p>
+	
+	<!-- Create the form with options -->
+	<form name="ratingsForm">
+	    <label>Do you like this post?</label>
+	    <input type="radio" name="rating" value="0.5">
+	    <input type="radio" name="rating" value="1.0">
+	    <input type="radio" name="rating" value="1.5">
+	    <input type="radio" name="rating" value="2.0">
+	    <input type="radio" name="rating" value="2.5">
+	    <input type="radio" name="rating" value="3.0">
+	    <input type="radio" name="rating" value="3.5">
+	    <input type="radio" name="rating" value="4.0">
+	    <input type="radio" name="rating" value="4.5">
+	    <input type="radio" name="rating" value="5.0">
+	    <input type="radio" name="rating" value="5.5">
+	    <input type="radio" name="rating" value="6.0">
+	    <input type="radio" name="rating" value="6.5">
+	    <input type="radio" name="rating" value="7.0" checked="checked">
+	    <input type="radio" name="rating" value="7.5">
+	    <input type="radio" name="rating" value="8.0">
+	    <input type="radio" name="rating" value="8.5">
+	    <input type="radio" name="rating" value="9.0">
+	    <input type="radio" name="rating" value="9.5">
+	    <input type="radio" name="rating" value="10.0">
+		<span id="htmlTip"></span>
+	</form>
+		
+</div>
+<div id="content-right">
+			<div id="bsap_1236348" class="bsarocks bsap_db3b221ddd8cbba67739ae3837520ffe"></div>
+	</div>
+
+
+<div class="clear"></div>
+</div></div>
+
+<div class="exhead">
+	<strong>&lt;&lt; Back to:</strong> <a href="http://davidwalsh.name/mootools-star-rating">MooTools Star Ratings with MooStarRating</a>
+</div>
+
+</body>
+</html>

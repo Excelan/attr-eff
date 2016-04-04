@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="Questionnaire" name="getResult">
+
+    <role>
+
+    </role>
+
+    <request>
+
+        <field name="user" type="integer" required="no"/>
+
+        <field name="urn" type="string" required="yes"/>
+        <field name="managementrole" type="integer" required="yes"/>
+        <field name="ticketurn" type="string" required="yes"/>
+        <field name="subjectURN" type="string" required="yes"/>
+
+        <field name="endTime" type="string" required="no"/>
+        <field name="startTime" type="string" required="no"/>
+
+    <field name="result" type="string" required="yes"/>
+
+        <field name="userUrn" type="string" required="no"/>
+
+    </request>
+
+
+    <response>
+
+
+        <field name="true" type="string" required="yes"/>
+        <field name="false" type="string" required="yes"/>
+        <field name="percent" type="string" required="yes"/>
+        <field name="done" type="string" required="yes"/>
+
+
+    </response>
+
+</gate>

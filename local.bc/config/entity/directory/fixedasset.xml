@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Directory:Fixedasset:Simple" manager="Business" uid="92998">
+
+    <passport>
+        <title>Основное средство</title>
+    </passport>
+
+    <states/>
+
+    <structure>
+
+        <useone entity="Document:Protocol:VT" title="Протокол валидационного исследования"/>
+        <hasone entity="BusinessObject:Record:Polymorph" as="equipment" title="Название, марка, модель оборудования"/>
+        <field name="numberequipment" type="string" title="Серийный номер"/>
+    	<field name="specification" type="text" title="Технические характеристики"/>
+
+    </structure>
+
+    <lists>
+        <!--<list name="responsible" entity="Management:Post:Individual" ns="921101" title="Ответственные лица"/>-->
+    </lists>
+
+
+    <defaultorder/>
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="title"/>
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes/>
+</entity>

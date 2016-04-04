@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="Comments" name="AddNewComment">
+
+    <role>
+
+    </role>
+
+    <request>
+
+        <field name="user" type="integer" required="no"/>
+
+        <field name="urn" type="string" required="yes"/>
+        <field name="content" type="string" required="yes"/>
+        <field name="replyto" type="string" required="no"/>
+        <field name="userid" type="string" required="yes"/>
+        <field name="level" type="string" required="yes"/>
+        <field name="idCapa" type="integer" required="no"/>
+
+    </request>
+
+
+    <response>
+
+        <field name="status" type="integer" required="yes"/>
+        <field name="urn" type="string" required="yes"/>
+        <field name="level" type="string" required="yes"/>
+        <field name="idCapa" type="string" required="no"/>
+
+    </response>
+
+</gate>

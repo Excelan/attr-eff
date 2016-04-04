@@ -1,0 +1,29 @@
+Version 1.1
+21 Jun 2015
+=NEW
+Entity XML конфиги экспорт в совмещенный с полями и статусами формат. Чтение таких новых конфигов и создание полей в памяти из них. Добавлен international в экспорт
+Gates external переработан, добавлена диагностика, тесты
+Gates php добавлена обработка исключений (ранняя версия gate на php)
+$m->send() отправка через gate (не завершено)
+Admin dashboard переработан
+httpRequest добавлено преобразование в json ответа по contenttype
+Переработан FieldMeta
+goldcut.php переработана инициализация
+Добавлена опция log screen CONSOLELOG к gclog.py, phptest?screenlog=yes к тестам
+Все системные entity xml переведены в новый совмещенный формат
+=FIXES
+Множественные небольшие изменения
+Показ текущего branch в админке был неверен, если был не только master
+Показ exceptions в boot, вместо fatal error
+goldcut/gate.php в admingate.php для дальнейшего закрытия от доступа с не админки
+=DOC
+[LEGACY]
+LEGACY_CONFIG_FIELDS_ASPHP = yes
+[GATES]
+GATES_ENABLED = yes
+EXTERNAL_GATES_ENABLED = yes
+[LOGGING]
+CONSOLELOG = yes
+
+
+

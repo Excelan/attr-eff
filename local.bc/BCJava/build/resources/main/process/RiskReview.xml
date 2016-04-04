@@ -1,0 +1,55 @@
+<process prototype="DMS:Deviations:RISKReview"  readyfor="test">
+    <!-- Пересмотр рисков -->
+    <parameters>
+        <!-- <param name="complaint" type="urn"  /> -->
+    </parameters>
+
+    <responsibility>
+
+        <stage name="CreateDraft"></stage>
+
+        <stage name="Configuring" title="Конфигурация">
+            <humantask responsible="initiator"  appoint="initiator"/>
+            <rule type="timelimit" value="1d"/>
+        </stage>
+
+        <stage name="Considering" title="Обработка не идентифицированных рисков">
+            <humantask responsible="initiator"  appoint="initiator"/>
+            <rule type="timelimit" value="1d"/>
+        </stage>
+
+        <stage name="Rating" title="Рейтинг рисков">
+            <humantask responsible="initiator"  appoint="initiator"/>
+            <rule type="timelimit" value="1d"/>
+        </stage>
+
+        <stage name="Control" title="Обработка идентифицированных рисков">
+            <humantask responsible="initiator"  appoint="initiator"/>
+            <rule type="timelimit" value="1d"/>
+        </stage>
+
+        <stage name="Route">
+            <target>По результатам пересмотра создаются САРА</target>
+            <delegate optional="yes" process="DMS:Correction:CAPA"/>
+        </stage>
+
+    </responsibility>
+
+    <stages>
+
+        <stage name="CreateDraft" type="automated"/>
+
+        <stage name="Configuring" type="humantask"/>
+
+        <stage name="Considering" type="humantask"/>
+
+        <stage name="Rating" type="humantask"/>
+
+        <stage name="Control" type="humantask"/>
+
+        <stage name="Route" type="automated"/>
+
+    </stages>
+
+
+</process>

@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+  <structure>
+
+    <!-- ПРОТОКОЛ УКД ВЫДАЧА -->
+
+    <section entity="Document:Protocol:RUKD" title="Выдача УКД">
+
+      <field name="eventdate" type="date" title="Дата проведения"/>
+
+      <struct entity="Directory:UKDState:IssueRecord" name="DirectoryUKDStateIssueRecord" multiple="yes" min="1" title="Факт получения">
+
+        <field name="urn" type="hidden" />
+
+        <field name="id" type="string" title="ID копии" edit="lock"/>
+
+        <field name="holder" type="ManagementPostIndividual" title="Должность держателя" />
+
+        <field name="reason" type="text" title="Детали или причина не проведения операции" />
+
+        <field name="issued" type="radio" title="Выдача новой версии">
+          <options>
+            <option value="no" title="Не получил"/>
+            <option value="yes" title="Получил"/>
+          </options>
+        </field>
+
+        <field name="withdrawal" type="select" title="Изъятие старой версии">
+          <options>
+            <option value="na" title="Не применимо"/>
+            <option value="yes" title="Сдал"/>
+            <option value="no" title="Не сдал"/>
+          </options>
+        </field>
+
+
+      </struct>
+
+    </section>
+
+  </structure>
+
+</form>

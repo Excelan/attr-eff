@@ -1,0 +1,9 @@
+<?php 
+/**
+ApplicationFreeAccess
+*/
+interface ApplicationFreeAccess
+{
+	
+}
+?>

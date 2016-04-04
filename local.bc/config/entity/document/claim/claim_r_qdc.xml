@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<entity prototype="Document:Claim:R_QDC" code="R_QDC" manager="Document" uid="1011">
+
+    <passport>
+        <title>Заявка на запуск процесса управления изменениями (САРА)</title>
+    </passport>
+
+    <structure>
+
+        <hasone entity="Directory:BusinessProjects:Item" as="companyproject" title="Текущий проект предприятия"/>
+		<hasone entity="Company:LegalEntity:Counterparty" title="Клиент, для которого создается заявка"/>
+		<hasone entity="BusinessObject:Record:Polymorph" as="warehouse" title="№ слада, для которого создается заявка"/>
+		<field name="specialrequirement" type="text" title="Специальное требование"/>
+		<field name="attachments" type="tarray" title="Вложение"/>
+
+        <hasone entity="Document:Solution:Universal" title="Утвержденный вариант решения"/>
+
+		<field name="initialsituation" type="text" title="Исходная ситуация"/>
+		<field name="changesdescription" type="text" title="Описание изменений"/>
+		<field name="expectedresult" type="text" title="Ожидаемый результат"/>
+		<field name="link" type="text" title="Ссылка на документ"/>
+
+    <!-- TODO -->
+    <field name="rtaken" type="set" title="Принятие ответственности">
+      <value name="myself" title="Моя сфера ответственности"/>
+      <value name="notmyresp" title="Не моя сфера ответственности"/>
+    </field>
+
+    </structure>
+
+    <lists>
+        <list name="solutionvariants" entity="Document:Solution:Universal" ns="9951" title="Предложенные решения"/>
+    </lists>
+
+    <defaultorder>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		<column selector="firstlinedescription"/> <!-- В таблице выводить первые две строки описания, а при наведении полный текст -->
+        <column selector="responsible"/> <!-- ответственный, которому приходит жалоба -->
+		<!-- <column selector="status"/> -->
+		<!-- <column selector="CTA TODO"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

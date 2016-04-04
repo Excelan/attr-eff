@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="Questionnaire" name="getUserList">
+
+    <role>
+
+    </role>
+
+    <request>
+
+        <field name="user" type="integer" required="no"/>
+        <field name="year" type="string" required="yes"/>
+        <field name="month" type="string" required="yes"/>
+        <field name="surn" type="string" required="yes"/>
+
+
+    </request>
+
+
+    <response>
+
+
+        <field name="status" type="string" required="yes"/>
+        <field name="day" type="string" required="yes"/>
+        <field name="mday" type="string" required="yes"/>
+        <field name="globMiss" type="string" required="yes"/>
+
+
+    </response>
+
+</gate>

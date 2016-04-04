@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- Заявление на увольнение-->
+        <section entity="Document:Staffdoc:SD" title="Заявление на увольнение">
+
+            <field name="employee" type="ManagementPostIndividual" title="Сотрудник"/>
+            <field name="masterpart" type="text" title="Основной раздел"/>
+            <field name="date" type="date" title="С какой даты увольнение"/>
+            <field name="based" type="select" title="На основании">
+                <options>
+                    <option value="yes" title="по согласованию сторон" />
+                    <option value="no" title="по собственному желанию" />
+                </options>
+            </field>
+        </section>
+
+    </structure>
+
+</form>

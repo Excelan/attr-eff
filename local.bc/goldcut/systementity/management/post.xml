@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Management:Post:Individual" manager="System" uid="106">
+
+  <passport>
+    <title>Должность</title>
+  </passport>
+
+  <states>
+    <status name="isactive" default="yes" title="Активна"/>
+  </states>
+
+  <structure>
+
+  <field name="origin" title="Origin" type="set">
+      <value name="internal" title="Сотрудник"/>
+      <value name="external" title="Агент"/>
+  </field>
+
+  <hasmany entity="Feed:MPETicket:InboxItem" as="FeedMPETicketInboxItem" title="Feed MPETicket InboxItem"/>
+
+  <!--<hasone entity="People:Employee:Internal" title="Сотрудник"/>-->
+
+  <hasone entity="Management:Post:Group" as="ManagementPostGroup" title="Тип должности"/>
+  <hasone entity="Company:Structure:Department" as="CompanyStructureDepartment" title="Департамент"/>
+
+
+  <field name="title" type="string" title="Название должности"/>
+  <field name="nameofemployee" type="string" title="ФИО (mirror)" system="yes" />
+
+  <useone entity="Management:Post:Individual" as="managedbypost" title="Начальник" />
+  <usemany entity="Management:Post:Individual" as="managedposts" title="Подчиненные"/>
+
+  <field name="created" type="timestamp" title="Время создания" createDefault="now"/>
+  <field name="updated" type="timestamp" title="Время последнего изменения" disabled="yes" createDefault="now" updateDefault="now"/>
+
+  <field name="ordered" type="integer" title="Порядок" system="yes"/>
+
+</structure>
+
+<lists>
+  <list name="takepartinevents" entity="Event:ProcessExecutionPlanned:Staged" ns="1381" reverse="participants" title="Принимает участие в ивентах"/>
+</lists>
+
+<defaultorder/>
+<admincolumns>
+  <column selector="id"/>
+  <column selector="title"/>
+  <column selector="nameofemployee"/>
+  <column selector="ManagementPostGroup"/>
+  <column selector="CompanyStructureDepartment"/>
+  <column selector="CompanyStructureDivision"/>
+  <column selector="employee"/>
+</admincolumns>
+<options/>
+<searchfields/>
+<indexes/>
+</entity>

@@ -1,0 +1,169 @@
+.gcform input[type=text].forminput, .gcform input[type=text].gcstring 
+{
+	padding: 4px; 
+	font-size: 12pt;
+	min-width: 300px;
+	/* border-radius: 5px; */
+}
+
+label 
+{
+	display: block;
+	margin-top: 0.7em;
+	margin-bottom: 0.4em;
+}
+
+label.required {
+	font-weight: bold;
+}
+
+div.flash {
+	background: yellow;
+	margin-top: 10px;
+	margin-bottom: 10px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 12pt;
+	font-weight: bold;
+}
+
+.rightfloat
+{
+float: right
+}
+.leftfloat
+{
+float: left
+}
+.leftpad1 {padding-left: 1em;}
+
+.formcontrols
+{
+	margin-top: 20px;
+	padding: 10px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+}
+.formcontrols input[type=submit]
+{
+	margin-right: 10px
+}
+.controlinfo, .controlstatus
+{
+	line-height: 2;
+}
+
+
+.infogood {color: darkgreen;}
+.infobad {color: red;}
+
+.linkasbutton
+{
+	text-decoration: none;
+	font-size: 12pt;
+	font-weight: normal;	
+	border: 1px solid #003366;
+	border-radius: 5px;
+	padding: 2px 6px;
+	background: #eee;
+}  
+
+fieldset {
+margin: 1em 0;
+padding: 0.5em;
+font: 100%/1 sans-serif;
+border: 1px dotted #777;
+}
+
+legend {
+	padding: 0 1em;
+	/* font: 80%/1 sans-serif; */
+	font-size: 12px;
+}
+
+
+
+.gcfs {
+	border: 1px solid #ddd; 
+	padding: 6px 4px 4px 4px;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+.dragover { background-color: yellow !important; border: 1px solid green; }
+.dropbox { border: 1px solid #ccc; width: 100%; height: 40px; background-color: #eee; text-align: center; position: relative; font-size: 15px !important; line-height: 200%; }
+.dropboxprogress {background-color: yellow; position: absolute; left:0; width: 0px; height: 40px;}
+
+#photosContainer .selected { background-color: #ccc !important; border-right: 0px solid green; }
+
+
+.photosContainer { display: table; width: 100%;}
+
+.photoitem { display: table-row; }
+
+.photoitem { height: 102px;}
+
+.photoitem > div {display: table-cell; vertical-align: top; padding: 4px; border-bottom: 1px solid #ccc; }
+
+.photoitem_move { width: 20px; padding-right: 4px;}
+.move1, .moveData { width: 20px; height: 50px; background-color: #999; display: table-cell; vertical-align: middle; text-align: center; color: white; font-size: 80%}
+.move1S, .moveDataS { width: 20px; height: 20px; background-color: #999; display: table-cell; vertical-align: middle; text-align: center; color: white; font-size: 80%}
+.photoitem_move .move2 { width: 20px; height: 50px; background-color: #555; }
+.move2S { width: 20px; height: 20px; background-color: #555; }
+
+.photoitem .photoitem_image { width: 110px; vertical-align: middle; text-align: center; background-color: #fff;}
+.photoitem .photoitem_titles { width: 400px; }
+.photoitem .photoitem_special { width: 560px; margin-left: 5px;}
+
+.ft {width: 98%; height: 50px; font-weight: bold; font-family: Arial}
+.fd {width: 98%; height: 50px; font-family: Arial}
+
+.move1, .moveData {cursor: pointer;}
+.move1selected {background-color: navy !important; color: blue; font-weight: bold;}
+
+.delPhoto {
+	font-size: 12px;
+	text-decoration: none;
+}
+
+
+
+.fleft { float: left; width: 50% }
+
+.disabledInputText {font-size: 10pt; color: #555; margin: 0; padding: 0;}
+
+.m2var
+{
+	display: block;
+	font-size: 10pt;
+	padding: 2px 4px;
+	margin: 2px 0px;
+	border: 1px solid #ccc;
+	width: 300px;
+}
+a.m2var:hover, a.m2var .selected {
+	background: yellow;
+}
+
+
+
+.gcformfield input[type=text] {
+	width: 99%;
+	padding: 0.2em;
+	font-size: 110%;
+}
+
+.gcformfield input.int, .gcformfield input.float {
+	width: 100px;
+}

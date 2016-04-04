@@ -1,0 +1,26 @@
+<process prototype="DMS:Decisions:Plan" readyfor="test">
+
+    <!-- Plan -->
+
+    <parameters>
+        <param name="initiator" type="urn"  />
+        <param name="subject" type="urn"  /> <!-- передача из вызывающего процесса, что визировать -->
+    </parameters>
+
+    <responsibility>
+        <stage name="Planning" title="Планирование">
+            <humantask responsible="system" appoint="configuration" />
+            <rule type="timelimit" value="1d" />
+        </stage>
+    </responsibility>
+
+    <stages>
+
+        <!-- subject -->
+        <stage name="Planning" type="humantask">
+            <ui task="dataapprove"></ui>
+        </stage>
+
+    </stages>
+
+</process>

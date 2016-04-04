@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>managed form generator test</title>
+    <!-- <link rel="stylesheet" href="/goldcut/assets/css/admin.css"> -->
+
+    <!--  traceur-compiler for load <module es6, traceur-runtime for run precomplied -->
+
+    <script src="/lib/js/when/when.js"></script>
+    <!-- <script src="/lib/js/jsondiff.js"></script> -->
+    <script src="/goldcut/js/gcdom.js"></script>
+    <script src="/goldcut/js/gcoo.js"></script>
+    <script src="/goldcut/js/gcui.js"></script>
+    <script src="/goldcut/js/ui/UIGeneralSelectWindow.js"></script>
+	<script src="/goldcut/js/gcmanagedforms.js"></script>
+    <script src="/goldcut/js/managedformbuilder.js"></script>
+
+    <script src="/lib/js/node_modules/systemjs/dist/system.js" type="text/javascript"></script>
+    <script src="/lib/js/bower_components/textarea-autogrow/textarea-autogrow.js" type="text/javascript"></script>
+
+    <link rel="stylesheet" href="/goldcut/assets/css/gcgrid.css" type="text/css" media="screen" charset="utf-8">
+    <link rel="stylesheet" href="/goldcut/assets/css/managedform.css?1" type="text/css" media="screen" charset="utf-8">
+
+	<script>
+    
+    GC.CALLBACKS['onmoveproductsetnumbers'] = function ()
+    {
+        var val = parseInt(this.getAttribute('data-avail'));
+        console.log("CALLBACK", val);
+    }
+
+    function SimpleDynamicWindow(opts) {
+        console.log('SimpleDynamicWindow', opts);
+        var html = this.buildHTML()
+    }
+    SimpleDynamicWindow.prototype.buildHTML = function()
+    {
+        var df = document.createDocumentFragment();
+        var main = document.createElement('main');
+        main.classList.add('reddebugbox100');
+        df.appendChild(main);
+        this.html = df;
+    }
+    SimpleDynamicWindow.prototype.getDom = function()
+    {
+    	return this.html;
+    }
+
+    function onclickdynwin(callerdata, windowdom)
+    {
+        console.log('onclickdynwin');
+        //console.log(this); // caller a link
+        console.log(callerdata); // caller a link data-*
+        //console.log(callerdata.callparam);
+        console.log(windowdom); // all rendered modal window
+    }
+
+
+
+	</script>
+
+    <style>
+    body { font-family: sans-serif; font-size: 80%; }
+    #managedform {
+        /*border: 1px solid #ccc;*/
+        width: 770px;
+        margin: 0 auto;
+    }
+    </style>
+  </head>
+  <body>
+
+      <!-- STATIC MODAL -->
+      <a data-openwindow="modal_static" data-call="onclickdynwin" href="#">
+          Open static modal
+      </a>
+      <div id="modal_static" class="windowcenter BLK g8 hide">Static html in div</div>
+
+      <br>
+
+      <!-- DYNAMIC MODAL -->
+      <a data-openwindow="modal_dynamic" data-windowcontentrenderer="SimpleDynamicWindow" href="#" data-call="onclickdynwin" data-callparam="12">
+          Open dynamic modal
+      </a>
+
+
+    <!-- FORM -->
+
+	<form id="managedform"
+	    data-structure="/config/form/Examples/detective.xml" data-load="/config/form/Examples/detective.json" data-save=""
+	        action="/echopost" data-managedform="yes" data-onsuccess="alertresult1" data-onerror="alerterror">
+    </form>
+
+
+    <div id="overlay"></div>
+  </body>
+</html>

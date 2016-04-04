@@ -1,0 +1,91 @@
+<?xml version='1.0' standalone='yes'?>
+<core>
+
+	<ns>oauth</ns>
+
+	<section>
+		<name>providers</name>
+		<title>
+			<string lang="en">OAuth providers</string>
+			<string lang="ru">OAuth провайдеры</string>
+		</title>
+		
+		<section>
+			<name>facebook</name>
+			<title><string>Facebook</string></title>
+			<urn>urn-oauth2service-1550101206</urn>
+			<tokenhttpget><option>yes</option></tokenhttpget>
+			<urloauthlogin><url>https://www.facebook.com/dialog/oauth?client_id={appid}&amp;redirect_uri={URI}&amp;scope={scope}&amp;response_type=code</url></urloauthlogin>
+			<urltokentrade><url>https://graph.facebook.com/oauth/access_token?client_id={appid}&amp;redirect_uri={URI}&amp;client_secret={appsecret}&amp;code={code}</url></urltokentrade>
+			<scopes><char>email,user_birthday,user_hometown,user_location,user_likes,user_photos,user_website</char></scopes>
+		</section>
+		
+		<section>
+			<name>twitter</name>
+			<title><string>Twitter</string></title>
+			<urn>urn-oauth2service-1641529108</urn>
+			<oauthV1><option>yes</option></oauthV1>
+			<localaccess><option>yes</option></localaccess>
+		</section>
+		
+		<section>
+			<name>vk</name>
+			<title><string>ВКонтакте</string></title>
+			<urn>urn-oauth2service-1576981807</urn>
+			<tokenhttpget><option>yes</option></tokenhttpget>
+			<urloauthlogin><url>http://oauth.vk.com/authorize?client_id={appid}&amp;redirect_uri={URI}&amp;response_type=code&amp;scope={scope}</url></urloauthlogin>
+			<urltokentrade><url>https://oauth.vk.com/access_token?client_id={appid}&amp;client_secret={appsecret}&amp;code={code}&amp;redirect_uri={URI}</url></urltokentrade>
+			<scopes><char>notify,notifications</char></scopes>
+		</section>
+		
+		<section>
+			<name>google</name>
+			<title><string>Google</string></title>
+			<urn>urn-oauth2service-1163206032</urn>
+			<urloauthlogin><url>https://accounts.google.com/o/oauth2/auth?redirect_uri={URI}&amp;response_type=code&amp;client_id={appid}&amp;scope={scope}</url></urloauthlogin>
+			<urltokentrade><url>https://accounts.google.com/o/oauth2/token?code={code}&amp;client_id={appid}&amp;client_secret={appsecret}&amp;redirect_uri={URI}&amp;grant_type=authorization_code</url></urltokentrade>
+			<scopes><char>https://www.googleapis.com/auth/userinfo.email</char></scopes>
+			<documentation><url>https://developers.google.com/accounts/docs/OAuth2Login</url></documentation>
+		</section>
+
+		<section>
+			<name>yandex</name>
+			<title><string>Яндекс</string></title>
+			<urn>urn-oauth2service-1489576815</urn>
+			<urloauthlogin><url>https://oauth.yandex.ru/authorize?response_type=code&amp;client_id={appid}</url></urloauthlogin>
+			<urltokentrade><url>https://oauth.yandex.ru/token?grant_type=authorization_code&amp;code={code}&amp;client_id={appid}&amp;client_secret={appsecret}</url></urltokentrade>
+		</section>
+
+        <section>
+            <name>linkedin</name>
+            <title><string>LinkedIn</string></title>
+            <urn>urn-oauth2service-1163206033</urn>
+            <tokenhttpget><option>yes</option></tokenhttpget>
+            <urloauthlogin><url>https://www.linkedin.com/uas/oauth2/authorization?response_type=code&amp;client_id={appid}&amp;redirect_uri={URI}&amp;state=135641358&amp;scope={scope}</url></urloauthlogin>
+            <urltokentrade><url>https://www.linkedin.com/uas/oauth2/accessToken?code={code}&amp;client_id={appid}&amp;client_secret={appsecret}&amp;redirect_uri={URI}&amp;grant_type=authorization_code</url></urltokentrade>
+            <scopes><char>r_basicprofile r_emailaddress rw_company_admin w_share</char></scopes>
+            <documentation><url>https://developer.linkedin.com/docs/oauth2</url></documentation>
+        </section>
+
+		<section>
+			<name>igram</name>
+			<title><string>Instagram</string></title>
+			<urn>urn-oauth2service-1489576815</urn>
+			<urloauthlogin><url>https://api.instagram.com/oauth/authorize/?client_id={$appid}&amp;redirect_uri={$URI}&amp;response_type=code</url></urloauthlogin>
+			<urltokentrade><url>https://api.instagram.com/oauth/access_token?code={code}&amp;client_id={$appid}&amp;client_secret={$appsecret}&amp;redirect_uri={URI}&amp;grant_type=authorization_code</url></urltokentrade>
+		</section>
+
+        <section>
+            <name>pinterest</name>
+            <title><string>Pinterest</string></title>
+            <urn>urn-oauth2service-1939576815</urn>
+            <tokenhttpget><option>yes</option></tokenhttpget>
+            <urloauthlogin><url>https://pinterest.com/oauth/?response_type=token&amp;consumer_id={appid}</url></urloauthlogin>
+            <urltokentrade><url>https://api.pinterest.com/v2/oauth/access_token?redirect_uri={URI}&amp;scope={scope}&amp;client_secret={appsecret}&amp;code={code}</url></urltokentrade>
+            <scopes><char>read read_write</char></scopes>
+            <documentation><url>http://wiki.gic.mx/pinterest-developers/</url></documentation>
+        </section>
+
+	</section>
+
+</core>

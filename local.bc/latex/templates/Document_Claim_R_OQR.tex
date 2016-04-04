@@ -1,0 +1,66 @@
+\input{../templates/DMS}
+
+\newcommand{\parDoc}{Протокол Служебного расследования №09876543}
+\newcommand{\childDoc}{Лист Аттестации №09876543}
+\newcommand{\relatedDoc}{CОП №3456789}
+
+\newcommand{\varInitiator}{Фурс C.Л.}
+\newcommand{\varVisant}{Пижук В.М.}
+\newcommand{\varApprover}{Павлова В.В.}
+\newcommand{\varResponsible}{Иванов И.И.}
+\newcommand{\varDoer}{Сидорова С.С.}
+
+\newcommand{\initiatorPost}{Контролер качества}
+\newcommand{\visantPost}{Главный инженер}
+\newcommand{\approverPost}{Директор}
+\newcommand{\responsibPost}{Начальник отдела качества}
+\newcommand{\doerPost}{Менеджер по обучению}
+
+\input{../templates/DMS_Claim}
+
+{{graphicspath}}
+
+\begin{document}
+
+\pagestyle{maintext}
+
+\center{\textbf{ЗАЯВКА}}
+\vspace{1mm}
+\center{\textbf{НА ПОКУПКУ / ПОЛУЧЕНИЕ РАСХОДНЫХ МАТЕРИАЛОВ}}
+
+\vspace{5mm}
+
+\begin{tabu} to \textwidth {X X}
+\textbf{Текущий проект предприятия}                   &  {{#companyproject}} {{title}} {{/companyproject}} \\ [2ex]
+\textbf{Клиент, для которого создается заявка}        &  {{#CompanyLegalEntityCounterparty}} {{title}} {{/CompanyLegalEntityCounterparty}}  \\ [2ex]
+\textbf{№ Склада, для которого создается заявка}      &  {{#warehouse}} {{title}} {{/warehouse}} \\  [2ex]
+\textbf{Ф.И.О получателя}      &  {{/purchaseorder}}  {{nameofemployee}} {{#purchaseorder}}   \\  [2ex]
+\textbf{Название расходного материала/НМА}          &  {{purchasename}}\\  [2ex]
+\textbf{Требуемое количество расходного материала/НМА} &  {{purchasequantity}} \\  [2ex]
+\end{tabu}
+
+
+
+\vspace{1mm}
+
+\begin{tabu} to \textwidth { |X|X|}
+\hline
+\taburulecolor{gray}
+\textbf{Родительский документ\rule{0pt}{3ex} }   & \parDoc{} \\ [1ex]  \hline
+\textbf{Дочерние документы\rule{0pt}{3ex} }      & \childDoc{} \\ [1ex] \hline
+\textbf{Связанные документы\rule{0pt}{3ex}}      & \relatedDoc{}  \\ [1ex] \hline
+\end{tabu}
+
+\vspace{1mm}
+
+\begin{tabu} to \textwidth { |X|X|X|}
+\hline
+\taburulecolor{gray}
+\textbf{Инициатор\rule{0pt}{3ex} }     & \initiatorPost{}  & \varInitiator{}   \\ [1ex]  \hline
+\textbf{Византы\rule{0pt}{3ex}}        & \visantPost{}     & \varVisant{}      \\ [1ex]  \hline
+\textbf{Утверждающий\rule{0pt}{3ex}}   & \approverPost{}   & \varApprover{}    \\ [1ex]  \hline
+\textbf{Ответственный\rule{0pt}{3ex}}  & \responsibPost{}  & \varResponsible{} \\ [1ex]  \hline
+\textbf{Исполнитель\rule{0pt}{3ex}}    & \varDoer{}        &  \varDoer{}       \\ [1ex]  \hline
+\end{tabu}
+
+\end{document}

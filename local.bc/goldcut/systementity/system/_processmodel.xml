@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Definition:ProcessModel:System" manager="SystemData" uid="9327222">
+
+  <passport>
+    <title>PROCESS MODEL</title>
+  </passport>
+
+  <states>
+    <status name="directstart" default="yes" title="Direct Start"/>
+  </states>
+
+  <structure>
+
+    <field name="title" type="string" title="Имя"/>
+    <field name="indomain" type="string" title="Домен"/>
+    <field name="target" type="string" title="Цель"/>
+    <field name="way" type="string" title="Путь"/>
+
+  </structure>
+
+  <lists>
+  </lists>
+
+  <defaultorder>
+    <by field="indomain" order="ASC"/>
+    <by field="target" order="ASC"/>
+    <by field="way" order="ASC"/>
+  </defaultorder>
+
+  <admincolumns>
+    <column selector="title"/>
+    <column selector="indomain"/>
+    <column selector="target"/>
+    <column selector="way"/>
+  </admincolumns>
+
+  <options>
+    <aparam name="clonable" value="yes" />
+  </options>
+
+  <searchfields/>
+
+  <indexes>
+    <unique column="title"/>
+    <unique column="domain"/>
+  </indexes>
+
+</entity>

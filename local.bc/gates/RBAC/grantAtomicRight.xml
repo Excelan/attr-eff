@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="RBAC" name="grantAtomicRight">
+
+  <role></role>
+
+  <column selector="actor"/>
+  <column selector="cando"/>
+  <column selector="withprototype"/>
+  <column selector="onid"/>
+
+  <request>
+      <field name="actor" type="urn" required="yes"/>
+      <field name="cando" type="string" required="yes"/>
+      <field name="withprototype" type="urn" required="yes"/>
+      <field name="onid" type="long" required="yes"/>
+  </request>
+
+  <response>
+      <field name="status" type="integer" required="yes"/>
+  </response>
+
+</gate>

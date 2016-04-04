@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- Жалоба - на выполнение инженерно-технических работ -->
+
+        <!--Обязательные поля для всех типов Жалоб -->
+        <section entity="Document:Complaint:C_IW" title="Жалоба на выполнение инженерно-технических работ">
+
+          <field name="client" type="CompanyLegalEntityCounterparty" title="Клиент, для которого создается жалоба" required="yes"/>
+          <field name="warehouse" type="BusinessObject" title="№ склада, для которого создается жалоба" required="yes"/>
+          <field name="datestart" type="date" title="Дата начала инцидента" required="yes"/>
+          <field name="dateend" type="date" title="Дата окончания инцидента, если он устранен" required="yes"/>
+          <field name="description" type="text" title="Описание жалобы" required="yes"/>
+          <field name="attachments" type="attachment" min="1"  multiple="yes" title="Вложение"/>
+
+
+        <!--Индивидуальные поля по каждому типу Жалобы -->
+            <field name="counterparty" type="CompanyLegalEntityCounterparty" title="Контрагент">
+                <query gate="Selector/company"/>
+            </field>
+            <field name="DocumentContractTME" type="Document" title="Договор">
+                <!-- <query gate="Selector/document"/> -->
+            </field>
+
+        </section>
+
+    </structure>
+
+</form>

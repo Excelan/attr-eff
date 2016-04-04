@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="User" name="GetUsersByPost">
+
+    <role>
+
+    </role>
+
+    <request>
+
+        <field name="user" type="integer" required="no"/>
+        <field name="post" type="integer" required="yes"/>
+
+    </request>
+
+
+    <response>
+
+        <field name="users" type="iarray" required="yes"/>
+
+    </response>
+
+</gate>

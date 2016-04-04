@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="TEST" name="TEST">
+
+    <role>
+
+    </role>
+
+    <request>
+
+        <field name="user" type="urn" required="no"/>
+        <field name="class" type="string" required="no"/>
+        <field name="type" type="string" required="no"/>
+        <field name="initiation" type="string" required="no"/>
+        <field name="urn" type="string" required="no"/>
+
+    </request>
+
+
+    <response>
+
+        <field name="data" type="text" required="yes"/>
+
+    </response>
+
+</gate>

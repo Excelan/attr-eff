@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity manager="SystemData" prototype="PushNotification:Template:Simple" uid="122011">
+    <passport>
+        <title>Push message template</title>
+    </passport>
+    <international>
+        <language code="ru"/>
+        <translations>
+            <language code="en"/>
+        </translations>
+    </international>
+    <states/>
+    <structure>
+        <field name="title" type="string" title="Заголовок"/>
+        <field name="description" type="text" title="Описание"/>
+    </structure>
+    <lists/>
+    <defaultorder>
+        <by field="title" order="ASC"/>
+    </defaultorder>
+    <admincolumns>
+        <column selector="title"/>
+        <column selector="uri"/>
+    </admincolumns>
+    <options>
+      <aparam name="directmanage" type="boolean" value="no"/>
+    </options>
+    <searchfields/>
+    <indexes>
+        <unique column="uri"/>
+    </indexes>
+</entity>

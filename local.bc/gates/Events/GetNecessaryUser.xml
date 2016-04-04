@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="Events" name="GetNecessaryUser">
+
+    <role>
+
+    </role>
+
+    <request>
+
+        <field name="user" type="integer" required="no"/>
+        <field name="year" type="string" required="yes"/>
+        <field name="month" type="string" required="yes"/>
+        <field name="urn" type="string" required="no"/>
+
+
+    </request>
+
+
+    <response>
+
+
+        <field name="status" type="string" required="yes"/>
+        <field name="day" type="string" required="yes"/>
+        <field name="mday" type="string" required="yes"/>
+        <field name="globMiss" type="string" required="yes"/>
+
+
+    </response>
+
+</gate>

@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- Протокол самоинспекции по риску-->
+
+        <section type="context" title="Инфо" entity="Document:Protocol:SI">
+
+            <field name="date" title="Дата мероприятия" type="date"/>
+            <field name="BusinessObjectRecordPolymorph" title="Место проведения мероприятия" type="BusinessObject">
+                <query gate="Selector/businessobject"/>
+            </field>
+
+        </section>
+
+        <section type="context" title="Идентифицированные риски">
+
+            <struct multiple="yes" name="riskselfinspection" title="Самоинспекция по риску">
+
+                <struct entity="RiskManagement:Risk:Approved" name="controlriskapproved" title="Риск" type="context">
+
+                    <field name="riskapproved" title="Названия риска" type="string" edit="lock" />
+                    <field name="BusinessObjectRecordPolymorph" title="Объект/процесс" type="BusinessObject" edit="lock">
+                        <query gate="Selector/businessobject"/>
+                    </field>
+                    <field name="ManagementPostIndividual" title="Ответственный за контроль риска" type="ManagementPostIndividual" edit="lock">
+                        <query gate="Selector/management"/>
+                    </field>
+                    <field name="controlact" title="Контролирующее действие" type="text" edit="lock"/>
+
+                </struct>
+
+
+                <struct name="smartfields" anonymous="yes" title="Smart поля, название секции скрыто в форме">
+
+                    <field name="responsibleevent" title="Ответственный по мероприятию" type="ManagementPostIndividual" edit="lock">
+                        <query gate="Selector/management"/>
+                    </field>
+
+                    <field name="dateprev" title="Дата предыдущей самоинспекции (smart)" type="date" edit="lock"/>
+
+                </struct>
+
+
+                <struct entity="Directory:RiskProtocolSolution:SI" name="DirectoryRiskProtocolSolutionSI" title="Результат самоинспекции">
+                    <field name="solutiononrisk" title="Решение" type="select">
+                        <options>
+                            <option value="yes" title="Соответсвует"/>
+                            <option value="remark" title="Соответсвует с замечаниями"/>
+                            <option value="no" title="Не соответствует"/>
+                        </options>
+                    </field>
+                    <field name="comment" title="Комментарий" type="text"/>
+                </struct>
+
+            </struct>
+
+        </section>
+
+    </structure>
+
+</form>

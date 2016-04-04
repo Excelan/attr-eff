@@ -1,0 +1,2 @@
+[paths]
+default = ssh://goldcut@dev.icebrg.net:223/hg

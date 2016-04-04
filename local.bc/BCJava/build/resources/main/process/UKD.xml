@@ -1,0 +1,56 @@
+<process prototype="DMS:Regulation:UKD"  readyfor="test">
+
+  <!-- UKD -->
+  <!--ТЗ: https://docs.google.com/document/d/1RFGPBSz42HrXIw6bKkiaKjNIpq9Ui0kzj2KPv4ZN1YI/edit  -->
+
+  <parameters></parameters>
+
+  <responsibility>
+
+    <!--
+    Call From Attestation?
+    PrepareProtocolRUKD
+    -->
+    <stage name="CreateDraft"/>
+
+    <stage name="Configuring" title="Коррекция списка сотрудников">
+      <target>Цель - выдача или изъятие, коррекция списка, кому выдавать</target>
+      <humantask responsible="initiator"  appoint="initiator"/>
+      <rule type="timelimit" value="1d"/>
+    </stage>
+
+    <stage name="Planning" title="Планирование даты">
+      <target>Цель - запланировать дату ивента Выдача УКД</target>
+      <call process="DMS:Decisions:Plan"/>
+      <rule type="timelimit" value="1d"/>
+    </stage>
+
+    <stage name="Print" title="Генерация УКД">
+      <target>Цель - In генерация УКД, оператор скачивает и печатает. In DMS/UKD/GenerateAllPDFForSOP</target>
+      <humantask responsible="initiator"  appoint="initiator"/>
+      <rule type="timelimit" value="1d"/>
+    </stage>
+
+    <stage name="Issue" title="Выдача/изъятие УКД">
+      <target>Цель - изъятие старой и выдача новой УКД. Back to Configuring если выдали еще не всем</target>
+      <humantask responsible="initiator"  appoint="initiator"/>
+      <rule type="timelimit" value="1d"/>
+    </stage>
+
+  </responsibility>
+
+  <stages>
+
+    <stage name="CreateDraft" type="automated" />
+
+    <stage name="Configuring" type="humantask" />
+
+    <stage name="Planning" type="delegate"/>
+
+    <stage name="Print" type="humantask"/>
+
+    <stage name="Issue" type="humantask"/>
+
+  </stages>
+
+</process>

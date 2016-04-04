@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        
+        <title>GOLDCUT FileAPI nad XHR2 ajax file uploading with Face detect, file select and drag area</title>
+        
+        <script type="text/javascript" src="/goldcut/js/gcdom.js"></script>
+        <script type="text/javascript" src="/goldcut/js/fapi.js"></script>
+        <script type="text/javascript" src="/goldcut/js/facedetect/ccv.js"></script>
+        <script type="text/javascript" src="/goldcut/js/facedetect/face.js"></script>
+        <script>
+        DETECT_FACES = true;
+        function showUploadOverlay()
+        {
+        		document.getElementById('light').style.display='block';
+        		document.getElementById('fade').style.display='block'
+        }
+        function hideUploadOverlay()
+        {
+        		document.getElementById('light').style.display='none';
+        		document.getElementById('fade').style.display='none'
+        }
+        </script>
+        <style>
+        #fileDrop {
+			width: 100%;
+			height: 100px;
+			border: dashed 1px olive;
+			background-color: yellow;
+			float: left;
+			color: black;
+		}
+		#fileDrop p {
+			margin: 0;
+			padding: 0;
+			text-align: center;
+			font-size: 1.6em;
+			line-height: 100px;
+		}
+		.black_overlay{
+			display: none;
+			position: absolute;
+			top: 0%;
+			left: 0%;
+			width: 100%;
+			height: 100%;
+			background-color: black;
+			z-index:1001;
+			-moz-opacity: 0.6;
+			opacity:.60;
+			filter: alpha(opacity=60);
+		}
+		.white_content {
+			display: none;
+			position: absolute;
+			top: 25%;
+			left: 25%;
+			width: 50%;
+			height: 50%;
+			padding: 16px;
+			border: 6px solid white;
+			border-radius: 20px;
+			background-color: white;
+			z-index:1002;
+			overflow: auto;
+		}
+        #src {
+            display: none;
+        }
+        </style>
+        <script>
+
+            div = null;
+
+            var onAllUploadedLocalOLD = function(data)
+            {
+                console.log('all uploaded local');
+                console.log(data);
+            }
+
+            onAllUploadedLocal = function(data)
+            {
+                console.log('all uploaded local');
+                console.log(data);
+                id('preview').src = data[0].thumbnail.uri;
+                var w = elWidth(id('preview'))
+                var h = elHeight(id('preview'))
+                console.log("Uploaded " + data.length + " files. First size is " + data[0].filesize);
+
+                setStyle(id('previewwrap'), 'width', w+'px');
+                setStyle(id('previewwrap'), 'height', h+'px');
+
+                // remove old face border
+                if (div)
+                {
+                    id('previewwrap').removeChild(div);
+                }
+
+                if (data[0].facelist)
+                {
+                    var facelist = (data[0].facelist);
+                    //console.log(facelist)
+                    facelist = JSON.parse(facelist)
+                    //console.log(facelist)
+                    for (var i=0;i<facelist.length;i++)
+                    {
+                        var face = facelist[i];
+                        console.log(face)
+                        var offsetX = parseFloat(face[0])
+                        var offsetY = parseFloat(face[1])
+                        var radius = parseFloat(face[2])
+                        console.log(offsetX, offsetY, radius)
+                        div = document.createElement('div');
+                        setStyle(div, 'border', '2px solid red');
+                        setStyle(div, 'position', 'absolute');
+                        setStyle(div, 'left', (offsetX*100  - radius*100) + '%'); // - radius*100
+                        setStyle(div, 'top', (offsetY*100  - radius*100) + '%'); // - radius*100
+                        setStyle(div, 'width', radius*100*2 + '%');
+                        setStyle(div, 'height', radius*100*2 * w/h + '%');
+                        id('previewwrap').appendChild(div);
+                    }
+                }
+            }
+        </script>
+    </head>
+    <body>
+        
+    		<div id="wrap">
+
+            <form action="/goldcut/upload/stream.php" method="post" enctype="multipart/form-data">
+
+                <input type="hidden" id="onalluploadedcall" value="onAllUploadedLocal">
+                <input type="hidden" id="upload_destination" value="urn-photoitem">
+                <input type="hidden" id="upload_container" value="urn-photoalbum-78">
+
+                <input type="file" id="fileField" name="fileField" multiple />
+
+                <div id="fileDrop">
+                    <p>Drop files here</p>
+                </div>
+
+                <!-- used in face detect -->
+                <canvas id="src"></canvas>
+
+                <div id="light" class="white_content">
+                    Processing...
+                </div>
+                <div id="fade" class="black_overlay"></div>
+
+            </form>
+
+                <br style="clear: both;">
+
+                <div style="width: 100px; height: 100px; position: relative; border: 1px solid red" id="previewwrap">
+                    <img id="preview" src="" style="position: absolute; top:0; left:0">
+                </div>
+
+        </div>
+
+
+    </body>
+</html>

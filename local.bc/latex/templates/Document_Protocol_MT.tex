@@ -1,0 +1,74 @@
+\input{../templates/DMS_prot}
+\input{../templates/DMS_Protocol}
+
+{{graphicspath}}
+
+\pagestyle{fancy}
+
+
+\ExplSyntaxOn
+\newcommand{\changedate}[2][/]{%
+  \tl_set:Nx \l_tmpa_tl {#2}
+  \seq_set_split:NnV \l_tmpa_seq {-} {\l_tmpa_tl}
+  \seq_reverse:N \l_tmpa_seq
+  \seq_use:Nnnn \l_tmpa_seq {#1} {#1} {#1}
+}
+\ExplSyntaxOff
+
+
+\newcommand{\webdate}{ {{date}} }
+\newcommand{\webdatep}{ {{datep}} }
+
+
+
+\fancyfoot[C]{
+\begin{tabu} to \textwidth { X[0.15,l,p] X[0.45,l,p] }
+\hline
+& \\
+\textbf{Глава комиссии:} & {{#bo}}  {{#MateriallyResponsible}}  {{title}}  {{/MateriallyResponsible}} {{/bo}}  \rule{4cm}{0.5pt}  \\
+\textbf{Другие участники} & {{#bo}}  {{#ResponsibleMaintenance}} {{title}} {{/ResponsibleMaintenance}} {{/bo}} \rule{4cm}{0.5pt}  \\
+& {{#bo}}  {{#ResponsibleVerification}} {{title}}  {{/ResponsibleVerification}} {{/bo}} \rule{4cm}{0.5pt}  \\
+\end{tabu}
+}
+
+
+\renewcommand{\headrulewidth}{0pt}
+
+\begin{document}
+
+\begin{flushright}
+ \textbf{Дата текущей поверки:}   \changedate{\webdate} \\
+ \textbf{Дата предыдущей поверки:} \changedate{\webdatep}   \\
+ \end{flushright}
+
+\begin{center}
+{\large \textbf{\textsc{Протокол поверки }}}
+\end{center}
+
+\vspace{0.5cm}
+
+\textbf{Объект:}  {{#bo}} {{title}} {{/bo}} \\
+\textbf{Договор на проведение поверки:} {{contractforverif}}
+
+\begin{center}
+ \textbf{\textsc{Результаты проведения поверки}} \\
+ \end{center}
+{{results}}
+
+\newpage
+\pagestyle{dodatki}
+
+{{#upload}}
+
+\vfill
+\begin{figure}[hb]
+  \centering
+{{=<% %>=}}
+  \includegraphics[width=\textwidth]{<% . %>}
+<%={{ }}=%>
+\end{figure}
+\vfill
+
+{{/upload}}
+
+\end{document}

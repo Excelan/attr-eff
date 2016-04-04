@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="Selector/directory" name="DirectoryKindOfOperationsItem">
+
+    <role>
+
+    </role>
+
+    <request>
+
+        <field name="user" type="urn" required="no"/>
+        <field name="mpe" type="urn" required="no"/>
+
+    </request>
+
+
+    <response>
+
+        <field name="options" type="struct" required="no" multiple="yes" minimum="1" maximum="1000">
+            <field name="value" type="string" required="yes"/>
+            <field name="title" type="string" required="yes"/>
+        </field>
+
+    </response>
+
+</gate>

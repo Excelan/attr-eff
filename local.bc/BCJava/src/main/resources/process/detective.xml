@@ -1,0 +1,66 @@
+<process prototype="DMS:Complaints:Detective" readyfor="test">
+
+    <!-- СЛУЖЕБНОЕ РАССЛЕДОВАНИЕ -->
+
+    <!-- 2 варианта - юзер инициирует или система иницирует от имени юзера -->
+
+    <parameters>
+        <param name="Claim" type="urn"/> <!-- Жалоба, на основании которой делается расследование-->
+    </parameters>
+
+    <responsibility>
+        <stage name="ProtocolCreateDraft"> <!-- нельзя начать процесс вручную (в тч нельзя создать документ Протоокл СР напрямую) -->
+
+        </stage>
+        <stage name="ProtocolEditing" title="Редактирование">
+            <target>Цель - сформировать протокол расследования на основании данных в Жалобе</target>
+            <humantask responsible="protocoleditor" appoint="configuration"/>
+            <rule type="timelimit" value="1d"/>
+        </stage>
+        <stage name="ProtocolExtendRisk" title="Обработка">
+            <target>Цель - определить риски. Can be skipped если жалоба отклонена</target>
+            <humantask responsible="riskmanager" appoint="configuration"/>
+            <rule type="timelimit" value="2d"/>
+        </stage>
+        <stage name="Vising" title="Визирование">
+            <call process="DMS:Decisions:Visa"/>
+            <rule type="timelimit" value="1d"/>
+            <forward to="Approving"/>
+            <backward to="ProtocolEditing"/>
+        </stage>
+        <stage name="Approving" title="Утверждение">
+            <call process="DMS:Decisions:Approvement"/>
+            <rule type="timelimit" value="1d"/>
+            <forward to="Route"/>
+            <backward to="ProtocolEditing"/>
+        </stage>
+        <stage name="Route">
+            <target>На основании данных процесса начать (или нет) процесс CAPA</target>
+            <delegate optional="yes" process="CAPA-CAPA-CAPA"/>
+        </stage>
+    </responsibility>
+
+    <stages>
+
+        <stage name="ProtocolCreateDraft" type="automated"></stage>
+
+        <stage name="ProtocolEditing" type="humantask">
+            <ui task="formedit"></ui>
+        </stage>
+
+        <stage name="ProtocolExtendRisk" type="humantask">
+            <ui task="datapreview"></ui>
+        </stage>
+
+        <stage name="Vising" type="delegate"></stage>
+
+        <stage name="Approving" type="delegate"></stage>
+
+        <stage name="Route" type="automated"></stage>
+
+        <!-- doc states / vs process stages -->
+
+    </stages>
+
+
+</process>

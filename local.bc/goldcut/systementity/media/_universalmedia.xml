@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Media:UniversalImage:Container" manager="Photo" uid="4980">
+  <passport>
+    <title>UniversalImage</title>
+  </passport>
+  <states>
+
+  </states>
+  <structure>
+    <!-- <belongsto entity="photo"/> -->
+    <!-- <belongsto entity="news"/> -->
+    <field name="ordered" type="integer" title="Порядок" system="yes"/>
+    <field name="title" type="string" title="Заголовок"/>
+    <field name="anons" type="richtext" title="Анонс" autoparagraph="yes" htmlallowed="p,br,a[href],cite,b,strong,i,em"/>
+    <field name="uri" type="string" title="URI"/>
+    <field name="alt" type="string" title="Alt"/>
+    <field name="ext" type="string" title="ext"/>
+    <field name="width" type="integer" title="Ширина"/>
+    <field name="height" type="integer" title="Высота"/>
+    <field name="filesize" type="integer" title=""/>
+    <field name="folder" type="string" title="Папка"/>
+    <field name="created" type="timestamp" title="Время создания" createDefault="now"/>
+    <field name="thumbnail" type="image" title="Thumbnail base64"/>
+  </structure>
+  <lists/>
+  <defaultorder/>
+  <admincolumns/>
+  <options>
+    <aparam name="directmanage" type="boolean" value="no"/>
+  </options>
+  <imagesettings>
+    <mainimage paradigm="C" hd="no">
+      <size eachside="800"/>
+    </mainimage>
+    <previews paradigm="C" hd="no">
+      <size name="thumb" eachside="100" base64="no"/>
+    </previews>
+  </imagesettings>
+  <searchfields/>
+  <indexes/>
+</entity>

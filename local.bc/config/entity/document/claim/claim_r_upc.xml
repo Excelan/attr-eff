@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<entity prototype="Document:Claim:R_UPC" code="R_UPC" manager="Document" uid="1018">
+
+    <passport>
+        <title>Заявка на выдачу/изъятие пластиковой карточки/изменение категории доступа СКД</title>
+		 <!-- Ограничение доступа - создание только для начальников -->
+    </passport>
+
+    <structure>
+
+        <hasone entity="Directory:BusinessProjects:Item" as="companyproject" title="Текущий проект предприятия"/>
+		<hasone entity="Company:LegalEntity:Counterparty" title="Клиент, для которого создается заявка"/>
+		<hasone entity="BusinessObject:Record:Polymorph" as="warehouse" title="№ слада, для которого создается заявка"/>
+		<field name="specialrequirement" type="text" title="Специальное требование"/>
+		<field name="attachments" type="tarray" title="Вложение"/>
+
+        <hasone entity="Document:Solution:Universal" title="Утвержденный вариант решения"/>
+
+		<hasone entity="Management:Post:Individual" as="mailuser" title="Ф.И.О. сотрудника"/>
+		<field name="descriptionneed" type="text" title="Описание необходимости"/>
+		<field name="permissionscurrent" type="text" title="Текущие права доступа"/>
+		<field name="permissionsnew" type="text" title="Новые права доступа"/>
+
+		<field name="processtype" type="set" title="Тип процесса">
+		            <value name="сhange" title="Изменение"/>
+		            <value name="issue" title="Выдача"/>
+		            <value name="withdrawal" title="Изъятие"/>
+		</field>
+
+    <!-- TODO -->
+    <field name="rtaken" type="set" title="Принятие ответственности">
+      <value name="myself" title="Моя сфера ответственности"/>
+      <value name="notmyresp" title="Не моя сфера ответственности"/>
+    </field>  
+
+    </structure>
+
+    <lists>
+		<list name="skduser" entity="Management:Post:Individual" ns="3300" title="Список пользователей для выдачи/изъятие"/>
+        <list name="solutionvariants" entity="Document:Solution:Universal" ns="9951" title="Предложенные решения"/>
+    </lists>
+
+    <defaultorder>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		<column selector="firstlinedescription"/> <!-- В таблице выводить первые две строки описания, а при наведении полный текст -->
+        <column selector="responsible"/> <!-- ответственный, которому приходит жалоба -->
+		<!-- <column selector="status"/> -->
+		<!-- <column selector="CTA TODO"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

@@ -1,0 +1,672 @@
+/* debug */
+/*[data-struct] { border: `px solid green; margin: 0em; }*/
+/*.multipleinput input { border: 1px dashed blue; }*/
+/*.multiplestruct { border: 1px solid blue; padding: 5px; margin: 10px 0; }*/
+input[disabled] { color: #000; background: #f0f0f0; }
+
+/* special */
+/*.contextsection  { background: yellow; border:0; margin:0;}*/
+.contextsection {
+    background-color: #f7f9ff !important;
+    width: 810px;
+    position: relative;
+    left: -20px;
+}
+
+.contextsection > div,
+.contextsection > section{
+    padding: 0 20px;
+}
+
+.contextsection > div.legend{
+    margin: 0 20px;
+    padding: 20px 20px 6px 0;
+}
+
+
+/*position:relative;     padding-top:20px;*/
+/*position:absolute; top: -0em; left:1em; border-bottom: 2px solid blue; width:95%; margin: 0; padding: 0;  */
+
+/* Form system */
+
+/* Form Fieldset Section */
+.fieldset {
+    font-size: 16px;
+    margin: 0 0 20px;
+    padding: 0 0 20px;
+}
+.fieldset .fieldset { margin-left: 1em;}
+
+.legend {
+    border-bottom: 1px solid #1c45ab;
+    clear: both;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 14px;
+    margin: 22px 0px 20px;
+    padding-bottom: 6px;
+    padding-left: 0;
+    padding-right: 0;
+    text-transform: uppercase;
+}
+
+/* Form Section */
+
+/*  ???  */
+section.multiplestruct {
+    margin: 10px 0;
+}
+
+section.structsection.anon {
+    /*background-color: #f0f0f0;*/
+}
+
+section.structsection.nonanon {
+    margin: 10px 0;
+}
+
+div.everystructheader
+{
+    color: #999;
+    font-size: 14px;
+    text-transform: uppercase;
+    margin: 0 ;
+    padding: 2px 0 6px 0;
+    border-bottom: 1px solid #dfdfdf;
+}
+
+div.everystructheader span{
+    float: right;
+}
+
+div.everystructheader span img{
+    vertical-align: middle;
+    cursor: pointer;
+}
+
+section.structsection > header {
+    color: #555;
+    font-size: 11px;
+    padding: 5px 0;
+    margin-bottom: 5px;
+}
+
+section.structsection > header.ofstruct.single {
+    font-size: 11px;
+    color: navy !important;
+    text-transform: uppercase;
+    border-bottom: 1px dotted #ddd !important;
+}
+section.structsection > footer.ofstruct.single {
+    border-top: 1px dotted #ddd;
+}
+
+section.structsection.nonanon[data-level="1"] .everystructheadertext {
+    font-size: 15px;
+    color: navy;
+}
+section.structsection.nonanon[data-level="2"] .everystructheadertext, section.structsection.nonanon[data-level="2"] header.ofstruct {
+    font-size: 13px;
+    color: navy;
+    /*padding-left: 10px;*/
+}
+section.structsection.nonanon[data-level="3"] .everystructheadertext {
+    font-size: 11px;
+    color: navy;
+    /*padding-left: 20px;*/
+}
+section.structsection.nonanon[data-level="2"] .everystructheadertext::before, section.structsection.nonanon[data-level="2"] header.ofstruct::before {
+    /*content: "1.1 ";*/
+}
+section.structsection.nonanon[data-level="3"] .everystructheadertext::before {
+    /*content: "1.2.1 ";*/
+}
+
+
+textarea[disabled], div[data-disabled="yes"] {
+    background-color: #eee;
+}
+
+
+section.structsection > footer.ofstruct {
+    text-align: right;
+}
+section.structsection > footer.ofstruct a {
+    clear: both;
+    color: #1c45ab;
+    font-size: 14px;
+    font-weight: 300;
+    text-decoration: none;
+    margin: 0;
+}
+
+section.structsection.nonanon[data-level="1"] {
+    /*background-color: yellow;*/
+    margin-bottom: 10px;
+}
+section.structsection.nonanon[data-level="2"] {
+    /*background-color: olive;*/
+}
+section.structsection.nonanon[data-level="3"] {
+    /*background-color: olive;*/
+}
+
+section.structsection.nonanon[data-level="1"] > header {
+    border-bottom: 1px solid #ccc;
+}
+section.structsection.nonanon[data-level="2"] > header {
+    /*border-bottom: 1px dotted #ccc;*/
+}
+section.structsection.nonanon[data-level="3"] > header {
+    /*border-bottom: 1px dotted #ccc;*/
+}
+
+section.structsection.nonanon[data-level="1"] > footer {
+    /*border-top: 1px solid #ddd;*/
+    margin-top: 10px;
+    margin-right: 32px;
+}
+section.structsection.nonanon[data-level="2"] > footer {
+    /*border-top: 1px dotted #ddd;*/
+    margin-top: 10px;
+    margin-right: 32px;
+}
+section.structsection.nonanon[data-level="3"] > footer {
+    /*border-top: 1px dotted #ddd;*/
+    margin-top: 10px;
+    margin-right: 32px;
+}
+
+
+section.structsection.nonanon[data-level="2"]
+{
+    /*background-color: #fafafa;*/
+}
+section.structsection.nonanon[data-level="3"]
+{
+    /*background-color: #f0f0f0;*/
+}
+
+
+section.structsection.nonanon section.structitem:not(:last-child) {
+    padding-bottom: 5px;
+    /*border-bottom: 1px dotted #ddd;*/
+    margin: 5px 0;
+}
+section.structsection.anon section.structitem {
+    border-bottom: none;
+    padding-bottom: 0px;
+    margin: 0;
+}
+
+section.struct > main.structcontainer
+{
+
+}
+section.struct > main.structcontainer[data-multiplestructcontainerfor]
+{
+
+}
+/* 1 container 1 struct item */
+section.struct > main.structcontainer section[data-struct] {
+
+}
+/* Mult container Nth struct item */
+section.struct > main.structcontainer[data-multiplestructcontainerfor] section[data-struct].multiplestructitem {
+
+}
+
+/* Form input full block */
+section.inputwidget {    }
+section.inputwidget header, section.inputwidget footer {
+    font-size: 8px;
+    text-align: right;
+}
+section.inputwidget > main {
+    clear: both;
+    font-size: 0;
+    margin-left: 0px;
+    margin-right: 0px;
+    margin-top: 23px;
+    padding-left: 0;
+    padding-right: 0;
+}
+section.inputwidget > main label {
+    color: #000000;
+    display: inline-block;
+    font-size: 12px;
+    font-weight: 500;
+    line-height: 20px;
+    margin: 0;
+    text-transform: uppercase;
+    vertical-align: top;
+    width: 340px;
+}
+section.inputwidget > main div.stack {
+    box-sizing: border-box;
+    display: inline-block;
+    font-size: 14px;
+    padding: 0;
+    vertical-align: top;
+    width: 430px;
+}
+
+section.inputwidget > main div.stack div.inputWithControls nav {
+    display: inline-block;
+    height: 16px;
+    line-height: 40px;
+    float: right;
+    vertical-align: middle;
+}
+section.inputwidget > main div.stack div.inputWithControls div.fieldbox {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+section.inputwidget > main div.stack div.inputWithControls div.fieldbox a[data-lightbox]{
+    display: block;
+}
+
+section.inputwidget > main div.stack div.inputWithControls nav.R {
+    color: green;
+    font-size: 10px;
+}
+
+
+
+/* field specific */
+/* input text */
+.inputwidget input {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box;
+    font-size: 14px;
+    font-weight: normal;
+    height: 35px;
+    padding: 5px 6px;
+    width: 400px;
+}
+
+.inputwidget input[type="radio"] {
+    display: inline-block;
+    width: auto;
+}
+
+
+div.richtext {
+    width: 382px;
+    min-height: 80px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    padding: 5px 6px;
+    font-size: 14px;
+}
+div.richtext ul, div.richtext ol {
+    margin-left: 20px;
+}
+
+.field_document {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    height: 35px;
+    width: 396px;
+}
+
+.richfield .icon {
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 20px;
+    height: 20px;
+    margin-left: 4px;
+    margin-top: 8px;
+    background-size: contain;
+    background-position: center;
+}
+
+.richfield_Document .icon {
+    background-image: url("/goldcut/assets/icons/newicons/content.png");
+}
+.richfield_RiskManagementRiskApproved .icon {
+    background-image: url("/goldcut/assets/icons/newicons/risk.png");
+}
+.richfield_CompanyLegalEntityCounterparty .icon {
+    background-image: url("/goldcut/assets/icons/newicons/counterparty.png");
+}
+.richfield_BusinessObject .icon {
+    background-image: url("/goldcut/assets/icons/newicons/bo.png");
+}
+.richfield_ManagementPostIndividual .icon {
+    background-image: url("/goldcut/assets/icons/newicons/person.png");
+}
+
+.field_document .value {
+    /*background: silver;*/
+    color: navy;
+    height: 35px;
+    line-height: 35px;
+    margin-left: 5px;
+    overflow: hidden;
+    padding-left: 5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    width: 360px;
+}
+
+textarea {
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    /*box-sizing: border-box;*/
+    display: inline-block;
+    font-size: 16px;
+    height: 100px;
+    padding: 10px 5px;
+    vertical-align: top;
+    width: 386px;
+    max-width: 386px;
+}
+
+.radioValueContainer{
+    display: inline-block;
+}
+
+footer img{
+    margin: 0;
+}
+
+div[id^="LFRContainer"] div.selectbox{
+    background: #fff url("/img/arrow_languageb.png") no-repeat scroll 95% 50%;
+    border: 1px solid #d9d9d9;
+    border-radius: 3px;
+    display: inline-block;
+    height: 35px;
+    line-height: 34px;
+    margin: 0;
+    overflow: hidden;
+    padding: 0;
+    vertical-align: top;
+}
+
+.inputwidget .fieldbox > select[disabled]{
+    background-color: threedlightshadow;
+}
+
+div[data-editmode = 'lock'] div.fieldbox{
+    background-color: threedlightshadow;
+}
+
+.inputwidget .fieldbox > select{
+    -moz-appearance: none;
+    background-color: transparent;
+/*    background-image: url("/img/position.png");*/
+    background-position: left center;
+    background-repeat: no-repeat;
+    background-size: 26px auto;
+    border: medium none;
+    box-shadow: none;
+    color: #3a3a3a;
+    font-family: "Roboto",sans-serif;
+    font-size: 16px;
+    font-weight: 300;
+    height: 35px;
+    margin: 0;
+    padding: 5px 8px 5px 5px;
+    width: 396px;
+    outline: none;
+
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+}
+
+section.multipleinput div[id^="LFRContainer"]{
+    margin: 0 0 10px;
+}
+
+div[id^="LFRContainer"] div.fieldbox:last-child input:not([type="radio"]):not([type="checkbox"]){
+    width: 398px !important;
+    font-weight: 400;
+    font-size: 14px;
+}
+
+div[id^="LFRContainer"] div.fieldbox:last-child textarea {
+    width: 386px !important;
+    max-width: 386px !important;
+}
+
+.L img{
+    margin: 0 0 0 4px;
+}
+
+.radioContainer .radioValueContainer:nth-child(1n+2){
+    margin: 0 0 0 50px;
+}
+
+.radioValueContainer span{
+    margin: 0 0 0 5px;
+}
+
+.radioValueContainer input[type="radio"]{
+    height: auto;
+}
+
+.radioValueContainer span,
+.radioValueContainer input[type="radio"]{
+    vertical-align: middle;
+    font-size: 14px;
+}
+
+
+
+/*  UI */
+
+/* FILTERS */
+.allowFilterSelect {
+  cursor: pointer;
+  border-bottom: 2px solid navy !important;
+}
+.allowFilterSelect.allowFilterSelectSelected {
+  cursor: pointer;
+  border-bottom: 2px solid #00AA00 !important;
+}
+.filterselectors {
+    position: relative;
+}
+.filterselector {
+  position: absolute;
+  max-height: 400px;
+  overflow-y: scroll;
+  background-color: #fff;
+  border: 1px solid #eee;
+  //box-shadow: 0 0 5px 0px #eee;
+  padding: 10px;
+}
+.filterselector p {
+  line-height: 18px;
+}
+.filterselector a {
+  display: block;
+  padding: 0px 2px;
+  text-decoration: none;
+  color: #000;
+}
+.filterselector a:hover {
+  background-color: #eee;
+  color: navy;
+}
+a#clearfilters {
+  text-decoration: none;
+  color: @primaryBackground;
+  line-height: 20px;
+  font-size: 11px;
+}
+
+
+/* TABLE */
+.uiwindow table {
+    width: 100%;
+}
+
+.uiwindow table th {
+	font: bold 11px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color: #4f6b72;
+	border-right: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	border-top: 1px solid #C1DAD7;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	text-align: left;
+	padding: 6px 6px 6px 12px;
+	background: #CAE8EA;
+}
+
+.uiwindow table th.nobg {
+	border-top: 0;
+	border-left: 0;
+	border-right: 1px solid #C1DAD7;
+	background: none;
+}
+
+.uiwindow table td {
+	border-right: 1px solid #C1DAD7;
+	border-bottom: 1px solid #C1DAD7;
+	background: #fff;
+	padding: 6px 6px 6px 12px;
+	color: #4f6b72;
+}
+
+
+.uiwindow table tr:even td {
+	background: #F5FAFA;
+	color: #797268;
+}
+
+.uiwindow table th:first-child {
+	border-left: 1px solid #C1DAD7;
+	border-top: 0;
+	background: #fff;
+	font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+}
+
+.uiwindow table th.specalt {
+	border-left: 1px solid #C1DAD7;
+	border-top: 0;
+	background: #f5fafa;
+	font: bold 10px "Trebuchet MS", Verdana, Arial, Helvetica, sans-serif;
+	color: #797268;
+}
+
+/*-----------------------------------------------------------------New button block------------------------------------------------------------------------*/
+
+
+.buttons.c{
+    border: none;
+}
+
+.buttons{
+    border: 1px solid #ccc;
+    padding: 25px;
+    margin: 30px 0 0;
+    text-align: center;
+}
+
+.buttons *{
+    margin: 0;
+    padding: 0;
+    vertical-align: middle;
+}
+
+.buttons .itext{
+    width: 462px;
+    text-align: left;
+    font-size: 14px;
+    font-weight: 500;
+    text-transform: uppercase;
+    display: inline-block;
+}
+
+.buttons .gin,
+.buttons .bin,
+.buttons .rin{
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px ;
+    font-weight: 700;
+    height: 50px;
+    line-height: 42px;
+    padding: 0;
+    display: inline-block;
+    margin: 0 auto;
+    width: 250px;
+    text-transform: uppercase;
+}
+
+.buttons .gin.c{
+    background-color: white;
+    color: #0c8a34;
+}
+
+.buttons .bin.c{
+    background-color: white;
+    color: #1c45ab;
+}
+
+.buttons .rin.c{
+    background-color: white;
+    color: #d0021b;
+}
+
+.buttons .gin{
+    background-color: #0c8a34;
+    border: 1px solid #0c8a34;
+    color: #fff;
+}
+
+.buttons .gin:hover{
+    background-color: #417505;
+    color: white;
+}
+
+.buttons .rin{
+    background-color: #d0021b;
+    border: 1px solid #d0021b;
+    color: #fff;
+}
+
+.buttons .rin:hover{
+    background-color: rgba(208, 2, 30, 0.76);
+    color: white;
+}
+
+.buttons .bin{
+    background-color: #1c45ab;
+    border: 1px solid #1c45ab;
+    color: #fff;
+}
+
+.buttons .bin:hover{
+    background-color: #172F82;
+    color: white;
+}
+
+form[data-managedform='yes'] > div.buttons:last-child{
+    margin-bottom: 70px;
+}
+
+
+/*-----------------------------------------------------------------End New button block------------------------------------------------------------------------*/
+
+
+table.uigeneralselect tr {
+    cursor: pointer;
+}
+table.uigeneralselect tr:hover td {
+    background: #eee;
+}
+table.uigeneralselect tr.selected td {
+    background: lightgoldenrodyellow;
+}
+
+#returnSelection {
+    margin: 20px 10px;
+    padding: 5px;
+}

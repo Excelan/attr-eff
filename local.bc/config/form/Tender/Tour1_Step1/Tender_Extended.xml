@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- Тендер ТУР 1 шаг 1-->
+
+        <section entity="Document:Tender:Extended" name="tendercondition"  type="context" title="Условия Тендера">
+
+            <field name="docpermitsneed" title="Требуемая разрешительная документация" type="text"/>
+
+        </section>
+
+        <section entity="Document:Tender:Extended" title="Информация по тендеру">
+
+            <field name="title" title="Название тендера" type="string"/>
+            <field name="attachment" title="Детальный свод предложений (xls таблица)" type="attachment"/>
+
+
+            <!-- <field name="currency" title="Валюта" type="select">
+                <options>
+                    <option value="usd" title="USD"/>
+                    <option value="eur" title="EUR"/>
+                    <option value="uah" title="UAH"/>
+                </options>
+            </field> -->
+
+        </section>
+
+        <section entity="Directory:TenderBidder:Simple" title="Участники Тендера">
+
+            <struct multiple="yes" name="DirectoryTenderBidderSimple" title="Участник Тендера">
+                <field type="hidden" name="urn"/>
+                <field name="CompanyLegalEntityCounterparty" type="CompanyLegalEntityCounterparty" title="Участник">
+                    <query gate="Selector/counterparty"  />
+                </field>
+                <field name="docpermitsneed" type="attachment" multiple="yes" title="Требуемая разрешительная документация"/>
+                <field name="commercialoffer" type="attachment" title="Коммерческое предложение"/>
+            </struct>
+
+        </section>
+
+    </structure>
+
+</form>

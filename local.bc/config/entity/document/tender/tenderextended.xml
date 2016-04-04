@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity prototype="Document:Tender:Extended" code="TTT" manager="Document" uid="8003">
+
+    <passport>
+        <title>Тендер</title>
+    </passport>
+
+    <structure>
+
+        <field name="docpermitsneed" type="text"  title="Перечень разрешительной документации, которая должна быть предоставлена подрядчиком"/><!--Создается из тасков-->
+		<!-- Информация по тендеру -->
+		<field name="title" type="string"  title="Название тендера"/>
+		<field name="attachment" type="string" title="Детальный свод предложений"/>
+
+		<!--Участники -->
+        <group title="Участники Тендера">
+            <hasmany entity="Directory:TenderBidder:Simple" as="DirectoryTenderBidderSimple"/>
+        </group>
+
+        <group title="Ценовые предложения">
+            <hasmany entity="Directory:TenderPosition:Simple" as="DirectoryTenderPositionSimple"/>
+        </group>
+
+		<!-- Коммерческое предложение -->
+		<field name="attachments" type="tarray" title="Загрузить файл"/>
+
+
+        <field name="currency" type="set" title="Валюта тендера">
+            <value name="usd" title="USD"/>
+            <value name="eur" title="EUR"/>
+            <value name="uah" title="UAH"/>
+        </field>
+
+
+       <!-- <hasone entity="Company:LegalEntity:Counterparty"  title="Новый участник"/> -->
+
+
+		<!-- <field name="datebegin" type="date"  title="Срок начала работ, согласно проектного плана"/>
+		<field name="dateend" type="date"  title="Cрок окончания работ, согласно проектного плана"/>
+		<field name="documentation" type="text"  title="Перечень разрешительной документации, которая должна быть предоставлена подрядчиком"/>
+ 		<field name="supplauditneeded" type="set" title="Необходимость в проведении предварительного аудита поставщика">
+            <value name="yes" title="Да" />
+            <value name="no" title="Нет" />
+        </field>
+        <field name="person" type="string"  title="Лицо, ответственное за осуществление технадзора со стороны заказчика"/>
+        <field name="contactperson" type="text"  title="Контактное лицо для ответа на технические вопросы"/>
+
+        <field name="musthave" type="text"  title="Название проектной документации достаточной для проведения работ"/>
+        <field name="musthave" type="text"  title="Название проектной документации в которую необходимо вносить изменения для проведения работ"/>
+        <field name="sevicedesription" type="text"  title="Описание работ, которые необходимо выполнить согласно данному техническому заданию "/>
+        <field name="volume" type="text"  title="Объем работ"/>
+        <field name="workinside" type="text"  title="Выполнение работ внутри здания в действующем предприятии"/>
+		<field name="priorities" type="text"  title="Желаемые приоритеты по порядку выполнения работ"/>
+		<field name="desc" type="text"  title="Описание материалов"/>
+		<field name="requirements" type="text"  title="Требования к формированию ЦП"/>
+		<field name="sectionsdesc" type="text"  title="Перечень либо структура разделов, которые обязательно должны быть отдельно выделены в представленном ценовом предложение"/>
+		<field name="upload" type="string"  title="Приложения"/> -->
+
+
+
+    </structure>
+
+
+    <defaultorder>
+      <by field="created" order="DESC"/>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="currency"/>
+		      <column selector="title"/>
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

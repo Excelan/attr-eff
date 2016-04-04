@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<entity prototype="Document:Tender:Table" code="DTT" manager="Document" uid="8023">
+
+    <passport>
+        <title>Сводная таблица Результат тендера</title>
+    </passport>
+
+    <structure>
+
+        <useone entity="Directory:TenderBidder:Simple" as="DirectoryTenderBidderSimple" title="Участник Тендера"/>
+
+        <field name="currency" type="set" title="Валюта">
+                <value name="usd" title="USD"/>
+                <value name="eur" title="EUR"/>
+                <value name="uah" title="UAH"/>
+        </field>
+
+
+        <field name="titleposition" type="string" title="Название позиции" />
+        <!--<field name="titlecriterion" type="string" multiple="yes" title="Название критерия" />-->
+        <field name="priceoffer" type="string"  title="Стоимость позиции" />
+        <field name="priceofferarray" type="tarray"  title="Стоимость позиции архив" />
+        <!--<field name="priceofferarray" type="tarray"  title="Стоимость позиции архив" />-->
+
+
+    </structure>
+
+
+    <defaultorder>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		<!-- <column selector="status"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

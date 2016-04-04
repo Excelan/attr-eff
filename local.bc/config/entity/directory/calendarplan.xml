@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Directory:CalendarPlan:Simple" manager="Business" uid="93081">
+
+    <passport>
+        <title>Календарный план</title>
+    </passport>
+
+    <states/>
+
+    <structure>
+
+        <belongsto entity="Document:Regulations:MP" title="Мастер-план по валидации"/>
+
+        <hasone entity="BusinessObject:Record:Polymorph" as="BusinessObjectRecordPolymorph" title="Объект (объекты у которых есть необходимость валидации)"/>
+        <field name="DocumentRegulationsPV" type="tarray" title="Программа валидации"/>
+        <field name="date" system="yes"  type="date"  title="Дата"/>
+
+    </structure>
+
+    <defaultorder/>
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="title"/>
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes/>
+</entity>

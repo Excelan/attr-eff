@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- Программа обучения и аттестации -->
+
+
+        <section type="context" entity="Document:Regulations:TA" title="Метаинформация Программы Обучения">
+
+            <field name="trainer" type="ManagementPostIndividual" title="Тренер"/>
+            <field name="CalendarPeriodMonth" type="select" title="Периодичность проведения">
+                <query gate="Selector/calendar/CalendarPeriodMonth"/>
+            </field>
+            <field name="moreinfo" type="text"  title="Дополнительная информация"/>
+            <field name="attachments" type="attachment" min="1" multiple="yes" title="Вложение"/>
+            <!--            <field name="percentage" type="string" title="Суммарный % правильных ответов для прохождения аттестации "/>-->
+        </section>
+
+        <section type="context" title="Программа обучения и аттестации">
+
+            <field name="statementoftopics" type="text" title="Формулировка темы к освещению"/>
+            <field name="time" type="integer" title="Врямя на ответ (минуты)"/>
+            <field name="percent" type="integer" title="Проходной процент(%)"/>
+
+            <struct entity="Study:RegulationStudy:Q" name="StudyRegulationStudyQ" multiple="yes" min="1" title="Вопрос">
+                <field name="urn" type="hidden"/>
+                <field name="content" type="text" title="Формулировка аттестационного вопроса"/>
+
+                <struct entity="Study:RegulationStudy:A" name="StudyRegulationStudyA" multiple="yes" min="1" title="Ответ">
+                    <field name="urn" type="hidden"/>
+                    <field name="content" type="string" title="Ответ на аттестационный вопрос"/>
+                    <field name="correctly" type="radio" title="Правильный ответ?">
+                        <options>
+                            <option value="yes" title="да"/>
+                            <option value="no" title="нет"/>
+                        </options>
+                    </field>
+                </struct>
+            </struct>
+
+        </section>
+
+    </structure>
+
+</form>

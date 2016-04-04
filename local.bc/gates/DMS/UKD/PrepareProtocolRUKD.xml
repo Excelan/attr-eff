@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="DMS/UKD" name="PrepareProtocolRUKD">
+
+  <role></role>
+
+  <!--
+  перенести с ASR.successpassed аттестации всех, кому нужно выдать УКД на SOP в протокол RUKD.plannedreceivers
+  добавить с SOP клиентов sop.clientusersinluded, кроме тех, на кого уже выдали sop hasmany entity="DMS:Copy:Controled"
+  manual start: при ручном начале процесса не будет ASR, а чтобы начать с SOP, нужно будет стартовать процесс с него (parent document, а не параметр вызова)
+ -->
+
+  <request>
+      <field name="rukdurn" type="urn" required="yes"/>
+
+
+      <field name="asrurn" type="urn" required="no"/>
+
+      <field name="sopurn" type="urn" required="yes"/>
+      <field name="sopversion" type="integer" required="no"/>
+
+
+      <field name="user" type="urn" required="no"/>
+  </request>
+
+  <response>
+      <field name="status" type="integer" required="yes"/>
+      <field name="transfered" type="integer" required="yes"/>
+      <field name="copyids" type="string" required="no"/>
+  </response>
+
+
+</gate>

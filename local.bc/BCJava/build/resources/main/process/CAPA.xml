@@ -1,0 +1,98 @@
+<process prototype="DMS:Correction:CAPA"  readyfor="test">
+
+  <!-- CAPA -->
+  <!-- ТЗ: https://docs.google.com/document/d/1Xa6QdTsoA9uHJcwy6peDCZO1AvAuHDzk_4oepqfcuyo/edit-->
+
+  <parameters>
+    <param name="Claim" type="urn"/>
+    <!-- может создаваться  в процессе рассмотрения жалобы, либо в ручном режиме-->
+  </parameters>
+
+  <responsibility>
+    <stage name="CreateDraft"/>
+    <!-- whocanstart="initiator"   -->
+
+    <stage name="Editing" type="humantask" title="Редактирование">
+      <target>Цель - организовать процесс корректирующих мероприятий (САРА)</target>
+      <humantask responsible="initiator"  appoint="initiator"/>
+      <rule type="timelimit" value="1d"/>
+    </stage>
+
+    <stage name="Delegating" type="humantask" title="Делегирование">
+      <target>Цель - ответственный за мероприятия принимает/отклоняет или делегирует ответственность</target>
+      <humantask responsible="responsible"  appoint="configuration"/>
+      <rule type="timelimit" value="1d"/>
+      <forward to="Considering"/>
+      <backward to="Editing"/>
+    </stage>
+
+    <stage name="Considering" type="humantask" title="Обработка">
+      <target>Цель - ответственный за мероприятия назначает решения по мероприятиям</target>
+      <humantask responsible="responsible"  appoint="configuration"/>
+      <rule type="timelimit" value="1d"/>
+      <forward to="Correction"/>
+    </stage>
+
+    <stage name="Correction" title="Корректировка">
+      <target>Цель - иницитор и ответственные обсуждают и вносят изменения до этапа визирования</target>
+      <humantask responsible="initiator"  appoint="initiator"/>
+      <rule type="timelimit" value="1d"/>
+      <forward to="Vising"/>
+      <backward to="Editing"/>
+    </stage>
+
+    <stage name="Vising" title="Визирование">
+      <target>Цель - завизировать</target>
+      <call process="DMS:Decisions:Visa"/>
+      <!--<humantask responsible="visant" appoint="system"/>-->
+      <rule type="timelimit" value="1d"/>
+      <forward to="Approving"/>
+      <backward to="Editing"/>
+    </stage>
+
+    <stage name="Approving" title="Утверждение">
+      <target>Цель - утвердить</target>
+      <call process="DMS:Decisions:Approvement"/>
+      <!--<humantask responsible="approver"/>-->
+      <rule type="timelimit" value="1d" appoint="system"/>
+      <forward to="Doing"/>
+      <backward to="Editing"/>
+    </stage>
+
+    <stage name="Doing" title="Исполнение">
+      <!--<call process="DMS:Decisions:Doing"/>-->
+      <humantask responsible="executor"/>
+      <rule type="timelimit" value="1d"/>
+    </stage>
+
+    <stage name="CallCI">
+      <target>Цель - вызвать процесс Контрольной самоинспекции по САРА</target>
+      <call process="DMS:Correction:CAPAInspection"/>
+      <rule type="timelimit" value="5d"/>
+    </stage>
+
+  </responsibility>
+
+  <stages>
+
+    <stage name="CreateDraft" type="automated"/>
+
+    <stage name="Editing" type="humantask"/>
+
+    <stage name="Delegating" type="humantask"/>
+
+    <stage name="Considering" type="humantask"/>
+
+    <stage name="Correction" type="humantask"/>
+
+    <stage name="Vising" type="delegate"/>
+
+    <stage name="Approving" type="delegate"/>
+
+    <stage name="Doing" type="humantask"/>
+
+    <stage name="CallCI" type="delegate"/>
+
+  </stages>
+
+</process>

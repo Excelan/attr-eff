@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="DMS/UKD" name="GenerateAllPDFForSOP">
+
+  <role></role>
+
+  <!--
+  sopurn version - версия есть в самом sop документе
+  протокол plannedreceivers
+  -->
+
+  <request>
+      <field name="sopurn" type="urn" required="yes"/>
+      <field name="rukdurn" type="urn" required="yes"/>
+      <field name="copyids" type="string" required="no"/>
+      <field name="user" type="urn" required="no"/>
+  </request>
+
+  <response>
+      <field name="status" type="integer" required="yes"/>
+      <field name="pdfs" type="string" required="yes"/>
+      <field name="pdfdests" type="string" required="yes"/>
+      <field name="zipfolderpath" type="string" required="yes"/>
+      <field name="zipfile" type="string" required="yes"/>
+      <field name="zipuri" type="string" required="yes"/>
+
+  </response>
+
+</gate>

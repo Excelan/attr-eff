@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity manager="RBAC" prototype="Actor:User:System" uid="99901">
+  <passport>
+    <title>Пользователь</title>
+  </passport>
+  <states>
+    <status name="active" default="yes" title="Активен"/>
+    <status name="tester" default="no" title="Тестер"/>
+    <status name="system" default="no" title="Системный"/>
+  </states>
+  <structure>
+
+    <field name="origin" title="Origin" type="set">
+        <value name="company" title="Company"/>
+        <value name="partner" title="Partner"/>
+        <value name="client" title="Client"/>
+        <!-- <value name="anonymous" title="Anonymous"/> -->
+    </field>
+
+     <useone entity="Actor:Role:System" as="ActorRoleSystem" />
+     <hasmany entity="OAuth:Link:UserId" as="oauth2link"/>
+     <hasmany entity="OAuth:Session:Tokens" as="oauth2session"/>
+    <field name="email" type="string" title="E-mail"/>
+    <field name="phone" type="string" title="Номер телефона"/>
+    <field name="dynamicsalt" type="integer" title="Dynamic Salt" system="yes"/>
+    <field name="password" type="string" title="Пароль" system="yes"/>
+    <field name="name" type="string" title="Имя" usereditable="yes" />
+    <field name="wallet" type="money" units="у.е." title="Счет"/>
+    <field name="bonus" type="float" units="у.е." title="Бонусный счет"/>
+    <field name="created" type="timestamp" title="Время создания" createDefault="now"/>
+    <field name="lastlogin" type="timestamp" title="Время последнего входа" system="yes"/>
+    <field name="prefs" type="string" title="Настройки"/>
+    <field name="wrbacgroups" type="iarray" default="{}" title="WRBAC Groups"/>
+  </structure>
+  <lists>
+     <list name="actas" entity="Actor:Role:System" ns="42" reverse="delegatedto" title="Делегированные роли"/>
+     <list name="following" entity="Actor:User:System" ns="789" reverse="followers" title="Following"/>
+     <list name="followers" entity="Actor:User:System" ns="987" reverse="following" title="Following"/>
+  </lists>
+  <defaultorder>
+    <by field="created" order="DESC"/>
+  </defaultorder>
+  <admincolumns>
+    <column selector="name"/>
+    <column selector="email"/>
+    <column selector="date"/>
+    <column selector="time"/>
+    <column selector="wallet"/>
+    <column selector="actas"/>
+    <column selector="prefs"/>
+  </admincolumns>
+  <options/>
+  <searchfields/>
+  <indexes>
+    <unique column="email"/>
+  </indexes>
+</entity>

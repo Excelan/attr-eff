@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <section title="Заявка ПО">
+
+            <field name="title" type="string" title="Название ПО" />
+            <field name="description" type="string" title="Описание ПО" />
+            <field name="descriptioninstall" type="string" title="Описание необоходимости установки" />
+
+            <struct name="linkstruct">
+                <field name="linkinfo" type="string" title="Ссылка на информацию о ПО" />
+                <field name="linkinfo" type="string" title="Ссылка на информацию о ПО" />
+            </struct>
+
+            <struct name="userstruct">
+                <field name="username" type="string" title="Пользователь" />
+                <field name="username" type="string" title="Пользователь" />
+            </struct>
+
+        </section>
+
+    </structure>
+
+</form>

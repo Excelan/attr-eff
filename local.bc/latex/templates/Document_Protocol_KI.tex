@@ -1,0 +1,96 @@
+\input{../templates/DMS}
+
+\newcommand{\ValueDocumentNumber}{123}
+%\newcommand{\ValuePlace}{с. Б. Александровка}
+%\newcommand{\ValueDate}{1 февряля 2016 года}
+
+% http://tex.stackexchange.com/questions/85178/increase-height-of-fancyhdr-header
+% !!!! http://tex.stackexchange.com/questions/117804/how-to-determine-head-height-automatically
+
+\pagestyle{fancy}
+\rhead{
+\begin{tabularx}{\textwidth}{X  X  X  X  }
+LOGO & \textbf{Класс документа:}    & \textbf{Id  документа:}    & \textbf{Название документа:}     \\
+ &Протоколы        & 1748365        &Протокол самоинспекции \\
+&\textbf{Тип документа:}    &  & \textbf{Страница в документе:}  \\ %\№ Версии документа:
+&Протокол самоинспекции    &   & \thepage  \\
+\end{tabularx}
+}
+
+\fancyfoot[C]{
+\begin{tabularx}{\textwidth}{X X X}
+\textbf{Разработал:} &\textbf{Согласовал:} & \textbf{Утвердил:} \\
+ Иванов  Ассистент отдела / 21.01.2016 / 9:30 & Ларцев  Заместитель менеджера / 21.01.2016 / 11:30 & Петров Менеджер / 21.01.2016 / 15:30   \\
+&\\
+\textbf{Дата проведение самоинспекции:} & &  \\
+25.01.2015 & &   \\
+\end{tabularx}}
+
+\renewcommand{\headrulewidth}{0.2pt}
+\renewcommand{\footrulewidth}{1pt}
+
+\begin{document}
+
+%\pagestyle{maintext}
+
+\begin{center}
+{\large \textbf{\textsc{Протокол самоинспекции по САРА № \ValueDocumentNumber}}}
+\end{center}
+
+%\begin{tabularx}{\textwidth}{ X rX }
+%\ValuePlace & \ValueDate \\
+%\end{tabularx}
+
+
+%Таблица - Отклонение & Риски
+{\small \begin{center}
+\tabulinesep=2mm
+\begin{tabu} to \textwidth {X X}
+\hline
+& \\
+\textbf{Выявленное отклонение:} & {{descriptiondeviation}} \\
+
+\textbf{Риски:} & \textbf{Отметка об уровне критичности риска:} \\
+
+% {{=<% %>=}}
+% <% RiskManagementRiskApproved %> & <% critical %>\\
+% <%={{ }}=%>
+
+\end{tabu}
+\end{center}
+}
+
+
+%Таблица - Мероприятия
+{\small \begin{center}
+\tabulinesep=2mm
+\begin{longtabu} to \textwidth { X[1,l,p] X[0.3,l,p]  X[0.4,l,p]  X[0.25,l,p]  X[0.25,l,p]  X[0.25,l,p] X[0.25,l,p] }  % {|X|X|X|}
+\hline\hline
+\textbf{Описание корректирующих мероприятий} & \textbf{Место проведения мероприятия} & \textbf{Ответственный за проведение мероприятия}  & \textbf{Плановая дата реализации} & \textbf{Фактическая дата реализации}  & \textbf{Статус реализации}   & \textbf{Комментарий}   \\ \hline
+\endfirsthead
+%\endhead
+\hline
+\endfoot
+\caption{Table title 2.}
+\endlastfoot
+
+%{{#DocumentCorrectionCapa}}
+%{{=<% %>=}}
+%  <% text %> &  <% eventplace %> & <% responsible %> & <% realizationdate %>  & 30.08.2016 & <% matches %> & <% comment %> \\ \hline
+%  <%={{ }}=%
+% {{/DocumentCorrectionCapa}}
+
+\end{longtabu}
+\end{center}
+}
+
+{\large \textbf{Заключение:}}
+
+\paragraph{По результатам проведенной самоинспекции установлено выполненных мероприятий со статусом:}
+
+\paragraph{\textbf{Соответствует - 6}}
+\paragraph{\textbf{Соответсвует с замечаниями - 2}}
+\paragraph{\textbf{Не соответствует - 2}}
+
+
+\end{document}

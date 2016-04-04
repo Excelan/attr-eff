@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="form" type="formType"/>
+  <xs:complexType name="formType">
+    <xs:sequence>
+      <xs:element type="structureType" name="structure"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="role"/>
+  </xs:complexType>
+  <xs:complexType name="structureType">
+    <xs:sequence>
+      <xs:element type="sectionType" name="section">
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:complexType name="sectionType">
+    <xs:sequence>
+      <xs:element type="fieldType" name="field" maxOccurs="unbounded" minOccurs="0">
+      </xs:element>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="title"/>
+  </xs:complexType>
+  <xs:complexType name="fieldType" mixed="true">
+    <xs:sequence>
+      <xs:element type="queryType" name="query" minOccurs="0"/>
+    </xs:sequence>
+    <xs:attribute type="xs:string" name="name" use="optional"/>
+    <xs:attribute type="xs:string" name="type" use="optional"/>
+    <xs:attribute type="xs:string" name="title" use="optional"/>
+    <xs:attribute type="xs:string" name="multiple" use="optional"/>
+  </xs:complexType>
+  <xs:complexType name="queryType">
+    <xs:simpleContent>
+      <xs:extension base="xs:string">
+        <xs:attribute type="xs:string" name="gate" use="optional"/>
+      </xs:extension>
+    </xs:simpleContent>
+  </xs:complexType>
+</xs:schema>

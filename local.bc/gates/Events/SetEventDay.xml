@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="Events" name="SetEventDay">
+
+    <role>
+
+    </role>
+
+    <request>
+
+
+        <field name="user" type="urn" required="no"/>
+        <field name="subjecturn" type="urn" required="yes"/>
+        <field name="eventDate" type="date" required="yes"/>
+        <field name="datefield" type="string" required="no"/>
+
+        <field name="users" type="urn" required="no"/>
+
+
+    </request>
+
+
+    <response>
+
+        <field name="status" type="integer" required="yes"/>
+
+    </response>
+
+</gate>

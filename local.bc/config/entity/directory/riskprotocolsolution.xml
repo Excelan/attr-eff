@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Directory:RiskProtocolSolution:SI" manager="Business" uid="920831">
+
+    <passport>
+        <title>Результат самоинспекции решение по риску</title>
+    </passport>
+
+    <states/>
+
+    <structure>
+
+        <belongsto entity="Document:Protocol:SI"/>
+        <field name="solutiononrisk" type="set" title="Заголовок дополнительного раздела">
+            <value name="yes" title="Соответсвует" />
+            <value name="remark" title="Соответсвует с замечаниями" />
+            <value name="no" title="Не соответствует" />
+        </field>
+        <field name="comment" type="text" title="Текст дополнительного раздела"/>
+
+    </structure>
+
+    <defaultorder/>
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="title"/>
+    </admincolumns>
+    <options>
+      <aparam name="directmanage" type="boolean" value="no"/>
+    </options>
+    <searchfields/>
+    <indexes/>
+</entity>

@@ -1,0 +1,91 @@
+\input{../templates/DMS}
+\input{../templates/DMS_TechTask}
+
+\usepackage{colortbl}
+
+{{graphicspath}}
+
+\ExplSyntaxOn
+\newcommand{\changedate}[2][/]{%
+  \tl_set:Nx \l_tmpa_tl {#2}
+  \seq_set_split:NnV \l_tmpa_seq {-} {\l_tmpa_tl}
+  \seq_reverse:N \l_tmpa_seq
+  \seq_use:Nnnn \l_tmpa_seq {#1} {#1} {#1}
+}
+\ExplSyntaxOff
+
+{{=<% %>=}}
+\newcommand{\webdate}{ <%#DirectoryTechnicalTaskMaterials%> <%date%>  <%/DirectoryTechnicalTaskMaterials%>}
+<%={{ }}=%>
+
+\newcommand\stwo{%<-- adopted
+\multicolumn{2}{|>{\RaggedRight\arraybackslash}%
+                p{\dimexpr\textwidth-2\arrayrulewidth-2\tabcolsep}|}}
+\setlength\extrarowheight{2pt}
+
+
+{{=<% %>=}}
+\newcommand{\supplauditneeded}{<%supplierauditneeded%>}
+\newcommand{\varId}{<% code %>}
+<%={{ }}=%>
+
+\begin{document}
+
+\pagestyle{maintext}
+
+
+
+\noindent
+\begin{tabularx}{\textwidth}{|*{2}{>{\RaggedRight\arraybackslash}X|}}
+                                                        \hline
+1.  Название документа  \rule{0pt}{3ex}     & Техническое задание \varId{}  \\ [1ex]  \hline
+2.  Компания группы    \rule{0pt}{3ex}      &   \textbf{ {{#CompanyStructureCompanygroup}} {{title}} {{/CompanyStructureCompanygroup}} } \\  [1ex]  \hline
+3.  Филиал/подразделение  \rule{0pt}{3ex}   &   \textbf{ {{#DirectoryBranchItem}}  {{title}} {{/DirectoryBranchItem}}  }                 \\   [1ex]   \hline
+\stwo{4. Вид работ: \rule{0pt}{3ex}  }                                \\ [1ex]   \hline
+    \stwo{\textbf{  {{type}} \rule{0pt}{3ex} }}                         \\ [1ex]   \hline
+\stwo{5. Срок поставки, согласно проектного плана} \rule{0pt}{3ex}   \\  [1ex]  \hline
+{{#DirectoryTechnicalTaskMaterials}}
+\textbf{ {{name}}  -  {{quantity}} } \rule{0pt}{3ex}   &    \changedate{\webdate}   }  \\ [1ex] \hline
+{{/DirectoryTechnicalTaskMaterials}}
+\stwo{6. Перечень разрешительной
+         документации, которая должна быть
+         предоставлена поставщиком:}      \rule{0pt}{3ex}           \\ [1ex] \hline
+    \stwo{  \textbf{ {{docpermitsneed}} } \rule{0pt}{3ex}    }                         \\ [1ex] \hline
+7.  Необходимость в проведении предварительного
+    аудита поставщика  \rule{0pt}{3ex}      &  \textbf{ \ifthenelse{\equal{\supplauditneeded}{yes}}{да}{нет} }\\ [1ex] \hline
+8.  Лицо, ответственное за осуществление
+    приемки товара со стороны заказчик \rule{0pt}{3ex}
+                            &      \textbf{   {{#personreceive}} {{nameofemployee}}  {{/personreceive}}  }  \\ [1ex] \hline
+9.  Контактное лицо для ответа
+    на технические вопросы \rule{0pt}{3ex} &    \textbf{   {{#contactperson}} {{nameofemployee}}  {{/contactperson}}  }   \\ [1ex]  \hline
+10. Условия поставки  \rule{0pt}{3ex}      &    \textbf{ {{deliveryconditions}} }                 \\ [1ex]  \hline
+11. Описание товаров, которые должны быть
+    поставлены согласно данному
+    техническому заданию: \rule{0pt}{3ex}    & \textbf{ {{#DirectoryTechnicalTaskMaterials}} {{materialdesription}} {{/DirectoryTechnicalTaskMaterials}}  } \\ [1ex]   \hline
+\stwo{12. Желаемые приоритеты по
+          порядку выполнения работ: \rule{0pt}{3ex}  }                \\ [1ex]  \hline
+    \stwo{ \textbf{ {{priority}}  } \rule{0pt}{3ex}   }                                 \\ [1ex]  \hline
+\stwo{13. Требования к формированию
+          коммерческого предложения: \rule{0pt}{3ex} }               \\  [1ex] \hline
+    \stwo{ \textbf{ {{requirement}} } \rule{0pt}{3ex}  }             \\  [1ex] \hline
+\end{tabularx}
+
+
+\pagebreak
+
+\pagestyle{dodatki}
+
+{{#attachments}}
+
+\vfill
+\begin{figure}[hb]
+  \centering
+{{=<% %>=}}
+  \includegraphics[width=\textwidth]{<% . %>}
+<%={{ }}=%>
+\end{figure}
+\vfill
+
+{{/attachments}}
+
+\end{document}

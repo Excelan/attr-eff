@@ -1,0 +1,26 @@
+<process prototype="DMS:Decisions:Visa" readyfor="test">
+
+    <!-- Визирование -->
+
+    <parameters>
+        <param name="initiator" type="urn"  />
+        <param name="subject" type="urn"  /> <!-- передача из вызывающего процесса, что визировать -->
+    </parameters>
+
+    <responsibility>
+        <stage name="Decision" title="Визирование">
+            <humantask responsible="system" appoint="system" members="configurable" /> <!-- human delay mode -->
+            <rule type="timelimit" value="1d" />
+        </stage>
+    </responsibility>
+
+    <stages>
+
+        <!-- subject -->
+        <stage name="Decision" type="humantask">
+            <ui task="dataapprove"></ui>
+        </stage>
+
+    </stages>
+
+</process>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Directory:Replacement:Item" manager="Business" uid="1287">
+
+    <passport>
+        <title>Заменяющие</title>
+    </passport>
+
+    <states/>
+
+    <structure>
+
+        <useone entity="Management:Post:Individual" as="missing" title="Отсутсвующий"/>
+        <useone entity="Management:Post:Individual" as="replacement" title="Заменяющий"/>
+
+        <field name="why" type="string" title="Причина отсутствия"/>
+
+        <field name="missingdate" type="timestamp" title="Дата отсутствия"/>
+
+        <field name="created" type="timestamp" title="Время создания" createDefault="now" system="yes"/>
+        <field name="updated" type="timestamp" title="Время последнего изменения" disabled="yes" createDefault="now" updateDefault="now" system="yes"/>
+        <field name="ordered" type="integer" title="Порядок" system="yes"/>
+
+    </structure>
+
+    <lists/>
+    <defaultorder/>
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="title"/>
+		<column selector="PeopleEmployeeInternal"/>
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes/>
+</entity>

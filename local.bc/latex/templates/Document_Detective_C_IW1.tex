@@ -1,0 +1,52 @@
+\input{../templates/DMS}
+%\input{../templates/DMS_Detective}
+
+{{graphicspath}}
+
+\begin{document}
+
+\begin{center}
+{\large \textbf{\textsc{ПРОТОКОЛ СЛУЖЕБНОГО РАССЛЕДОВАНИЯ }}} \\
+{\large \textbf{\textsc{По инциденту № }}} \\
+\end{center}
+
+\vspace{0.5cm}
+
+\noindent \textbf{РЕАГИРОВАНИЕ (ЕСЛИ БЫЛИ ПРИНЯТЫ МЕРЫ ПО УСТРАНЕНИЮ ПРОБЛЕМЫ)} \\
+
+\noindent\underline{Дата проведения мер по быстрому устранению проблемы:} {{troublefixdate}}  \\
+\noindent\underline{Меры, принятые для устранения проблемы:} {{troubleevent}} \\
+\noindent\underline{Ответственный исполнитель:} {{responsible}} \\
+
+\noindent \textbf{РАССЛЕДОВАНИЕ} \\
+
+\noindent\underline{Дата проведения расследования:} {{investigationdate}} \\
+\noindent\underline{Члены комиссии:} {{PeopleEmployeeInternal}} \\
+\noindent\underline{Выявленные факты:}  {{factdetected}} \\
+\noindent\underline{Объекты, которые проходили проверку:}  {{BusinessObjectRecordPolymorph}}\\
+
+\noindent \textbf{ЗАКЛЮЧЕНИЕ} \\
+
+
+\noindent\underline{Отметка о статусе жалобы:} {{complaintstatus}}\\
+\noindent\underline{Заключение:}  {{conclusion}} \\
+\noindent\underline{Опись использованных материалов:}  {{materialsused}} \\
+\noindent\underline{Опись использованных внешних докуvентов:}  {{attachments}} \\
+\noindent\underline{Опись использованных внутренних документов:}  ???\\
+
+\noindent \textbf{СПИСОК ОТКЛОНЕНИЙ}
+\vspace{0.2cm}
+
+\noindent
+\begin{tabularx}{\linewidth}{|l|>{\hspace{0pt}}p{2.2cm}|l|>{\hspace{0pt}}p{2cm}|X|l|}\hline
+№& Описание отклонения & Департамент & Идентифицированный риск & \multicolumn{2}{l|}{Не
+идентифицированный риск 1} \\ \hline
+%\endhead
+1   & ОТКЛОНЕНИЕ 1   & Департамент 1  & Риск 1  & Описание не идентифицированного риска &
+НИ Риск  \\ \cline{5-6}
+&           &           &           & Объект / процесс, в которос появился этот риск &
+Объект 1 \\ \hline
+\end{tabularx}
+
+
+\end{document}

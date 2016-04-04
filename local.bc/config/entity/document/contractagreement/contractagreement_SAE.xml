@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<entity prototype="Document:ContractAgreement:SAE" code="SAE" manager="Document" uid="3331">
+
+    <passport>
+        <title>Дополнительное соглашение на продление</title>
+    </passport>
+
+    <structure>
+
+        <field name="date"  type="date"  title="Дата Дополнительного соглашения"/>
+        <field name="text"  type="richtext"  title="Текст приложения"/>
+        <field name="text"  type="string"  title="Подпись к изображению"/>
+        <field name="attachment"  type="string" multiple="yes"  title="Вложения"/>
+        <field name="contractlink"  type="string" title="Ссылка на договор"/>
+
+    </structure>
+
+    <lists>
+        <list name="contractapplication" entity="Document:ContractApplication:Universal" ns="1045" title="Приложения к Договору"/>
+    </lists>
+
+    <defaultorder>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+		<column selector="CompanyLegalEntityCounterparty"/>
+		<column selector="date"/>
+        <column selector="initiator"/>
+		<!-- <column selector="status"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

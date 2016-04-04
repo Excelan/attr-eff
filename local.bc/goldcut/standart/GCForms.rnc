@@ -1,0 +1,20 @@
+default namespace = "http://erp.digital/Schema/ERP/Form.rnc"
+
+start =
+    element form {
+        attribute role { xsd:NCName },
+        element structure {
+            element section {
+                attribute title { text },
+                element field {
+                    attribute multiple { xsd:NCName }?,
+                    attribute name { xsd:NCName },
+                    attribute title { text },
+                    attribute type { xsd:NCName },
+                    element query {
+                        attribute gate { text }
+                    }?
+                }+
+            }
+        }
+    }

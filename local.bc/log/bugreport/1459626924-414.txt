@@ -1,0 +1,12 @@
+WEB REQUEST ERROR:	No subject in MPE
+
+URI:	/processactorsdirector (local.bc)
+FILE:	/Users/andrey/Sites/bc/apps/ProcessActorsDirector/ProcessActorsDirectorControl.php : 37
+CODE:	throw new Exception("No subject in MPE");
+TRACE:	ProcessActorsDirectorControl.exclusive /Users/andrey/Sites/bc/goldcut/framework/application.php:296
+TRACE:	application.runApp /Users/andrey/Sites/bc/goldcut/framework/sitemap.php:73
+TRACE:	SiteMap.route /Users/andrey/Sites/bc/goldcut/framework/webrequest.php:66
+TRACE:	WebRequest.dispatch /Users/andrey/Sites/bc/goldcut/webrouter.php:92
+IP:	127.0.0.1 localhost server ip: 127.0.0.1
+BROWSER:	(OS/2) Java/1.8.0_77
+POST:	{"json":"{\"upn\":\"UPN:DMS:Claims:Claim:9628694\",\"processPrototype\":\"DMS:Claims:Claim\",\"stage\":\"Considering\",\"subjectProto\":\"Document:Claim:R_LSC\"}"}

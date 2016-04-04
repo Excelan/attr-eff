@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Directory:Materialbase:Simple" manager="Business" uid="92111">
+
+    <passport>
+        <title>Материальная база</title>
+    </passport>
+
+    <states/>
+
+    <structure>
+
+        <belongsto entity="Document:Regulations:PV" title="Программа валидационного исследования"/>
+
+        <hasone entity="BusinessObject:Record:Polymorph" title="Название, марка, модель оборудования"/>
+
+        <field name="numberequipment"  type="string"  title="Количество оборудования"/>
+        <field name="specification"  type="richtext"  title="Критические характеристики оборудования"/>
+
+    </structure>
+
+    <lists/>
+    <defaultorder/>
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="title"/>
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes/>
+</entity>

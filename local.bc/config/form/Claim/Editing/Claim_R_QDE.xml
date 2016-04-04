@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- CONTEXT BLOCK ЗАЯВКА НА повторное обучение/переаттестацию -->
+
+
+        <section entity="Document:Claim:R_QDE" title="Заявка на повторное обучение/переаттестацию">
+
+            <!--Обязательные поля для всех типов Заявок -->
+            <field name="companyproject" type="select" title="Текущий проект предприятия" required="yes">
+                <query gate="Selector/directory/DirectoryBusinessProjectsItem"/>
+            </field>
+            <field name="CompanyLegalEntityCounterparty" type="CompanyLegalEntityCounterparty" title="Клиент, для которого создается заявка" required="yes">
+                <query gate="Selector/company"  />
+            </field>
+            <field name="warehouse" type="BusinessObject" title="№ склада, для которого создается заявка" required="yes">
+                <query gate="Selector/businessobject"  />
+            </field>
+
+            <!--Индивидуальные поля по каждому типу Заявок -->
+            <field name="reason" type="text" title="Причина" required="yes"/>
+            <field name="student" type="ManagementPostIndividual" multiple="yes" min="1" title="Сотрудник, для которого необходимо провести обучение" required="yes">
+                <query gate="Selector/management"  />
+            </field>
+            <field name="CalendarPeriodMonth" type="select" title="Периодичность обучения" required="yes">
+                <query gate="Selector/calendar/CalendarPeriodMonth" />
+            </field>
+            <field name="dateprev" type="date" title="Дата предыдущего обучения у каждого сотрудника" required="yes"/>
+            <field name="datenext" type="date" title="Дата следующего обучения по плану" required="yes"/>
+
+            <!--Обязательные поля для всех типов Заявок -->
+            <field name="specialrequirement" type="text" title="Специальное требование"/>
+            <field name="attachments" type="attachment" min="1"  multiple="yes" title="Вложение"/>
+
+        </section>
+
+    </structure>
+
+</form>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="DMS/UniversalDocument" name="ListAllThatRoleHasAccessTo">
+
+  <role></role>
+
+  <request>
+      <field name="user" type="integer" required="no"/>
+      <field name="urn" type="integer" required="no"/>
+  </request>
+
+  <response>
+
+      <field name="status" type="integer" required="yes"/>
+      <field name="total" type="integer" required="yes"/>
+
+      <field name="documents" type="struct" required="no" multiple="yes" minimum="1" maximum="1000">
+          <field name="urn" type="string" required="yes"/>
+          <field name="title" type="string" required="yes"/>
+      </field>
+
+  </response>
+
+</gate>

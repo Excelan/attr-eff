@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- CONTEXT BLOCK ЗАЯВКА НА ОСУЩЕСТВЛЕНИЕ ПЛАТЕЖА -->
+
+
+        <section entity="Document:Claim:R_FPI" title="Заявка на осуществление платежа">
+
+            <!--Обязательные поля для всех типов Заявок -->
+            <field name="companyproject" type="select" title="Текущий проект предприятия" required="yes">
+                <query gate="Selector/directory/DirectoryBusinessProjectsItem"/>
+            </field>
+            <field name="CompanyLegalEntityCounterparty" type="CompanyLegalEntityCounterparty" title="Клиент, для которого создается заявка" required="yes">
+                <query gate="Selector/company"/>
+            </field>
+            <field name="warehouse" type="BusinessObject" title="№ склада, для которого создается заявка" required="yes">
+                <query gate="Selector/businessobject"/>
+            </field>
+
+            <!--Индивидуальные поля по каждому типу Заявок -->
+            <field name="budgetitem" type="text" title="Статья бюджета" required="yes"/>
+            <field name="paymentpurpose" type="text" title="Назначение платежа" required="yes"/>
+
+            <field name="paymenttype" type="radio" title="Тип платежа">
+              <options>
+                  <option value="regular" title="Регулярный" />
+                  <option value="notregular" title="Разовый" />
+              </options>
+            </field>
+
+            <field name="sumtaxfree" type="text" title="Сумма планируемых затрат без НДС" required="yes"/>
+            <field name="tax" type="radio" title="НДС" required="yes">
+              <options>
+                  <option value="yes" title="да" />
+                  <option value="no" title="нет" />
+              </options>
+            </field>
+            <field name="paymentdate" type="date" title="Дата платежа"/>
+            <field name="contractdocument" type="Document" title="Оплата по Договору" required="yes"/>
+
+
+
+            <!--Обязательные поля для всех типов Заявок -->
+            <field name="specialrequirement" type="text" title="Специальное требование"/>
+            <field name="attachments" type="attachment" min="1"  multiple="yes" title="Вложение"/>
+
+        </section>
+
+    </structure>
+
+</form>

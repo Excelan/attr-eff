@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+        <!--<section title="СОП">-->
+
+            <!--<struct entity="Document:Regulations:SOP" name="DocumentRegulationsSOP" title="Участники процедуры">-->
+                <!--<field name="urn" type="hidden" />-->
+                <!--<field name="userprocedure" type="ManagementPostIndividual" multiple="yes" min="1" title="Участник процедуры">-->
+                    <!--<query gate="Selector/management"  />-->
+                <!--</field>-->
+
+            <!--</struct>-->
+
+
+        <!--</section>-->
+
+        <section title="СОП" entity="Document:Regulations:ASR">
+
+
+
+
+            <!--<struct entity="Document:Regulations:ASR" name="DocumentRegulationsSOP" title="Участники процедуры">-->
+
+            <!--<field name="urn" type="hidden" />-->
+            <field name="plannedattendees" type="ManagementPostIndividual" multiple="yes" min="1" title="Участник процедуры" />
+
+            <!--</struct>-->
+
+        </section>
+
+
+    </structure>
+
+</form>

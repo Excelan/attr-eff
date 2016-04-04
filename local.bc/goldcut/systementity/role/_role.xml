@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity manager="RBAC" prototype="Actor:Role:System" uid="1000">
+  <passport>
+    <title>Роль</title>
+  </passport>
+  <states/>
+  <structure>
+    <field name="title" type="string" title="Заголовок"/>
+    <field name="homeuri" type="string" title="Home"/>
+    <field name="name" type="string" title="NAME"/>
+  </structure>
+  <lists>
+     <list name="delegatedto" entity="Actor:User:System" ns="24" reverse="actas" title="Пользователи"/>
+  </lists>
+  <defaultorder/>
+  <admincolumns>
+    <column selector="title"/>
+    <column selector="name"/>
+    <!--<column selector="homeuri"/>-->
+    <column selector="delegatedto"/>
+  </admincolumns>
+  <options/>
+  <searchfields/>
+  <indexes>
+    <unique column="title"/>
+  </indexes>
+</entity>

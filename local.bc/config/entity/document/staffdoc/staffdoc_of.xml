@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<entity prototype="Document:Staffdoc:OF" code="OF" manager="Document" uid="7001">
+
+    <passport>
+        <title>Приказ на увольнение</title>
+    </passport>
+
+    <structure>
+		<!-- Приказ на увольнение-->
+
+
+	    	<hasone entity="Management:Post:Individual"  as="ManagementPostIndividual" title="ФИО сотрудника"/>
+	    	<hasone entity="Company:Structure:Department"  as="CompanyStructureDepartment" system="yes" title="Название структурного подразделения"/>
+            <field name="reason" system="yes" type="text"  title="Причина прекращения трудового договора"/>
+            <field name="base" title="Основания увольнения" type="string"/>
+            <field name="dateofdismissal"  type="date"  title="Дата уввольнения"/>
+            <field name="severancepay"  type="string"  title="Выходное пособие"/>
+            <field name="dateunusedvacation"  type="string"  title="Количество дней неиспользованного отпуска"/>
+            <hasone entity="Management:Post:Individual" as="manager"  title="Руководитель"/>
+
+
+
+    </structure>
+
+    <defaultorder>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		<!-- <column selector="status"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

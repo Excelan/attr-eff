@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity prototype="Document:Regulations:JD" code="JD" manager="Document" uid="6002">
+
+    <passport>
+        <title>Должностная инструкция</title>
+    </passport>
+
+    <structure>
+        <field name="effectivedate" type="date" title="Дата введения в действие"/>
+        <field name="instructionname" type="string" title="Название должностной инструкции"/>
+        <field name="position" type="richtext" title="Общие положения"/>
+        <field name="duty" type="richtext" title="Функциональные обязанности"/>
+        <field name="authority" type="richtext" title="Права"/>
+        <field name="responsibility" type="richtext" title="Ответственность"/>
+        <field name="conditions" type="richtext" title="Условия работы"/>
+
+        <lists>
+            <list name="userprocedure" entity="Management:Post:Individual" ns="30998" title="Участники процедуры"/>
+        </lists>
+
+    </structure>
+
+    <lists>
+    </lists>
+    <defaultorder />
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		<!-- <column selector="status"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

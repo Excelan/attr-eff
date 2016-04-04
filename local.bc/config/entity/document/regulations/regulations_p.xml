@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity prototype="Document:Regulations:P" code="P" manager="Document" uid="6004">
+
+    <passport>
+        <title>Положение/Регламент/Политика</title>
+    </passport>
+
+    <structure>
+
+        <field name="title" type="string" title="Название документа"/>
+
+        <field name="fileprocessattachment" type="string" title="Блок-схема бизнес-процесса"/>
+        <field name="attachments" type="tarray" title="Вложения"/>
+
+        <hasone entity="Directory:BusinessProcess:Item" title="Процесс компании"/>
+        <hasone entity="BusinessObject:Record:Polymorph" as="scaleapplication" title="Масштаб применения"/>
+        <field name="causeedit" type="text" title="Причина создания новой версии"/>
+        <hasone entity="Calendar:Period:Month" title="Срок действия"/>
+        <field name="effectivedate" type="date" title="Дата введения в действие"/>
+        <field name="enddate" type="date" title="Конечная дата действия"/><!--Автоматически выводится на этапе визирования-->
+
+        <hasmany entity="Directory:AdditionalSection:Simple" title="Дополнительный раздел"/>
+
+        <!--Основная часть СОПА-->
+        <field name="target" type="richtext" title="Цель"/>
+        <field name="realmuse" type="richtext" title="Область применения"/>
+        <field name="response" type="richtext" title="Ответственность и полномочия"/>
+        <field name="resource" type="richtext" title="Материалы и оборудование"/>
+        <field name="procedure" type="richtext" title="Процедура"/>
+	    <field name="extrachapter" type="richtext" title="Дополнительный раздел"/> <!-- multiple -->
+        <field name="report" type="richtext" title="Отчетность"/>
+        <field name="docforlink" type="richtext" title="Документы для ссылок"/>
+
+
+    </structure>
+
+    <lists>
+        <list name="boprocedure" entity="BusinessObject:Record:Polymorph" ns="30111" title="Список объектов"/>
+        <list name="userprocedure" entity="Management:Post:Individual" ns="30113" title="Участники процедуры"/>
+    </lists>
+    <defaultorder />
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		<!-- <column selector="status"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

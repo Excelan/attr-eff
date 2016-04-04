@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- ПРОТОКОЛ ПОВЕРКИ<-->
+        <section entity="Document:Protocol:СТ" type="context" title="Метаинформация по Протоколу Поверки">
+
+            <field name="bo" type="BusinessObject" title="Объект"/>
+            <field name="responsible" type="ManagementPostIndividual" title="Ответственный за поверку"/>
+            <field name="warehouse" type="BusinessObject" title="№ Склада"/>
+            <field name="client" type="CompanyLegalEntityCounterparty" title="Клиент"/>
+            <field name="CalendarPeriodMonth" type="select" title="Периодичность поверки">
+                <query gate="Selector/calendar/CalendarPeriodMonth"/>
+            </field>
+        </section>
+
+        <section type="context" entity="Document:Protocol:СТ" title="Форма для заполнения Протокола Поверки">
+
+            <field name="date" type="date" title="Дата проведения поверки"/>
+            <field name="datep" type="date" title="Дата проведения предыдущей поверки"/>
+            <field name="сontractforverif" type="Document" title="Договор на проведение поверки"/>
+            <field name="relateddocuments" type="Document" multiple="yes" title="Связанные документы"/>
+            <field name="results" type="text" title="Результаты проведения поверки"/>
+            <field name="upload" type="string" multiple="yes" title="Вложения"/>
+
+        </section>
+
+    </structure>
+
+
+</form>

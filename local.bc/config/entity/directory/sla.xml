@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Directory:SLA:Item" manager="Document" uid="117">
+
+    <passport>
+        <title>SLA</title>
+    </passport>
+
+    <states/>
+
+    <structure>
+
+        <field name="title" type="string" title="Название пункта из SLA"/>
+
+    </structure>
+
+    <lists/>
+    <defaultorder/>
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="title"/>
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes/>
+</entity>

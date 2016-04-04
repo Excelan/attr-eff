@@ -1,0 +1,9 @@
+<?php 
+/**
+ApplicationAccessManaged
+*/
+interface ApplicationAccessManaged 
+{
+	
+}
+?>

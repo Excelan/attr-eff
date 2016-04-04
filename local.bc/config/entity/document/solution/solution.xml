@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<entity prototype="Document:Solution:Universal" code="SOL" manager="System" uid="1301">
+
+    <passport>
+        <title>Решение</title>
+    </passport>
+
+    <structure>
+        <field name="realizationtype" type="set" title="Тип реализации">
+            <value name="without_contractor_without_money" title="Без подрядчиков и покупки материалов"/>
+            <value name="without_contractor_with_money" title="Без подрядчиков с покупкой материала"/>
+            <value name="with_contractor_without_money" title="С подрядчиками без покупки материала"/>
+            <value name="with_contractor_with_money" title="С подрядчиками с покупкой материала"/>
+        </field>
+        <field name="realizationdate" type="date" title="Дата реализации"/>
+        <field name="cost" type="money" units="UAH" title="Оценочная стоимость"/>
+        <field name="description" type="text" title="Описание решения"/>
+        <hasone entity="Management:Post:Individual" as="executor" title="Исполнитель"/>
+
+        <field name="ordered" type="integer" system="yes" title="system order"/>
+
+    </structure>
+
+    <lists>
+        <list name="visedby" entity="Management:Post:Individual" ns="9121" title="Визировано кем"/>
+    </lists>
+
+
+    <defaultorder>
+        <by field="ordered" order="ASC"/>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		<column selector="firstlinedescription"/> <!-- В таблице выводить первые две строки описания, а при наведении полный текст -->
+        <column selector="responsible"/> <!-- ответственный, которому приходит жалоба -->
+		<!-- <column selector="status"/> -->
+		<!-- <column selector="CTA TODO"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

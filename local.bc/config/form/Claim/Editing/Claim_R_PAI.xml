@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- CONTEXT BLOCK ЗАЯВКА НА покупку/установку ПО -->
+
+
+        <section entity="Document:Claim:R_PAI" title="Заявка на покупку/установку ПО">
+
+            <!--Обязательные поля для всех типов Заявок -->
+            <field name="companyproject" type="select" title="Текущий проект предприятия" required="yes">
+                <query gate="Selector/directory/DirectoryBusinessProjectsItem"/>
+            </field>
+            <field name="CompanyLegalEntityCounterparty" type="CompanyLegalEntityCounterparty" title="Клиент, для которого создается заявка" required="yes">
+                <query gate="Selector/company"  />
+            </field>
+            <field name="warehouse" type="BusinessObject" title="№ склада, для которого создается заявка" required="yes">
+                <query gate="Selector/businessobject"  />
+            </field>
+
+            <!--Индивидуальные поля по каждому типу Заявок -->
+            <field name="software" type="text" title="Название ПО" required="yes"/>
+            <field name="descriptionneed" type="text" title="Описание необходимости установки" required="yes"/>
+            <field name="description" type="text" title="Описание ПО" required="yes"/>
+            <field name="link" type="text" title="Ссылки на информационные сайты" required="yes"/>
+            <field name="employees" type="ManagementPostIndividual" multiple="yes" min="1" title="Пользователи для установки" required="yes"/>
+
+            <!--Обязательные поля для всех типов Заявок -->
+            <field name="specialrequirement" type="text" title="Специальное требование"/>
+            <field name="attachments" type="attachment" min="1"  multiple="yes" title="Вложение"/>
+        </section>
+
+    </structure>
+
+</form>

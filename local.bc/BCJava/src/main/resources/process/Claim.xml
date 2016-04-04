@@ -1,0 +1,77 @@
+<process prototype="DMS:Claims:Claim" readyfor="test">
+
+  <!-- Заявка -->
+  <!--ТЗ: https://docs.google.com/document/d/1NCuLTW64TSzPnZuKij7aeWZriqcvVW9_5awMyUgQDnE/edit# -->
+  <!-- заявка никогда не создается автоматически -->
+
+  <responsibility>
+    <stage name="CreateDraft"></stage>
+
+    <stage name="Editing" title="Редактирование">
+      <target>Цель - обеспечить всем пользователям системы возможность создавать Заявки тех типов, которые доступны пользователю в соответствии с присвоенным ему доступом</target>
+      <humantask responsible="initiator" appoint="initiator"/>
+      <rule type="timelimit" value="1d"/>
+    </stage>
+
+    <stage name="Considering" type="humantask" title="Обработка">
+      <target>Цель - ответственный предоставляет варианты решений</target>
+      <humantask responsible="responsible" appoint="configuration" />
+      <rule type="timelimit" value="1d"/>
+      <forward to="Vising"/>
+      <backward to="Editing"/>
+    </stage>
+
+    <stage name="Vising" title="Визирование">
+      <target>Цель - завизировать</target>
+      <call process="DMS:Decisions:Visa"/>
+      <humantask responsible="visant"/>
+      <rule type="timelimit" value="1d"/>
+      <forward to="Approving"/>
+      <backward to="Considering"/>
+    </stage>
+
+    <stage name="Approving" title="Утверждение">
+      <target>Цель - утвердить</target>
+      <call process="DMS:Decisions:Approvement"/>
+      <humantask responsible="approver"/>
+      <rule type="timelimit" value="1d"/>
+      <forward to="Doing"/>
+      <backward to="Considering"/>
+    </stage>
+
+    <stage name="Doing" title="Исполнение">
+      <target>Цель - исполнение</target>
+      <call process="DMS:Execution:Doing"/>
+      <humantask responsible="executor"/>
+      <rule type="timelimit" value="10d"/>
+    </stage>
+
+    <stage name="Reviewing" title="Проверка исполнения">
+      <target>Цель - проверка исполнения</target>
+      <call process="DMS:Decisions:Reviewing"/>
+      <humantask responsible="initiator"/>
+      <rule type="timelimit" value="1d"/>
+      <backward to="Doing"/>
+    </stage>
+
+  </responsibility>
+
+  <stages>
+
+    <stage name="CreateDraft" type="automated"/>
+
+    <stage name="Editing" type="humantask"/>
+
+    <stage name="Considering" type="humantask"/>
+
+    <stage name="Vising" type="delegate"/>
+
+    <stage name="Approving" type="delegate"/>
+
+    <stage name="Doing" type="delegate"/>
+
+    <stage name="Reviewing" type="delegate"/>
+
+  </stages>
+
+</process>

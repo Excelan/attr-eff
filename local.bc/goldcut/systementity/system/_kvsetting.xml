@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Settings:Option:System" manager="Settings" uid="982000">
+
+  <passport>
+    <title>System Option</title>
+  </passport>
+
+  <states>
+
+  </states>
+
+  <structure>
+
+    <field name="title" type="string" title="Имя"/>
+    <field name="key" type="string" title="Ключ"/>
+    <field name="value" type="string" title="Значение"/>
+
+  </structure>
+
+  <defaultorder>
+    <by field="title" order="ASC"/>
+  </defaultorder>
+
+  <admincolumns>
+    <column selector="title"/>
+    <column selector="key"/>
+  </admincolumns>
+  <options>
+    <!-- <aparam name="clonable" value="no" /> -->
+  </options>
+  <searchfields/>
+  <indexes>
+    <unique column="key"/>
+    <unique column="title"/>
+  </indexes>
+</entity>

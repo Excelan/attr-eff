@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- Приказ на увольнение-->
+        <section entity="Document:Staffdoc:OF" title="Информация по увольняющемуся">
+
+            <field name="ManagementPostIndividual" type="ManagementPostIndividual" title="Сотрудник"/>
+            <!-- для печатной формы:
+
+            <field name="Company:Structure:Department" title="Название структурного подразделения" type="select">
+                <query gate="Selector/company/structure/CompanyStructureDepartment"/>
+            </field>
+            <field name="Company:Structure:Department" title="Должность" type="ManagementPostIndividual"/> -->
+            <field name="reason" system="yes" title="Причина прекращения трудового договора" type="text"/>
+            <field name="base" title="Основания увольнения" type="string"/>
+            <field name="dateofdismissal" type="date" title="Дата увольнения"/>
+            <field name="severancepay" type="string" title="Выходное пособие"/>
+            <field name="dateunusedvacation" type="string" title="Количество дней неиспользованного отпуска"/>
+            <field name="manager" type="ManagementPostIndividual" title="Руководитель"/>
+
+        </section>
+
+    </structure>
+
+</form>

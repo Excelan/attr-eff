@@ -1,0 +1,11 @@
+***************
+*** 355,358 ****
+          lijournal.className = 'active';
+      });
+  
+- </script>
+--- 355,358 ----
+          lijournal.className = 'active';
+      });
+  
++ </script>

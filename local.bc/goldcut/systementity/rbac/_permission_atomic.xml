@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="RBAC:Permission:Atomic" manager="RBAC" uid="12099">
+
+    <passport>
+        <title>Permission Atomic</title>
+    </passport>
+
+    <states>
+         <status name="accessactive" default="yes" title="Активен"/>
+    </states>
+
+    <structure>
+
+        <useone entity="Management:Post:Individual" as="actor" title="Actor"/>
+
+        <field name="cando" type="string" title="Can do action name" />
+        <useone entity="Definition:Prototype:System" as="withprototype" title="With prototype"/>
+        <!-- <useone entity="Definition:Prototype:System" as="withmodel" title="С моделью процесса"/> -->
+        <field name="onid" type="long" title="On ID" />
+
+    </structure>
+    <lists />
+    <defaultorder/>
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="actor"/>
+        <column selector="cando"/>
+        <column selector="withprototype"/>
+        <column selector="onid"/>
+    </admincolumns>
+
+    <searchfields/>
+    <indexes/>
+</entity>

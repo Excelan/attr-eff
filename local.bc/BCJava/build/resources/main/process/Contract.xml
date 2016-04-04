@@ -1,0 +1,66 @@
+<process prototype="DMS:Contracts:Contract" readyfor="test">
+
+  <parameters>
+    <!-- <param name="" type="urn"/> -->
+  </parameters>
+
+  <responsibility>
+
+      <stage name="CreateDraft"/>
+
+    <stage name="Configuring" title="Выбор контрагента">
+      <target>Цель - конфигурация документа</target>
+      <humantask responsible="initiator" appoint="initiator"/>
+      <rule type="timelimit" value="1d"/>
+    </stage>
+
+    <stage name="Editing" title="редактирование">
+      <target>Цель - редактирование документа</target>
+      <humantask responsible="initiator" appoint="initiator"/>
+      <rule type="timelimit" value="1d"/>
+    </stage>
+
+    <!--<stage name="Considering" type="humantask" title="Обработка">-->
+      <!--<target>Цель - совместное редактирование документа</target>-->
+      <!--<humantask responsible="responsible" appoint="configuration"/>-->
+      <!--<rule type="timelimit" value="1d"/>-->
+      <!--<forward to="Vising"/>-->
+      <!--<backward to="Editing"/>-->
+    <!--</stage>-->
+
+    <stage name="Vising" title="Визирование">
+      <target>Цель - завизировать</target>
+      <call process="DMS:Decisions:Visa"/>
+      <humantask responsible="visant"/>
+      <rule type="timelimit" value="1d"/>
+      <forward to="Approving"/>
+      <backward to="Editing"/>
+    </stage>
+
+    <stage name="Approving" title="Утверждение">
+      <target>Цель - утвердить</target>
+      <call process="DMS:Decisions:Approvement"/>
+      <humantask responsible="approver"/>
+      <rule type="timelimit" value="1d"/>
+      <backward to="Editing"/>
+    </stage>
+
+  </responsibility>
+
+  <stages>
+
+    <stage name="CreateDraft" type="automated"/>
+
+    <stage name="Configuring" type="humantask"/>
+
+    <stage name="Editing" type="humantask"/>
+
+    <!--<stage name="Considering" type="humantask"/>-->
+
+    <stage name="Vising" type="delegate"/>
+
+    <stage name="Approving" type="delegate"/>
+
+  </stages>
+
+</process>

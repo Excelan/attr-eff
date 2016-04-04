@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="Questionnaire" name="getQA">
+
+    <role>
+
+    </role>
+
+    <request>
+
+        <field name="user" type="integer" required="no"/>
+
+        <field name="urn" type="string" required="yes"/>
+
+        <field name="userUrn" type="string" required="no"/>
+
+    </request>
+
+
+    <response>
+
+<!--        <field type="struct" required="yes" multiple="yes" minimum="1" maximum="1000" name="options">
+            <field name="time" type="string" required="yes"/>
+            <field name="questions" type="struct" required="yes" multiple="yes" minimum="1" maximum="1000">
+                <field name="urn" type="string" required="yes"/>
+                <field name="text" type="string" required="yes"/>
+                <field name="answers" type="struct" required="yes" multiple="yes" minimum="1" maximum="1000">
+                    <field name="urn" type="string" required="yes"/>
+                    <field name="text" type="string" required="yes"/>
+                </field>
+            </field>
+        </field>-->
+
+        <field name="options" type="string" required="yes"/>
+
+
+    </response>
+
+
+</gate>

@@ -1,0 +1,121 @@
+\input{../templates/DMS}
+\input{../templates/DMS_Protocol_VT}
+\input{../templates/DMS_Protocol}
+
+{{graphicspath}}
+
+
+\newcommand\rownum{\ifnumequal{\value{rowcnt}}{0}{№}{\therowcnt.}\refstepcounter{rowcnt}}
+\AtEndEnvironment{tabularx}{\setcounter{rowcnt}{0}}
+
+\begin{document}
+
+\pagestyle{maintext}
+
+
+\begin{center}
+{\large{\textbf{\textsc{Программа валидационного исследования}} \\
+{\large{\textbf{\textsc{ {{title}} }} \\
+\end{center}
+
+\begin{tabularx}{\textwidth}{|X|X|}
+    \hline
+\textbf{Объект валидационных испытаний} \rule{0pt}{3ex} & \textbf{Этап валидационных испытаний} \\ [1ex] \hline
+  {{#bo}} {{title}} {{/bo}} \rule{0pt}{3ex} & Квалификация функционирования \\ [1ex] \hline
+
+\end{tabularx}
+
+\setcounter{tocdepth}{1}
+\tableofcontents
+
+%\begin{center}
+
+
+%{\large \textbf{\textsc{Содержание }}}
+%\end{center}
+
+% \begin{tabularx}{\textwidth}{|l|X|c|}
+%    \hline
+% \multicolumn{2}{|c|}{\textbf{Разделы}}
+%        & \multirow{2}*{\textbf{Страницы}} \\
+%    \cline{1-2}
+% \textbf{Номер} & \textbf{Название}  &   \\ \hline
+% 1. & Отрасль применения            &   \\ \hline
+% 2. & Ответственные лица            &   \\ \hline
+% 3. & Нормативная база              &   \\ \hline
+% 4. & Материальная база             &   \\ \hline
+% 5. & Определения и сокращения      &   \\ \hline
+% 6. & Основная часть                &   \\ \hline
+% 7. & Конечные выводы, рекомендации &   \\ \hline
+% \end{tabularx}
+
+\newpage
+
+\section{ \textbf{\textsc{Отрасль применения}}}
+{{industryscope}}
+
+
+\section{ \textbf{\textsc{Ответственные лица}}}
+
+%\renewcommand\arraystretch{1.333}
+\begin{tabularx}{\textwidth}{ | >{\rownum}r|X|X| }
+  \hline
+    & Характер работ \rule{0pt}{3ex} & Ответственные лица \\ [1ex] \hline
+    {{#DirectoryResponsibletwoSimple}}
+    &  {{worktype}} \rule{0pt}{3ex}   &  {{#ManagementPostIndividual}} {{nameofemployee}}   {{/ManagementPostIndividual}} \\ [1ex]  \hline
+    {{/DirectoryResponsibletwoSimple}}
+\end{tabularx}
+
+
+
+\section{\textbf{\textsc{Нормативная база}}}
+{{normativebase}}
+
+\section{ \textbf{\textsc{Материальная база}}}
+\subsection{ \textbf{\textsc{Основные средства}}}
+
+
+
+\noindent
+\small{
+\begin{tabu}to \textwidth {|>{\rownum}X[0,1,l,p] | X[50,l,p]|X [0,20,l,p]|X[0,20,l,p]|X[0,25,l,p]|X[0,25,l,p]|c|}
+  \hline
+  \multirow{2}{\linewidth}{} & \multirow{2}{\linewidth}{ Название, марка, модель обуродования } & \multirow{2}{\linewidth}{Количество} & \multirow{2}{\linewidth}{Серийный номер} & \multirow{2}{\linewidth}{Технические харектеристики}  & \multicolumn{2}{c|}{Поверка} \\ [3ex] \cline{6-7}
+    \multicolumn{1}{|l|}{}   & &  & &   & последняя & следующая \\ \hline
+{{#DirectoryFixedassetSimple}}
+  &   {{#equipment}} {{title}} {{/equipment}} \rule{0pt}{3ex}   & 1 &  {{numberequipment}}   &  {{specification}}    & {{latestcheck}}  & {{nextcheck}} \rule{0pt}{3ex}    \\ [3ex] \hline
+{{/DirectoryFixedassetSimple}}
+\end{tabu}
+}
+
+
+
+\subsection{ \textbf{\textsc{Химические средства}}}
+{{chemicals}}
+
+\section{ \textbf{\textsc{Определения и сокращения}}}
+{{defabbr}}
+
+\section{ \textbf{\textsc{Основная часть}}}
+{{masterpart}}
+
+\section{ \textbf{\textsc{Конечные выводы / рекомендации}}}
+{{finalrecommend}}
+
+\newpage
+\pagestyle{dodatki}
+\pagestyle{dodatki}
+
+{{#attachments}}
+\vfill
+\begin{figure}[hb]
+  \centering
+{{=<% %>=}}
+  \includegraphics[width=\textwidth]{<% . %>}
+<%={{ }}=%>
+\end{figure}
+\vfill
+{{/attachments}}
+
+
+\end{document}

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- CONTEXT BLOCK Протокол служебного расследования по всем типам жалоб -->
+
+
+            <!-- Реагирование -->
+            <section entity="Document:Detective:C_LP" type="context" title="Реагирование">
+                <field name="troublefixdate" type="date" title="Дата проведения мер по быстрому устранению проблемы" edit="lock"/>
+                <field name="troubleevent" type="richtext" title="Меры, принятые для устранения проблемы" edit="lock"/>
+                <field name="responsible" type="ManagementPostIndividual" title="Ответственный исполнитель" edit="lock">
+                    <query gate="Selector/management"/>
+                </field>
+            </section>
+
+            <!-- Расследование-->
+            <section entity="Document:Detective:C_LP" type="context" title="Расследование">
+                <field name="investigationdate" type="date" title="Дата проведения расследования" edit="lock"/>
+                <field name="commissionmember" type="ManagementPostIndividual" multiple="yes" min="1" title="Члены комиссии" edit="lock">
+                    <query gate="Selector/management"/>
+                </field>
+                <field name="factdetected" type="richtext" title="Выявленные факты" edit="lock"/>
+                <field name="checkbo" type="BusinessObject" multiple="yes" min="1" title="Объекты, которые проходили проверку" required="yes"/>
+                <!-- <field name="BusinessObjectRecordPolymorph" type="BusinessObject" title="Объекты, которые проходили проверку" edit="lock">
+                    <query gate="Selector/businessobject"/>
+                </field> -->
+            </section>
+
+            <!-- Заключение-->
+            <section entity="Document:Detective:C_LP" type="context" title="Заключение">
+                <field name="complaintstatus" type="radio" title="Отметка о статусе жалобы" edit="lock">
+                    <options>
+                        <option value="yes" title="Принять"/>
+                        <option value="no" title="Отклонить"/>
+                    </options>
+                </field>
+                <field name="conclusion" type="richtext" title="Заключение" edit="lock"/>
+                <field name="materialsused" type="richtext" title="Опись использованных материалов" edit="lock"/>
+
+                <field name="attachments" type="attachment" multiple="yes" title="Внешние документы" edit="lock"/>
+                <field name="internaldocuments" type="Document" title="Внутренние документы" edit="lock">
+                    <!-- <query gate="Selector/Document"/> -->
+                </field>
+            </section>
+
+
+            <!-- Отклонение-->
+            <section title="Список отклонений">
+              <struct name="deviations" entity="Directory:Deviation:PreCapa" multiple="yes" title="Отклонение">
+                <field name="urn" type="hidden"/>
+                <field name="description" type="richtext" title="Описание отклонения"/>
+                <field name="CompanyStructureDepartment"  type="select"  title="Департамент">
+                  <query gate="Selector/company/structure/CompanyStructureDepartment"/>
+                </field>
+                <!--<struct name="approvedrisks" multiple="yes" title="Идентифицированный риск">-->
+                <field name="approvedrisks" type="RiskManagementRiskApproved" multiple="yes" title="Идентифицированный риск"/>
+                <!--</struct>-->
+                <struct name="notapprovedrisks" entity="RiskManagement:Risk:NotApproved" min="0" multiple="yes" title="Не идентифицированный риск">
+                  <field name="urn" type="hidden"/>
+                  <field name="riskdescription" type="richtext" title="Описание не идентифицированного риска"/>
+                  <field name="BusinessObjectRecordPolymorph" type="BusinessObject"  title="Объект, в котором появился этот риск"/>
+                  <field name="DirectoryBusinessProcessItem" type="select"  title="Процесс, в котором появился этот риск">
+                    <query gate="Selector/directory/DirectoryBusinessProcessItem"  />
+                  </field>
+                </struct>
+              </struct>
+            </section>
+
+    </structure>
+
+</form>

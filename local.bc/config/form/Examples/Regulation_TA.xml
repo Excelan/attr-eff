@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- Программа обучения и аттестации -->
+
+
+        <section entity="Document:Regulations:TA" title="Метаинформация Программы Обучения">
+
+            <field name="trainer" type="ManagementPostIndividual" title="Тренер"/>
+            <field name="CalendarPeriodMonth" type="select" title="Периодичность проведения">
+                <query gate="Selector/calendar/CalendarPeriodMonth"  />
+            </field>
+            <field name="moreinfo" type="text"  title="Дополнительная информация"/>
+            <field name="attachments" type="attachment" multiple="yes" title="Вложение"/>
+            <field name="percentage" type="string" title="Суммарный % правильных ответов для прохождения аттестации "/>
+        </section>
+
+        <section title="Программа обучения и аттестации">
+
+            <struct entity="" name="questionsprogram" multiple="yes" min="1" title="Тема к освещению">
+                <field name="questionsprogram" type="text" title="Формулировка темы к освещению"/>
+
+                <struct entity="" name="questions" multiple="yes" min="1" title="Аттестационный вопрос по теме к освещению">
+
+                    <field name="question" type="text"  title="Формулировка аттестационного вопроса"/>
+
+                    <struct entity="" name="answers" multiple="yes" min="1" title="Ответ на аттестационный вопрос">
+                        <field name="answer" type="string"  min="1" title="Ответ на аттестационный вопрос"/>
+                        <field name="answertype" type="select" title="Тип ответа">
+                            <options>
+                                <option value="correct" title="Правильный ответ"/>
+                                <option value="correctcrit" title="Правильный критический ответ"/>
+                                <option value="notcorrect" title="Не правильный ответ"/>
+                            </options>
+                        </field>
+                    </struct>
+
+                </struct>
+
+            </struct>
+
+
+
+
+        </section>
+
+    </structure>
+
+</form>

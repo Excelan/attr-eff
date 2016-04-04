@@ -1,0 +1,121 @@
+\input{../templates/DMS_con}
+
+
+{{graphicspath}}
+
+\ExplSyntaxOn
+\newcommand{\changedate}[2][/]{%
+  \tl_set:Nx \l_tmpa_tl {#2}
+  \seq_set_split:NnV \l_tmpa_seq {-} {\l_tmpa_tl}
+  \seq_reverse:N \l_tmpa_seq
+  \seq_use:Nnnn \l_tmpa_seq {#1} {#1} {#1}
+}
+\ExplSyntaxOff
+
+{{=<% %>=}}
+\newcommand{\varId}{<% code %>}
+\newcommand{\varDate}{<% date %>}
+\newcommand{\varDirector}{ <%#owncomany%> <%signatoryname%>  <%/owncomany%> }
+\newcommand{\varSignature}{ <%#CompanyLegalEntityCounterparty%>  <%signatoryname%>  <%/CompanyLegalEntityCounterparty%> }
+<%={{ }}=%>
+
+\input{../templates/DMS_Contract}
+
+\begin{document}
+
+\pagestyle{maintext}
+
+\begin{center}
+\large \textbf{\textsc{Договор аренды офисных помещений №   }}
+\vspace{6mm}\\
+\large \textbf{\textsc{ \varId{}  }}
+\end{center}
+
+{{place}}  \hfill   \changedate{\varDate}    \\
+
+{{introduction}}
+
+\section{\large \textbf{\textsc{Предмет договора}}}
+{{contractsubject}}
+
+\section{\large \textbf{\textsc{Порядок передачи объекта в аренду}}}
+{{objectforrent}}
+
+\section{\large \textbf{\textsc{Срок аренды}}}
+{{timeofrent}}
+
+\section{\large \textbf{\textsc{Арендная плата и порядок расчетов}}}
+{{priceandterms}}
+
+\section{\large \textbf{\textsc{Права и обязанности Арендодателя}}}
+{{responsibilitiesoflandlord}}
+
+\section{\large \textbf{\textsc{Права и обязанности Арендатора}}}
+{{responsibilities}}
+
+\section{\large \textbf{\textsc{Ответственность сторон}}}
+{{liabilities}}
+
+\section{\large \textbf{\textsc{Порядок решения споров}}}
+{{disputesresolving}}
+
+\section{\large \textbf{\textsc{Форс-мажор}}}
+{{forcemajeure}}
+
+\section{\large \textbf{\textsc{Основания досрочного прекращения договора}}}
+{{contracttermination}}
+
+\section{\large \textbf{\textsc{Другие условия}}}
+{{otherconditions}}
+
+
+\section{\large \textbf{\textsc{Реквизиты сторон}}}
+\thispagestyle{empty}
+
+\begin{tabularx}{\textwidth}{ X@{\hskip 0.5in} X }
+
+\textbf{Арендодатель:}  & \textbf{Арендатор:} \\
+ & \\
+ & \\
+ \textbf{ {{#owncomany}} {{title}}  {{/owncomany}}:} & \textbf{ {{#CompanyLegalEntityCounterparty}} {{title}} {{/CompanyLegalEntityCounterparty}} :} \\
+ {{#owncomany}} {{legaladdress}}  {{/owncomany}} &  {{#CompanyLegalEntityCounterparty}}  {{legaladdress}}  {{/CompanyLegalEntityCounterparty}}  \\
+ р/с   {{#owncomany}} {{ba}}  {{/owncomany}} &  р/с  {{#CompanyLegalEntityCounterparty}}  {{ba}}  {{/CompanyLegalEntityCounterparty}}  \\
+ {{#owncomany}} {{mfo}}  {{/owncomany}} &  МФО {{#CompanyLegalEntityCounterparty}}  {{mfo}}   {{/CompanyLegalEntityCounterparty}}   \\
+ ЕДРПОУ {{#owncomany}} {{edropou}}  {{/owncomany}} & ЕДРПОУ {{#CompanyLegalEntityCounterparty}} {{edropou}}  {{/CompanyLegalEntityCounterparty}}  \\
+ & \\
+ \textbf{Директор}  & \textbf{Директор} \\
+ & \\
+ & \\
+ & \\
+ \noindent\rule{4cm}{0.5pt} {{#owncomany}} {{signatoryname}}  {{/owncomany}}   & \noindent\rule{5cm}{0.5pt} {{#CompanyLegalEntityCounterparty}} {{signatoryname}}  {{/CompanyLegalEntityCounterparty}}  \\
+ \end{tabularx}
+
+
+{{#contractapplication}}
+
+\newpage
+\pagestyle{dodatki}
+
+
+
+
+{{text}}
+
+  {{#MediaAttributed}}
+
+	  \vfill
+	  \begin{figure}[hb]
+	    \centering
+		{{=<% %>=}}
+	    \includegraphics[width=\textwidth]{<% attachment %>}
+	    \caption{<% text %>}
+		<%={{ }}=%>
+	  \end{figure}
+	  \vfill
+
+
+  {{/MediaAttributed}}
+
+{{/contractapplication}}
+
+\end{document}

@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+
+        <section title="Пересмотр рисков">
+
+            <struct name="eachrisk" multiple="yes" title="Не идентифицированный риск">
+
+                <field name="urn" type="hidden" />
+
+                <struct name="RiskManagementRiskNotApproved_CONTEXT" entity="RiskManagement:Risk:NotApproved" type="context" title="Зарегистрированный неидентифицированный риск">
+
+                    <field name="urn" type="hidden" />
+
+                    <field name="riskdescription" type="text" title="Описание не идентифицированного риска" edit="lock"/>
+                    <field name="BusinessObjectRecordPolymorph" type="BusinessObject" title="Объект, в котором появился этот риск" edit="lock"/>
+                    <field name="DirectoryBusinessProcessItem" type="select" title="Процесс, в котором появился этот риск" edit="lock">
+                        <query gate="Selector/directory/DirectoryBusinessProcessItem"/>
+                    </field>
+
+                </struct>
+
+                <struct name="linkwith" entity="RiskManagement:Risk:NotApproved"
+                        title="Вариант 1. Или свяжите этот неидентифицированный риск с существующим идентифицированным">
+
+                    <field name="RiskManagementRiskApproved" type="RiskManagementRiskApproved"
+                           title="Связать с идентифицированным риском"/>
+
+                </struct>
+
+
+                <struct name="createnew" entity="RiskManagement:Risk:NotApproved"
+                        title="Вариант 2. Или создайте новый идентифицированный риск">
+
+                    <field name="title" type="string" title="Название нового индентифицированного риска"/>
+                    <field name="DirectorySLAItem" type="select" title="Критерий SLA">
+                        <query gate="Selector/directory/DirectorySLAItem"/>
+                    </field>
+
+                    <struct name="refineplace" title="Уточнение фактического места появления риска">
+                        <field name="BusinessObjectRecordPolymorph" type="BusinessObject" title="Объект, с которым фактически связан этот риск"/>
+                        <field name="DirectoryBusinessProcessItem" type="select" title="Процесс, с которым фактически связан этот риск">
+                            <query gate="Selector/directory/DirectoryBusinessProcessItem"/>
+                        </field>
+                    </struct>
+
+                </struct>
+
+            </struct>
+
+        </section>
+
+
+    </structure>
+
+</form>

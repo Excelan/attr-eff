@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Study:RegulationStudy:R" code="RR" manager="System" uid="6020">
+
+    <passport>
+        <title>Результаты аттестации сотрудника</title>
+        <!--
+        для каждой сессии/попытки сдачи - те тут и результат "сдал" и "не сдал"
+        -->
+    </passport>
+
+    <states>
+
+    </states>
+
+    <structure>
+
+        <field name="done" type="integer" title="Пройдено" />
+
+        <useone entity="Document:Regulations:ASR" as="DocumentRegulationsASR" title="@ Лист аттестации всей сессии"/>
+        <useone entity="Document:Regulations:TA" as="questionnaire" title="Опросник"/>
+
+        <useone entity="Management:Post:Individual" as='user' title="Должность"/>
+
+        <field name="question" type="json" title="Перечень вопросов" />
+
+        <field name="useranswer" type="json" title="Ответы пользователя" />
+
+        <field name="trua" type="integer" title="Количество правильно данных ответов" />
+        <field name="falsea" type="integer" title="Количество неправильно данных ответов" />
+        <field name="alla" type="integer" title="Общее количество правильных ответов в анкете" />
+
+        <field name="starttime" type="timestamp" title="Время старта" />
+        <field name="endtime" type="timestamp" title="Время окончания" />
+
+
+        <field name="created" type="timestamp" title="Время создания" createDefault="now"/>
+        <field name="updated" type="timestamp" title="Время последнего изменения" disabled="yes" createDefault="now" updateDefault="now"/>
+
+    </structure>
+    <lists/>
+
+    <parameters/>
+    <defaultorder/>
+
+    <admincolumns>
+        <column selector="id"/>
+    </admincolumns>
+
+    <options/>
+    <searchfields/>
+    <indexes/>
+
+
+</entity>

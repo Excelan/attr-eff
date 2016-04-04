@@ -1,0 +1,2 @@
+<?php
+$GLOBALS['WORLD']['CODEVERSION'] = 6;

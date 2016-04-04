@@ -1,0 +1,142 @@
+\input{../templates/DMS_sop}
+
+{{graphicspath}}
+
+{{=<% %>=}}
+\newcommand{\varId}{<% code %>}
+\newcommand{\varTitle}{<% title %>}
+\newcommand{\varDate}{<% effectivedate %>}
+\newcommand{\varPeriod}{<%#CalendarPeriodMonth%> <%title%> <%/CalendarPeriodMonth%>  }
+\newcommand{\varRevision}{31/01/2016}
+
+\newcommand{\docClass}{Regulation}
+\newcommand{\docType}{P}
+
+\newcommand{\varInitiator}{Фурс C.Л.}
+\newcommand{\varVisant}{Пижук В.М.}
+\newcommand{\varApprover}{Павлова В.В.}
+
+\newcommand{\initiatorPost}{Контролер качества}
+\newcommand{\visantPost}{Главный инженер}
+\newcommand{\approverPost}{Директор}
+
+\newcommand{\varDatecreation}{21.01.2016}
+\newcommand{\varDatevise}{25.01.2016}
+\newcommand{\varDateapprove}{28.01.2016}
+
+\newcommand{\varChange}{JD.QS.A.04.0.33/2015/3-UA}
+\newcommand{\varReason}{Введение новых требований GDP}
+
+\newcommand{\varVersion}{1}
+
+\newcommand{\addition}{<%#DirectoryAdditionalSectionSimple%><%sectiontitle%><%/DirectoryAdditionalSectionSimple%>}
+<%={{ }}=%>
+
+\input{../templates/DMS_Regulations}
+
+\begin{document}
+
+\pagestyle{prefirstpage}
+.
+\vspace{3cm} \\
+\center{\large{\textsc{ПОЛОЖЕНИЕ}}}\\
+\vspace{2mm} \\
+\center{\large{\textsc{ \varId{} }}} \\
+\vspace{2mm} \\
+\center{\large{\textsc{ {{title}} }}}\\
+
+\vfill
+\begin{tabu} to \textwidth { |X[0.29,l,p]|X[0.18,l,p]|X[0.78,l,p]    }
+\taburulecolor{gray}
+\cline{4-5}
+\textbf{Введено в действие}\rule{0pt}{3ex} & \varDate{}  & \\ [1ex] \cline{4-5}
+\textbf{Срок действия до}\rule{0pt}{3ex}   &  \varPeriod{} & \\ [1ex]  \cline{4-5}
+\end{tabu}
+
+
+\vspace{2mm}
+\begin{tabu} to \textwidth { |X|X|X|X|X|   }
+\taburulecolor{gray}
+\hline
+\textbf{Статус} & \textbf{Должность} & \textbf{Фамилия И.О.}& \textbf{Дата} & \textbf{Подпись} \\  [1ex] \hline
+\textbf{Утвердил:}    & \approverPost{}  & \varApprover{}   & \varDateapprove{}   &  \\  [2ex] \hline
+\textbf{Согласовал:}   & \visantPost{}    & \varVisant{}    & \varDatevise{}      &  \\  [2ex] \hline
+\textbf{Разработал:}   & \initiatorPost{} & \varInitiator{} & \varDatecreation{}  &  \\  [2ex] \hline
+\end{tabu}
+
+\pagebreak
+
+\pagestyle{firstpage}
+
+\vspace{1cm}
+
+\tableofcontents
+
+\vfill
+
+\pagebreak
+
+\pagestyle{maintext}
+
+\begin{center}
+\Large \textbf{\textsc{ПОЛОЖЕНИЕ}} \\
+\vspace{1mm}
+\Large \textbf{\textsc{ {{title}} }} \\
+\end{center}
+
+\begin{flushleft}
+
+\section{\large \textbf{\textsc{Цель}}}
+% \thispagestyle{empty}
+{{target}}
+
+\section{\large \textbf{\textsc{Область применения}}}
+{{realmuse}}
+
+\section{\large \textbf{\textsc{Ответственность и полномочия}}}
+{{response}}
+
+\section{\large \textbf{\textsc{Материалы и оборудование(ресурсы)}}}
+{{resource}}
+
+\section{\large \textbf{\textsc{Процедура}}}
+{{procedure}}
+
+%DirectoryAdditionalSectionSimple
+
+\ifthenelse{\equal{\addition}{}}{}{
+{{#DirectoryAdditionalSectionSimple}}
+  {{=<% %>=}}
+  \section{\large \textbf{\textsc{ <% sectiontitle %> }}}
+  <% sectiontext %>
+  <%={{ }}=%>
+{{/DirectoryAdditionalSectionSimple}}
+}
+
+
+\section{\large \textbf{\textsc{Отчет}}}
+{{report}}
+
+\section{\large \textbf{\textsc{Документы}}}
+{{docforlink}}
+
+\end{flushleft}
+
+\pagebreak
+
+\pagestyle{dodatki}
+
+{{#attachments}}
+
+  \vfill
+  \begin{figure}[hb]
+    \centering
+    {{=<% %>=}}
+    \includegraphics[width=\textwidth]{{<% . %>}}
+    <%={{ }}=%>
+  \end{figure}
+  \vfill
+
+{{/attachments}}
+
+\end{document}

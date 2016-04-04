@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <section entity="RiskManagement:Risk:Approved" title="Рейтингование рисков">
+
+          <field name="BusinessObjectRecordPolymorph" type="BusinessObject" title="Объект, в котором появился этот риск" edit="lock"/>
+          <field name="DirectoryBusinessProcessItem" type="select" title="Процесс, в котором появился этот риск" edit="lock">
+              <query gate="Selector/directory/DirectoryBusinessProcessItem"/>
+          </field>
+
+            <struct name="eachrisk" multiple="yes" title="Рейтинг каждого риска">
+
+                <!-- <struct entity="RiskManagement:Risk:Approved" title="Оценка риска"> -->
+                    <field name="urn" type="hidden" />
+
+                    <field name="title" type="string" title="Название риска" edit="lock"/>
+                    <field name="producteffect" type="string" title="Влияние на товар"/>
+                    <field name="emergenceprobability" type="string" title="Вероятность возникновения"/>
+                    <field name="undetectedprobability" type="string" title="Вероятность не обнаружения"/>
+                <!-- </struct> -->
+
+
+            </struct>
+
+
+        </section>
+
+    </structure>
+
+</form>

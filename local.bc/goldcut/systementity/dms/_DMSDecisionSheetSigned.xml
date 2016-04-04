@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="DMS:DecisionSheet:Signed" manager="System" uid="120371">
+
+    <passport>
+        <title>Обходной лист</title>
+    </passport>
+
+    <states>
+        <status name="closed" default="no" title="Закрыт"/>
+    </states>
+
+    <structure>
+
+        <field name="needsignfrom" type="tarray" title="Должны подписать" />
+        <field name="hassignfrom" type="tarray" title="Уже подписали" />
+        <field name="hascancelfrom" type="tarray" title="Уже отказались подписать" />
+
+        <field name="document" type="string" title="Документ"/>
+        <field name="created" type="timestamp" title="Создан" system="yes" createDefault="now" />
+
+    </structure>
+    <lists />
+
+    <defaultorder>
+        <by field="created" order="DESC"/>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="document"/>
+        <column selector="stateofdecisions"/>
+        <column selector="created"/>
+    </admincolumns>
+
+    <searchfields/>
+    <indexes/>
+</entity>

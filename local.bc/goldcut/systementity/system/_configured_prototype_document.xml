@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Definition:Prototype:Document" manager="SystemData" uid="932711122">
+
+  <passport>
+    <title>ПРОТОТИП Документа</title>
+  </passport>
+
+  <states>
+    <status name="unmanaged" default="no" title="Без визирования"/>
+    <status name="withhardcopy" default="no" title="С печатью"/>
+  </states>
+
+  <structure>
+
+    <useone entity="Definition:Prototype:System" as="DefinitionPrototypeSystem" title="Базовый системный прототип"  system="yes" />
+
+    <useone entity="Definition:DocumentClass:ForPrototype" as="DefinitionDocumentClassForPrototype" title="Класс документа"/>
+
+    <field name="title" type="string" title="Имя"/>
+
+    <field name="indomain" type="string" title="Домен" />
+    <field name="ofclass" type="string" title="Класс" />
+    <field name="oftype" type="string" title="Тип"/>
+
+    <!-- NEW -->
+    <useone entity="Definition:ProcessModel:System" as="processprototype" title="Прототип управляющего процесса"/>
+
+    <!-- new -->
+
+    <useone entity="Management:Post:Individual" as="approver" title="Утверждающий"/>
+
+  </structure>
+
+  <lists>
+    <list name="visants" entity="Management:Post:Individual" ns="829323" title="Византы"/>
+    <list name="initiators" entity="Management:Post:Individual" ns="829325" title="Инициаторы"/>
+  </lists>
+
+  <defaultorder>
+    <by field="indomain" order="ASC"/>
+    <by field="ofclass" order="ASC"/>
+    <by field="oftype" order="ASC"/>
+  </defaultorder>
+
+  <admincolumns>
+    <column selector="title"/>
+    <column selector="indomain"/>
+    <column selector="ofclass"/>
+    <column selector="oftype"/>
+    <!-- <column selector="check"/> -->
+    <column selector="processprototype"/>
+    <column selector="visants"/>
+    <column selector="approver"/>
+  </admincolumns>
+
+  <options>
+    <aparam name="clonable" value="yes" />
+  </options>
+
+  <searchfields/>
+
+  <indexes>
+    <unique column="title"/>
+    <unique column="domain"/>
+  </indexes>
+
+</entity>

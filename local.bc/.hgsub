@@ -1,0 +1,2 @@
+goldcut = ssh://goldcut@dev.icebrg.net:223/hg
+lib = ssh://goldcut@dev.icebrg.net:223/lib

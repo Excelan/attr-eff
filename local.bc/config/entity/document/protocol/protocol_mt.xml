@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<entity prototype="Document:Protocol:MT" code="MT" manager="Document" uid="5006">
+
+  <passport>
+    <title>Протокол поверки</title>
+  </passport>
+
+  <structure>
+
+    <hasone entity="BusinessObject:Record:Polymorph" system="yes" as="bo" title="Объект"/>
+    <hasone entity="Management:Post:Individual" system="yes" as="ResponsibleVerification" title="Ответственный за поверку"/>
+    <hasone entity="BusinessObject:Record:Polymorph" system="yes" as="warehouse" title="№ Склада"/>
+    <hasone entity="Company:LegalEntity:Counterparty" system="yes" as="client" title="Клиент"/>
+    <hasone entity="Calendar:Period:Month" system="yes" title="Периодичность поверки"/>
+
+    <!-- Форма для заполнения-->
+    <field name="date" type="date" title="Дата проведения поверки"/>
+    <field name="datep" type="date" title="Дата проведения предыдущей поверки"/>
+    <field name="contractforverif" type="string" title="Договор на проведение поверки"/>
+    <field name="relateddocuments" type="tarray" title="Связанные документы"/>
+
+    <!--Связанные документы БД Документы-->
+
+    <field name="results" type="richtext" title="Результаты проведения поверки"/>
+    <field name="upload" type="tarray" title="Вложения"/>
+
+
+  </structure>
+
+  <lists>
+
+  </lists>
+
+
+  <defaultorder>
+  </defaultorder>
+
+  <admincolumns>
+    <column selector="code"/>
+    <column selector="created"/>
+    <column selector="initiator"/>
+    <!-- <column selector="status"/> -->
+  </admincolumns>
+
+  <indexes>
+    <index column=""/>
+  </indexes>
+
+</entity>

@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<entity prototype="Document:TechnicalTask:ForMaterials" code="TTM" manager="Document" uid="8002">
+
+    <passport>
+        <title>Техническое задание на закупку материалов</title>
+    </passport>
+
+    <structure>
+
+		<!-- -->
+		<hasone entity="Company:Structure:Companygroup"  title="Компания группы"/>
+		<hasone entity="Directory:Branch:Item"  title="Филиал/подразделение"/>
+		<field name="type" type="string"  title="Вид работ"/>
+
+		<!-- Материалы -->
+
+		<field name="docpermitsneed" type="richtext"  title="Требуемая документация"/>   <!-- multiple -->
+
+ 		<field name="supplierauditneeded" type="set" title="Необходимость в проведении предварительного аудита поставщика">
+            <value name="yes" title="Да" />
+            <value name="no" title="Нет" />
+        </field>
+        <hasone entity="Management:Post:Individual" as="personreceive" title="Лицо, ответственное за осуществление приемки товара со стороны заказчика"/>
+        <hasone entity="Management:Post:Individual" as="contactperson" title="Контактное лицо для ответа на технические вопросы"/>
+        <field name="deliveryconditions" type="richtext" title="Условия поставки"/>
+		<field name="priority" type="richtext"  title="Желаемые приоритеты по порядку выполнения работ"/>
+		<field name="desc" type="richtext"  title="Описание материалов"/>
+		<field name="requirement" type="richtext"  title="Требования к формированию КП"/>
+		<field name="attachments" type="tarray" title="Приложения"/>
+
+
+    </structure>
+
+    <lists>
+        <list name="CompanyLegalEntityCounterparty" entity="Company:LegalEntity:Counterparty" ns="27132" title="Участники тендера"/>
+        <list name="DirectoryTechnicalTaskMaterials" entity="Directory:TechnicalTask:Materials" ns="27145" title="Материалы"/>
+    </lists>
+
+
+
+    <defaultorder>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		<!-- <column selector="status"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

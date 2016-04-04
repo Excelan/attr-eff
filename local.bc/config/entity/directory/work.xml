@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<entity prototype="Directory:TechnicalTask:Works" manager="Business" uid="92085">
+
+    <passport>
+        <title>Работы</title>
+    </passport>
+
+    <states/>
+
+    <structure>
+
+        <field name="datebegin" type="date"  title="Срок начала работ, согласно проектного плана"/>
+        <field name="dateend" type="date"  title="Cрок окончания работ, согласно проектного плана"/>
+        <field name="materialdesription" type="richtext"  title="Описание работ, которые необходимо выполнить согласно данному техническому заданию"/>
+
+    </structure>
+
+    <lists>
+
+    </lists>
+
+
+    <defaultorder/>
+    <admincolumns>
+        <column selector="id"/>
+        <column selector="title"/>
+    </admincolumns>
+    <options/>
+    <searchfields/>
+    <indexes/>
+</entity>

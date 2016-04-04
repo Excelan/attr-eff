@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<entity prototype="Directory:TenderPosition:Simple" code="DTPS" manager="Business" uid="80232">
+
+    <passport>
+        <title>Ценовые предложения</title>
+    </passport>
+
+    <structure>
+
+        <useone entity="Document:Tender:Extended" as="DocumentTenderExtended" title="Тендер"/>
+
+
+        <field name="titleposition" type="string"  title="Название позиции" />
+        <!--<field name="priceoffer" type="string"  title="Стоимость позиции(можно описание)" />-->
+
+
+    </structure>
+
+
+    <defaultorder>
+    </defaultorder>
+
+    <admincolumns>
+        <column selector="code"/>
+        <column selector="created"/>
+        <column selector="initiator"/>
+		<!-- <column selector="status"/> -->
+    </admincolumns>
+
+    <indexes>
+        <index column=""/>
+    </indexes>
+
+</entity>

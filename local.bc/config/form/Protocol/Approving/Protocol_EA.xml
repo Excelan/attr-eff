@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- Протокол Аудита-->
+
+      <!--  <section entity="Document:Protocol:EA" type="context" title="Метаинформация по Протоколу Аудита">
+            <field name="date" type="date"  title="Дата предыдущего аудита"/>
+        </section>  -->
+
+        <section type="context" entity="Document:Protocol:EA" title="Форма для заполнения Протокола Аудита">
+
+            <field name="boprocedure" type="BusinessObject" multiple="yes" min="1" title="Объект(ы) аудита"/>
+            <field name="date" type="date" title="Дата проведения аудита"/>
+            <field name="datep" type="date" title="Дата предыдущего аудита"/>
+            <field name="commisionhead"  type="ManagementPostIndividual"  title="Глава комиссии"/>
+            <field name="commisionmembers" type="ManagementPostIndividual" multiple="yes" title="Участники комиссии"/>
+            <field name="results" type="richtext" title="Результаты проведения аудита"/>
+            <field name="attachments" type="attachment" min="1"  multiple="yes" title="Вложения"/>
+
+        </section>
+
+    </structure>
+</form>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- CONTEXT BLOCK Жалоба-->
+
+        <section type="context" title="Жалоба">
+            <struct name="claim" anonymous="yes">
+                <field name="claimtext" type="richtext" title="Текст жалобы" placeholder="test"/>
+            </struct>
+        </section>
+
+        <section title="Реагирование">
+            <field name="donefor" type="string" title="Принятые меры" placeholder="test" />
+        </section>
+
+        <section title="Расследование">
+            <field name="facts" type="text" title="Выявленные факты" />
+            <field name="doc1" type="Document" title="Документ" />
+        </section>
+
+        <section title="Заключение">
+            <field name="result" type="string" title="Заключение" edit="lock" />
+            <field name="doc2" type="RiskManagementRiskApproved" title="Риск" />
+        </section>
+
+        <section title="Документация">
+            <field name="links" type="string" title="Links" multiple="yes" edit="lockloaded" />
+
+            <field name="ireason2messagebased" type="select" title="Причина2 from Gate">
+                <query gate="Selector/TestSelect" user="urn-user-1" />
+            </field>
+
+        </section>
+
+
+        <section title="Отклонения">
+
+        <struct name="ots" multiple="yes" min="1" title="Отклонение">
+            <field name="desc" type="string" title="Описание" />
+            <field name="choser" type="radio" title="След Radio">
+                <options>
+                    <option value="val1" title="VaR1" />
+                    <option value="val2" title="VaR2" />
+                </options>
+            </field>
+
+            <field name="ireason2messagebased" type="select" title="Причина2 from Gate">
+                <query gate="Selector/TestSelect" user="urn-user-1" />
+            </field>
+
+
+            <!-- РИСКИ -->
+            <!-- select 1 старый риск -->
+            <struct name="oldrisk" title="Старый риск" anonymous="yes">
+                <field name="riskID" type="string" title="@ Old Risk ID" />
+            </struct>
+            <!-- MULT новый риск -->
+            <struct name="newrisk" multiple="yes" min="1" title="Новый риск">
+                <field name="risktitle" type="string" title="New Risk Title" />
+                <field name="depart" type="string" title="@ Департамент" />
+                <field name="links" type="attachment" title="Links" multiple="yes" edit="" />
+            </struct>
+        </struct>
+
+
+        </section>
+
+
+    </structure>
+
+</form>

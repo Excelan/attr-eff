@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gate ns="Html" name="AddVisauser">
+
+    <role>
+
+    </role>
+
+    <request>
+
+        <field name="user" type="integer" required="yes"/>
+        <field name="roles" type="iarray" required="no"/>
+
+        <field name="user_urn" type="string" required="yes"/>
+
+    </request>
+
+
+    <response>
+
+        <field name="visauser_html" type="string" required="yes"/>
+
+    </response>
+
+</gate>

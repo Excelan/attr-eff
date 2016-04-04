@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<form role="testRole">
+
+    <structure>
+
+        <!-- CONTEXT BLOCK Просмотр не идентифицированного риска -->
+        <!--  https://projects.invisionapp.com/share/MW49C7CKZ#/screens/113967508-->
+
+
+        <section entity="RiskManagement:Risk:NotApproved" type="context" title="Не идентифицированный риск">
+
+                <field name="riskdescription" type="text"  title="Описание не идентифицированного риска"/>
+                <field name="bo" type="BusinessObject"  title="Объект, в котором появился этот риск"/>
+                <field name="process" type="select"  title="Процесс, в котором появился этот риск">
+                    <query gate="Selector/directory/DirectoryBusinessProcessItem"  />
+                </field>
+
+        </section>
+
+    </structure>
+
+</form>
